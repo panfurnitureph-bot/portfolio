@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-cream text-ink antialiased;
+}
+
+/* Dual-range price slider — thumb lang ang clickable (track invisible) */
+.range-thumb {
+  height: 20px;
+  pointer-events: none;
+}
+.range-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #b1502e;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: 0;
+}
+.range-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #b1502e;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.range-thumb::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 20px;
+}
+.range-thumb::-moz-range-track {
+  background: transparent;
+}
+
+/* Itago ang number-input spinner arrows (nag-o-overflow sa maliit na box) */
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"].no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"].no-spinner {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

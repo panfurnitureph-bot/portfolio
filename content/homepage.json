@@ -1,0 +1,1078 @@
+{
+  "heroSlides": [
+    {
+      "headline": "",
+      "subtext": "",
+      "cta": "Shop New Arrivals",
+      "ctaHref": "/collections/new-in",
+      "imageDesktop": "/images/hero-slide-1-desktop-1784504441605.jpg",
+      "imageMobile": "/images/hero-slide-1-mobile-1784504443515.jpg"
+    },
+    {
+      "headline": "Our iconic Cognac Tan",
+      "subtext": "Premium leather. Timeless color. A sofa that looks better every single year.",
+      "cta": "Shop Collection",
+      "ctaHref": "/collections/sofas",
+      "imageDesktop": "/images/hero-slide-2-desktop-1784504448614.jpg",
+      "imageMobile": "/images/hero-slide-2-mobile-1784504450759.jpg"
+    },
+    {
+      "headline": "Designed for real homes",
+      "subtext": "Quality materials that hold up to everyday living, paws included.",
+      "cta": "Shop Pet-Friendly Furniture",
+      "ctaHref": "/collections/living",
+      "imageDesktop": "/images/hero-slide-3-desktop-1784504454133.jpg",
+      "imageMobile": "/images/hero-slide-3-mobile-1784504457705.jpg"
+    },
+    {
+      "headline": "Your outdoor era isn’t over",
+      "subtext": "Designed for year-round living, made to weather it all.",
+      "cta": "Shop Outdoor",
+      "ctaHref": "/collections/living",
+      "imageDesktop": "/images/hero-slide-4-desktop-1784504460604.jpg",
+      "imageMobile": "/images/hero-slide-4-mobile-1784504462824.jpg"
+    }
+  ],
+  "trustBadges": [
+    {
+      "icon": "sofa",
+      "title": "Quality materials. Built to last.",
+      "text": "Well made, is always worth it."
+    },
+    {
+      "icon": "guarantee",
+      "title": "100-Day Happiness Guarantee",
+      "text": ""
+    },
+    {
+      "icon": "card",
+      "title": "0% APR available for",
+      "text": "12 & 24 month financing*."
+    },
+    {
+      "icon": "truck",
+      "title": "Free Shipping on all orders*",
+      "text": ""
+    }
+  ],
+  "pressBar": {
+    "title": "Featured in",
+    "quote": "“PAN Furnitures made it clear we’d found the one.”",
+    "logos": [
+      "domino",
+      "THE NEW YORKER",
+      "AD",
+      "houzz",
+      "GQ",
+      "Forbes",
+      "ELLE DECOR"
+    ]
+  },
+  "bestSelling": {
+    "title": "Best-selling Bed",
+    "productPrefixes": [
+      "eden-bed-frame",
+      "frankie-bed-frame",
+      "emery-bed-frame",
+      "pure-bed-frame",
+      "eva-bed-frame",
+      "poise-bed-frame"
+    ]
+  },
+  "bannerSlideshows": [
+    {
+      "id": "audrey",
+      "slides": [
+        {
+          "headline": "Made in America. Made to order.",
+          "ctas": [
+            {
+              "label": "PAN Collection",
+              "href": "/collections/sofas"
+            }
+          ],
+          "image": "/images/banner-audrey-1-1784504481478.jpg",
+          "label": "Audrey 84\" Leather Sofa"
+        },
+        {
+          "headline": "Built for how you live",
+          "ctas": [
+            {
+              "label": "Shop Sofas",
+              "href": "/collections/sofas"
+            }
+          ],
+          "image": "/images/banner-audrey-2-1784503593594.jpg",
+          "label": "Cognac Tan Leather"
+        }
+      ]
+    },
+    {
+      "id": "bedroom",
+      "slides": [
+        {
+          "headline": "Make room for better rest",
+          "ctas": [
+            {
+              "label": "Explore Bedroom",
+              "href": "/collections/beds"
+            },
+            {
+              "label": "Shop Aberdeen",
+              "href": "/collections/beds"
+            }
+          ],
+          "image": "/images/banner-bedroom-1-1784503550527.jpg",
+          "label": "Aberdeen Bed in Walnut"
+        },
+        {
+          "headline": "Bedrooms that breathe",
+          "ctas": [
+            {
+              "label": "Explore Bedroom",
+              "href": "/collections/beds"
+            }
+          ],
+          "image": "/images/banner-bedroom-2-1784503546639.jpg",
+          "label": "Bedroom Collection"
+        },
+        {
+          "headline": "Rest, elevated",
+          "ctas": [
+            {
+              "label": "Shop Beds",
+              "href": "/collections/beds"
+            }
+          ],
+          "image": "/images/banner-bedroom-3-1784503558650.jpg",
+          "label": "Bedroom Collection"
+        }
+      ]
+    }
+  ],
+  "splitSections": [
+    {
+      "image": "/images/split-1-1784504594917.jpg",
+      "headline": "Stay out a little longer",
+      "subtext": "Thoughtful designs for outdoor living",
+      "cta": "Explore Outdoor",
+      "href": "/collections/living",
+      "productPrefixes": [
+        "eden-bed-frame",
+        "frankie-bed-frame",
+        "emery-bed-frame"
+      ]
+    },
+    {
+      "image": "/images/split-2-1784513627102.png",
+      "headline": "Statement armchairs",
+      "subtext": "The kind of chair every room needs",
+      "cta": "Explore Accent Chairs",
+      "href": "/collections/accent-chair",
+      "productPrefixes": [
+        "accent-9",
+        "accent-4",
+        "accent-16"
+      ]
+    },
+    {
+      "image": "/images/split-3-1784504585264.jpg",
+      "headline": "The dining edit",
+      "subtext": "Good living starts at the table",
+      "cta": "Shop Now",
+      "href": "/collections/dining",
+      "productPrefixes": [
+        "eden-bed-frame",
+        "frankie-bed-frame",
+        "emery-bed-frame"
+      ]
+    }
+  ],
+  "testimonials": {
+    "title": "What our customers are saying",
+    "items": [
+      {
+        "state": "WY",
+        "quote": "Stunning designs - We get lots of compliments.",
+        "name": "Damian B.",
+        "city": "Cheyenne, WY"
+      },
+      {
+        "state": "TX",
+        "quote": "The leather quality exceeded every expectation we had.",
+        "name": "Marissa L.",
+        "city": "Austin, TX"
+      },
+      {
+        "state": "CA",
+        "quote": "Fast delivery and the sofa is even better in person.",
+        "name": "Kevin O.",
+        "city": "San Diego, CA"
+      },
+      {
+        "state": "NY",
+        "quote": "Our dining set gets used every single day. Zero regrets.",
+        "name": "Priya S.",
+        "city": "Brooklyn, NY"
+      },
+      {
+        "state": "FL",
+        "quote": "The outdoor set survived a full summer of storms.",
+        "name": "Carlos M.",
+        "city": "Tampa, FL"
+      },
+      {
+        "state": "WA",
+        "quote": "Beautiful craftsmanship — worth every penny.",
+        "name": "Elaine T.",
+        "city": "Seattle, WA"
+      }
+    ]
+  },
+  "videoReviews": {
+    "eyebrow": "Real customer reviews",
+    "title": "Sit back and press play",
+    "items": [
+      {
+        "video": "/videos/pan-reel-1.mp4",
+        "poster": "/images/video-poster-custom-2-1784415918748.jpg",
+        "name": "Roldan Albaniel test",
+        "role": "Real PAN Furnitures Customer"
+      }
+    ]
+  },
+  "ugc": {
+    "title": "PAN Furnitures, in real life",
+    "subtitle": "USE #PANFURNITURES AND TAG US @PANFURNITURES",
+    "handle": "@panfurnitures",
+    "caption": "A little look at how our pieces are living in your homes ✨\n\nDifferent styles, different spaces, but one thing stays the same — furniture that feels like you.",
+    "photos": [
+      "/images/reviews/card-pan-customer-1784550000246.jpg",
+      "/images/reviews/card-pan-customer-1784550000440.jpg",
+      "/images/reviews/card-pan-customer-1784550000673.jpg",
+      "/images/reviews/card-pan-customer-1784550000900.jpg",
+      "/images/reviews/card-pan-customer-1784550001115.jpg",
+      "/images/reviews/card-pan-customer-1784550001279.jpg",
+      "/images/reviews/card-pan-customer-1784550001444.jpg",
+      "/images/reviews/card-pan-customer-1784550001602.jpg",
+      "/images/reviews/card-pan-customer-1784550001767.jpg",
+      "/images/reviews/card-pan-customer-1784550001940.jpg",
+      "/images/reviews/card-pan-customer-1784550002101.jpg",
+      "/images/reviews/card-pan-customer-1784550002260.jpg",
+      "/images/reviews/card-pan-customer-1784550002483.jpg",
+      "/images/reviews/card-pan-customer-1784550002738.jpg",
+      "/images/reviews/card-pan-customer-1784550002969.jpg",
+      "/images/reviews/card-pan-customer-1784550003207.jpg",
+      "/images/reviews/card-pan-customer-1784550003496.jpg",
+      "/images/reviews/card-pan-customer-1784550003786.jpg",
+      "/images/reviews/card-pan-customer-1784550004099.jpg",
+      "/images/reviews/card-pan-customer-1784550004405.jpg",
+      "/images/reviews/card-pan-customer-1784550004727.jpg"
+    ]
+  },
+  "faqs": {
+    "title": "FAQs",
+    "items": [
+      {
+        "q": "How much do you charge for shipping?",
+        "a": "Shipping is free on all orders — no minimum, no surprises at checkout."
+      },
+      {
+        "q": "How long will it take for my order to arrive?",
+        "a": "In-stock items ship within 3–5 business days and typically arrive within 1–2 weeks."
+      },
+      {
+        "q": "Do you offer a price guarantee?",
+        "a": "Yes. If you find the same item for less within 30 days of purchase, we'll match the price."
+      },
+      {
+        "q": "What kind of warranty is provided on your products?",
+        "a": "Every piece includes a multi-year warranty covering manufacturing defects in frames, materials, and workmanship."
+      },
+      {
+        "q": "What is your return policy?",
+        "a": "Live with it for up to 100 days. Not in love? We'll pick it up for free and refund you in full."
+      },
+      {
+        "q": "Do you offer financing?",
+        "a": "Yes — 0% APR financing is available for 12 and 24 months through our checkout partners."
+      }
+    ]
+  },
+  "googleReviews": {
+    "title": "PAN Furnitures Reviews on Google",
+    "rating": 4.8,
+    "count": 92,
+    "items": [
+      {
+        "name": "Gel_justwannahavefun",
+        "rating": 1,
+        "date": "3 weeks ago",
+        "text": "I bought my custom bed from them back in 2022, and I’ve been very happy with it ever since. It’s incredibly durable, still sturdy to this day, and the craftsmanship really shows. I’ve even recommended them to friends—my best friend ended up buying the same bed because of how impressed I was with mine.\n\nThe only feedback I have is about the after-sales experience. I was hoping to have the bed reupholstered by the same team, mainly because I trust the people who built it to maintain the quality and integrity of their own furniture. After reaching out a few times, though, I got the impression that reupholstery work may not be something they currently prioritize.\n\nI’m not sure if they’ve had changes in their administration or process, but I remember them being more accommodating before. This is just something I hope they can improve, because the quality of their furniture is excellent, and strong after-sales support would make the overall experience even better.",
+        "photos": [
+          "/images/reviews/card-gel-justwannahavefun.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Marinella Guda",
+        "rating": 5,
+        "date": "2 weeks ago",
+        "text": "The quality of their products is top-notch, especially for the price. They just need to improve their customer response time. Though it’s understandable that they’re dealing with an influx of inquiries, I think hiring more page managers would really help.",
+        "photos": [
+          "/images/reviews/card-marinella-guda.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Lara Angelique Santos",
+        "rating": 5,
+        "date": "2026-07",
+        "text": "The staff is very accommodating, and the furniture is high class. It's worth every peso — highly recommended!",
+        "photos": [
+          "/images/reviews/card-lara-angelique-santos.jpg"
+        ]
+      },
+      {
+        "name": "Dalisay Vargas",
+        "rating": 3,
+        "date": "June 15, 2026",
+        "text": "Satisfied customer ❤️",
+        "photos": [
+          "/images/reviews/card-dalisay-vargas.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Nancy Davidson",
+        "rating": 5,
+        "date": "June 14, 2026",
+        "text": "Im very Satisfied😊 100% Recommended👍👍 Thank you Pan Furniture..",
+        "photos": [
+          "/images/reviews/card-nancy-davidson.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Joan Moje",
+        "rating": 5,
+        "date": "June 02, 2026",
+        "text": "We are very happy with the bed frame we purchased! It is sturdy, well-made, and has a beautiful design. It was easy to assemble and looks perfect in our bedroom. The quality exceeded our expectations, and it is definitely worth the price. Highly recommended to anyone looking for a durable and stylish bed frame! A great purchase and an excellent addition to our home!",
+        "photos": [
+          "/images/reviews/card-joan-moje.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Andrea May Magcayang",
+        "rating": 5,
+        "date": "2 months ago",
+        "text": "I really like how my bed frame turned out\nit’s simple but still feels clean and elegant. The soft upholstered finish gives it a cozy vibe, and I like how the headboard is padded, especially when I just want to sit back and relax. The neutral color was a good choice too since it makes everything look bright and easy to style.\nI’m happy with it overall it feels comfortable, looks neat, and it’s a good base that I can slowly style the way I want.",
+        "photos": [
+          "/images/reviews/card-andrea-may-magcayang.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Artemus Angeles",
+        "rating": 5,
+        "date": "May 09, 2026",
+        "text": "Got the 15k promo beds from them. They are sturdy. They used hardwood supports and good plywood for the bed. The braces and the support are 1x1”s or 2x2”s im not sure but they were straight and solid and treated wood pa. The foam is thick and feels firm to the touch. Tamang tama lang. Its actually much bigger in person than in the reels and pics. Mukhang hindi 15k talaga. Very happy with my purchase!",
+        "photos": [
+          "/images/reviews/card-artemus-angeles.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Karen Reyes",
+        "rating": 5,
+        "date": "May 05, 2026",
+        "text": "Sobrang ganda ng naging outcome nung na-order naming promo bed sa PAN furniture. Kahit naka promo lang siya, ang ganda ng quality! Sobrang helpful din pagdating sa requests and sa inquiries ko. Ang bilis lang din nila mag-assemble ng kama at sobrang professional nila. Thank you PAN furniture!\n\n(Translated by Google)\nThe outcome was so good when we ordered a promo bed from PAN furniture. Even though it was just on promo, the quality was great! They were also very helpful when it came to my requests and inquiries. They were also very quick to assemble the bed and they were very professional. Thank you PAN furniture!",
+        "photos": [
+          "/images/reviews/card-karen-reyes.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Francia Magdales",
+        "rating": 5,
+        "date": "April 25, 2026",
+        "text": "WE ORDERED BED FRAMES FROM THEM. GREAT SERVICE, FRIENDLY AND ACCOMMODATING STAFF. GUARANTEED QUALITY FURNITURE AND THEY RESPOND QUICKLY ✌️👌 THANK YOU PAN FURNITURE, SA UULITIN 🙏",
+        "photos": [
+          "/images/reviews/card-francia-magdales.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Rose Ann Saguid",
+        "rating": 5,
+        "date": "April 19, 2026",
+        "text": "Thank you Pan Furniture for the high quality bed frame. It was worth the price and definitely worth the wait. It came exactly the right time before our flight & we are so happy for the purchase.❤️❤️❤️",
+        "photos": [
+          "/images/reviews/card-rose-ann-saguid.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "julie boreres",
+        "rating": 5,
+        "date": "March 14, 2026",
+        "text": "Yung nakahabol ka sa promo nung valentines day😊 ang ganda at ang tibay. Next year ulit. Pag iipunan ko naman yung kung size\n\n(Translated by Google)\nWhen you caught the promo on Valentine's Day😊 it's beautiful and durable. Next year again. I'll save up for the right size.",
+        "photos": [
+          "/images/reviews/card-julie-boreres.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Antonio Cabanit",
+        "rating": 5,
+        "date": "March 13, 2026",
+        "text": "\"I wanted to share how impressed I am with the quality of this bed. The craftsmanship is excellent, and it feels incredibly sturdy. It’s rare to find such high quality at this price point. Thank you for a great product and a smooth delivery. Highly recommended & a satisfied customer here.\nMore blessings in your business. GOD BLESS",
+        "photos": [
+          "/images/reviews/card-antonio-cabanit.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Jandel Gimeno",
+        "rating": 5,
+        "date": "March 12, 2026",
+        "text": "Thanks to Pan Furniture!\nGot my customized bed that is so durable and looks good with my room's interior!\n\nGreat customer service and excellent product!\nKudos to the staff who delivered and installed the bedframe, so friendly and so approachable!",
+        "photos": [
+          "/images/reviews/card-jandel-gimeno.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Joel Gambala",
+        "rating": 5,
+        "date": "March 07, 2026",
+        "text": "We recently bought two bed frames from your store, and we’re very pleased with our purchase!\n\nQuality & Construction\nThe frames feel sturdy and well-built, with solid materials that don’t squeak or wobble even with regular use. The finish is smooth and looks exactly as shown on your website.\n\nValue\nCompared to other options we looked at, these frames offer great value for money. They provide excellent support for our mattresses and have enough under-bed storage space to keep our bedroom tidy.\n\nThe delivery was also on time, and the staff we spoke with when placing our order were friendly and helpful. We’d definitely recommend these bed frames to family and friends!",
+        "photos": [
+          "/images/reviews/card-joel-gambala.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Bennieson Co",
+        "rating": 5,
+        "date": "March 05, 2026",
+        "text": "Responsive, good quality, reasonable price. Shout out to Ms. Aina!",
+        "photos": [
+          "/images/reviews/card-bennieson-co.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Shiela ann Ualat",
+        "rating": 4,
+        "date": "January 17, 2026",
+        "text": "The quality of the products met expectations—what is shown in the ads accurately reflects how they look in person. The furniture is visually pleasing, and the delivery team handled the items carefully and remained courteous throughout the process.\n\nHowever, communication through the online messenger needs significant improvement. Order updates and requests were not provided unless we followed up, and our delivery was cancelled or rescheduled twice without clear explanation. The first cancellation was not communicated to us at all, and even on the final delivery day, no update was given until I personally reached out to one of the delivery personnel, who was helpful and responsive despite not being assigned to our delivery.\n\nWhile I would still recommend the good quality of your products, client inquiries should be handled more attentively and proactively. A business is not defined solely by how well its products are advertised, but also by the consistency, clarity, and professionalism shown in how customers are treated.",
+        "photos": [
+          "/images/reviews/card-shiela-ann-ualat.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Jay",
+        "rating": 5,
+        "date": "January 16, 2026",
+        "text": "Bed is so beautiful and look so elegant, money wise and very reliable company. Easy to talk with. Highly recommended to family and friends. I will update you with photo when everything is on place. Thank you so much! 🥳",
+        "photos": [
+          "/images/reviews/card-jay.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Catrina Quieta - Pasno",
+        "rating": 5,
+        "date": "January 13, 2026",
+        "text": "Thank you so much Pan Furniture! Sobrang Ganda ng Bed Frame na pinagawa namin. Bang for the buck! Ang babait pa ng mga staff niyo and magaling na, mabilis pa. 'Till next bed frame or sofa soon!☺️☺️\n\n(Translated by Google)\nThank you so much Pan Furniture! The Bed Frame we had made is so beautiful. Bang for the buck! Your staff is so kind and efficient, and fast. 'Till next bed frame or sofa soon!☺️☺️",
+        "photos": [
+          "/images/reviews/card-catrina-quieta-pasno.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "kimbely roque",
+        "rating": 1,
+        "date": "December 16, 2025",
+        "text": "If you cant respond to people regarding the price, put the price in your posts. Worst customer service experience",
+        "photos": [
+          "/images/reviews/card-kimbely-roque.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "PW",
+        "rating": 5,
+        "date": "December 13, 2025",
+        "text": "Smooth transaction! Trustworthy seller. No doubt highly recommended. Thank you PAN Furniture. Di niyo kami binigo. The bed is exactly what we wanted it to be for our new house. 🤩🤩🤩🤩🤩",
+        "photos": [
+          "/images/reviews/card-pw.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Riza Kraics",
+        "rating": 5,
+        "date": "December 13, 2025",
+        "text": "Thank you PAN Furniture!\nYour custom sofabed, bedframe with wall padded headboard and curtains are masterpieces that surpass expectations with exceptional quality and craftsmanship.\nAside from the quality, you can be trusted and are very professional to work with.\nHighly recommended! 👏",
+        "photos": [
+          "/images/reviews/card-riza-kraics.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "A Macawile",
+        "rating": 5,
+        "date": "December 03, 2025",
+        "text": "Super quality at ang ganda ng gawa nila. Highly recommended po kayo. Thank you PAN Furniture!\n\n(Translated by Google)\nSuper quality and their work is beautiful. Highly recommended. Thank you PAN Furniture!",
+        "photos": [
+          "/images/reviews/card-a-macawile.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Anabelle Perez",
+        "rating": 5,
+        "date": "December 02, 2025",
+        "text": "I was highly satisfied with the product.I hope it will last as this is an early Christmas present for our dear parents.",
+        "photos": [
+          "/images/reviews/card-anabelle-perez.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Elisa Bagtas",
+        "rating": 5,
+        "date": "November 19, 2025",
+        "text": "Salamat po ang Ganda-ganda ng Quality, pang Hotel Design ang quality hindi halatang Promo Bed Sale nasa tamang Pan Bed Furniture talaga po ako💗 worth the wait po 💗 Sabi kona eto talaga yon gusto ko sa dami kong iniquiran eto talaga ang deserve pag-ipunan😅\nThank you po ulit sa maganda serbisyo, mababait na staff and sa consideration nyo 🙏Godbless po more sales to come po🥰\n\n(Translated by Google)\nThank you for the beautiful quality, the quality is for Hotel Design, not obvious Promo Bed Sale, I'm really in the right place for Pan Bed Furniture💗 worth the wait💗 I said this is what I really want, I asked for a lot, this is what I really deserve to save😅\nThank you again for the good service, kind staff and your consideration 🙏Godbless, more sales to come🥰",
+        "photos": [
+          "/images/reviews/card-elisa-bagtas.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Noel Liu",
+        "rating": 1,
+        "date": "November 17, 2025",
+        "text": "The bed frame and other furniture are low quality and feel cheap. You are better off buying from a different store.\n\nEDIT: The owner's excuse is irrelevant. The furniture's poor quality speaks for itself.",
+        "photos": [
+          "/images/reviews/card-noel-liu.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Genry M",
+        "rating": 5,
+        "date": "August 09, 2025",
+        "text": "I just wanted to say thank you for the excellent service and the beautiful bed I purchased from Pan Furniture. The quality and comfort are outstanding, and it has made a wonderful addition to my home. I truly appreciate your professionalism and support throughout the process More power and success.",
+        "photos": [
+          "/images/reviews/card-genry-m.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Justine Camille Palisoc",
+        "rating": 5,
+        "date": "July 30, 2025",
+        "text": "Great service and product! Fast transaction. Highly recommended ❤️",
+        "photos": [
+          "/images/reviews/card-justine-camille-palisoc.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "mark anthony loza",
+        "rating": 5,
+        "date": "July 13, 2025",
+        "text": "Fast transaction, very accomodating ang Pan furniture.. and quality ang bed frame..mabilis din nadeliver ang frame, mas maaga sa napagusapang date.. salamat Pan furniture.. all the best! 🙏\n\n(Translated by Google)\nFast transaction, Pan furniture is very accommodating.. and the bed frame is quality..the frame was also delivered quickly, earlier than the expected date.. thank you Pan furniture.. all the best! 🙏",
+        "photos": [
+          "/images/reviews/card-mark-anthony-loza.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ronald Labrador",
+        "rating": 5,
+        "date": "June 23, 2025",
+        "text": "Trusted & Recomended.\nQuality & Legit.\nWorth buying for comfortableness.",
+        "photos": [
+          "/images/reviews/card-ronald-labrador.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ann Cadsawan",
+        "rating": 5,
+        "date": "June 14, 2025",
+        "text": "Thank you so much PAN Furniture for smooth transaction and fast delivery. Expected delivery June 22 pero nadeliver na din agad june 13. Legit talaga yung 15k promo bed and napakaganda pa 🥰\n\n(Translated by Google)\nThank you so much PAN Furniture for smooth transaction and fast delivery. Expected delivery June 22 but it was delivered already June 13. The 15k promo bed is really legit and it's still very beautiful 🥰",
+        "photos": [
+          "/images/reviews/card-ann-cadsawan.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "ronalyn garcia",
+        "rating": 5,
+        "date": "June 04, 2025",
+        "text": "Bedframe met expectations in terms of quality. The materials used appear durable and well-constructed, offering a stable and supportive structure.\n\nOverall, I am satisfied with both the timely delivery and the quality of the product.\n\nI highly recommend this company, I also commend the way the staff communicated with the client. Very professional. 👍👍👍⭐️⭐️⭐️⭐️⭐️",
+        "photos": [
+          "/images/reviews/card-ronalyn-garcia.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Clarizze Cortez",
+        "rating": 5,
+        "date": "April 29, 2025",
+        "text": "I found the representatives to be approachable and easy to communicate with. I purchased a queen-size bed frame for 15k PHP, and I was informed that the estimated delivery time would be approximately 7 to 8 weeks; however, the actual delivery occurred in a significantly shorter timeframe. The quality of the bed frame surpassed my expectations. I highly recommend them.",
+        "photos": [
+          "/images/reviews/card-clarizze-cortez.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Brian Mendoza",
+        "rating": 5,
+        "date": "April 23, 2025",
+        "text": "Amazing and utmost experience, on time deliveries, superb products and very above expectation costumer service.\nSuper recommended..",
+        "photos": [
+          "/images/reviews/card-brian-mendoza.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Kaiize Lomibao",
+        "rating": 5,
+        "date": "April 04, 2025",
+        "text": "Just got my bed today from Pan Furniture! I'm so satisfied and happy coz the bed is so beautiful and matibay! 😊✨ Sa uulitin sofa naman. Thank you so much po sa PAN furniture sa easy transaction dn. 😊 Highly recommended ko sya..",
+        "photos": [
+          "/images/reviews/card-kaiize-lomibao.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "jer corpuz",
+        "rating": 5,
+        "date": "March 18, 2025",
+        "text": "Sulit na sulit ang 2mos para sa mura at quality na bed 🛏️👌 will order again soon salamat po\n\n(Translated by Google)\n2 months is well worth it for a cheap and quality bed 🛏️👌 will order again soon thank you",
+        "photos": [
+          "/images/reviews/card-jer-corpuz.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Roselyn Tajan (Rose)",
+        "rating": 5,
+        "date": "February 27, 2025",
+        "text": "Your staff is very approachable, especially Madam, she is very kind.😍😍😍",
+        "photos": [
+          "/images/reviews/card-roselyn-tajan-rose.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Primo Rey Adame",
+        "rating": 5,
+        "date": "February 03, 2025",
+        "text": "If you want quality bed frame you are in the right place. Value for money..feel free to ask them they are very accommodating.",
+        "photos": [
+          "/images/reviews/card-primo-rey-adame.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "C A",
+        "rating": 5,
+        "date": "February 02, 2025",
+        "text": "Thank you Pan Furniture for the promo bedframe super ganda! And the uratex mattress we love it so much! Super lambot highly recommended😍and napaka accomodating ng team  mula admin gang sa mga nagdeliver kuddos sainio🫡  Very satisfied kame sa quality ,color and design because of your bed our room became cozy😍",
+        "photos": [
+          "/images/reviews/card-c-a.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Christian Villadiego",
+        "rating": 5,
+        "date": "January 27, 2025",
+        "text": "Ang bilis dumating ng order namin at ang ganda niya😍\n\n(Translated by Google)\nOur order arrived so quickly and it's beautiful😍",
+        "photos": [
+          "/images/reviews/card-christian-villadiego.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Jerome Giron",
+        "rating": 5,
+        "date": "January 27, 2025",
+        "text": "Affordable bedframe yet quality materials. This is definitely 5 star!",
+        "photos": [
+          "/images/reviews/card-jerome-giron.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Quiet Force",
+        "rating": 5,
+        "date": "January 04, 2025",
+        "text": "SUPERB! First, I want to praise all the PAN STAFF ang babait nilang lhat. Very friendly Hangang sa delivery crews very pleasant lahat! 😊 Kahit nsa states ako, very accommodating sla. So, I ordered not  only 1 frame but 4 bed frames with drawers and pulled out bed. I waited for couple of months but wow! it’s soooo with it! Ang GANDA at tlagang well made & STURDY tlaga. I highly recommend PAN furniture 💯. Galing!😍\n\n(Translated by Google)\nSUPERB! First, I want to praise all the PAN STAFF they are all so nice. Very friendly Even the delivery crews are very pleasant everyone! 😊 Even though I'm from the states, they are very accommodating. So, I ordered not only 1 frame but 4 bed frames with drawers and pulled out bed. I waited for couple of months but wow! it’s soooo with it! It’s BEAUTIFUL and really well made & STURDY. I highly recommend PAN furniture 💯. Awesome!😍",
+        "photos": [
+          "/images/reviews/card-quiet-force.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Shynne Magat",
+        "rating": 5,
+        "date": "January 04, 2025",
+        "text": "Transaction was smooth, and they provided updates on the delivery of my order. Yung bedframe looks very sturdy and spacious ung storage sa ilalim. Ung mga nag deliver and nag install are courteous and efficient. Thanks Pan Furniture, worth the wait kasi quality ang product. Highly recommended",
+        "photos": [
+          "/images/reviews/card-shynne-magat.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "JEN AGUACITO FERNANDEZ",
+        "rating": 5,
+        "date": "December 19, 2024",
+        "text": "Got 5 bed from them and all of It are sturdy, affordable and very stylish. They're my hidden gem hahaha I wanted to gatekeep them but I also wanted to support them since they're locally made. Thank you PAN FURNITURES for always accommodating my request and my rush order. I'll order again soon! for sure!",
+        "photos": [
+          "/images/reviews/card-jen-aguacito-fernandez.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Jenalyn N. Queaño",
+        "rating": 5,
+        "date": "December 19, 2024",
+        "text": "Sobrang solid.This team exceed my expectations.Bihirang bihira ako mag review pero deserve nila ng more than 5 stars. Walang duda na babalikan mo sila for the quality of their products.Sofa naman soon😍😊\n\n(Translated by Google)\nVery solid. This team exceeds my expectations. I rarely review but they deserve more than 5 stars. I have no doubt that you will come back to them for the quality of their products. Sofa soon😍😊",
+        "photos": [
+          "/images/reviews/card-jenalyn-n-quea-o.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Maricar Sailog",
+        "rating": 5,
+        "date": "December 14, 2024",
+        "text": "We really love the bed because we know it is made out of solid wood beneath its posh design. We can do everything without being fear of breaking the bed or what not😅😅😅 #iykyk\n\nOur kids even wanted to sleep with us last night! Thank you PAN Furniture. Highly recommended!",
+        "photos": [
+          "/images/reviews/card-maricar-sailog.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Michael Antonio",
+        "rating": 5,
+        "date": "December 10, 2024",
+        "text": "Smooth transaction. Beautiful designs with high quality materials. Very satisfied customer here. Thank you Pan Furniture.",
+        "photos": [
+          "/images/reviews/card-michael-antonio.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "renen agustin",
+        "rating": 5,
+        "date": "December 08, 2024",
+        "text": "Thank you Pan Furniture, you really wanted to meet the expectation of your clients.  We do appreciate the craftmanship and the  “wise diskarte” of your delivery staff. Small bedroom is not a hindrance to an elegant bed, comfort and durability. Its really worth for the price, worth the wait, worth for the very good sleep. Thank you Pan Furniture",
+        "photos": [
+          "/images/reviews/card-renen-agustin.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ronald De Guzman",
+        "rating": 5,
+        "date": "December 03, 2024",
+        "text": "Thank you Pan Furniture.. Sobrang ganda po at pulido ang pagkagawa.. indeed super satisfied customer here.  Highly recommended\n\n(Translated by Google)\nThank you Pan Furniture.. The workmanship is very beautiful and polished.. indeed super satisfied customer here. Highly recommended",
+        "photos": [
+          "/images/reviews/card-ronald-de-guzman.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Mariane Natividad",
+        "rating": 5,
+        "date": "November 25, 2024",
+        "text": "highly recommend this business PAN FURNITURE\nThe product quality is consistently outstanding, exceeding my expectations every time\nI was completely impressed with their professionalism and customer service. Ang ganda ng pagkakagawa ng bed frame, excellent quality of work.\nThank you so much po ❤️⭐️⭐️⭐️⭐️⭐️",
+        "photos": [
+          "/images/reviews/card-mariane-natividad.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Roy Roger Punay",
+        "rating": 5,
+        "date": "November 25, 2024",
+        "text": "Quality!",
+        "photos": [
+          "/images/reviews/card-roy-roger-punay.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ellaine Agulan",
+        "rating": 5,
+        "date": "October 26, 2024",
+        "text": "Smooth transaction. Very responsive team via socmed or sms. Our custom bed was delivered and installed in perfect condition. What you see in fb is what you get for real. 😉🥰",
+        "photos": [
+          "/images/reviews/card-ellaine-agulan.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Phoebe Partoriza",
+        "rating": 5,
+        "date": "September 01, 2024",
+        "text": "Matibay siya at mabilis ang gawa. Responsive rin sila sa FB Page nila kapag ina-ask sa updates ng bed. ☺️\n\n(Translated by Google)\nHe is strong and works quickly. They are also responsive on their FB Page when asked about bed updates. ☺️",
+        "photos": [
+          "/images/reviews/card-phoebe-partoriza.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Iris Vergara",
+        "rating": 5,
+        "date": "July 25, 2024",
+        "text": "Good workers!! they even waited for me. From the moment we got to their showcase I knew I'm gonna buy from them because of their friendly staff. Will truly recommend this to my friends and family. Thank you again! 🥰",
+        "photos": [
+          "/images/reviews/card-iris-vergara.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Erin Espineda",
+        "rating": 5,
+        "date": "June 15, 2024",
+        "text": "We ordered their promo bedframe online and we never regret it because what you see on their page is what you will get. Their frame is now the masterpiece of our room. Thank you Jess and team for making our dream bed into a reality. Kudos Pan Furniture!",
+        "photos": [
+          "/images/reviews/card-erin-espineda.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Garry Villena",
+        "rating": 5,
+        "date": "June 15, 2024",
+        "text": "Amazing service and product! Was able to accommodate our requests on the preferred delivery date and come actual delivery, the staff’s also very accommodating and was even able to give us after-sales and care tips. Highly recommended furniture store!\nPS. Bear with the photos as property is still about 85% done. ☺️",
+        "photos": [
+          "/images/reviews/card-garry-villena.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Jezreel Venzon",
+        "rating": 5,
+        "date": "May 31, 2024",
+        "text": "This is a good deal. Quality for its price. Looks durable. Thank you Pan Furniture for your hardwork! 😍",
+        "photos": [
+          "/images/reviews/card-jezreel-venzon.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ryan Nembert Telar",
+        "rating": 5,
+        "date": "May 27, 2024",
+        "text": "Superb Quality, sa kahoy palang makikita mo ng matibay talaga compare sa mga mall maninipis agn ginamit na kahoy, highly recommended para sa mga gusto talaga ng customized quality bedframe\n\n(Translated by Google)\nSuperb Quality, you will see that the wood is really sturdy compared to malls that use thinner wood, highly recommended for those who really want a customized quality bedframe",
+        "photos": [
+          "/images/reviews/card-ryan-nembert-telar.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Erik Jard",
+        "rating": 5,
+        "date": "May 25, 2024",
+        "text": "Quality yung bed",
+        "photos": [
+          "/images/reviews/card-erik-jard.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Richard Balanon",
+        "rating": 5,
+        "date": "May 24, 2024",
+        "text": "Sulit ang binayad,maganda na matibay pa Thank you PAN FURNITURE 🤗🥰👍\n\n(Translated by Google)\nWorth the price, beautiful and durable. Thank you PAN FURNITURE 🤗🥰👍",
+        "photos": [
+          "/images/reviews/card-richard-balanon.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Maria Christerlyn Yu",
+        "rating": 5,
+        "date": "May 18, 2024",
+        "text": "High quality bed frame yet affordable. Highly recommended. 🛌",
+        "photos": [
+          "/images/reviews/card-maria-christerlyn-yu.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Rose Ann Dela Cruz Gutierrez",
+        "rating": 5,
+        "date": "May 17, 2024",
+        "text": "First time ko mag order online ng furniture and yet super satisfied ako sa bed frame na to excited na tuloy ako makita sa personal since nasa qatar pako and ang bilis nila magreply sa mga tanong ko\n\n(Translated by Google)\nThis is my first time ordering furniture online and yet I am super satisfied with this bed frame. I am excited to see it in person since I am in Qatar and they are so quick to reply to my questions.",
+        "photos": [
+          "/images/reviews/card-rose-ann-dela-cruz-gutierrez.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Adora Fajardo",
+        "rating": 5,
+        "date": "May 15, 2024",
+        "text": "Super nice ng pagkagawa sa bed frame namin!! I must say perfect for our new bedroom! Kuddos to the staff and managemnt of Pan Furniture!! Will surely recommend you and your compny! Keep it up guys👏👏👏👍👍👍",
+        "photos": [
+          "/images/reviews/card-adora-fajardo.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Joana Marie Cuento",
+        "rating": 5,
+        "date": "May 14, 2024",
+        "text": "Satisfied customer here kahit order online lang. really exceed our expectations. Very smooth katransact si sir.",
+        "photos": [
+          "/images/reviews/card-joana-marie-cuento.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "kevin viloria",
+        "rating": 5,
+        "date": "May 09, 2024",
+        "text": "🔝 TOP, sobrang ganda, sobrang tibay,\nThe BEST kuhang kuha design na gusto ko,\nsobrang sulit ang bayad, looking forward for my next project with you pan furniture very soon😬\n\n(Translated by Google)\n🔝 TOP, very beautiful, very durable,\nThe BEST design I've ever seen,\nthe price is very good, looking forward to my next project with you pan furniture very soon😬",
+        "photos": [
+          "/images/reviews/card-kevin-viloria.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Lj Frias",
+        "rating": 5,
+        "date": "April 26, 2024",
+        "text": "Build quality and materials used for bed frame top notch. Good price also.",
+        "photos": [
+          "/images/reviews/card-lj-frias.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Ana Dominique Cruz",
+        "rating": 5,
+        "date": "April 16, 2024",
+        "text": "Our dream bed! Thank you Pan Furniture! My husband and I loved it so much! The quality, design, and color are perfect!",
+        "photos": [
+          "/images/reviews/card-ana-dominique-cruz.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Deriquito Angelica Fe L.",
+        "rating": 5,
+        "date": "April 15, 2024",
+        "text": "Loving how they were very accomodating and delivered the item earlier than expected.\nWe will surely communicate again to this supplier for our future orders. 100% Legit seller. Thank you!💖",
+        "photos": [
+          "/images/reviews/card-deriquito-angelica-fe-l.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Angelica Calderon",
+        "rating": 5,
+        "date": "April 10, 2024",
+        "text": "I have been on a look out for a good furniture maker for years already as I haven't been so satisfied for the some of the furnitures I have bought from the other makers but I think I finally found best one yet. Thanks PAN furniture for making good quality of beds. We love ours! Great job! Continue to make your customers happy and satisfied; ALWAYS remember it's the best 🔑 to success!😊✨",
+        "photos": [
+          "/images/reviews/card-angelica-calderon.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Irish Bargola",
+        "rating": 5,
+        "date": "April 07, 2024",
+        "text": "Worth it ang pagiintay namin ng ilang linggo super ganda ng bed hehe thank you so much po PAN Furniture! Sa susunod ulit hehe\n\n(Translated by Google)\nIt was worth our wait for a few weeks, the bed is super nice hehe, thank you so much PAN Furniture! See you next time hehe",
+        "photos": [
+          "/images/reviews/card-irish-bargola.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Allyza Nieva",
+        "rating": 5,
+        "date": "April 02, 2024",
+        "text": "I had a very easy communication and coordination with the team. Very accommodating & efficient as well. I would be happy to work with them again.",
+        "photos": [
+          "/images/reviews/card-allyza-nieva.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Rose Palma",
+        "rating": 5,
+        "date": "March 22, 2024",
+        "text": "We love our new bed. It looks beautiful in our bedroom. Sakto sa padating na new baby. Ibang iba ung quality niya sa mga nakikita sa mall. Very sturdy and Superb Quality. Sana magka promo din sa iba size ng bedframe. 💚💚\n\nFast delivery and easy transaction sa Pan Furniture.\n\n(Translated by Google)\nWe love our new bed. It looks beautiful in our bedroom. Just in time for the new baby. Its quality is different from what you see in the mall. Very sturdy and Superb Quality. Hopefully there will be a promo for other sizes of bedframe. 💚💚\n\nFast delivery and easy transaction at Pan Furniture.",
+        "photos": [
+          "/images/reviews/card-rose-palma.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Bianca Angela Yap",
+        "rating": 5,
+        "date": "March 20, 2024",
+        "text": "Highly recommended. Pasok na pasok sa budget and kuha talaga yung design na gusto namin. Very easy to talk to yung owner tsaka marami siya questions and suggestions to make sure na correct and masusunod sa gusto ni client yung gagawin nila. Very approachable din sila kahit marami akong inquiries. Lagi rin sila nagsesend ng updates. Thank you so much po sa bed frame namin. Happy customer here 🥰💕\n\n(Translated by Google)\nHighly recommended. It was within budget and we got the design we wanted. The owner was very easy to talk to and he had many questions and suggestions to make sure what they were doing was correct and in line with the client's wishes. They were also very approachable even though I had many inquiries. They also always sent updates. Thank you so much for our bed frame. Happy customer here 🥰💕",
+        "photos": [
+          "/images/reviews/card-bianca-angela-yap.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Paul Jeddan Flores",
+        "rating": 5,
+        "date": "March 18, 2024",
+        "text": "Responsive. Delivering what was promised. Recommending this store!",
+        "photos": [
+          "/images/reviews/card-paul-jeddan-flores.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Diana Giabia",
+        "rating": 5,
+        "date": "March 14, 2024",
+        "text": "Today I received my customized bed  made by Pan furniture. I am so pleased with the outcome of the bed I was hoping for, I must say, they delivered. They have an excellent and fast service. I will order again once my daughter has decided what bed to get from them. Thank you Pan Furniture! :)",
+        "photos": [
+          "/images/reviews/card-diana-giabia.jpg"
+        ],
+        "product": ""
+      },
+      {
+        "name": "Erica Palma Victoria",
+        "rating": 5,
+        "date": "March 14, 2024",
+        "text": "Great products! And ang babait po ng staff ng PAN. Will order again soon!\n\n(Translated by Google)\nGreat products! And the PAN staff is very kind. Will order again soon!",
+        "photos": [
+          "/images/reviews/card-erica-palma-victoria.jpg"
+        ],
+        "product": ""
+      }
+    ]
+  },
+  "preFooter": {
+    "title": "Any questions?",
+    "subtitle": "We are happy to help!",
+    "phone": "1-855-310-1450",
+    "phoneHours": "Mon-Fri 9 AM - 7:30 PM EDT",
+    "chatLabel": "Chat",
+    "chatText": "Chat with experts",
+    "email": "panfurnitureph@gmail.com",
+    "emailText": "Expect a reply within 2 days"
+  }
+}
