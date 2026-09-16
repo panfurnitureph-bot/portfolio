@@ -1,0 +1,21 @@
+Packing List,PL-100080,,,,,,,
+Booking,NW2680,Container,SEAU9454285,ETD,2026-06-13,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9475,IG1865-OE,Voltera Spark Plug Set,OE Spec,120,1.377,177.9,160.1
+11-12,PO-9472,FL3106-LH,Kestrel Oil Filter,Left Hand,24,0.211,11.9,10.7
+13-28,PO-9471,CO8718-CR,Ironbridge Radiator,Chrome,200,2.182,536.3,482.7
+29-38,PO-9400,LT1377-HD,Lumen LED Headlight,Heavy Duty,120,2.512,352.1,316.9
+39-48,PO-9421,BR5231-BK,Apex Brake Pad Set,Black,120,1.976,395.1,355.6
+49-58,PO-9493,BD4439-OE,Ridgeline Side Mirror Set,OE Spec,120,2.688,195.7,176.1
+59-60,PO-9443,BR9438-LH,Apex Brake Pad Set,Left Hand,24,0.415,34.6,31.1
+61-61,PO-9407,LT6680-BK,Lumen LED Headlight,Black,12,0.318,20.4,18.4
+62-69,PO-9437,FL4161-RH,Kestrel Oil Filter,Right Hand,96,2.291,159.0,143.1
+70-70,PO-9416,BR1475-LH,Apex Brake Pad Set,Left Hand,12,0.296,34.4,31.0
+71-72,PO-9429,DR8299-OE,Torqueline Drive Chain,OE Spec,24,0.530,38.4,34.6
+73-73,PO-9430,FL7091-LH,Kestrel Oil Filter,Left Hand,12,0.299,21.7,19.5
+74-75,PO-9503,CO3117-RH,Ironbridge Radiator,Right Hand,24,0.432,90.4,81.4
+76-85,PO-9537,EL4008-LH,Voltera Battery 12V,Left Hand,120,0.580,462.4,416.2
+
+TOTAL,,,,,1028,16.107,2530.3,2277.4
+Total cartons,85,,,,,,,

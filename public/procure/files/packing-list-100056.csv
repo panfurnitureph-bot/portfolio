@@ -1,0 +1,25 @@
+Packing List,PL-100056,,,,,,,
+Booking,NW2656,Container,NWMU7800643,ETD,2026-08-07,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9530,DR9311-CE,Torqueline Drive Chain,Ceramic,12,0.255,14.8,13.3
+2-5,PO-9428,FL2897-BK,Kestrel Oil Filter,Black,48,0.470,95.4,85.9
+6-21,PO-9500,FL6821-HD,Kestrel Oil Filter,Heavy Duty,200,0.436,604.2,543.8
+22-22,PO-9519,BD7569-OE,Ridgeline Side Mirror Set,OE Spec,12,0.347,27.0,24.3
+23-30,PO-9478,SU7307-BK,Summit Shock Absorber,Black,96,0.689,322.9,290.6
+31-31,PO-9474,BR5036-CE,Redhawk Brake Pad Set,Ceramic,12,0.266,34.1,30.7
+32-35,PO-9429,CO9965-RH,Ironbridge Radiator,Right Hand,48,0.690,135.9,122.3
+36-39,PO-9435,BR6928-OE,Redhawk Brake Pad Set,OE Spec,48,0.147,14.9,13.4
+40-47,PO-9446,LT4586-LH,Lumen LED Headlight,Left Hand,96,2.328,177.3,159.6
+48-49,PO-9441,IG6267-LH,Voltera Spark Plug Set,Left Hand,24,0.103,23.4,21.1
+50-53,PO-9442,CO8997-LH,Ironbridge Radiator,Left Hand,48,1.351,146.9,132.2
+54-63,PO-9486,BD2222-OE,Ridgeline Side Mirror Set,OE Spec,120,1.880,278.5,250.7
+64-64,PO-9504,EL9670-BK,Voltera Battery 12V,Black,12,0.046,39.8,35.8
+65-72,PO-9524,EL6781-LH,Voltera Battery 12V,Left Hand,96,2.646,255.1,229.6
+73-76,PO-9511,DR2709-PF,Torqueline Drive Chain,Performance,48,1.089,97.0,87.3
+77-92,PO-9459,IG5249-OE,Voltera Spark Plug Set,OE Spec,200,3.046,230.0,207.0
+93-108,PO-9496,DR1973-RH,Torqueline Drive Chain,Right Hand,200,2.313,442.4,398.2
+109-124,PO-9403,LT5447-OE,Lumen LED Headlight,OE Spec,200,5.219,413.5,372.2
+
+TOTAL,,,,,1520,23.321,3353.1,3018.0
+Total cartons,124,,,,,,,

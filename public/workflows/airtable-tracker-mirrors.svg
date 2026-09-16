@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="10.0" height="10.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M104.5 385.7 C125.9 385.7 125.9 385.7 147.3 385.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M143.3 383.3 L147.3 385.7 L143.3 388.1z" fill="#7a7a7a"/>
+<path d="M181.8 385.7 C203.2 385.7 203.2 247.7 224.6 247.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M220.6 245.3 L224.6 247.7 L220.6 250.1z" fill="#7a7a7a"/>
+<path d="M181.8 385.7 C203.2 385.7 203.2 316.7 224.6 316.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M220.6 314.3 L224.6 316.7 L220.6 319.1z" fill="#7a7a7a"/>
+<path d="M181.8 385.7 C203.2 385.7 203.2 385.7 224.6 385.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M220.6 383.3 L224.6 385.7 L220.6 388.1z" fill="#7a7a7a"/>
+<path d="M259.1 385.7 C285.3 385.7 285.3 351.2 311.5 351.2" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M307.5 348.8 L311.5 351.2 L307.5 353.6z" fill="#7a7a7a"/>
+<path d="M346.0 351.2 C367.4 351.2 367.4 351.2 388.8 351.2" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M384.8 348.8 L388.8 351.2 L384.8 353.6z" fill="#7a7a7a"/>
+<path d="M423.3 351.2 C444.7 351.2 444.7 302.9 466.1 302.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M462.1 300.5 L466.1 302.9 L462.1 305.3z" fill="#7a7a7a"/>
+<path d="M259.1 385.7 C285.3 385.7 285.3 427.1 311.5 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M307.5 424.7 L311.5 427.1 L307.5 429.5z" fill="#7a7a7a"/>
+<path d="M346.0 427.1 C367.4 427.1 367.4 427.1 388.8 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M384.8 424.7 L388.8 427.1 L384.8 429.5z" fill="#7a7a7a"/>
+<path d="M423.3 427.1 C444.7 427.1 444.7 427.1 466.1 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M462.1 424.7 L466.1 427.1 L462.1 429.5z" fill="#7a7a7a"/>
+<path d="M500.6 427.1 C522.0 427.1 522.0 427.1 543.4 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M539.4 424.7 L543.4 427.1 L539.4 429.5z" fill="#7a7a7a"/>
+<path d="M577.9 427.1 C599.3 427.1 599.3 427.1 620.7 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M616.7 424.7 L620.7 427.1 L616.7 429.5z" fill="#7a7a7a"/>
+<path d="M655.2 427.1 C676.6 427.1 676.6 427.1 698.0 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M694.0 424.7 L698.0 427.1 L694.0 429.5z" fill="#7a7a7a"/>
+<path d="M732.5 427.1 C753.9 427.1 753.9 427.1 775.3 427.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M771.3 424.7 L775.3 427.1 L771.3 429.5z" fill="#7a7a7a"/>
+<path d="M809.8 427.1 C836.7 427.1 836.7 482.3 863.6 482.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M859.6 479.9 L863.6 482.3 L859.6 484.7z" fill="#7a7a7a"/>
+<path d="M898.1 482.3 C919.5 482.3 919.5 482.3 940.9 482.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M936.9 479.9 L940.9 482.3 L936.9 484.7z" fill="#7a7a7a"/>
+<path d="M975.4 482.3 C996.8 482.3 996.8 482.3 1018.2 482.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1014.2 479.9 L1018.2 482.3 L1014.2 484.7z" fill="#7a7a7a"/>
+<path d="M1052.7 482.3 C1074.1 482.3 1074.1 482.3 1095.5 482.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1091.5 479.9 L1095.5 482.3 L1091.5 484.7z" fill="#7a7a7a"/>
+<path d="M1130.0 482.3 h4.1 q2.8 0 2.8 2.8 V513.4 q0 2.8 -2.8 2.8 H771.1 q-2.8 0 -2.8 -2.8 V429.9 q0 -2.8 2.8 -2.8 h4.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M771.3 424.7 L775.3 427.1 L771.3 429.5z" fill="#7a7a7a"/>
+<path d="M87.3 368.5 H99.7 a4.8 4.8 0 0 1 4.8 4.8 V398.1 a4.8 4.8 0 0 1 -4.8 4.8 H87.3 A17.3 17.3 0 0 1 87.3 368.5z" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(87.3 385.7) scale(0.345) translate(-87.3 -385.7)"><circle cx="87.25260416666666" cy="385.703125" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M87.25260416666666 377.703125 V385.703125 H93.25260416666666" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="104.5" cy="385.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path transform="translate(61.0 382.6) scale(0.345)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="87.3" y="413.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Every Hour</text>
+<rect x="147.3" y="368.5" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(164.5 385.7) scale(0.345) translate(-164.5 -385.7)"><path d="M164.54427083333331 373.703125 l13 5 -13 5 -13 -5z" fill="#fcb400"/><path d="M151.54427083333331 382.703125 v10 l11 4 v-9z" fill="#18bfff"/><path d="M177.54427083333331 382.703125 v10 l-11 4 v-9z" fill="#f82b60"/></g>
+<circle cx="147.3" cy="385.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="181.8" cy="385.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="164.5" y="413.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Airtable</text>
+<text x="164.5" y="421.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">PO Tracker</text>
+<text x="164.5" y="430.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">search: record</text>
+<rect x="224.6" y="230.4" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(241.8 247.7) scale(0.345) translate(-241.8 -247.7)"><text x="241.83593749999997" y="256.68229166666663" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="224.6" cy="247.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="259.1" cy="247.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M261.6 247.7 h7.6" stroke="#7a7a7a" stroke-width="1.0"/><rect x="269.2" y="244.9" width="5.5" height="5.5" rx="1.0" fill="#3a3a3a"/><text x="271.9" y="249.1" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="241.8" y="275.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Field Coverage</text>
+<rect x="224.6" y="299.4" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(241.8 316.7) scale(0.345) translate(-241.8 -316.7)"><text x="241.83593749999997" y="325.6927083333333" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="224.6" cy="316.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="259.1" cy="316.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M261.6 316.7 h7.6" stroke="#7a7a7a" stroke-width="1.0"/><rect x="269.2" y="313.9" width="5.5" height="5.5" rx="1.0" fill="#3a3a3a"/><text x="271.9" y="318.1" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="241.8" y="344.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Check One</text>
+<text x="241.8" y="352.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Record</text>
+<rect x="224.6" y="368.5" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(241.8 385.7) scale(0.345) translate(-241.8 -385.7)"><path d="M231.83593749999997 381.703125 a10 10 0 1 1 3 10" fill="none" stroke="#4ac97e" stroke-width="2.6"/><path d="M227.83593749999997 376.703125 l5 6 3 -7z" fill="#4ac97e"/></g>
+<circle cx="224.6" cy="385.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="259.1" cy="385.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="241.8" y="413.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Loop Over Items</text>
+<rect x="311.5" y="333.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(328.8 351.2) scale(0.345) translate(-328.8 -351.2)"><text x="328.7890625" y="360.1979166666667" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="311.5" cy="351.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="346.0" cy="351.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="328.8" y="378.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Build Delete</text>
+<text x="328.8" y="387.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Query</text>
+<rect x="388.8" y="333.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(406.1 351.2) scale(0.345) translate(-406.1 -351.2)"><ellipse cx="406.0807291666667" cy="352.1979166666667" rx="12" ry="10" fill="#4f9fd8"/><circle cx="402.0807291666667" cy="349.1979166666667" r="2" fill="#fff"/><path d="M415.0807291666667 349.1979166666667 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M398.0807291666667 359.1979166666667 v5 M412.0807291666667 359.1979166666667 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="388.8" cy="351.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="423.3" cy="351.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="406.1" y="378.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Delete Removed</text>
+<text x="406.1" y="387.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Records</text>
+<text x="406.1" y="395.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="466.1" y="285.6" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(483.4 302.9) scale(0.345) translate(-483.4 -302.9)"><ellipse cx="483.3723958333333" cy="303.890625" rx="12" ry="10" fill="#4f9fd8"/><circle cx="479.3723958333333" cy="300.890625" r="2" fill="#fff"/><path d="M492.3723958333333 300.890625 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M475.3723958333333 310.890625 v5 M489.3723958333333 310.890625 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="466.1" cy="302.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="500.6" cy="302.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M503.1 302.9 h7.6" stroke="#7a7a7a" stroke-width="1.0"/><rect x="510.7" y="300.1" width="5.5" height="5.5" rx="1.0" fill="#3a3a3a"/><text x="513.5" y="304.3" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="483.4" y="330.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Resolve</text>
+<text x="483.4" y="339.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Linked Names</text>
+<text x="483.4" y="347.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="311.5" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(328.8 427.1) scale(0.345) translate(-328.8 -427.1)"><text x="328.7890625" y="436.109375" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="311.5" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="346.0" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="328.8" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Map + Hash</text>
+<rect x="388.8" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(406.1 427.1) scale(0.345) translate(-406.1 -427.1)"><text x="406.0807291666667" y="436.109375" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="388.8" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="423.3" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="406.1" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Build Query</text>
+<rect x="466.1" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(483.4 427.1) scale(0.345) translate(-483.4 -427.1)"><ellipse cx="483.3723958333333" cy="428.109375" rx="12" ry="10" fill="#4f9fd8"/><circle cx="479.3723958333333" cy="425.109375" r="2" fill="#fff"/><path d="M492.3723958333333 425.109375 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M475.3723958333333 435.109375 v5 M489.3723958333333 435.109375 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="466.1" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="500.6" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="483.4" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Upsert</text>
+<text x="483.4" y="463.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">tracker rows</text>
+<text x="483.4" y="471.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="543.4" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(560.7 427.1) scale(0.345) translate(-560.7 -427.1)"><ellipse cx="560.6640624999999" cy="428.109375" rx="12" ry="10" fill="#4f9fd8"/><circle cx="556.6640624999999" cy="425.109375" r="2" fill="#fff"/><path d="M569.6640624999999 425.109375 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M552.6640624999999 435.109375 v5 M566.6640624999999 435.109375 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="543.4" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="577.9" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="560.7" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Prune Attachment</text>
+<text x="560.7" y="463.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Files</text>
+<text x="560.7" y="471.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="620.7" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(638.0 427.1) scale(0.345) translate(-638.0 -427.1)"><ellipse cx="637.9557291666666" cy="428.109375" rx="12" ry="10" fill="#4f9fd8"/><circle cx="633.9557291666666" cy="425.109375" r="2" fill="#fff"/><path d="M646.9557291666666 425.109375 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M629.9557291666666 435.109375 v5 M643.9557291666666 435.109375 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="620.7" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="655.2" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="638.0" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Get Copied</text>
+<text x="638.0" y="463.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Attachments</text>
+<text x="638.0" y="471.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="698.0" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(715.2 427.1) scale(0.345) translate(-715.2 -427.1)"><text x="715.2473958333333" y="436.109375" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="698.0" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="732.5" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="715.2" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Prepare Attachment</text>
+<text x="715.2" y="463.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Downloads</text>
+<rect x="775.3" y="409.9" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(792.5 427.1) scale(0.345) translate(-792.5 -427.1)"><path d="M782.5390624999999 423.109375 a10 10 0 1 1 3 10" fill="none" stroke="#4ac97e" stroke-width="2.6"/><path d="M778.5390624999999 418.109375 l5 6 3 -7z" fill="#4ac97e"/></g>
+<circle cx="775.3" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="809.8" cy="427.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="792.5" y="454.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Batch Files</text>
+<text x="792.5" y="463.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">(10 at a time)</text>
+<rect x="863.6" y="465.1" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(880.9 482.3) scale(0.345) translate(-880.9 -482.3)"><circle cx="880.8723958333333" cy="482.3177083333333" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="880.8723958333333" cy="482.3177083333333" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M867.8723958333333 482.3177083333333 H893.8723958333333 M869.8723958333333 476.3177083333333 H891.8723958333333 M869.8723958333333 488.3177083333333 H891.8723958333333" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="863.6" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="898.1" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="880.9" y="509.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Download File</text>
+<text x="880.9" y="518.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">from Airtable</text>
+<text x="880.9" y="526.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="940.9" y="465.1" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(958.2 482.3) scale(0.345) translate(-958.2 -482.3)"><circle cx="958.1640624999999" cy="482.3177083333333" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="958.1640624999999" cy="482.3177083333333" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M945.1640624999999 482.3177083333333 H971.1640624999999 M947.1640624999999 476.3177083333333 H969.1640624999999 M947.1640624999999 488.3177083333333 H969.1640624999999" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="940.9" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="975.4" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="958.2" y="509.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Upload to</text>
+<text x="958.2" y="518.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Storage</text>
+<text x="958.2" y="526.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1018.2" y="465.1" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1035.5 482.3) scale(0.345) translate(-1035.5 -482.3)"><text x="1035.4557291666667" y="491.3177083333333" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="1018.2" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1052.7" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="1035.5" y="509.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Build</text>
+<text x="1035.5" y="518.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Storage URLs</text>
+<rect x="1095.5" y="465.1" width="34.5" height="34.5" rx="4.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1112.7 482.3) scale(0.345) translate(-1112.7 -482.3)"><ellipse cx="1112.7473958333333" cy="483.3177083333333" rx="12" ry="10" fill="#4f9fd8"/><circle cx="1108.7473958333333" cy="480.3177083333333" r="2" fill="#fff"/><path d="M1121.7473958333333 480.3177083333333 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1104.7473958333333 490.3177083333333 v5 M1118.7473958333333 490.3177083333333 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="1095.5" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1130.0" cy="482.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="1112.7" y="509.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Save Attachment</text>
+<text x="1112.7" y="518.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Links</text>
+<text x="1112.7" y="526.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+</svg>

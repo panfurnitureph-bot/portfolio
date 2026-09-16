@@ -1,0 +1,24 @@
+Packing List,PL-100065,,,,,,,
+Booking,NW2665,Container,NWMU1999301,ETD,2026-07-18,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9403,LT9841-CR,Lumen LED Headlight,Chrome,120,3.594,378.4,340.6
+11-26,PO-9509,BD3063-PF,Ridgeline Side Mirror Set,Performance,200,3.597,84.4,76.0
+27-42,PO-9518,BD8462-CE,Ridgeline Side Mirror Set,Ceramic,200,3.657,352.9,317.6
+43-52,PO-9501,FL3589-STD,Kestrel Oil Filter,Standard,120,1.286,338.9,305.0
+53-53,PO-9450,DR5505-HD,Torqueline Drive Chain,Heavy Duty,12,0.072,6.4,5.8
+54-63,PO-9457,EL5292-LH,Voltera Battery 12V,Left Hand,120,3.211,311.6,280.4
+64-79,PO-9511,BR3629-PF,Apex Brake Pad Set,Performance,200,5.785,263.1,236.8
+80-81,PO-9526,EL2555-STD,Voltera Battery 12V,Standard,24,0.164,78.1,70.3
+82-85,PO-9424,SU6210-PF,Summit Shock Absorber,Performance,48,0.152,30.1,27.1
+86-93,PO-9421,BR2681-RH,Redhawk Brake Pad Set,Right Hand,96,0.351,117.9,106.1
+94-109,PO-9405,LT2905-STD,Lumen LED Headlight,Standard,200,5.303,226.8,204.1
+110-119,PO-9481,BR5980-PF,Apex Brake Pad Set,Performance,120,1.299,470.3,423.3
+120-121,PO-9464,FL9515-HD,Kestrel Oil Filter,Heavy Duty,24,0.164,82.9,74.6
+122-137,PO-9479,BR1976-RH,Redhawk Brake Pad Set,Right Hand,200,1.117,562.1,505.9
+138-147,PO-9468,SU7107-RH,Summit Shock Absorber,Right Hand,120,1.927,70.1,63.1
+148-155,PO-9436,FL9818-STD,Kestrel Oil Filter,Standard,96,2.183,309.7,278.7
+156-157,PO-9468,SU1730-LH,Summit Shock Absorber,Left Hand,24,0.371,30.5,27.4
+
+TOTAL,,,,,1924,34.233,3714.2,3342.8
+Total cartons,157,,,,,,,

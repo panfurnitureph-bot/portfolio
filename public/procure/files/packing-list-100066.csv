@@ -1,0 +1,33 @@
+Packing List,PL-100066,,,,,,,
+Booking,NW2666,Container,BOXU7108099,ETD,2026-06-17,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9490,BR1036-PF,Redhawk Brake Pad Set,Performance,12,0.137,29.8,26.8
+2-11,PO-9428,BD1892-LH,Ridgeline Side Mirror Set,Left Hand,120,0.752,474.2,426.8
+12-19,PO-9426,BD7257-LH,Ridgeline Side Mirror Set,Left Hand,96,1.158,168.3,151.5
+20-29,PO-9531,DR9262-OE,Torqueline Drive Chain,OE Spec,120,0.947,49.6,44.6
+30-45,PO-9484,FL2121-CR,Kestrel Oil Filter,Chrome,200,4.369,294.8,265.3
+46-53,PO-9501,BD3346-BK,Ridgeline Side Mirror Set,Black,96,1.816,173.7,156.3
+54-57,PO-9457,EL7511-STD,Voltera Battery 12V,Standard,48,0.106,112.1,100.9
+58-73,PO-9540,DR6446-HD,Torqueline Drive Chain,Heavy Duty,200,2.939,248.7,223.8
+74-77,PO-9415,LT3170-CE,Lumen LED Headlight,Ceramic,48,1.402,162.4,146.2
+78-79,PO-9507,SU5969-CR,Summit Shock Absorber,Chrome,24,0.486,57.8,52.0
+80-95,PO-9466,SU2520-OE,Summit Shock Absorber,OE Spec,200,2.046,379.2,341.3
+96-111,PO-9526,EL8929-CR,Voltera Battery 12V,Chrome,200,4.597,595.0,535.5
+112-119,PO-9410,IG5020-OE,Voltera Spark Plug Set,OE Spec,96,2.497,383.5,345.2
+120-135,PO-9419,BD5959-BK,Ridgeline Side Mirror Set,Black,200,4.921,388.0,349.2
+136-151,PO-9413,FL2101-HD,Kestrel Oil Filter,Heavy Duty,200,0.652,563.2,506.9
+152-152,PO-9505,CO4287-STD,Ironbridge Radiator,Standard,12,0.294,44.7,40.2
+153-162,PO-9401,BR6334-BK,Apex Brake Pad Set,Black,120,1.564,467.4,420.7
+163-172,PO-9483,LT1503-HD,Lumen LED Headlight,Heavy Duty,120,3.163,219.9,197.9
+173-173,PO-9424,BD3246-OE,Ridgeline Side Mirror Set,OE Spec,12,0.145,35.1,31.6
+174-174,PO-9451,IG3007-RH,Voltera Spark Plug Set,Right Hand,12,0.064,44.4,40.0
+175-176,PO-9536,BD6985-HD,Ridgeline Side Mirror Set,Heavy Duty,24,0.672,83.6,75.2
+177-178,PO-9482,BD4701-HD,Ridgeline Side Mirror Set,Heavy Duty,24,0.145,50.8,45.7
+179-182,PO-9402,DR8305-LH,Torqueline Drive Chain,Left Hand,48,0.859,84.4,76.0
+183-190,PO-9400,FL8495-LH,Kestrel Oil Filter,Left Hand,96,1.651,91.1,82.0
+191-194,PO-9415,DR2871-HD,Torqueline Drive Chain,Heavy Duty,48,0.633,43.0,38.7
+195-195,PO-9418,CO7863-CR,Ironbridge Radiator,Chrome,12,0.261,15.6,14.0
+
+TOTAL,,,,,2388,38.276,5260.3,4734.3
+Total cartons,195,,,,,,,

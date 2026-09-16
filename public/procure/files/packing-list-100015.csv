@@ -1,0 +1,39 @@
+Packing List,PL-100015,,,,,,,
+Booking,NW2615,Container,CNTU5557514,ETD,2026-09-04,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-4,PO-9540,SU8921-CR,Summit Shock Absorber,Chrome,48,0.239,101.8,91.6
+5-6,PO-9477,IG3006-HD,Voltera Spark Plug Set,Heavy Duty,24,0.275,18.4,16.6
+7-16,PO-9474,BD4607-STD,Ridgeline Side Mirror Set,Standard,120,3.327,64.4,58.0
+17-17,PO-9463,BD9282-PF,Ridgeline Side Mirror Set,Performance,12,0.227,42.5,38.2
+18-21,PO-9491,BD6500-CR,Ridgeline Side Mirror Set,Chrome,48,0.349,25.5,22.9
+22-22,PO-9526,EL5328-HD,Voltera Battery 12V,Heavy Duty,12,0.096,36.6,32.9
+23-26,PO-9462,BD6726-CE,Ridgeline Side Mirror Set,Ceramic,48,0.763,24.4,22.0
+27-30,PO-9467,IG5349-CR,Voltera Spark Plug Set,Chrome,48,1.213,142.8,128.5
+31-38,PO-9401,EL6849-BK,Voltera Battery 12V,Black,96,2.538,183.8,165.4
+39-48,PO-9494,LT8303-OE,Lumen LED Headlight,OE Spec,120,1.027,133.3,120.0
+49-49,PO-9423,BD8079-LH,Ridgeline Side Mirror Set,Left Hand,12,0.032,10.9,9.8
+50-50,PO-9490,CO9570-STD,Ironbridge Radiator,Standard,12,0.237,40.7,36.6
+51-58,PO-9537,EL5369-STD,Voltera Battery 12V,Standard,96,0.750,68.1,61.3
+59-68,PO-9426,BR7328-PF,Redhawk Brake Pad Set,Performance,120,2.828,83.3,75.0
+69-70,PO-9533,BR3679-BK,Apex Brake Pad Set,Black,24,0.190,75.4,67.9
+71-78,PO-9429,FL5500-LH,Kestrel Oil Filter,Left Hand,96,1.808,253.2,227.9
+79-94,PO-9461,BR4040-CR,Apex Brake Pad Set,Chrome,200,5.653,88.9,80.0
+95-98,PO-9420,LT1837-RH,Lumen LED Headlight,Right Hand,48,1.251,185.8,167.2
+99-100,PO-9463,CO8440-CR,Ironbridge Radiator,Chrome,24,0.692,46.0,41.4
+101-102,PO-9540,SU4630-BK,Summit Shock Absorber,Black,24,0.488,39.0,35.1
+103-112,PO-9412,SU6813-HD,Summit Shock Absorber,Heavy Duty,120,3.375,76.5,68.9
+113-128,PO-9466,SU5709-PF,Summit Shock Absorber,Performance,200,1.260,697.2,627.5
+129-129,PO-9414,BD6402-RH,Ridgeline Side Mirror Set,Right Hand,12,0.051,6.3,5.7
+130-130,PO-9431,IG4619-RH,Voltera Spark Plug Set,Right Hand,12,0.354,16.6,14.9
+131-146,PO-9427,BR4690-PF,Apex Brake Pad Set,Performance,200,2.200,782.7,704.4
+147-156,PO-9522,FL7895-LH,Kestrel Oil Filter,Left Hand,120,1.126,303.5,273.2
+157-160,PO-9477,LT9417-BK,Lumen LED Headlight,Black,48,0.930,118.7,106.8
+161-168,PO-9467,LT4330-LH,Lumen LED Headlight,Left Hand,96,0.920,226.1,203.5
+169-169,PO-9498,LT8424-LH,Lumen LED Headlight,Left Hand,12,0.317,22.0,19.8
+170-179,PO-9480,BR1424-RH,Redhawk Brake Pad Set,Right Hand,120,2.043,224.9,202.4
+180-187,PO-9493,DR8666-HD,Torqueline Drive Chain,Heavy Duty,96,0.984,313.4,282.1
+188-189,PO-9523,LT3207-PF,Lumen LED Headlight,Performance,24,0.180,32.8,29.5
+
+TOTAL,,,,,2292,37.723,4485.5,4037.0
+Total cartons,189,,,,,,,

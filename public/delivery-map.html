@@ -1,0 +1,2207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+/* Portfolio demo: this static map page normally talks to the Pan Furniture API. Mock the /api/* calls so
+   navigation still works against the in-browser demo (no server). Map tiles come from OpenFreeMap. */
+(function(){
+  var real = window.fetch.bind(window);
+  var json = function(o){ return Promise.resolve(new Response(JSON.stringify(o), { status: 200, headers: { 'Content-Type': 'application/json' } })); };
+  window.fetch = function(input, init){
+    var url = typeof input === 'string' ? input : (input && input.url) || '';
+    if (url.indexOf('/api/') === 0 || url.indexOf(location.origin + '/api/') === 0) {
+      var path = url.replace(location.origin, '').split('?')[0];
+      if (path === '/api/delivery/map-style') return json({ style: 'https://tiles.openfreemap.org/styles/liberty', source: 'openfreemap', token: '', day: true });
+      if (path === '/api/delivery/traffic') return json({ levels: [] });
+      if (path === '/api/delivery/places') return json({ places: [{ name: 'PAN Furniture Warehouse', kind: 'warehouse', lat: 13.9412, lng: 121.6236 }, { name: 'GMA Original Workshop', kind: 'workshop', lat: 14.2965, lng: 121.0015 }, { name: 'GMA White Workshop', kind: 'workshop', lat: 14.3012, lng: 121.0102 }, { name: 'LRT Workshop', kind: 'workshop', lat: 14.6488, lng: 121.0509 }] });
+      if (path === '/api/delivery/ping') { if (init && init.method === 'POST') return json({ ok: true }); var o = {}; try { o = JSON.parse(sessionStorage.getItem('demo-ping') || '{}'); } catch (e) {} return json(o); }
+      if (path === '/api/delivery/arrive' || path === '/api/delivery/pickup-proof' || path === '/api/pickup-task/collected') return json({ ok: true, demo: true });
+      return json({ ok: true });
+    }
+    return real(input, init);
+  };
+})();
+</script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PAN Furniture — Live Delivery Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"/>
+<style>
+  :root{--brand:#4a3b1a;--gold:#caa45a}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:#3a2e20}
+  body{display:flex;flex-direction:column}
+  .screen{display:none;flex-direction:column;flex:1;min-height:0}
+  .screen.on{display:flex}
+  .navfoot{flex:0 0 auto;display:flex;flex-direction:column;gap:8px;padding:10px;background:#fff;border-top:1px solid #e7e0d6}
+  .frow{display:flex;gap:8px}
+  .fbtn{flex:1;text-align:center;border:1px solid #e7e0d6;border-radius:10px;padding:11px;font-size:13px;font-weight:700;background:#faf8f4;color:var(--brand);cursor:pointer}
+  .fbtn.g{width:100%;background:#2e7d52;color:#fff;border-color:#2e7d52}
+  .navbanner{background:var(--brand);color:#f4ead8;padding:11px 14px;display:flex;align-items:center;gap:12px;flex:0 0 auto}
+  .navbanner .ar{font-size:28px;line-height:1} .navbanner .txt{font-weight:800;font-size:16px} .navbanner .sub{font-size:11px;opacity:.85;margin-top:2px}
+  .maparea{position:relative;flex:1 1 auto;min-height:0}
+  #navmap,#map3d{position:absolute;inset:0;width:100%;height:100%}
+  .threed-btn{position:absolute;right:12px;top:12px;z-index:500;background:#fff;border:1px solid #e7e0d6;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:700;color:var(--brand);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .speed{position:absolute;left:12px;bottom:78px;z-index:500;width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid #d23b3b;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .speed b{font-size:16px;line-height:1;font-weight:800} .speed span{font-size:7.5px;color:#8a7c6b;letter-spacing:.5px}
+  /* Waze speed-limit sign: white disc, bold red ring, black number */
+  .speedlimit{position:absolute;left:12px;bottom:138px;z-index:500;width:48px;height:48px;border-radius:50%;background:#fff;border:4px solid #e02424;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .speedlimit b{font-size:19px;font-weight:800;color:#12141a;line-height:1}
+  .voicechip{position:absolute;right:12px;bottom:78px;z-index:500;background:#fff;border:1px solid #e7e0d6;border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .wazebar{display:flex;align-items:center;justify-content:center;gap:16px;background:#22303b;color:#fff;padding:10px;font-size:13px;flex:0 0 auto}
+  .wazebar .big{font-weight:800;font-size:15px} .wazebar .mut{opacity:.72}
+  /* ── Waze-style turn card (top): black bar, white maneuver arrow, big white distance,
+        blue street name — rounded bottom corners like Waze's maneuver panel. ── */
+  .wzturn{flex:0 0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:18px;background:#0a0a0c;color:#fff;padding:16px 20px 18px;border-radius:0 0 20px 20px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+  /* Upcoming-maneuvers strip (Waze-style): hanay ng susunod na mga liko sa
+     itaas ng turn card — kasama ang U-turns; unang icon = susunod na liko. */
+  .wzSeq{flex-basis:100%;display:none;align-items:center;gap:10px;margin-bottom:2px}
+  .wzSeq.show{display:flex}
+  .wzSeq .sq{display:flex;align-items:center;justify-content:center;opacity:.38}
+  .wzSeq .sq svg{width:26px;height:26px}
+  .wzSeq .sq.on{opacity:1}
+  .wzSeq .sq.on svg{width:32px;height:32px}
+  .wzSeq .sqSep{width:1px;height:20px;background:rgba(255,255,255,.28);flex:0 0 auto;transform:rotate(12deg)}
+  .wzturn .wzArrow{flex:0 0 auto;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+  .wzturn .wzArrow svg{width:42px;height:42px}
+  .navbanner .ar svg{width:28px;height:28px;stroke:#f4ead8}
+  .wzturn .wzInfo{min-width:0}
+  .wzturn .wzDist{font-size:30px;font-weight:800;line-height:1.02;letter-spacing:-.5px}
+  .wzturn .wzStreet{font-size:16px;color:#4aa8ff;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+  /* Waze "then …" second-turn preview under the main instruction */
+  .wzturn .wzThen{font-size:12px;color:#9aa0aa;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+  .wzturn .wzThen:empty{display:none}
+  /* ── Waze-style bottom bar — rounded white pill floating over the map ── */
+  .wzbottom{position:absolute;left:12px;right:12px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:space-around;background:#fff;color:#12141a;padding:12px 10px;border-radius:16px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+  .wzbottom b{font-size:19px;font-weight:800;line-height:1;display:block}
+  .wzbottom span{font-size:10px;color:#8a8f98;letter-spacing:.4px;text-transform:uppercase}
+  .wzbottom>div{text-align:center;min-width:60px}
+  .wzEta b{color:#16a34a}
+  .wzSep{width:1px;height:28px;background:rgba(0,0,0,.1);min-width:1px}
+  .maplibregl-marker{pointer-events:none;outline:none}
+  /* Ang callout marker ay dapat kasinlaki lang ng teksto nito. Kung wala ito, ang
+     lapad ng marker ang masusunod at bumabanat ang label sa buong screen
+     (nakita 2026-08-23). Klase, hindi :has() — wala iyon sa lumang Android
+     WebView na ginagamit ng ilang device ng team. */
+  .maplibregl-marker.co-mk{width:max-content!important;max-width:190px}
+  /* Waze-style street-name bubble (purple pill) */
+  /* PAALALA LANG, HINDI TANONG (hiling 2026-08-29). Isang sheet na may dalawang
+     pindutan ito noon — "Not yet" at "Arrived — take signature" — habang may
+     "Arrived — sign for the item" na sa ibaba. Tatlong pindutan sa isang
+     pagdating, at dalawa ang gumagawa ng parehong bagay. Ngayon ay abiso lang
+     ito na kusang nawawala; ang pindutan sa ibaba ang tanging aksyon. */
+  .arrtoast{position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:560;display:none;align-items:center;gap:9px;
+    background:#eef8f1;border:1.5px solid #2e7d52;border-radius:11px;padding:9px 14px;max-width:min(420px,88%);
+    box-shadow:0 6px 20px rgba(0,0,0,.35);pointer-events:none}
+  .arrtoast.show{display:flex;animation:arrpop .28s ease-out}
+  @keyframes arrpop{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  .arrtoast .ic{width:22px;height:22px;flex:0 0 auto;border-radius:50%;background:#2e7d52;color:#fff;font-size:13px;font-weight:900;
+    display:flex;align-items:center;justify-content:center}
+  .arrtoast .st{font-size:13px;font-weight:800;color:#1f5c3b;line-height:1.25}
+  .arrtoast .ss{font-size:11px;color:#5a4e3c;margin-top:1px}
+  .lanes{display:none;gap:6px;margin-top:7px;flex-basis:100%}
+  .lanes.show{display:flex}
+  .lanes span{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;opacity:.35}
+  .lanes span.on{opacity:1;background:rgba(74,168,255,.28)}
+  .lanes span svg{width:18px;height:18px}
+  .altchip{position:relative;background:#fff;color:#12141a;font-size:12px;font-weight:800;padding:5px 10px;border-radius:9px;box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap;cursor:pointer;transform:translate(-50%,-100%);font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .altchip::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border:6px solid transparent;border-top-color:#fff;border-bottom:0}
+  .altchip.faster{background:#2fbf5e;color:#fff}.altchip.faster::after{border-top-color:#2fbf5e}
+  .speedlimit.guess{border-color:#b9a06a}
+  .speedlimit.guess::after{content:"?";position:absolute;top:-7px;right:-7px;background:#b9a06a;color:#1a1a1a;font-size:10px;font-weight:800;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  /* ══ MAPBOX v3 LOOK (body.v3 — kapag Mapbox ang style) ══ */
+  body.v3 .wzturn{position:absolute;left:12px;top:12px;z-index:600;width:min(300px,72%);background:#1557f5;border-radius:14px;padding:12px 14px 12px;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.45);flex-wrap:wrap;align-items:center}
+  body.v3 .wzturn .wzSeq{display:none!important}
+  body.v3 .wzturn .wzArrow{width:40px;height:40px}
+  body.v3 .wzturn .wzDist{font-size:30px;order:0}
+  body.v3 .wzturn .wzStreet{font-size:17px;color:#fff;margin-top:2px;white-space:normal;line-height:1.15}
+  body.v3 .wzturn .wzInfo{flex:1;min-width:0}
+  body.v3 .wzturn .wzThen{flex-basis:calc(100% + 28px);margin:10px -14px -12px;padding:8px 14px;background:#0f172a;color:#e5e7eb;border-radius:0 0 14px 14px;font-size:14px;font-weight:700}
+  body.v3 .wzturn .inc{flex-basis:calc(100% + 28px);margin:6px -14px -12px;padding:7px 14px;background:#1f2937;color:#fde68a;border-radius:0 0 14px 14px;font-size:13px;font-weight:700}
+  body.v3 .wzturn .wzThen:not(:empty) ~ .inc{margin-top:0;border-radius:0 0 14px 14px}
+  body.v3 .wzturn .wzThen:not(:empty){border-radius:0}
+  body.v3 .wzturn .lanes{display:none!important}
+  body.v3 .screen#s3d .maparea{background:#0e1117}
+  /* speed: puting sign sa kanang-itaas "40 / km/h"; current speed sa kaliwa nito, pula kapag lampas */
+  body.v3 .speedlimit{left:auto;right:12px;top:12px;bottom:auto;width:56px;height:62px;border-radius:10px;border:2px solid #1f2937;background:#fff;flex-direction:column;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+  body.v3 .speedlimit b{font-size:22px;line-height:1}
+  body.v3 .speedlimit::after{display:none}
+  body.v3 .speedlimit.guess{border-style:dashed;border-color:#b9a06a}
+  body.v3 .speedlimit::before{content:"km/h";order:2;font-size:10px;font-weight:700;color:#374151;margin-top:2px}
+  body.v3 .speed{left:auto;right:70px;top:12px;bottom:auto;width:56px;height:62px;border-radius:10px;border:2px solid #1f2937;background:#f3f4f6;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+  body.v3 .speed b{font-size:22px}
+  body.v3 .speed span{font-size:10px;color:#374151}
+  body.v3 .speed.over{background:#dc2626;border-color:#dc2626}
+  body.v3 .speed.over b,body.v3 .speed.over span{color:#fff}
+  body.v3 .threed-btn{top:auto;bottom:86px;left:12px;right:auto}
+  body.v3 .voicechip{right:12px;bottom:auto;top:300px}
+  body.v3 .rbtns{display:flex}
+  .rbtns{position:absolute;right:12px;top:92px;z-index:500;display:none;flex-direction:column;gap:8px}
+  .rbtns button{width:46px;height:46px;border-radius:12px;border:0;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.45);cursor:pointer}
+  .rbtns button svg{width:22px;height:22px}
+  body.v3 .curstreet{background:#111827;color:#fff;border:1px solid rgba(255,255,255,.08);bottom:96px}
+  /* bottom card: km · min · ETA + progress */
+  body.v3 .wzbottom{left:50%;right:auto;transform:translateX(-50%);width:min(420px,92%);background:#0f172a;color:#fff;border-radius:14px;padding:12px 16px 12px;flex-wrap:wrap;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+  body.v3 .wzbottom b{font-size:16px;color:#fff}
+  body.v3 .wzbottom span{display:none}
+  body.v3 .wzbottom .wzEta b{color:#fff}
+  body.v3 .wzbottom .wzSep{display:none}
+  body.v3 .wzbottom>div{min-width:0;text-align:left}
+  .prog{display:none}
+  body.v3 .prog{display:block;position:relative;flex-basis:100%;height:5px;margin-top:10px;border-radius:3px;background:#374151;overflow:visible}
+  body.v3 .prog .traf{position:absolute;inset:0;border-radius:3px;background:#1fd0f0;opacity:.9}
+  body.v3 .prog i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#1fd0f0;width:0;box-shadow:0 0 0 0}
+  body.v3 .prog .pk{position:absolute;top:50%;transform:translate(-50%,-50%) rotate(90deg);left:0;width:0;height:0}
+  body.v3 .prog i::after{content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);border:7px solid transparent;border-left:10px solid #fff;border-right:0}
+  body.v3 .mblogo{position:absolute;left:12px;bottom:12px;z-index:500;display:flex;align-items:center;gap:5px;color:#9ca3af;font-weight:800;font-size:12px}
+  .mblogo{display:none}
+  body.v3 .mblogo i{width:13px;height:13px;border-radius:50%;background:#9ca3af;display:inline-block;position:relative}
+  body.v3 .mblogo i::after{content:"";position:absolute;inset:4px;border-radius:50%;background:#0e1117}
+  .lanepop{background:#0f172a;border-radius:12px;padding:8px 10px;display:flex;gap:8px;box-shadow:0 6px 18px rgba(0,0,0,.5);position:relative}
+  .lanepop::after{content:"";position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);border:7px solid transparent;border-top-color:#0f172a;border-bottom:0}
+  .lanepop span{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;opacity:.35}
+  .lanepop span.on{opacity:1;background:rgba(31,208,240,.25)}
+  .lanepop span svg{width:20px;height:20px}
+  body.v3 .altchip{background:#0f172a;color:#fff}body.v3 .altchip::after{border-top-color:#0f172a}
+  body.v3 .altchip.faster{background:#1fd0f0;color:#0b1020}body.v3 .altchip.faster::after{border-top-color:#1fd0f0}
+  /* Ang toast sa madilim na tema (2026-08-29) — ang mga panuntunan ng lumang
+     sheet ay pinalitan; wala nang `later`/`now` na pindutan doon. */
+  body.v3 .arrtoast{background:#0f172a;border:0;color:#fff}
+  body.v3 .arrtoast .ic{background:#1fd0f0;color:#0b1020}
+  body.v3 .arrtoast .st{color:#fff}
+  body.v3 .arrtoast .ss{color:#cbd5e1}
+  body.v3 .landmark{background:#0f172a;color:#fff;border-color:#1fd0f0}
+  body.v3 .landmark b{color:#1fd0f0}
+  .simbar{position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:610;display:none;align-items:center;gap:6px;background:#000;color:#fff;border-radius:8px;padding:4px 6px 4px 10px;font-size:11.5px;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.45)}
+  .simbar button{border:0;border-radius:6px;background:#1f2937;color:#fff;font-size:11px;font-weight:800;padding:4px 8px;cursor:pointer}
+  .simbar button.on{background:#1fd0f0;color:#0b1020}
+  .simbar .pp{background:#2e7d52}
+  body.v3 .simbar{top:auto;bottom:96px;left:12px;transform:none}
+  /* AUTO DAY: maliwanag na mapa → mas madidilim na tsimenea para sa kontrast */
+  body.mbday .curstreet{background:#111827;color:#fff}
+  body.mbday .wzbottom{background:#0f172a}
+  body.mbday .speed{background:#fff}
+  body.mbday .simbar{background:#111827}
+  .wzturn .wzThen.soon{font-size:15px;color:#fff;font-weight:800}
+  body.v3 .wzturn .wzThen.soon{background:#1e40af;color:#fff}
+  .fbtn.g.big{padding:20px;font-size:17px;letter-spacing:.3px}
+  /* Callout sa mismong kanto — gaya ng asul na label ng Google Maps */
+  .callout{display:inline-flex;width:max-content;max-width:170px;align-items:center;gap:4px;background:#1557f5;color:#fff;border-radius:7px;padding:3px 8px 3px 5px;font-size:11px;font-weight:700;line-height:1.25;box-shadow:0 3px 9px rgba(0,0,0,.4);opacity:.75;position:relative}
+  .callout.next{opacity:1;font-size:12px;padding:4px 9px 4px 6px}
+  .callout::after{content:"";position:absolute;left:11px;bottom:-5px;border:5px solid transparent;border-top-color:#1557f5;border-bottom:0}
+  .callout .rd{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .callout .ar{display:flex;align-items:center;flex:0 0 auto}
+  .callout .ar svg{width:13px;height:13px;stroke-width:5.5}
+  .callout.next .ar svg{width:15px;height:15px}
+  /* Lane strip sa ilalim ng turn card */
+  .lanebar{display:none;align-items:center;justify-content:center;gap:14px;background:#0f172a;padding:9px 12px;border-radius:0 0 14px 14px;margin:0 -14px -12px}
+  .lanebar.show{display:flex}
+  .lanebar span{display:flex;align-items:center;justify-content:center;opacity:.32}
+  .lanebar span.on{opacity:1}
+  .lanebar span svg{width:24px;height:24px;stroke-width:4}
+  .lanebar span.on svg{width:27px;height:27px}
+  body:not(.v3) .lanebar{border-radius:0;margin:6px 0 0}
+  .vdiag{position:absolute;left:8px;right:8px;top:56px;z-index:900;display:none;margin:0;padding:10px;background:rgba(6,10,18,.95);color:#9ef29e;font:11px/1.45 ui-monospace,Menlo,Consolas,monospace;border-radius:10px;white-space:pre-wrap;max-height:60%;overflow:auto;border:1px solid #2f6f96}
+  .vdiag.show{display:block}
+  /* Chip ng oras sa ibabaw ng daan — ito ang buong pakikipag-usap tungkol sa ruta */
+  .tchip{display:inline-flex;width:max-content;align-items:center;background:#0f172a;color:#fff;border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:800;box-shadow:0 3px 10px rgba(0,0,0,.45);white-space:nowrap;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;transform:translate(-50%,-50%)}
+  .tchip.fast{background:#2fbf5e;color:#0b1020;cursor:pointer;pointer-events:auto}
+  .satchip{position:absolute;left:12px;right:12px;top:58px;z-index:552;display:none;justify-content:center;background:#1e3a5f;color:#dbeafe;border-radius:10px;padding:7px 12px;font-size:12px;font-weight:800;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  .satchip.show{display:flex}
+  body.v3 .satchip{top:110px}
+  .nextstop{position:absolute;left:12px;right:12px;bottom:150px;z-index:570;display:none;align-items:center;gap:10px;background:#14532d;color:#fff;border-radius:12px;padding:11px 12px;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+  .nextstop.show{display:flex}
+  .nextstop .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+  .nextstop .t b{font-size:10.5px;letter-spacing:.4px;color:#bbf7d0;text-transform:uppercase}
+  .nextstop .t span{font-size:13px;font-weight:800}
+  .nextstop .t i{font-size:11px;font-style:normal;color:#bbf7d0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nextstop .go{border:0;border-radius:9px;background:#fff;color:#14532d;font-size:12.5px;font-weight:800;padding:9px 14px;cursor:pointer}
+  .callchip{position:absolute;left:12px;right:12px;bottom:150px;z-index:558;display:none;align-items:center;gap:8px;background:#0f172a;color:#fff;border-radius:12px;padding:9px 10px 9px 14px;font-size:12.5px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+  .callchip.show{display:flex}
+  .callchip span{flex:1;min-width:0}
+  .callchip button{border:0;border-radius:8px;background:#2e7d52;color:#fff;font-size:12px;font-weight:800;padding:7px 14px;cursor:pointer}
+  .callchip button.x{background:transparent;color:#9fc4dc;padding:7px 6px}
+  .offbanner{position:absolute;left:12px;top:58px;max-width:min(320px,60%);z-index:545;display:none;justify-content:flex-start;border-radius:9px;padding:6px 11px;font-size:11.5px;font-weight:800;box-shadow:0 4px 14px rgba(0,0,0,.4);pointer-events:none}
+  .offbanner.show{display:flex}
+  .offbanner.bad{background:#7f1d1d;color:#fecaca}
+  .offbanner.ok{background:#14532d;color:#bbf7d0}
+  body.v3 .offbanner{top:auto;bottom:150px;left:12px}
+  .recenter{position:absolute;left:50%;top:96px;transform:translateX(-50%);z-index:560;display:none;align-items:center;gap:7px;background:#1557f5;color:#fff;border:0;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.45);cursor:pointer}
+  .recenter.show{display:flex}
+  .recenter svg{width:15px;height:15px}
+  .battchip{position:absolute;right:12px;bottom:96px;z-index:500;display:flex;align-items:center;background:#78350f;color:#fde68a;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:800}
+  body.v3 .recenter{top:110px}
+  .landmark{position:absolute;left:12px;right:12px;bottom:128px;z-index:500;display:none;align-items:flex-start;gap:8px;background:#fff8e6;color:#3a2e20;border:1.5px solid #e0b64f;border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.35);line-height:1.3}
+  .landmark.show{display:flex}
+  .landmark b{flex:0 0 auto;font-size:10px;letter-spacing:.4px;color:#8a6a1f;margin-top:1px}
+  .curstreet{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);z-index:500;background:#0f1620;color:#fff;font-weight:700;font-size:13px;padding:6px 16px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);max-width:70%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none}
+  /* ── WAZE NIGHT (2D map): CARTO dark tiles na tinint sa slate-BLUE at
+        pinaliwanag para tumugma sa Waze night — hindi black; kitang-kita ang
+        mga kalsada bilang mas maliwanag na blue-gray. Ang markers at route ay
+        nasa ibang pane kaya hindi apektado ng filter. ── */
+  #navmap{background:#33424f}
+  #navmap .leaflet-tile-pane{filter:brightness(1.9) contrast(.88) sepia(.5) hue-rotate(172deg) saturate(1.6)}
+  /* PIN modal */
+  .pinmodal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(20,15,8,.55)}
+  .pinmodal.show{display:flex}
+  .pincard{width:1000px;max-width:94vw;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 22px 55px rgba(0,0,0,.45)}
+  .pinhead{background:#4a3b1a;color:#f4ead8;padding:16px 18px;text-align:center}
+  .pinhead .t{font-weight:800;font-size:15px}.pinhead .s{font-size:11px;opacity:.85;margin-top:3px}
+  .pinbody{padding:20px 18px}
+  .pinrow{display:flex;gap:9px;justify-content:center}
+  .pinrow input{width:50px;height:58px;text-align:center;font-size:25px;font-weight:800;border:2px solid #e7e0d6;border-radius:11px;color:#4a3b1a;outline:none}
+  .pinrow input:focus{border-color:#caa45a;box-shadow:0 0 0 3px rgba(202,164,90,.18)}
+  .pinerr{color:#c0392b;font-size:12px;text-align:center;min-height:16px;margin-top:9px;font-weight:600}
+  .pinbtns{display:flex;gap:8px;margin-top:6px}
+  .pinbtns button{flex:1;border:0;border-radius:11px;padding:13px;font-size:13px;font-weight:800;cursor:pointer}
+  .pinbtns .ok{background:#2e7d52;color:#fff}.pinbtns .ok:disabled{opacity:.6}
+  .pinbtns .cancel{background:#faf8f4;color:#4a3b1a;border:1px solid #e7e0d6}
+  /* ── PORTRAIT LOCK (driver view) ─────────────────────────────────────
+     Ang nav UI ay dinisenyo bilang FIXED portrait phone view (Waze-style).
+     Kapag umikot ang phone sa landscape, sumisira ang layout — kaya:
+     (1) JS: sinusubukang i-lock ang orientation (fullscreen + Screen
+         Orientation API — gumagana sa APK webview at Android Chrome), at
+     (2) CSS fallback: kapag phone landscape pa rin (coarse pointer + mababang
+         taas — hindi tatama sa desktop LiveMap iframe), tinatakpan ng overlay
+         na nagsasabing i-rotate pabalik sa portrait. Hindi kailanman
+         magre-render ang nav sa sirang landscape layout. */
+  .nodest{display:none;position:fixed;inset:0;z-index:9998;align-items:center;justify-content:center;background:rgba(20,15,8,.6);padding:20px}
+  .nodest.show{display:flex}
+  .nodest .card{width:340px;max-width:92%;background:#fff;border-radius:16px;padding:18px;box-shadow:0 22px 55px rgba(0,0,0,.45);color:#3a2e20}
+  .nodest .t{font-size:16px;font-weight:800;color:#c0392b}
+  .nodest .s{font-size:12.5px;margin-top:6px;line-height:1.4}
+  .nodest .a{font-size:12px;font-weight:700;background:#faf6ec;border:1px dashed #caa45a;border-radius:9px;padding:8px 10px;margin-top:10px;word-break:break-word}
+  .nodest .row{display:flex;gap:8px;margin-top:12px}
+  .nodest button{flex:1;border:1px solid #e7e0d6;background:#faf8f4;color:#4a3b1a;border-radius:10px;padding:11px;font-size:13px;font-weight:800;cursor:pointer}
+  .nodest button.ok{background:#4a3b1a;color:#f4ead8;border-color:#4a3b1a}
+  #rotateOverlay{display:none;position:fixed;inset:0;z-index:99999;background:#0a0a0c;color:#fff;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px}
+  #rotateOverlay .ph{font-size:52px;animation:rotph 1.6s ease-in-out infinite}
+  #rotateOverlay b{font-size:17px}
+  #rotateOverlay span{font-size:13px;color:#9aa0aa}
+  @keyframes rotph{0%,20%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
+  @media screen and (orientation:landscape) and (pointer:coarse) and (max-height:520px){
+    #rotateOverlay{display:flex}
+  }
+  .proofsec{margin-bottom:14px}
+  .prooflbl{font-size:12px;font-weight:800;color:#4a3b1a;margin-bottom:6px}
+  .pcount{color:#a8997f;font-weight:700}
+  /* ANG TAAS NG PIRMAHAN. Ang 120px ay puwede sa telepono pero masikip sa
+     tablet: naipipilipit ang pirma at hindi nagkakasya. Sa buong pahaba ng
+     tablet ay may lugar para sa pirmang kasinglaki ng nasa papel. */
+  .sigpad{width:100%;height:360px;border:2px dashed #d8cdb8;border-radius:11px;background:#fbf9f4;touch-action:none;display:block}
+  .sigclear{margin-top:6px;background:none;border:0;color:#a8997f;font-size:11px;font-weight:700;cursor:pointer;text-decoration:underline}
+  .photogrid{display:flex;flex-wrap:wrap;gap:7px}
+  .photogrid .ph{position:relative;width:62px;height:62px;border-radius:9px;overflow:hidden;border:1px solid #e7e0d6}
+  .photogrid .ph img{width:100%;height:100%;object-fit:cover}
+  .photogrid .ph .rm{position:absolute;top:1px;right:1px;width:18px;height:18px;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:11px;line-height:18px;cursor:pointer;padding:0}
+  .addphoto{margin-top:7px;width:100%;background:#faf6ec;border:1.5px dashed #caa45a;border-radius:11px;padding:11px;font-size:13px;font-weight:800;color:#4a3b1a;cursor:pointer}
+</style>
+</head>
+<body>
+  <!-- 2D (north-up, auto-follow) -->
+  <!-- ADDRESS NA HINDI MAHANAP — harang, hindi tahimik na Manila -->
+  <div class="nodest" id="noDest">
+    <div class="card">
+      <div class="t">Address not found</div>
+      <div class="s">We could not locate this address on the map, so no route was built.</div>
+      <div class="a" id="noDestAddr"></div>
+      <div class="row"><button type="button" onclick="callCust()">Call customer</button><button type="button" class="ok" onclick="document.getElementById('noDest').classList.remove('show')">OK</button></div>
+    </div>
+  </div>
+  <div id="rotateOverlay"><div class="ph"></div><b>Rotate back to portrait</b><span>The driver view is locked to portrait so the map and controls stay stable.</span></div>
+  <div class="screen on" id="snav">
+    <div class="navbanner"><span class="ar" id="navAr">↑</span><div><div class="txt" id="navTxt">Starting…</div><div class="sub" id="navSub">Calculating route</div></div></div>
+    <div class="maparea"><div id="navmap"></div><button class="threed-btn" onclick="open3D()">Driver View</button><div class="curstreet" id="curStreet2"></div></div>
+  </div>
+
+  <!-- Driver View — Waze-style turn-by-turn -->
+  <div class="screen" id="s3d">
+    <!-- Big Waze turn card: distance-to-turn + maneuver arrow + the street you turn onto -->
+    <div class="wzturn">
+      <!-- Waze-style upcoming-maneuvers strip: susunod na mga liko (kasama
+           U-turns) bilang hanay ng arrow icons — ang pinakamalapit ay maliwanag,
+           ang mga susunod ay lumalabo. -->
+      <div class="wzSeq" id="wzSeq"></div>
+      <span class="wzArrow" id="nav3Ar">↑</span>
+      <div class="wzInfo">
+        <div class="wzDist" id="wz3Dist">—</div>
+        <div class="wzStreet" id="nav3Txt">Starting…</div>
+        <div class="wzThen" id="wz3Then"></div>
+        <div class="inc" id="incTxt" style="display:none"></div>
+        <div class="lanes" id="lanes"></div>
+      </div>
+      <!-- Lane strip sa ilalim ng turn card — aling linya bago ang liko -->
+      <div class="lanebar" id="lanebar"></div>
+      <div class="wzInfoEnd" hidden></div>
+    </div>
+    <div class="maparea">
+      <div id="map3d"></div>
+      <button class="threed-btn" id="tdBtn" onclick="toggleTopdown(this)">Map</button>
+      <div class="speed"><b id="speedVal">0</b><span>KM/H</span></div>
+      <!-- Waze-style speed-limit sign (red ring + number). Hidden until we have a limit. -->
+      <div class="speedlimit" id="speedLimit" style="display:none"><b id="speedLimitVal">40</b></div>
+      <div class="voicechip" id="voiceChip" onclick="toggleVoice()" style="font-size:11px;font-weight:700">On</div>
+      <!-- v3 na hanay ng buton sa kanan: recenter · + · − · feedback/message -->
+      <div class="rbtns">
+        <button type="button" title="Recenter" onclick="recenterNav()"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></button>
+        <button type="button" title="Zoom in" onclick="zoomNav(1)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button type="button" title="Zoom out" onclick="zoomNav(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+        <button type="button" title="Message customer" onclick="msgCust()"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"/><path d="M8 9h8M8 12h5"/></svg></button>
+      </div>
+      <div class="mblogo"><i></i>mapbox</div>
+      <!-- B3: lumilitaw habang hiwalay ang tanaw sa truck; kusang nawawala sa 8 s -->
+      <button type="button" class="recenter" id="recenterBtn" onclick="recenterNav()"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Recenter</button>
+      <!-- B4: kita kung bakit humina ang mga bagay -->
+      <div class="battchip" id="battchip" style="display:none">Battery saver</div>
+      <!-- B2: estado ng koneksyon at ng naka-save na mapa -->
+      <div class="offbanner" id="offbanner"></div>
+      <!-- C3: sa 1 km — ang customer ang pinakamabilis na turo -->
+      <!-- B5: ang susunod sa ruta, pagkatapos ng Arrived -->
+      <div class="nextstop" id="nextstop"><div class="t"><b>Next stop</b><span id="nsTxt"></span><i id="nsSub"></i></div><button type="button" class="go">Navigate →</button></div>
+      <pre class="vdiag" id="vdiag"></pre>
+      <div class="satchip" id="satchip">Satellite view — look for the roof and gate</div>
+      <div class="callchip" id="callchip"><span>1 km away — call the customer?</span><button type="button" onclick="callCust();this.parentElement.classList.remove('show')">Call</button><button type="button" class="x" onclick="this.parentElement.classList.remove('show')">✕</button></div>
+      <!-- SIMULATE DRIVE (TEST-* orders / ?sim=1 lang) -->
+      <div class="simbar" id="simbar" style="display:none"><span class="t">Simulate drive</span><button type="button" class="pp" onclick="simToggle()">▶</button><button type="button" data-x="1" onclick="simSet(1)">1×</button><button type="button" data-x="4" onclick="simSet(4)">4×</button><button type="button" data-x="10" onclick="simSet(10)">10×</button></div>
+      <div class="curstreet" id="curStreet3"></div>
+      <!-- LANDMARK NG CUSTOMER — ang "Landmark / delivery notes" mula sa quote request
+           ("blue gate, across the sari-sari store"), nasa loob ng panaklong ng address.
+           Lumilitaw kapag < 500 m na: doon ito kailangan, hindi sa highway. -->
+      <div class="landmark" id="landmark"></div>
+      <!-- Nakatago hangga't walang laman — dating lumalabas bilang blangkong itim na kahon. -->
+      <!-- Waze bottom bar: minutes left · arrival clock · distance left (floating pill) -->
+      <div class="wzbottom">
+        <div class="wzKmWrap"><b id="wzKm">—</b><span>away</span></div>
+        <div class="wzSep"></div>
+        <div class="wzEta"><b id="wzMin">—</b><span>min</span></div>
+        <div class="wzSep"></div>
+        <div class="wzClockWrap"><b id="wzClock">—</b><span>arrival</span></div>
+        <!-- v3: progress bar — nalakbay (cyan) vs natitira (may kulay ng trapik) -->
+        <div class="prog" id="prog"><div class="traf" id="progTraf"></div><i id="progFill"></i><span class="pk"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer (both Normal + Driver view) -->
+  <div class="navfoot">
+    <!-- GPS status + enable (driver taps once to grant real location on iOS) -->
+    <div id="gpsRow" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700">
+      <span id="gpsDot" style="width:9px;height:9px;border-radius:50%;background:#c0392b;flex:0 0 auto"></span>
+      <span id="gpsTxt" style="flex:1;color:#5a4e3c">Live GPS off</span>
+      <button class="fbtn" id="gpsBtn" style="flex:0 0 auto;padding:8px 12px" onclick="enableGps()">Enable Live GPS</button>
+    </div>
+    <!-- Numero ng customer na KITA MISMO (hiling 2026-09-02) + alternative na
+         numero kung meron - hindi na kailangang buksan ang app para malaman
+         kung sino ang tatawagan kapag hindi sumasagot ang pangunahin. -->
+    <div id="custNums" style="display:none;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center"></div>
+    <div class="frow" id="custRow">
+      <button class="fbtn" onclick="callCust()">Call</button>
+      <button class="fbtn" onclick="msgCust()">Message</button>
+    </div>
+    <!-- KUSANG LUMILITAW KAPAG NASA LOKASYON NA (< 60 m). Dating ang driver ang
+         dapat makaalala na pindutin ang Arrived — kapag nakalimot, "on the way"
+         pa rin ang order sa ops. Parehong proof flow (pirma + litrato); ang
+         pag-alala lang ang inaalis. -->
+    <div class="arrtoast" id="arrSheet">
+      <span class="ic">✓</span>
+      <span>
+        <span class="st">You've arrived</span>
+        <span class="ss" id="arrSheetAddr"></span>
+      </span>
+    </div>
+    <button class="fbtn g" id="arrBtn" onclick="markArrived()">Arrived</button>
+    <script>try{ if(new URLSearchParams(location.search).get('collect')==='1'){
+      // IISANG SALITA SA DALAWANG LUGAR (2026-08-29): "take signature" ang sabi
+      // ng pop-up at "sign for the item" ang ibaba — parehong aksyon, magkaibang
+      // pangalan, kaya mukhang dalawang hakbang.
+      document.getElementById('arrBtn').textContent='Arrived — sign for the item';
+      const sn=document.querySelector('#arrSheet .now'); if(sn) sn.textContent='Arrived — sign for the item';
+    } }catch(e){}</script>
+  </div>
+
+  <!-- Arrival proof modal: driver signature + on-site photos (no PIN) -->
+  <div class="pinmodal" id="pinModal">
+    <div class="pincard">
+      <div class="pinhead"><div class="t">Confirm Arrival</div><div class="s">Sign + add delivery photos</div></div>
+      <div class="pinbody">
+        <div class="proofsec">
+          <div class="prooflbl">Driver signature</div>
+          <canvas id="sigPad" class="sigpad" width="960" height="360"></canvas>
+          <button class="sigclear" type="button" onclick="clearSig()">Clear signature</button>
+        </div>
+        <div class="proofsec">
+          <div class="prooflbl">Delivery photos <span id="photoCount" class="pcount">(0)</span></div>
+          <div class="photogrid" id="photoGrid"></div>
+          <input type="file" id="photoInput" accept="image/*" capture="environment" multiple style="display:none" onchange="addPhotos(event)">
+          <button class="addphoto" type="button" onclick="document.getElementById('photoInput').click()">Take photo</button>
+        </div>
+        <div class="pinerr" id="pinErr"></div>
+        <div class="pinbtns">
+          <button class="cancel" onclick="closePin()">Cancel</button>
+          <button class="ok" id="pinOk" onclick="submitProof()">Confirm Arrival</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+  // ── params: ?dlat,?dlng (customer) · ?olat,?olng (driver, optional) · ?addr ?order ?name ──
+  const P = new URLSearchParams(location.search);
+  let NAV_DEST = (isFinite(+P.get('dlat')) && isFinite(+P.get('dlng')) && P.get('dlat')) ? [+P.get('dlat'), +P.get('dlng')] : null;
+  const hasDriver = P.get('olat') && P.get('olng');
+  // COLLECT MODE (?collect=1) — ang pagkuha ng TAPOS NANG gamit sa workshop o
+  // sa bodega, bago ito ihatid sa customer.
+  //
+  // HUWAG IPAGKAMALI SA ?pickup=1: iyon ang Pickup Rework — ang pagsundo ng
+  // SIRANG gamit sa customer para dalhin sa workshop. Magkaibang biyahe,
+  // magkaibang endpoint; magkatabi lang ang pangalan.
+  //
+  // Ang natatanggal dito ay ang Call/Message: tumatawag sila sa customer, at
+  // walang customer sa dulo ng biyaheng ito. Ang Arrived ay NANANATILI —
+  // pumipirma ang driver na tinanggap niya ang gamit, at doon nagsisimula ang
+  // pananagutan niya rito.
+  const COLLECT = P.get('collect') === '1';
+  if (COLLECT) {
+    try {
+      const el = document.getElementById('custRow');
+      if (el) el.style.display = 'none';
+      const h = document.querySelector('#pinModal .pinhead .s');
+      if (h) h.textContent = 'Sign + photograph what you are collecting';
+    } catch (e) {}
+  }
+  // PICKUP mode (rework pull-out): ?pickup=1 → proof posts to /api/delivery/pickup-proof.
+  //   leg 1 (default)  = arrive at the CUSTOMER to collect the item
+  //   leg 2 (?drop=1)  = deliver the item to the WORKSHOP ("Arrived & Drop")
+  const PICKUP = P.get('pickup') === '1';
+  const DROP = P.get('drop') === '1';
+  if (DROP) { try { document.getElementById('arrBtn').textContent = 'Arrived & Drop'; } catch(e){} }
+
+  function go(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on')); document.getElementById(id).classList.add('on'); setTimeout(()=>{ if(id==='snav'&&navMap){navMap.invalidateSize(); if(navDriver){const p=navDriver.getLatLng(); navMap.panTo(aheadCenter([p.lat,p.lng],smHead2),{animate:false});}} if(id==='s3d'&&map3d)map3d.resize(); },80); }
+  // footer actions (Call → dial customer; Message/Arrived → notify the parent app via postMessage)
+  const PHONE = P.get('phone') || '';
+  // Alternative contact (0224): pangalawang numerong tatawagan kapag hindi
+  // sumasagot ang customer, kasama ang relasyon niya sa customer.
+  const ALTPHONE = P.get('altphone') || '';
+  const ALTREL = P.get('altrel') || '';
+  (function(){
+    try{
+      var el = document.getElementById('custNums');
+      if(!el) return;
+      var pill = function(label, p, rel){
+        return '<a href="tel:'+p.replace(/[^\d+]/g,'')+'" style="display:inline-flex;align-items:center;gap:7px;background:#f6f0e2;border:1px solid #d8c9a8;border-radius:999px;padding:7px 13px;text-decoration:none;font-size:13px;font-weight:800;color:#3d3425;line-height:1">'
+          + '<span style="font-size:10px;font-weight:800;color:#8a6a1f;letter-spacing:.6px">'+label+'</span>'
+          + '<span>'+p+'</span>'
+          + (rel ? '<span style="font-weight:600;color:#7a6a4f">('+rel+')</span>' : '')
+          + '</a>';
+      };
+      var esc = function(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+      var CNAME = P.get('name') || '';
+      var parts = [];
+      if(PHONE) parts.push(pill('CUSTOMER', (CNAME?esc(CNAME)+' &nbsp;·&nbsp; ':'')+PHONE, ''));
+      if(ALTPHONE) parts.push(pill('ALT', ALTPHONE, ALTREL));
+      if(parts.length){ el.innerHTML = parts.join(''); el.style.display = 'flex'; }
+    }catch(e){}
+  })();
+  // ── B2 · OFFLINE ──────────────────────────────────────────────────────────
+  // Ang service worker ang nagta-tago ng tile (cache-first) at ng huling ruta.
+  // Dalawang pakinabang sa iisang bagay: (1) tumatakbo ang nabigasyon kahit
+  // nawala ang signal sa SLEX o sa probinsya, at (2) ang paulit-ulit na koridor
+  // ay hindi na muling binabayaran kada biyahe.
+  let swReady=null;
+  if('serviceWorker' in navigator){
+    swReady=navigator.serviceWorker.register('/delivery-map-sw.js',{scope:'/'})
+      .then(r=>navigator.serviceWorker.ready).catch(()=>null);
+    navigator.serviceWorker.addEventListener('message',(e)=>{
+      const d=e.data||{};
+      if(d.type==='prefetch-done'){
+        const el=document.getElementById('offbanner');
+        if(el){ el.textContent=`Offline map ready · ${d.count} tiles`; el.className='offbanner ok show'; setTimeout(()=>el.classList.remove('show'),3500); }
+      }
+    });
+  }
+  function netBanner(){
+    const el=document.getElementById('offbanner'); if(!el) return;
+    if(navigator.onLine){ if(el.classList.contains('bad')) { el.textContent='Back online'; el.className='offbanner ok show'; setTimeout(()=>el.classList.remove('show'),3000); } }
+    else { el.textContent='No signal — using saved map and route'; el.className='offbanner bad show'; }
+  }
+  window.addEventListener('online',netBanner); window.addEventListener('offline',netBanner);
+
+  // PREFETCH: ang mga tile sa haba ng ruta, hinihila habang nasa Wi-Fi bago
+  // umalis. Sinusundan ang linya ng ruta at kinukuha ang tile sa dalawang zoom
+  // (z14 pang-overview, z16 pang-turn) — hindi ang buong parihaba, kaya kaunti
+  // lang. Isang beses kada ruta.
+  let prefetched=false;
+  function tileXYZ(lat,lng,z){ const n=Math.pow(2,z); const x=Math.floor((lng+180)/360*n); const la=lat*Math.PI/180; const y=Math.floor((1-Math.log(Math.tan(la)+1/Math.cos(la))/Math.PI)/2*n); return [z,x,y]; }
+  async function prefetchRoute(){
+    if(prefetched || !NAV_STYLE || !MB_TOKEN || !navCoords || navCoords.length<2) return;
+    if(!navigator.onLine) return;
+    prefetched=true;
+    const seen=new Set(), urls=[];
+    for(const z of [14,16]){
+      for(const c of navCoords){
+        const [zz,x,y]=tileXYZ(c[0],c[1],z);
+        for(const dx of [-1,0,1]) for(const dy of [-1,0,1]){
+          const k=`${zz}/${x+dx}/${y+dy}`;
+          if(seen.has(k)) continue; seen.add(k);
+          urls.push(`https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/${k}.vector.pbf?sku=&access_token=${encodeURIComponent(MB_TOKEN)}`);
+        }
+      }
+    }
+    const el=document.getElementById('offbanner');
+    if(el){
+      el.textContent=`Saving offline map · ${urls.length} tiles…`; el.className='offbanner ok show';
+      // Huwag kailanman iwang nakabukas: kahit hindi sumagot ang SW, nawawala ito.
+      setTimeout(()=>{ if(el.textContent.startsWith('Saving offline map')) el.classList.remove('show'); }, 12000);
+    }
+    const reg=await (swReady||Promise.resolve(null));
+    if(reg && reg.active) reg.active.postMessage({type:'prefetch',urls});
+    else if(el) el.classList.remove('show');
+  }
+  let NO_DEST=false;
+  // Auto-arrival: isang beses lang tinatanong; "Not yet" = 3 minutong pahinga.
+  let arriveAsked=false, arriveSnoozedUntil=0, callChipShown=false;
+  // C2: bukas ang satellite sa loob ng 500 m, sarado sa labas ng 700 m —
+  // may agwat para hindi ito kumurap sa hangganan.
+  let satOn=false;
+  function setSatellite(on){
+    if(satOn===on || !map3d || !map3d.getLayer || !map3d.getLayer('sat')) return;
+    satOn=on;
+    try{
+      map3d.setLayoutProperty('sat','visibility', on?'visible':'none');
+      map3d.setPaintProperty('sat','raster-opacity', on?0.95:0, {duration:600});
+      const b=document.getElementById('satchip'); if(b) b.classList.toggle('show',on);
+      if(on){ try{ speak('Approaching the delivery. Satellite view on.'); }catch(e){} }
+    }catch(e){}
+  }
+  // Ang "Not yet" ay wala na (hiling 2026-08-29): abiso na lang ang pagdating,
+  // walang itinatanong, kaya walang iuurong. Ang `arriveSnoozedUntil` ay
+  // nananatili para sa `arriveAsked` gate — isang abiso kada pagdating.
+  // Ang landmark ay idinidikit ng website sa dulo ng address sa loob ng panaklong:
+  // "9173 Brgy Maduya, …, 4116 (blue gate, across the sari-sari store)".
+  const LANDMARK = (()=>{ const a=P.get('addr')||''; const m=a.match(/\(([^()]{3,})\)\s*$/); return m?m[1].trim():''; })();
+  function callCust(){ if(PHONE) location.href='tel:'+PHONE.replace(/[^\d+]/g,''); else try{ parent.postMessage({type:'call-customer',order:P.get('order')},'*'); }catch(e){} }
+  // DIRETSO SA NUMERO (hiling 2026-09-02): ang Message ay nagbubukas ng SMS sa
+  // mismong numero ng customer, gaya ng Call na tel: - ang postMessage sa parent
+  // ay pambalik na lang kapag walang numero.
+  function msgCust(){ if(PHONE) location.href='sms:'+PHONE.replace(/[^\d+]/g,''); else try{ parent.postMessage({type:'message-customer',order:P.get('order')},'*'); }catch(e){} }
+  // ── Arrival proof: driver signature (canvas) + on-site photos (no PIN) ──
+  let proofPhotos=[]; // array of JPEG data URLs
+  let sigCtx=null, sigDrawing=false, sigDirty=false;
+  // ── B5 · SUSUNOD NA STOP ──────────────────────────────────────────────────
+  // Pagkatapos ng Arrived ay patay ang mapa: kailangang bumalik sa listahan at
+  // buksan ulit nang manu-mano — limang beses kada araw sa isang ruta. Ang
+  // parent (delivery-manager) ang may hawak ng listahan, kaya tinatanong ito;
+  // kapag walang sumagot sa loob ng 1.5 s, walang ipinapakita.
+  function showNextStop(){
+    try{ parent.postMessage({type:'next-stop-request',order:ORDER},'*'); }catch(e){}
+  }
+  window.addEventListener('message',(e)=>{
+    const d=e.data||{};
+    if(d.type!=='next-stop' || !d.order) return;
+    const el=document.getElementById('nextstop'); if(!el) return;
+    document.getElementById('nsTxt').textContent=`${d.order} · ${d.customer||''}`.trim();
+    document.getElementById('nsSub').textContent=d.address||'';
+    el.classList.add('show');
+    el.querySelector('.go').onclick=()=>{ try{ parent.postMessage({type:'open-stop',order:d.order},'*'); }catch(e){} };
+  });
+
+  function markArrived(){ document.getElementById('pinErr').textContent=''; proofPhotos=[]; renderPhotos(); initSig(); clearSig(); document.getElementById('pinModal').classList.add('show'); }
+  function closePin(){ document.getElementById('pinModal').classList.remove('show'); }
+
+  function initSig(){
+    const c=document.getElementById('sigPad'); if(!c) return;
+    // Size the backing store to the element for crisp lines.
+    // Ang backing store ay sinusukat sa MISMONG elemento — kung hindi, ang
+    // linya ay naiiba sa kinasusulatan ng daliri.
+    const r=c.getBoundingClientRect(); if(r.width){ c.width=r.width; c.height=r.height||360; }
+    sigCtx=c.getContext('2d'); sigCtx.lineWidth=4; sigCtx.lineCap='round'; sigCtx.lineJoin='round'; sigCtx.strokeStyle='#2a2316';
+    if(c._wired) return; c._wired=true;
+    const pos=e=>{ const b=c.getBoundingClientRect(); const t=e.touches?e.touches[0]:e; return [t.clientX-b.left, t.clientY-b.top]; };
+    const start=e=>{ e.preventDefault(); sigDrawing=true; sigDirty=true; const [x,y]=pos(e); sigCtx.beginPath(); sigCtx.moveTo(x,y); };
+    const move=e=>{ if(!sigDrawing)return; e.preventDefault(); const [x,y]=pos(e); sigCtx.lineTo(x,y); sigCtx.stroke(); };
+    const end=()=>{ sigDrawing=false; };
+    c.addEventListener('mousedown',start); c.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+    c.addEventListener('touchstart',start,{passive:false}); c.addEventListener('touchmove',move,{passive:false}); c.addEventListener('touchend',end);
+  }
+  function clearSig(){ const c=document.getElementById('sigPad'); if(c&&sigCtx){ sigCtx.clearRect(0,0,c.width,c.height); } sigDirty=false; }
+
+  function addPhotos(ev){
+    const files=[...(ev.target.files||[])]; ev.target.value='';
+    files.forEach(f=>{ if(proofPhotos.length>=(PICKUP?1:8)) return; const rd=new FileReader(); rd.onload=()=>{ downscale(rd.result, d=>{ proofPhotos.push(d); renderPhotos(); }); }; rd.readAsDataURL(f); });
+  }
+  // Downscale to <=1280px JPEG to keep the POST body small.
+  function downscale(dataUrl, cb){
+    const img=new Image(); img.onload=()=>{ const max=1280; let {width:w,height:h}=img; const s=Math.min(1,max/Math.max(w,h)); w=Math.round(w*s); h=Math.round(h*s); const cv=document.createElement('canvas'); cv.width=w; cv.height=h; cv.getContext('2d').drawImage(img,0,0,w,h); cb(cv.toDataURL('image/jpeg',0.72)); }; img.onerror=()=>cb(dataUrl); img.src=dataUrl;
+  }
+  function renderPhotos(){
+    const g=document.getElementById('photoGrid'); g.innerHTML='';
+    proofPhotos.forEach((d,i)=>{ const el=document.createElement('div'); el.className='ph'; el.innerHTML='<img src="'+d+'"><button class="rm" onclick="rmPhoto('+i+')">×</button>'; g.appendChild(el); });
+    document.getElementById('photoCount').textContent='('+proofPhotos.length+')';
+  }
+  function rmPhoto(i){ proofPhotos.splice(i,1); renderPhotos(); }
+
+  async function submitProof(){
+    const err=document.getElementById('pinErr'), ok=document.getElementById('pinOk');
+    // Ang PIRMA ay dito — sa lugar mismo, sa harap ng bagay. Ang TATLONG
+    // litrato at ang bilang ng tinanggap ay nasa Pickup / Drop Proof card.
+    //
+    // ISA LANG ANG LITRATO SA PICKUP (2026-08-27). Hanggang WALO ang tinatanggap
+    // dito noon, at ang limang inupload ng driver sa mapa ay nakaabot na sa
+    // hinihinging tatlo — kaya nagsara ang proof card bago pa ito mabuksan, at
+    // wala nang mailagay. Isa dito bilang bakas ng pagdating; ang tunay na
+    // katibayan ay sa card, kung saan may bilang ng tinanggap at ng may sira.
+    if(!sigDirty){ err.textContent='Please sign to confirm.'; return; }
+    if(proofPhotos.length===0){ err.textContent='Add at least one photo.'; return; }
+    const signature=document.getElementById('sigPad').toDataURL('image/png');
+    ok.textContent='Saving…'; ok.disabled=true; err.textContent='';
+    try{
+      // PICKUP mode → sariling endpoint (walang customer email / job side-effects);
+      // leg 'drop' = paghahatid sa workshop, leg 'arrive' = pagdating sa customer.
+      // Tatlong magkaibang biyahe, tatlong endpoint:
+      //   COLLECT — kinukuha ang tapos nang gamit sa workshop/bodega
+      //   PICKUP  — sinusundo ang sirang gamit sa customer (rework)
+      //   wala    — inihahatid sa customer
+      const url = COLLECT ? '/api/pickup-task/collected'
+                : PICKUP ? '/api/delivery/pickup-proof'
+                : '/api/delivery/arrive';
+      const payload = COLLECT
+        ? {source:P.get('src'),id:+(P.get('sid')||0),signature,photos:proofPhotos}
+        : PICKUP
+        ? {order:P.get('order'),leg:DROP?'drop':'arrive',signature,photos:proofPhotos}
+        : {order:P.get('order'),signature,photos:proofPhotos};
+      const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const j=await r.json();
+      if(j.ok){ closePin(); showNextStop(); const b=document.getElementById('arrBtn'); b.textContent=COLLECT?'Collected — confirmed':DROP?'Dropped — confirmed':'Arrived — confirmed'; b.style.opacity=.75; b.disabled=true; setTimeout(()=>{ try{ parent.postMessage({type:COLLECT?'item-collected':'driver-arrived',order:P.get('order')},'*'); }catch(e){} }, 500); }
+      else { err.textContent=j.error||'Could not confirm. Try again.'; ok.textContent='Confirm Arrival'; ok.disabled=false; }
+    }catch(e){ err.textContent='Network error — try again.'; ok.textContent='Confirm Arrival'; ok.disabled=false; }
+  }
+  function setArrow(id,key){ const e=document.getElementById(id); if(e) e.innerHTML=mvIcon(key); }
+  function smooth(prev,raw,k){ if(prev==null)return raw; let d=raw-prev; while(d>180)d-=360; while(d<-180)d+=360; return (prev+d*k+360)%360; }
+  function fmtKm(m){ return m>=1000?(m/1000).toFixed(1)+' km':Math.round(m)+' m'; }
+  function fmtMin(s){ const m=Math.round(s/60); return m>=60?Math.floor(m/60)+'h '+(m%60)+'m':Math.max(1,m)+' min'; }
+  function clockIn(sec){ return new Date(Date.now()+sec*1000).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}); }
+  function turnDelta(m){ if(m.bearing_before==null||m.bearing_after==null)return null; let d=m.bearing_after-m.bearing_before; while(d>180)d-=360; while(d<-180)d+=360; return d; }
+  // Maneuver KEY (not an emoji) — mapped to a clean white Waze-style SVG chevron below.
+  function navArrow(s){ const m=s.maneuver,t=m.type; if(t==='depart')return'depart'; if(t==='arrive')return'arrive'; const d=turnDelta(m); if(d==null)return /left/.test(m.modifier||'')?'left':/right/.test(m.modifier||'')?'right':'straight'; return Math.abs(d)<18?'straight':Math.abs(d)>150?'uturn':d>0?(Math.abs(d)>110?'sharp-right':'right'):(Math.abs(d)>110?'sharp-left':'left'); }
+  // White Waze-style maneuver chevron for a given key. Returns an <svg> string.
+  function mvIcon(key){
+    const P=(d)=>`<svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="display:block">${d}</svg>`;
+    switch(key){
+      case 'left':        return P('<path d="M28 32 V18 a6 6 0 0 0-6-6 H12"/><path d="M17 7 L10 12 L17 17"/>');
+      case 'right':       return P('<path d="M12 32 V18 a6 6 0 0 1 6-6 H28"/><path d="M23 7 L30 12 L23 17"/>');
+      case 'sharp-left':  return P('<path d="M26 32 C26 20 22 14 12 12"/><path d="M18 7 L10 12 L16 19"/>');
+      case 'sharp-right': return P('<path d="M14 32 C14 20 18 14 28 12"/><path d="M22 7 L30 12 L24 19"/>');
+      case 'uturn':       return P('<path d="M14 32 V18 a6 6 0 0 1 12 0 v3"/><path d="M31 16 L26 22 L21 16"/>');
+      case 'depart':      return P('<path d="M20 33 V9"/><path d="M12 17 L20 8 L28 17"/>');
+      case 'arrive':      return P('<circle cx="20" cy="15" r="6"/><path d="M20 21 V33"/>');
+      default:            return P('<path d="M20 33 V9"/><path d="M12 17 L20 8 L28 17"/>'); // straight
+    }
+  }
+  function navInstr(s){ const m=s.maneuver,r=s.name||'',t=m.type; if(t==='depart')return'Depart'+(r?' on '+r:''); if(t==='arrive')return'Arrive at delivery'; const d=turnDelta(m); let dir; if(d==null) dir=/left/.test(m.modifier||'')?'Turn left':/right/.test(m.modifier||'')?'Turn right':'Continue'; else dir=Math.abs(d)<18?'Continue straight':Math.abs(d)>150?'Make a U-turn':d>0?'Turn right':'Turn left'; return dir+(r?' on '+r:''); }
+  function bearing(a,b){ const R=d=>d*Math.PI/180,D=r=>r*180/Math.PI; const f1=R(a[0]),f2=R(b[0]),dl=R(b[1]-a[1]); const y=Math.sin(dl)*Math.cos(f2); const x=Math.cos(f1)*Math.sin(f2)-Math.sin(f1)*Math.cos(f2)*Math.cos(dl); return (D(Math.atan2(y,x))+360)%360; }
+
+  let NAV_ORIGIN = null;
+  let navMap=null, navDriver=null, navTimer=null, navInit=false;
+  let navCoords=[], navSteps=[], navDur=0, navDist=0;
+  let navRouteLayers=[];          // current 2D route polylines (cleared on re-route)
+  let lastLL=null, offCount=0, rerouting=false; // off-route detection state
+  // ── DIRECTIONS (Mapbox sa likod ng /api/delivery/route; OSRM kapag walang token) ──
+  let ROUTE_PROVIDER='osrm';      // 'mapbox' | 'osrm' — galing sa proxy
+  let lastRouteJson=null;         // buong sagot ng huling tawag (routes[0] = ginagamit, [1..] = alternatibo)
+  let navAlts=[];                 // [{idx, coords, dur, dist}] — ang mga alternatibo
+  let navMaxspeed=[], navCongestion=[]; // kada segment ng ruta (Mapbox annotations)
+  let altLayers2d=[], m3AltMarkers=[];
+  let REAL_LIMIT=null;            // speed limit mula sa data ng kalsada (km/h), null = hulaan
+  let lastRouteCheck=0, suggestJson=null, navEtaFresh=null;
+  let lastEtaSec=null, lastRemainM=null;  // ipinapadala sa ping para makita ng ops/customer
+  function fetchRoute(from,to,alt){
+    // Walang linya: huwag nang subukan ang live check — ang SW ang magbibigay ng huling ruta.
+    if(!navigator.onLine && arguments.length>2) return Promise.resolve(null);
+    return fetch(`/api/delivery/route?from=${from[0]},${from[1]}&to=${to[0]},${to[1]}${alt?'&alt=1':''}`,{cache:'no-store'}).then(r=>r.json());
+  }
+  // Ang bawat step ay may maneuver sa SIMULA nito; cum = distansya mula sa simula ng
+  // ruta hanggang sa maneuver. Mapbox at OSRM ay iisang hugis. Dagdag sa Mapbox:
+  //   dur      — tagal ng step (traffic-aware) → ETA na natitira
+  //   lanes    — mga linya sa PAGLAPIT sa liko (huling intersection ng naunang step)
+  function parseRoute(j, idx){
+    const rt=j.routes[idx];
+    const coords=rt.geometry.coordinates.map(c=>[c[1],c[0]]);
+    const raw=rt.legs[0].steps||[];
+    let c=0;
+    const steps=raw.map((st,i)=>{
+      const mloc=st.maneuver&&st.maneuver.location;
+      const prev=raw[i-1];
+      const lanes=prev&&prev.intersections&&prev.intersections.length ? (prev.intersections[prev.intersections.length-1].lanes||null) : null;
+      const step={ ar:navArrow(st), txt:navInstr(st), road:st.name||'', type:(st.maneuver&&st.maneuver.type)||'', loc: mloc?[mloc[1],mloc[0]]:null, cum:c, d:st.distance, dur:st.duration||0, lanes };
+      c+=st.distance; return step;
+    });
+    const ann=(rt.legs[0].annotation)||{};
+    // incidents (Mapbox driving-traffic): aksidente, sarado, konstruksyon — kung saan sa ruta
+    let cumAt=[0]; for(let i=1;i<coords.length;i++) cumAt.push(cumAt[i-1]+haversine(coords[i-1],coords[i]));
+    const incidents=(rt.legs[0].incidents||[]).map(inc=>{ const gi=Math.min(coords.length-1, inc.geometry_index_start||0); return { type:inc.type||'incident', text:inc.long_description||inc.description||inc.type||'Incident', at:coords[gi], cum:cumAt[gi] }; });
+    return { coords, dur:rt.duration, dist:rt.distance, steps, maxspeed:ann.maxspeed||[], congestion:ann.congestion||[], incidents };
+  }
+  // TRAPIK SA RUTA — lahat ng antas may kulay. Dating null ang `low`/`unknown`, kaya
+  // sa probinsyang biyahe (Lucena→MOA: 85% ang `unknown`) ay walang makikitang kulay
+  // at mukhang walang traffic data. Ngayon: berde ang malinaw, kulay-abo ang walang
+  // sukat, amber/pula ang mabagal — kita agad kung saan may siksikan at kung saan
+  // walang alam ang data.
+  const CONG_COLOR={low:'#3fbf62', unknown:'#8a94a6', moderate:'#e3a72f', heavy:'#e04545', severe:'#8e1b1b'};
+  // Pinagsasama ang magkakasunod na segment na iisang antas — isang linya kada
+  // bahagi, hindi isang linya kada 10 metro.
+  function congestionRuns(coords, cong){
+    const runs=[]; let cur=null;
+    for(let i=0;i<cong.length && i+1<coords.length;i++){
+      const col=CONG_COLOR[cong[i]]||null;
+      if(!col){ cur=null; continue; }
+      if(cur && cur.color===col){ cur.pts.push(coords[i+1]); }
+      else { cur={color:col, pts:[coords[i],coords[i+1]]}; runs.push(cur); }
+    }
+    return runs;
+  }
+  // Lane strip sa turn card: isang kahon kada linya, naka-highlight ang puwede.
+  const LANE_ICON={left:'left','slight left':'left','sharp left':'sharp-left',right:'right','slight right':'right','sharp right':'sharp-right',straight:'straight',uturn:'uturn',none:'straight'};
+  // ── TURN CALLOUT SA MISMONG KANTO ─────────────────────────────────────────
+  // Gaya ng Google Maps: asul na label sa mismong intersection kung saan liliko,
+  // may arrow at pangalan ng kalsada. Sa turn card ay nababasa mo kung ANO ang
+  // gagawin; dito ay kita mo kung SAAN — ang mismong kanto sa harap mo. Dalawa
+  // ang ipinapakita kapag magkasunod ang liko (ang "Then" ng Google), para hindi
+  // ka mapapunta sa mali sa dalawang magkatabing kanto.
+  let m3Callouts=[];
+  function updateCallouts(ni, traveled){
+    if(!map3d || !NAV_STYLE) return;
+    try{
+      // Ang susunod na dalawang liko lang, at kapag malapit na (≤ 900 m) —
+      // sa malayo ay ingay lang ang mga ito.
+      const want=[];
+      // ISA LANG: sa maliit na screen ay nagkukumpulan ang dalawa at natatabunan
+      // ang mapa. Ang "then" ay nasa turn card na.
+      for(let k=ni; k<Math.min(ni+1,(navSteps||[]).length); k++){
+        const st=navSteps[k]; if(!st || !st.loc) continue;
+        if(/depart/.test(st.type||'')) continue;
+        const d=(st.cum||0)-traveled;
+        if(d<-20 || d>900) continue;
+        want.push({ st, d, first:k===ni });
+      }
+      // muling gamitin ang marker; gumawa/mag-alis lang kung nagbago ang bilang
+      while(m3Callouts.length>want.length){ const m=m3Callouts.pop(); try{ m.remove(); }catch(e){} }
+      want.forEach((w,i)=>{
+        const arrow=mvIcon(w.st.ar||'straight');
+        const road=w.st.road || (/arrive/.test(w.st.type||'') ? 'Destination' : '');
+        const html=`<span class="ar">${arrow}</span><span class="rd">${(road||'').replace(/</g,'')}</span>`;
+        if(!m3Callouts[i]){
+          const el=document.createElement('div'); el.className='callout';
+          m3Callouts[i]=new maplibregl.Marker({element:el,anchor:'bottom',offset:[0,-6]}).setLngLat([w.st.loc[1],w.st.loc[0]]).addTo(map3d);
+          // Markahan ang container ng marker — doon nakalagay ang sukat.
+          try{ m3Callouts[i].getElement().parentElement?.classList.add('co-mk'); m3Callouts[i].getElement().classList.add('co-mk'); }catch(e){}
+        }
+        const el=m3Callouts[i].getElement();
+        el.innerHTML=html;
+        el.classList.toggle('next', w.first);
+        m3Callouts[i].setLngLat([w.st.loc[1],w.st.loc[0]]);
+      });
+    }catch(e){}
+  }
+
+  let m3LaneMarker=null;
+  function renderLanes(lanes, dToTurn, loc){
+    const el=document.getElementById('lanes'); if(!el) return;
+    const html=(lanes||[]).map(l=>`<span class="${l.valid?'on':''}">${mvIcon(LANE_ICON[(l.indications||['straight'])[0]]||'straight')}</span>`).join('');
+    const show=lanes && lanes.length && dToTurn<=400;
+    // v3: lumulutang na kahon sa MISMONG liko sa mapa (gaya ng Mapbox); kung hindi, sa ilalim ng turn card.
+    // LANE SA BANNER, hindi sa mapa (gaya ng Google Maps): madilim na strip sa
+    // ilalim ng turn card. Sa mapa ay natatakpan ito ng callout at ng ruta; sa
+    // banner ay nasa tanaw mo na kasama ng distansya at ng pangalan ng kalsada.
+    if(NAV_STYLE){
+      if(m3LaneMarker){ try{ m3LaneMarker.remove(); }catch(e){} m3LaneMarker=null; }
+      const bar=document.getElementById('lanebar');
+      if(bar){ bar.innerHTML=show?html:''; bar.classList.toggle('show',!!show); }
+      el.classList.remove('show');
+      return;
+    }
+    if(!show){ el.classList.remove('show'); return; }
+    el.innerHTML=html; el.classList.add('show');
+  }
+  // Ang natitirang tagal sa kasalukuyang ruta: buong step na nasa unahan + bahagi ng
+  // kasalukuyang step — mula sa traffic-aware na tagal ni Mapbox.
+  function remainingDuration(ni, traveled){
+    if(!navSteps.length || !navSteps[0].dur && navSteps.length<2) return null;
+    let sum=0;
+    for(let i=ni;i<navSteps.length;i++) sum+=navSteps[i].dur||0;
+    const cur=navSteps[Math.max(0,ni-1)];
+    if(cur && cur.d>0){ const left=Math.max(0, Math.min(1,(cur.cum+cur.d-traveled)/cur.d)); sum+=(cur.dur||0)*left; }
+    return sum||null;
+  }
+  let nav2Zoomed=false;           // 2D map: set zoom once on first live fix, then pan-only
+  let map3d=null, t3=null, m3Marker=null, m3Init=false;
+  // OPS VIEWER (desktop na walang touch, hindi test): nanonood lang — zoom 15.5 ang sapat,
+  // at ~4× mas kaunting tile kaysa 17.5 na 3D kada pagbukas ng Live Map sa opisina.
+  const OPS_VIEWER = !(navigator.maxTouchPoints>0) && !(P.get('sim')==='1' || /^TEST-/i.test(P.get('order')||''));
+  // TILT: 30°, hindi 55°. Sapat para malaman kung saan ka papunta; sa mataas na tilt
+  // ay nagkukumpulan ang label sa abot-tanaw at hindi na mabasa (Grab/Angkas ay ganito).
+  const NAV_TILT=30;
+  let navZoom=OPS_VIEWER?15.5:17.5; // + / − ng driver; ang follow camera ay gumagamit nito
+  function zoomNav(d){ navZoom=Math.max(14,Math.min(19,navZoom+d)); try{ map3d.easeTo({zoom:navZoom,duration:250}); }catch(e){} }
+  // ── B1 · SCREEN WAKE LOCK ─────────────────────────────────────────────────
+  // Ang tablet ay namamatay ang screen tuwing ~30 s (setting ng Android). Sa
+  // 2.5-oras na biyahe ay daan-daang beses itong tatapikin ng driver habang
+  // nagmamaneho — o titigil na lang siyang tumingin. Hinahawakan ang lock
+  // habang nakabukas ang nav, at KINUKUHA ULIT kapag bumalik ang tab (kusang
+  // binibitawan ito ng browser kapag na-background).
+  let wakeLock=null;
+  async function keepAwake(){
+    try{
+      if(!('wakeLock' in navigator) || wakeLock) return;
+      wakeLock=await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release',()=>{ wakeLock=null; });
+    }catch(e){ /* hindi suportado / tinanggihan — walang magagawa */ }
+  }
+  function dropAwake(){ try{ if(wakeLock){ wakeLock.release(); wakeLock=null; } }catch(e){} }
+  document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') keepAwake(); });
+
+  // ── B4 · BATTERY SAVER ────────────────────────────────────────────────────
+  // GPS + mapa + bukas na screen ay umuubos ng tablet sa ~2 oras. Sa mahabang
+  // biyahe, mamamatay ito bago makarating. Sa ≤20% (at hindi naka-charge):
+  // itinitigil ang live faster-route check, dinadalas nang mas mabagal ang
+  // GPS, at hinihinaan ang liwanag ng mapa. Ang turn-by-turn at ang boses ay
+  // HINDI hinahawakan — iyon ang dahilan kung bakit bukas ang app.
+  let lowPower=false;
+  function applyLowPower(on){
+    if(lowPower===on) return;
+    lowPower=on;
+    const el=document.getElementById('map3d'); if(el) el.style.filter=on?'brightness(.82)':'';
+    const b=document.getElementById('battchip'); if(b) b.style.display=on?'flex':'none';
+    if(on){ dropAwake(); } else { keepAwake(); }
+    // muling simulan ang GPS watch sa bagong pagitan
+    try{ if(geoWatch!=null){ navigator.geolocation.clearWatch(geoWatch); geoWatch=null; startGeoStream(); } }catch(e){}
+  }
+  (async ()=>{
+    try{
+      if(!navigator.getBattery) return;
+      const bat=await navigator.getBattery();
+      const check=()=>applyLowPower(bat.level<=0.20 && !bat.charging);
+      bat.addEventListener('levelchange',check); bat.addEventListener('chargingchange',check); check();
+    }catch(e){}
+  })();
+
+  // ── B3 · AUTO-RECENTER ────────────────────────────────────────────────────
+  // Kapag hinila ng driver ang mapa para tumingin sa unahan, doon ito natitigil
+  // habang tumatakbo ang truck. Pagkatapos ng 8 segundong walang galaw, kusang
+  // bumabalik sa driver (gaya ng Waze/Grab), at may kitang buton habang hiwalay.
+  let userPanned=0;
+  function markPanned(){ userPanned=Date.now(); const b=document.getElementById('recenterBtn'); if(b) b.classList.add('show'); }
+  function clearPanned(){ userPanned=0; const b=document.getElementById('recenterBtn'); if(b) b.classList.remove('show'); }
+  const FOLLOW_PAUSE=8000;
+  function followPaused(){
+    if(!userPanned) return false;
+    if(Date.now()-userPanned > FOLLOW_PAUSE){ clearPanned(); recenterNav(); return false; }
+    return true;
+  }
+  function recenterNav(){ clearPanned(); try{ if(lastLL) map3d.easeTo({center:[lastLL[1],lastLL[0]],zoom:navZoom,pitch:topdown?0:NAV_TILT,duration:400}); }catch(e){} }
+  let smHead2=null, smHead3=null;
+  // Waze-style driver marker: a solid TEAL/cyan arrowhead sitting on a soft white disc,
+  // pointing up (the map rotates under it heading-up, like Waze).
+  const ARROW='<svg width="46" height="46" viewBox="0 0 46 46" style="display:block;filter:drop-shadow(0 3px 6px rgba(0,0,0,.45))"><circle cx="23" cy="23" r="15" fill="#ffffff" opacity=".95"/><circle cx="23" cy="23" r="15" fill="none" stroke="#d7f5f0" stroke-width="1.5"/><path d="M23 9 L33 33 L23 27 L13 33 Z" fill="#12d1c0" stroke="#08a99b" stroke-width="1" stroke-linejoin="round"/></svg>';
+
+  function openNav(){
+    if(!navInit){
+      navInit=true;
+      navMap=L.map('navmap',{attributionControl:false,rotate:true,rotateControl:false,touchRotate:false,bearing:0,zoomControl:false}).setView(NAV_DEST,17);
+      // Clean, low-clutter basemap (CARTO Voyager) closer to the Waze/Google look than
+      // raw OSM tiles — muted roads, clear labels — so the purple route stands out.
+      // CARTO dark tiles — CSS filter (sa taas) ang nagti-tint sa Waze slate-blue.
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd'}).addTo(navMap);
+      L.marker(NAV_DEST,{icon:L.divIcon({html:'<div style="font-size:26px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))"></div>',className:'',iconSize:[28,28],iconAnchor:[14,26]})}).addTo(navMap);
+      navDriver=L.marker(NAV_ORIGIN,{icon:L.divIcon({html:ARROW,className:'',iconSize:[48,48],iconAnchor:[24,24]})}).addTo(navMap);
+      loadNavRoute();
+    }
+    setTimeout(()=>navMap.invalidateSize(),120);
+  }
+  // `pre` = naunang nakuha nang sagot (pag-adopt ng alternatibo / mas mabilis na daan)
+  async function loadNavRoute(pre){
+    let coords=[NAV_ORIGIN,NAV_DEST], steps=[], dur=0, dist=0;
+    if(NO_DEST){ document.getElementById('navSub').textContent='Address not found — call the customer'; const t=document.getElementById('nav3Txt'); if(t) t.textContent='Address not found'; navCoords=coords; navSteps=[]; navDur=0; navDist=0; return; }
+    try{
+      // Dating diretso sa router.project-osrm.org (demo server, walang SLA, walang
+      // trapik). Ngayon sa sariling proxy: Mapbox driving-traffic kapag may token —
+      // umiiwas sa siksikan sa pagpili pa lang, may alternatibo, tunay na speed limit
+      // at lane guidance — at gumagana sa APK WebView dahil ang server ang tumatawag.
+      const j=pre || await fetchRoute(NAV_ORIGIN, NAV_DEST, true);
+      if(!j || !j.routes || !j.routes.length) throw new Error(j&&j.error||'no route');
+      lastRouteJson=j; ROUTE_PROVIDER=j.provider||'osrm';
+      // Lumang ruta mula sa cache (walang linya) — sabihin, huwag ipagpalagay na sariwa.
+      if(j.stale){ const el=document.getElementById('offbanner'); if(el){ el.textContent='No signal — showing the last saved route'; el.className='offbanner bad show'; } }
+      const parsed=parseRoute(j,0);
+      coords=parsed.coords; dur=parsed.dur; dist=parsed.dist; steps=parsed.steps;
+      navMaxspeed=parsed.maxspeed; navCongestion=parsed.congestion; navIncidents=parsed.incidents||[];
+      // ALTERNATIBO: hanggang dalawa. Ipinapakita KAHIT MAS MABAGAL (may "+ N min")
+      // — ang driver ang mas nakakaalam ng kalsada, at ang pagpipilian ang punto.
+      navAlts=j.routes.slice(1,3).map((r,k)=>({ idx:k+1, coords:r.geometry.coordinates.map(c=>[c[1],c[0]]), dur:r.duration, dist:r.distance }));
+      navEtaFresh={t:Date.now(), sec:dur};
+    }catch(e){ document.getElementById('navSub').textContent='Route offline'; }
+    // Clear the previous route lines (a re-route redraws them) so they don't stack.
+    navRouteLayers.forEach(l=>{ try{ navMap.removeLayer(l); }catch(e){} }); navRouteLayers=[];
+    // Waze-NIGHT route: madilim na teal casing + maliwanag na CYAN core + puting
+    // dash "chevrons" na nagpapakita ng direksyon (gaya ng Waze night nav line).
+    const rCase=L.polyline(coords,{color:'#0d6a86',weight:10,opacity:.95}).addTo(navMap); // casing
+    const rMain=L.polyline(coords,{color:'#3ddcff',weight:6.5,opacity:1}).addTo(navMap);  // main line
+    const rChev=L.polyline(coords,{color:'#eaffff',weight:2.5,opacity:.9,dashArray:'2 14',lineCap:'round'}).addTo(navMap); // direction ticks
+    navRouteLayers=[rCase,rMain,rChev];
+    navCoords=coords; navSteps=steps; navDur=dur; navDist=dist;
+    // ALTERNATIBO (2D): kulay-abong linya + chip na may tipid/dagdag na oras; pindot = lipat.
+    altLayers2d.forEach(l=>{ try{ navMap.removeLayer(l); }catch(e){} }); altLayers2d=[];
+    for(const a of navAlts){
+      const pl=L.polyline(a.coords,{color:'#8a94a6',weight:6,opacity:.85}).addTo(navMap);
+      pl.on('click',()=>adoptRoute(a.idx));
+      const mid=a.coords[Math.floor(a.coords.length/2)];
+      const diff=Math.round((a.dur-dur)/60);
+      const mk=L.marker(mid,{icon:L.divIcon({className:'',html:`<div class="altchip ${diff<0?'faster':''}">${diff<0?'− ':'+ '}${Math.abs(diff)} min</div>`,iconSize:[0,0]}),interactive:true}).addTo(navMap);
+      mk.on('click',()=>adoptRoute(a.idx));
+      altLayers2d.push(pl,mk);
+    }
+    // TRAPIK NG MAPBOX sa mismong ruta (2D) — amber/pula/maroon sa mabagal hanggang siksikan.
+    if(ROUTE_PROVIDER==='mapbox'){
+      for(const run of congestionRuns(coords,navCongestion)){ const tl=L.polyline(run.pts,{color:run.color,weight:6.5,opacity:.95}).addTo(navMap); navRouteLayers.push(tl); }
+    }
+    // Sariling trapik ng fleet — kapag walang Mapbox; kapag meron, ang Mapbox ang pumipinta.
+    if(ROUTE_PROVIDER!=='mapbox') startTraffic(); else { try{ clearInterval(trafficTimer); }catch(e){} }
+    // I-save ang koridor habang may linya pa — bago pa mawala sa daan.
+    setTimeout(prefetchRoute, 2500);
+    // Only recenter/zoom on the FIRST load. On a LIVE re-route the GPS camera (setDriverPos
+    // easeTo) owns the view, so don't yank it back to zoom 16.
+    if(!LIVE) navMap.setView(NAV_ORIGIN,16);
+    // LIVE mode: real GPS drives the marker — just show the route + next turn from
+    // the driver's true position; do NOT run the demo self-advancing animation.
+    if(LIVE){
+      clearInterval(navTimer);
+      const s0=navSteps[1]||navSteps[0];
+      if(s0){ setArrow('navAr',s0.ar); document.getElementById('navTxt').textContent=s0.txt; }
+      document.getElementById('navSub').textContent=`${fmtKm(navDist)} · ETA ~${fmtMin(navDur)}`;
+      return;
+    }
+    const seg=[],cum=[0]; let tot=0;
+    for(let k=0;k<coords.length-1;k++){const dx=coords[k][0]-coords[k+1][0],dy=coords[k][1]-coords[k+1][1];const d=Math.sqrt(dx*dx+dy*dy);seg.push(d);tot+=d;cum.push(tot);}
+    let prog=0; const INC=tot*1.6/(dist||tot); clearInterval(navTimer);
+    navTimer=setInterval(()=>{
+      const fin=()=>{ const L2=coords[coords.length-1]; navDriver.setLatLng(L2); document.getElementById('navTxt').textContent='Arrived at delivery '; setArrow('navAr','arrive'); document.getElementById('navSub').textContent='At customer'; clearInterval(navTimer); };
+      prog+=INC; if(prog>=tot){ fin(); return; }
+      let i=0; while(i<seg.length-1 && cum[i+1]<prog) i++;
+      const t=seg[i]?(prog-cum[i])/seg[i]:0, a=coords[i], b=coords[i+1];
+      const pos=[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+      navDriver.setLatLng(pos);
+      smHead2=smooth(smHead2,bearing(a,b),0.25);
+      if(navMap.setBearing) navMap.setBearing(-smHead2);   // heading-up: rotate map, arrow stays pointing forward (up)
+      navMap.panTo(aheadCenter(pos,smHead2),{animate:false}); // fixed camera: driver sa ibabang-gitna
+      const frac=(tot-prog)/tot, traveled=(1-frac)*dist;
+      let ai=steps.findIndex(s=>traveled<=s.cum); if(ai<0)ai=steps.length-1;
+      const cur=steps[ai];
+      if(cur){ setArrow('navAr',cur.ar); document.getElementById('navTxt').textContent=cur.txt; document.getElementById('navSub').textContent=`in ${fmtKm(cur.cum-traveled)} · ETA ~${fmtMin(dur*frac)}`; }
+      const cs2=document.getElementById('curStreet2'); if(cs2){ const rd=cur&&cur.road; cs2.textContent=rd||''; cs2.style.display=rd?'block':'none'; }
+    },140);
+  }
+
+  // ── voice ── (Waze turn announcements) — ON by default so the driver hears turns
+  // without tapping. The chip toggles it off/on. Every prompt is spoken TWO ways: we
+  // ask the parent app to speak it via NATIVE TTS (reliable inside the Android APK
+  // WebView, where web speechSynthesis is flaky), AND we speak it locally with the web
+  // API (for a plain browser / office screen). The native side wins on the APK.
+  // BOSES: PERMANENTENG BUKAS SA APK AT SA WINDOWS APP.
+  //
+  // Ang driver ay hindi dapat maghanap ng buton bago umalis, at kapag naiwang
+  // patay ang boses ay tahimik ang buong biyahe nang hindi niya namamalayan.
+  // Sa app (Capacitor WebView o ang naka-install na Windows app) ay HINDI
+  // maaaring maiwang patay: ang toggle ay tumatahimik lang habang bukas ang
+  // pagkakataong iyon, at bumabalik na BUKAS sa susunod na pagbukas ng mapa.
+  // Sa ordinaryong browser (desktop QA) ay naaalala ang pinili sa loob ng sesyon.
+  const IN_APP = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform())
+    || /PANFurniture|Electron|wv\)/i.test(navigator.userAgent)
+    || window.matchMedia('(display-mode: standalone)').matches;
+  let voiceOn = IN_APP ? true : (function(){ try{ return sessionStorage.getItem('navVoice') !== 'off'; }catch(e){ return true; } })();
+  let vStep=-1, vDone=[];
+  const V_TH=[2000,1000,500,200,60];
+  function toggleVoice(){ voiceOn=!voiceOn; if(!IN_APP){ try{ sessionStorage.setItem('navVoice', voiceOn?'on':'off'); }catch(e){} } document.getElementById('voiceChip').textContent=voiceOn?'On':'Off'; if(!voiceOn){ try{speechSynthesis.cancel();}catch(e){} try{ parent.postMessage({type:'nav-speak-stop'},'*'); }catch(e){} } }
+  // Ang iframe ay may SARILING speechSynthesis. Sa Windows app at sa desktop ay
+  // kailangan din nito ng gesture bago tumunog — kung hindi, tahimik ang web
+  // fallback kahit gumagana ang native sa APK.
+  let webVoiceUnlocked=false;
+  function unlockVoice(){
+    if(webVoiceUnlocked) return;
+    try{ const u=new SpeechSynthesisUtterance(' '); u.volume=0; speechSynthesis.speak(u); webVoiceUnlocked=true; vlog('unlockVoice',true); }
+    catch(e){ vlog('unlockVoice',false,String(e).slice(0,40)); }
+  }
+  document.addEventListener('pointerdown', unlockVoice, {once:true});
+  // ANG DRIVER AY PUMIPINDOT SA PARENT (▶ Start Delivery), HINDI SA MAPA. Ang
+  // gesture na nagbubukas ng audio ay nangyayari sa labas ng iframe na ito, kaya
+  // hindi ito naaabot ng listener sa itaas — at nananatiling tahimik ang boses.
+  // Ipinapaalam ito ng parent sa pagbukas.
+  window.addEventListener('message',(e)=>{ if(e.data && e.data.type==='audio-unlock') unlockVoice(); });
+
+  // ── DIAGNOSTICS ──────────────────────────────────────────────────────────
+  // Apat na hakbang ang dinadaanan ng boses; kapag isa ang pumalya ay tahimik
+  // ang lahat at walang nagsasabi kung alin. Long-press sa voice chip para
+  // makita ito sa mismong tablet — walang laptop na kailangan.
+  const vLog=[];
+  function vlog(step, ok, extra){
+    vLog.push(`${ok?'OK ':'FAIL'} ${step}${extra?' · '+extra:''}`);
+    if(vLog.length>14) vLog.shift();
+    const el=document.getElementById('vdiag');
+    if(el && el.classList.contains('show')) el.textContent=vDiagText();
+  }
+  function vDiagText(){
+    return [
+      'VOICE DIAGNOSTICS',
+      `voiceOn: ${voiceOn}`,
+      `IN_APP: ${IN_APP}`,
+      `webVoiceUnlocked: ${webVoiceUnlocked}`,
+      `speechSynthesis: ${typeof speechSynthesis!=='undefined'}`,
+      `voices: ${(()=>{ try{ return speechSynthesis.getVoices().length; }catch(e){ return 'err'; } })()}`,
+      `in iframe: ${window.parent!==window}`,
+      '',
+      ...vLog,
+    ].join('\n');
+  }
+  function toggleDiag(){
+    const el=document.getElementById('vdiag'); if(!el) return;
+    el.classList.toggle('show');
+    el.textContent=vDiagText();
+  }
+  { // long-press sa voice chip
+    let t0=null;
+    const chip=()=>document.getElementById('voiceChip');
+    document.addEventListener('pointerdown',(e)=>{ if(chip() && chip().contains(e.target)) t0=setTimeout(toggleDiag,700); });
+    document.addEventListener('pointerup',()=>{ if(t0){ clearTimeout(t0); t0=null; } });
+  }
+
+  function speak(t){
+    if(!voiceOn){ vlog('speak',false,'voiceOn=false'); return; }
+    unlockVoice();
+    // Native TTS via the parent app (APK) — reliable turn-by-turn voice.
+    try{ parent.postMessage({type:'nav-speak', text:t},'*'); vlog('postMessage→parent',true,t.slice(0,28)); }
+    catch(e){ vlog('postMessage→parent',false,String(e).slice(0,40)); }
+    // Web fallback (browser / desktop).
+    try{
+      speechSynthesis.cancel();
+      const u=new SpeechSynthesisUtterance(t); u.rate=1; u.lang='en-US';
+      u.onstart=()=>vlog('web speech start',true);
+      u.onerror=(ev)=>vlog('web speech',false,(ev&&ev.error)||'error');
+      speechSynthesis.speak(u);
+      vlog('web speak() called',true,`pending=${speechSynthesis.pending} speaking=${speechSynthesis.speaking}`);
+    }catch(e){ vlog('web speak()',false,String(e).slice(0,40)); }
+  }
+  function spokenDist(m){ return m>=1000?(m/1000)+' kilometer'+((m/1000)>1?'s':''):(Math.round(m/10)*10)+' meters'; }
+  // Ang pinakamalapit na threshold na hindi pa nasasabi — at MARKAHAN ang lahat ng
+  // mas malayo. Kung hindi, ang likong 80 m na agad ang layo (sunod-sunod na liko o
+  // bagong ruta) ay bubuga ng "In 2 kilometers… In 1 kilometer… In 500 meters…"
+  // nang sunod-sunod bago ang tamang prompt (nasubukan 2026-08-23).
+  function voiceGuide(idx,instr,dist){
+    if(idx!==vStep){ vStep=idx; vDone=[]; }
+    for(let i=V_TH.length-1;i>=0;i--){          // mula sa pinakamalapit (60 m) pataas
+      const th=V_TH[i];
+      if(dist<=th && !vDone.includes(th)){
+        for(let k=0;k<=i;k++) if(!vDone.includes(V_TH[k])) vDone.push(V_TH[k]);
+        speak(th<=60 ? instr : `In ${spokenDist(th)}, ${instr}`);
+        return;
+      }
+    }
+  }
+
+  // ── 3D (MapLibre satellite, heading-up) ──
+  function open3D(){
+    go('s3d');
+    if(navCoords.length<2){ document.getElementById('nav3Txt').textContent='Loading route…'; setTimeout(open3D,500); return; }
+    if(!m3Init){ m3Init=true; init3d(); }
+    else { setTimeout(()=>{ map3d.resize(); animate3d(); },150); }
+  }
+
+  // "Map" toggle — PAREHONG Waze-style vector map ang gamit (hindi na hiwalay
+  // na Leaflet view): top-down flat overview (pitch 0, mas malayo) ⇄ Driver
+  // View (pitch 55, malapit). Iisang palette, iisang route line — mismong
+  // Waze na lumilipat lang ng kamera.
+  let topdown=false;
+  function toggleTopdown(btn){
+    topdown=!topdown;
+    if(btn) btn.textContent=topdown?'Driver View':'Map';
+    try{
+      const ph=(map3d.getContainer().clientHeight||400)*(topdown?0.30:0.36);
+      map3d.easeTo({pitch:topdown?0:NAV_TILT, zoom:topdown?15.8:navZoom, duration:500, padding:{top:ph,bottom:0,left:0,right:0}, essential:true});
+    }catch(e){}
+  }
+  // ── STYLE NG DRIVER VIEW ──
+  // Kinukuha sa boot mula sa /api/delivery/map-style: Mapbox navigation-day kapag
+  // may naka-set na token, kung hindi ay ang OpenFreeMap liberty na matagal nang
+  // ginagamit. SA BOOT, hindi sa pagbukas ng Driver View: kung hihintayin pa ang
+  // fetch sa sandaling pinindot ang buton, may pagitan bago lumitaw ang mapa —
+  // habang nagmamaneho iyon.
+  let MAP_STYLE='https://tiles.openfreemap.org/styles/liberty';
+  // NAV_STYLE = Mapbox navigation style ba? Ang paglilinis ng layer sa ibaba ay
+  // ginawa para sa liberty; sa navigation-day ay SINISIRA nito ang mismong
+  // idinagdag — ang pangalan ng kalsada sa mapa at ang mga establisimyento.
+  let NAV_STYLE=false;
+  let MB_TOKEN='', MB_DAY=false;
+  const LIBERTY='https://tiles.openfreemap.org/styles/liberty';
+  // HINDI BINABASA NG MAPLIBRE ANG mapbox:// — ang Mapbox style JSON ay tumutukoy sa
+  // mapbox://mapbox.mapbox-streets-v8 (tiles), mapbox://sprites/… at mapbox://fonts/…
+  // Kung walang pagsasalin, walang tile at walang font na dumarating: BLANGKONG
+  // mapa na may buong UI (nakita 2026-08-22). Ito ang nagsasalin sa api.mapbox.com.
+  function mapboxTransform(url){
+    if(!/^mapbox:\/\//.test(url)) return {url};
+    const t='access_token='+encodeURIComponent(MB_TOKEN);
+    if(url.startsWith('mapbox://sprites/')){
+      const m=url.slice('mapbox://sprites/'.length).match(/^([^/]+)\/([^@.]+)(.*)$/);
+      if(m) return {url:`https://api.mapbox.com/styles/v1/${m[1]}/${m[2]}/sprite${m[3]}?${t}`};
+    }
+    if(url.startsWith('mapbox://fonts/')) return {url:`https://api.mapbox.com/fonts/v1/${url.slice('mapbox://fonts/'.length)}?${t}`};
+    return {url:`https://api.mapbox.com/v4/${url.slice('mapbox://'.length)}.json?secure&${t}`};
+  }
+  fetch('/api/delivery/map-style',{cache:'no-store'})
+    .then(r=>r.json()).then(j=>{ if(j&&j.style){ MAP_STYLE=j.style; NAV_STYLE=j.source==='mapbox'; MB_TOKEN=j.token||''; MB_DAY=!!j.day; document.body.classList.toggle('v3',NAV_STYLE); document.body.classList.toggle('mbday',MB_DAY); } })
+    .catch(()=>{});
+
+  function init3d(){
+    // Waze-style Driver View: clean flat VECTOR basemap (no 3D buildings, no terrain
+    // shimmer), a Waze driving tilt (55°) — reads like Waze turn-by-turn navigation.
+    map3d=new maplibregl.Map({ container:'map3d', attributionControl:false, style:MAP_STYLE, center:[NAV_ORIGIN[1],NAV_ORIGIN[0]], zoom:17.5, pitch:NAV_TILT, bearing:0, maxZoom:19, maxPitch:60, transformRequest: NAV_STYLE?mapboxTransform:undefined });
+    // KAPAG HINDI NAG-LOAD ANG MAPBOX STYLE (maling token, restriction, network) —
+    // huwag iwanang blangko: balik sa liberty at sa lumang look, at sabihin sa console.
+    if(NAV_STYLE){
+      let styled=false;
+      map3d.once('style.load',()=>{
+        styled=true;
+        // TRAPIK SA LAHAT NG KALSADA (hindi lang sa ruta): pinapanatili ang traffic
+        // tileset ng navigation style — doon nakikita ng driver kung saan siksikan ang
+        // KABILANG daan bago pa siya lumiko. Pinapakapal para kita sa 3D tilt.
+        try{
+          const st=map3d.getStyle();
+          for(const ly of st.layers){
+            if(ly.type==='line' && /traffic/i.test(ly.id)){
+              try{ map3d.setLayerZoomRange(ly.id, 8, 24); }catch(e){}
+              try{ map3d.setPaintProperty(ly.id,'line-width',['interpolate',['linear'],['zoom'],10,1.5,14,3,18,6]); }catch(e){}
+              try{ map3d.setPaintProperty(ly.id,'line-opacity',0.9); }catch(e){}
+            }
+          }
+        }catch(e){}
+      });
+      const bail=(why)=>{ if(styled) return; styled=true; console.warn('[driver-map] Mapbox style failed, falling back to liberty:', why); NAV_STYLE=false; document.body.classList.remove('v3'); try{ map3d.setStyle(LIBERTY); }catch(e){} };
+      map3d.on('error',(e)=>{ const err=e&&e.error; const st=err&&(err.status||err.statusCode); if(!styled && (st===401||st===403||st===404)) bail('http '+st+' '+(err.message||'')); });
+      setTimeout(()=>bail('timeout'),12000);
+    }
+    // hawakan ang screen habang bukas ang nav; ihinto ang follow kapag hinila
+    keepAwake();
+    // TAO LANG ANG BUMIBILANG. Ang easeTo() ng follow camera ay pumuputok din ng
+    // dragstart/pitchstart; kung iyon ang bibilangin, lalabas ang Recenter at
+    // titigil ang pagsunod kahit walang ginagalaw ang driver (nakita 2026-08-22).
+    // Ang MapLibre ay naglalagay ng `originalEvent` kapag gesture ng tao.
+    const humanPan=(e)=>{ if(e && e.originalEvent) markPanned(); };
+    ['dragstart','rotatestart','pitchstart','wheel','touchstart'].forEach(ev=>map3d.on(ev,humanPan));
+    map3d.on('styleimagemissing',e=>{ try{ if(!map3d.hasImage(e.id)) map3d.addImage(e.id,{width:1,height:1,data:new Uint8Array(4)}); }catch(x){} });
+    map3d.on('load',()=>{
+      const firstSymbol=(map3d.getStyle().layers.find(l=>l.type==='symbol')||{}).id;
+      // Waze look: NO 3D buildings, NO POIs, NO terrain shading. Just clean roads + the
+      // route. We REMOVE the 3D building extrusions (the gray blocks) entirely, kill the
+      // hillshade/contour/landcover layers (source of the rainbow shimmer at an angle),
+      // and hide POI/place clutter — leaving the flat, minimal Waze map.
+      try{
+        for(const ly of map3d.getStyle().layers){
+          const sl = ly['source-layer'];
+          // 1) Remove 3D building extrusions completely (Waze has no 3D buildings).
+          //    SA MAPBOX v3 LOOK ay KAILANGAN ang 3D — doon nakikilala ang gusali
+          //    ng destinasyon (naka-highlight na cyan) at ang mga kanto.
+          // FLAT NA MAPA (Grab/Angkas look, 2026-08-22): WALANG 3D kahit saan. Ang
+          // nakatayong bloke ay tumatakip sa pangalan ng establisimyento sa tilt —
+          // at ang pangalan ang mismong hinahanap ng driver. Ang PATAG na footprint
+          // ng gusali ay NANANATILI (ibang layer): kita pa rin ang hugis at kinalalagyan
+          // ng bawat gusali, wala lang taas at anino. Bonus: ~30% mas kaunting tile.
+          if(ly.type==='fill-extrusion'){
+            try{ map3d.removeLayer(ly.id); }catch(e){ try{ map3d.setLayoutProperty(ly.id,'visibility','none'); }catch(x){} }
+            continue;
+          }
+          // 2) Kill hillshade / contour / terrain / landcover-pattern layers — these
+          //    render as a shimmering rainbow moiré once the map is tilted.
+          if(ly.type==='hillshade' || sl==='contour' || sl==='hillshade' || sl==='landcover' || /hillshade|contour|terrain|landcover/i.test(ly.id)){
+            try{ map3d.removeLayer(ly.id); }catch(e){ try{ map3d.setLayoutProperty(ly.id,'visibility','none'); }catch(x){} }
+            continue;
+          }
+          // 3) Hide POI / place icon + label clutter (shops, malls, parking).
+          //
+          // LIBERTY LANG. Sa navigation-day ang mga POI ang mismong hinihingi
+          // ("kita lahat ng establisimyento para di nakakalito") — at ang
+          // /label/ ay tatama sa road-label, ang pangalan ng kalsada sa mapa.
+          // Nakapili na ang Mapbox kung ano ang ipinapakita habang nagmamaneho.
+          if(!NAV_STYLE && ly.type==='symbol' && (sl==='poi' || sl==='place' || /poi|label/i.test(ly.id))){
+            try{ map3d.setLayoutProperty(ly.id,'visibility','none'); }catch(e){}
+          }
+          // MAPBOX: ILABAS ANG LAHAT NG ESTABLISIMYENTO. Ang navigation style ay
+          // nagpapakita lang ng malalaking POI, at sa mababang zoom ay halos wala —
+          // pero ang driver ay naghahanap ng matutukoy sa labas ng bintana ("kita
+          // lahat para di nakakalito"). Ibinababa ang minzoom, tinatanggal ang
+          // density cap at pinapayagan ang magkakapatong na label.
+          if(NAV_STYLE && ly.type==='symbol' && /^poi/i.test(ly.id)){
+            try{ map3d.setLayerZoomRange(ly.id, 11, 24); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'visibility','visible'); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'symbol-sort-key',undefined); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'text-allow-overlap',false); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'icon-allow-overlap',true); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'text-padding',1); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'text-size',13); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-width',1.4); }catch(e){}
+            // Ang filter ng navigation style ay pumipili ayon sa "importance"/class —
+            // tinatanggal para pumasok pati ang maliliit (sari-sari, botika, karinderya).
+            try{ const f=map3d.getFilter(ly.id); if(Array.isArray(f) && JSON.stringify(f).includes('filterrank')) map3d.setFilter(ly.id,null); }catch(e){}
+          }
+          // 4) Flat building footprints — very subtle, no extrusion (Waze keeps a faint fill).
+          // Liberty lang — may sariling kulay ng gusali ang navigation-day.
+          if(!NAV_STYLE && sl==='building' && ly.type==='fill'){
+            try{ map3d.setPaintProperty(ly.id,'fill-color','#e6e3dc'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'fill-opacity',0.4); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'fill-outline-color','rgba(0,0,0,0)'); }catch(e){}
+          }
+        }
+        // Disable any terrain DEM so the ground stays perfectly flat (no relief shimmer).
+        try{ map3d.setTerrain(null); }catch(e){}
+      }catch(e){}
+      // ANG DALAWANG PASS SA IBABA AY PARA SA LIBERTY LANG. Ang liberty ay
+      // maliwanag na pangkalahatang mapa na OpenMapTiles ang schema
+      // (transportation_name, name:latin) — kaya binubuo nang mano-mano: ilabas
+      // ang pangalan ng kalsada, tapos kulayan nang madilim. Ang navigation-day
+      // ay ibang schema at nakadisenyo na; ang pagpapatakbo ng mga pass dito ay
+      // pumapatay sa hierarchy ng kalsada at sa mga POI.
+      if(!NAV_STYLE) try{
+        for(const ly of map3d.getStyle().layers){
+          if(ly.type!=='symbol') continue;
+          let tf; try{ tf=map3d.getLayoutProperty(ly.id,'text-field'); }catch(e){ continue; }
+          const s=JSON.stringify(tf||''); const isRoad=ly['source-layer']==='transportation_name';
+          if(isRoad){
+            map3d.setLayoutProperty(ly.id,'text-field',['coalesce',['get','name:latin'],['get','name'],'']);
+            map3d.setLayoutProperty(ly.id,'visibility','visible');
+            map3d.setLayoutProperty(ly.id,'symbol-placement','line');
+            map3d.setLayoutProperty(ly.id,'text-size',10);
+            map3d.setLayoutProperty(ly.id,'text-allow-overlap',false);
+            map3d.setLayoutProperty(ly.id,'text-rotation-alignment','map');
+            map3d.setLayoutProperty(ly.id,'text-pitch-alignment','viewport');
+            try{ map3d.setPaintProperty(ly.id,'text-color','#33302a'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-color','rgba(255,255,255,.95)'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-width',2.2); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-blur',0.3); }catch(e){}
+            try{ map3d.setLayerZoomRange(ly.id,10,24); }catch(e){}
+          }else if(/\bref\b/.test(s)){ map3d.setLayoutProperty(ly.id,'visibility','none'); }
+          else{
+            try{ map3d.setPaintProperty(ly.id,'text-color','#33302a'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-color','rgba(255,255,255,.95)'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-width',2); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'text-size',9); }catch(e){}
+          }
+        }
+      }catch(e){}
+      // ── WAZE NIGHT palette: i-recolor ang buong basemap sa navy/steel-blue na
+      //    hitsura ng Waze night mode (madilim na lupa, mas madilim na tubig,
+      //    asul-abo na mga kalsada, malamlam na labels na may madilim na halo).
+      if(!NAV_STYLE) try{
+        // Aktwal na Waze-night tones: slate na lupa, MAS MALIWANAG na blue-gray
+        // na kalsada (kitang-kita, hindi black-on-black), maliwanag na labels.
+        const NIGHT={bg:'#3a4a59',water:'#232f3a',land:'#354453',road:'#63788c',casing:'#2b3844',text:'#e2edf5',halo:'rgba(35,47,58,.9)'};
+        for(const ly of map3d.getStyle().layers){
+          const sl=ly['source-layer'];
+          if(ly.type==='background'){ try{map3d.setPaintProperty(ly.id,'background-color',NIGHT.bg);}catch(e){} }
+          else if(ly.type==='fill'){
+            if(sl==='water'){ try{map3d.setPaintProperty(ly.id,'fill-color',NIGHT.water);}catch(e){} }
+            else if(sl==='building'){ try{map3d.setPaintProperty(ly.id,'fill-color','#3d4d5b');}catch(e){} try{map3d.setPaintProperty(ly.id,'fill-opacity',0.6);}catch(e){} }
+            else { try{map3d.setPaintProperty(ly.id,'fill-color',NIGHT.land);}catch(e){} }
+          }
+          else if(ly.type==='line'){
+            const dark=/casing|outline|tunnel/i.test(ly.id);
+            try{map3d.setPaintProperty(ly.id,'line-color',dark?NIGHT.casing:NIGHT.road);}catch(e){}
+          }
+          else if(ly.type==='symbol'){
+            try{map3d.setPaintProperty(ly.id,'text-color',NIGHT.text);}catch(e){}
+            try{map3d.setPaintProperty(ly.id,'text-halo-color',NIGHT.halo);}catch(e){}
+          }
+        }
+      }catch(e){}
+      map3d.addSource('route',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:navCoords.map(c=>[c[1],c[0]])}}});
+      // Waze-NIGHT nav line: teal casing + bright cyan core + white dash chevrons.
+      // v3 LOOK (Mapbox): 3D na gusali mula sa building tiles, cyan na ruta, kulay-abo
+      // ang nadaanan na, at naka-highlight na gusali ng destinasyon.
+      // FLAT: ang footprint ng gusali ay pinapatingkad nang bahagya para kita ang
+      // hugis ng bloke nang hindi humaharang sa label (dating 3D extrusion dito).
+      if(NAV_STYLE){
+        try{
+          for(const ly of map3d.getStyle().layers){
+            if(ly.type==='fill' && /building/i.test(ly.id)){
+              try{ map3d.setLayerZoomRange(ly.id, 13, 24); }catch(e){}
+              try{ map3d.setPaintProperty(ly.id,'fill-opacity', MB_DAY?0.55:0.65); }catch(e){}
+              try{ map3d.setPaintProperty(ly.id,'fill-outline-color', MB_DAY?'#c9ced6':'#39414f'); }catch(e){}
+            }
+          }
+        }catch(e){}
+      }
+      map3d.addLayer({id:'route-case',type:'line',source:'route',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':NAV_STYLE?'#0b6f82':'#0d6a86','line-width':NAV_STYLE?13:14,'line-opacity':1}});
+      map3d.addLayer({id:'route',type:'line',source:'route',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':NAV_STYLE?'#1fd0f0':'#3ddcff','line-width':9,'line-opacity':1}});
+      // ANG NADAANAN NA — kulay-abo sa ibabaw ng ruta; ina-update kada GPS fix.
+      map3d.addSource('route-done',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
+      map3d.addLayer({id:'route-done',type:'line',source:'route-done',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#6b7280','line-width':9,'line-opacity':.9}});
+      // GUSALI NG DESTINASYON — cyan extrusion kapag nahanap ang polygon sa pin.
+      map3d.addSource('destbld',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map3d.addLayer({id:'destbld',type:'fill-extrusion',source:'destbld',paint:{'fill-extrusion-color':'#1fd0f0','fill-extrusion-height':['coalesce',['get','height'],10],'fill-extrusion-base':['coalesce',['get','min_height'],0],'fill-extrusion-opacity':.95}});
+      map3d.on('idle', highlightDestBuilding);
+      // INCIDENTS mula sa Directions (aksidente, sarado, konstruksyon) — marker sa ruta.
+      map3d.addSource('incidents',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map3d.addLayer({id:'incidents',type:'circle',source:'incidents',paint:{'circle-radius':9,'circle-color':'#ff7a1a','circle-stroke-color':'#fff','circle-stroke-width':2}});
+      update3dIncidents();
+      map3d.addLayer({id:'route-chev',type:'line',source:'route',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#eaffff','line-width':2.5,'line-dasharray':[0.1,2.4],'line-opacity':.9}});
+      // Alternatibo (kulay-abo, sa ILALIM ng pangunahing ruta) at trapik ni Mapbox (sa ibabaw).
+      map3d.addSource('alts',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map3d.addLayer({id:'alts',type:'line',source:'alts',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#8a94a6','line-width':7,'line-opacity':.85}},'route-case');
+      // ANG IMINUMUNGKAHING DAAN — BERDE, sa IBABAW ng kasalukuyang ruta.
+      // Dating ang card lang ("Faster route · saves 2 min") ang lumalabas at
+      // walang makikitang linya: hindi alam ng driver kung SAAN siya papunta,
+      // kaya hindi niya matatanggap nang may tiwala.
+      map3d.addSource('suggest',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map3d.addLayer({id:'suggest-case',type:'line',source:'suggest',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#14532d','line-width':13,'line-opacity':.95}});
+      map3d.addLayer({id:'suggest',type:'line',source:'suggest',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#2fbf5e','line-width':8,'line-opacity':1}});
+      map3d.addLayer({id:'suggest-chev',type:'line',source:'suggest',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#eaffea','line-width':2.5,'line-dasharray':[0.1,2.4],'line-opacity':.9}});
+      map3d.on('click','suggest',()=>acceptSuggest());
+      map3d.addSource('route-traffic',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map3d.addLayer({id:'route-traffic',type:'line',source:'route-traffic',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':['get','color'],'line-width':6.5,'line-opacity':.95}});
+      // C2 · SATELLITE SA HULING 500 m. Ang vector na mapa ay nagsasabi kung
+      // aling kalsada; ang satellite ang nagsasabi kung ALING BAHAY — kita ang
+      // bubong, ang tarangkahan at ang hugis ng lote. Idinadagdag bilang layer
+      // (hindi style switch) kaya hindi nawawala ang ruta at ang mga label.
+      // Bukas lang sa loob ng 500 m: ~30–50 tile kada delivery.
+      try{
+        if(NAV_STYLE && !map3d.getSource('sat')){
+          map3d.addSource('sat',{type:'raster',tiles:[`https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg90?access_token=${encodeURIComponent(MB_TOKEN)}`],tileSize:256,maxzoom:19});
+          const firstLine=(map3d.getStyle().layers.find(l=>l.type==='line')||{}).id;
+          map3d.addLayer({id:'sat',type:'raster',source:'sat',layout:{visibility:'none'},paint:{'raster-opacity':0}}, firstLine);
+        }
+      }catch(e){}
+      loadPanPlaces();
+      update3dAlts(); update3dTraffic();
+      map3d.on('click','alts',(e)=>{ const f=e.features&&e.features[0]; if(f&&f.properties) adoptRoute(Number(f.properties.idx)); });
+      const el=document.createElement('div'); el.style.pointerEvents='none'; el.innerHTML=ARROW;
+      m3Marker=new maplibregl.Marker({element:el}).setLngLat([NAV_ORIGIN[1],NAV_ORIGIN[0]]).addTo(map3d);
+      animate3d();
+    });
+  }
+  function animate3d(){
+    const coords=navCoords; if(coords.length<2)return;
+    // LIVE mode: real GPS moves the 3D marker (setDriverPos). Skip the demo run.
+    if(LIVE){ clearInterval(t3); return; }
+    const seg=[],cum=[0]; let tot=0;
+    for(let k=0;k<coords.length-1;k++){const dx=coords[k][0]-coords[k+1][0],dy=coords[k][1]-coords[k+1][1];const d=Math.sqrt(dx*dx+dy*dy);seg.push(d);tot+=d;cum.push(tot);}
+    vStep=-1; vDone=[]; smHead3=null; clearInterval(t3);
+    let prog=0; const INC=tot*1.6/(navDist||tot);
+    t3=setInterval(()=>{
+      const fin=()=>{ const L2=coords[coords.length-1]; m3Marker.setLngLat([L2[1],L2[0]]); document.getElementById('nav3Txt').textContent='Arrived at delivery '; setArrow('nav3Ar','arrive'); { const wd=document.getElementById('wz3Dist'); if(wd) wd.textContent=''; } document.getElementById('wzMin').textContent='Arrived'; clearInterval(t3); };
+      prog+=INC; if(prog>=tot){ fin(); return; }
+      let i=0; while(i<seg.length-1 && cum[i+1]<prog) i++;
+      const t=seg[i]?(prog-cum[i])/seg[i]:0, a=coords[i], b=coords[i+1];
+      const lat=a[0]+(b[0]-a[0])*t, lng=a[1]+(b[1]-a[1])*t;
+      m3Marker.setLngLat([lng,lat]);
+      smHead3=smooth(smHead3,bearing(a,b),0.25);
+      const ph=(map3d.getContainer().clientHeight||400)*(topdown?0.30:0.36); // driver sa lower third (more road ahead, Waze-style)
+      if(!followPaused()) map3d.easeTo({center:[lng,lat],bearing:smHead3,pitch:topdown?0:NAV_TILT,duration:160,padding:{top:ph,bottom:0,left:0,right:0},essential:true});
+      const frac=(tot-prog)/tot, traveled=(1-frac)*navDist;
+      let ai=navSteps.findIndex(s=>traveled<=s.cum); if(ai<0)ai=navSteps.length-1;
+      const cur=navSteps[ai], turn=navSteps[ai+1]||cur, dToTurn=Math.max(0,(cur?cur.cum:0)-traveled);
+      const cs3=document.getElementById('curStreet3'); if(cs3){ const rd=cur&&cur.road; cs3.textContent=rd||''; cs3.style.display=rd?'block':'none'; }
+      setArrow('nav3Ar',turn.ar);
+      document.getElementById('nav3Txt').textContent=turn.txt;
+      { const wd=document.getElementById('wz3Dist'); if(wd) wd.textContent=fmtKm(dToTurn); }
+      voiceGuide(ai, turn.txt, dToTurn);
+      document.getElementById('wzClock').textContent=clockIn(navDur*frac);
+      document.getElementById('wzMin').textContent=fmtMin(navDur*frac);
+      document.getElementById('wzKm').textContent=fmtKm(navDist*frac);
+      document.getElementById('speedVal').textContent=String(30+Math.round(15*Math.abs(Math.sin(prog))));
+    },140);
+  }
+
+  // ── SELF-SOURCED TRAFFIC ──────────────────────────────────────────────────
+  // Color the route by our own drivers' recent GPS speeds (POST the route points →
+  // /api/delivery/traffic returns a congestion level per point: 0 unknown, 1 free,
+  // 2 slow, 3 jam). We overlay colored segments on top of the base route (green stays
+  // as the plain route line; amber/red draw over it). Refreshes every 30 s.
+  const TRAFFIC_COLOR={2:'#f5a623',3:'#e02424'}; // 1/0 = keep the base blue-purple line
+  let trafficLayers2d=[], trafficTimer=null, trafficLevels=[];
+  function sampleRoutePoints(){
+    // Downsample the route to ≤200 points (one per ~cell) to keep the request small.
+    if(!navCoords||navCoords.length<2) return [];
+    const stepN=Math.max(1,Math.round(navCoords.length/200));
+    const pts=[]; for(let i=0;i<navCoords.length;i+=stepN){ pts.push([navCoords[i][0],navCoords[i][1]]); }
+    return pts;
+  }
+  async function loadTraffic(){
+    const pts=sampleRoutePoints(); if(pts.length<2) return;
+    try{
+      const j=await (await fetch('/api/delivery/traffic',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({points:pts})})).json();
+      trafficLevels = (j && Array.isArray(j.levels)) ? j.levels : [];
+    }catch(e){ return; }
+    drawTraffic2d(pts); drawTraffic3d(pts);
+  }
+  function drawTraffic2d(pts){
+    if(!navMap) return;
+    trafficLayers2d.forEach(l=>{ try{ navMap.removeLayer(l); }catch(e){} }); trafficLayers2d=[];
+    for(let i=0;i<pts.length-1;i++){
+      const lv=trafficLevels[i]||0, col=TRAFFIC_COLOR[lv]; if(!col) continue;
+      const seg=L.polyline([pts[i],pts[i+1]],{color:col,weight:6.5,opacity:1}).addTo(navMap);
+      trafficLayers2d.push(seg);
+    }
+  }
+  function drawTraffic3d(pts){
+    if(!map3d||!map3d.getSource) return;
+    // Build a colored FeatureCollection (one line feature per congested segment).
+    const feats=[];
+    for(let i=0;i<pts.length-1;i++){
+      const lv=trafficLevels[i]||0, col=TRAFFIC_COLOR[lv]; if(!col) continue;
+      feats.push({type:'Feature',properties:{color:col},geometry:{type:'LineString',coordinates:[[pts[i][1],pts[i][0]],[pts[i+1][1],pts[i+1][0]]]}});
+    }
+    const data={type:'FeatureCollection',features:feats};
+    try{
+      if(map3d.getSource('traffic')){ map3d.getSource('traffic').setData(data); }
+      else{
+        map3d.addSource('traffic',{type:'geojson',data});
+        map3d.addLayer({id:'traffic',type:'line',source:'traffic',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':['get','color'],'line-width':9}});
+      }
+    }catch(e){}
+  }
+  function startTraffic(){ loadTraffic(); clearInterval(trafficTimer); trafficTimer=setInterval(loadTraffic,30000); }
+
+  // ── LIVE GPS ──────────────────────────────────────────────────────────────
+  // Real tracking replaces the demo animation. Every viewer polls the server for
+  // the driver's last real position and moves the marker there. Additionally, if
+  // THIS device can get GPS (the driver's phone), it streams its own position up
+  // via watchPosition → /api/delivery/ping, which is what the poll then reads.
+  const ORDER = P.get('order') || '';
+  let LIVE = false;             // true once we have a real server/GPS fix
+  let liveTimer=null, geoWatch=null, lastPingAt=0;
+
+  function stopDemo(){ try{ clearInterval(navTimer); }catch(e){} try{ clearInterval(t3); }catch(e){} }
+
+  // Move both the 2D and 3D driver markers to a real [lat,lng], keep the map following.
+  // Push the current route geometry into the 3D map's route source (so the blue
+  // line redraws from the driver's real position, not the stale demo seed).
+  // Point-in-polygon (ray casting) — para hanapin kung aling gusali ang nasa pin.
+  function pointInRing(pt, ring){ let inside=false; for(let i=0,j=ring.length-1;i<ring.length;j=i++){ const xi=ring[i][0],yi=ring[i][1],xj=ring[j][0],yj=ring[j][1]; if(((yi>pt[1])!==(yj>pt[1])) && (pt[0] < (xj-xi)*(pt[1]-yi)/(yj-yi)+xi)) inside=!inside; } return inside; }
+  let destBldDone=false;
+  function highlightDestBuilding(){
+    if(destBldDone || !NAV_STYLE || !NAV_DEST || NO_DEST || !map3d || !map3d.getSource) return;
+    try{
+      if(!map3d.getSource('composite')) return;
+      const feats=map3d.querySourceFeatures('composite',{sourceLayer:'building'});
+      if(!feats.length) return;
+      const pt=[NAV_DEST[1],NAV_DEST[0]];
+      const hit=feats.find(f=>{ const g=f.geometry; if(!g) return false; const polys=g.type==='Polygon'?[g.coordinates]:g.type==='MultiPolygon'?g.coordinates:[]; return polys.some(p=>p[0]&&pointInRing(pt,p[0])); });
+      if(hit){ map3d.getSource('destbld').setData({type:'FeatureCollection',features:[{type:'Feature',properties:hit.properties||{},geometry:hit.geometry}]}); destBldDone=true; map3d.off('idle',highlightDestBuilding); }
+    }catch(e){}
+  }
+  let navIncidents=[];
+  function update3dIncidents(){
+    if(!map3d || !map3d.getSource) return;
+    try{ const src=map3d.getSource('incidents'); if(src) src.setData({type:'FeatureCollection',features:navIncidents.filter(i=>i.at).map(i=>({type:'Feature',properties:{t:i.type},geometry:{type:'Point',coordinates:[i.at[1],i.at[0]]}}))}); }catch(e){}
+  }
+  function update3dDone(bi){
+    if(!map3d || !map3d.getSource) return;
+    try{ const src=map3d.getSource('route-done'); if(src && navCoords.length>1) src.setData({type:'Feature',geometry:{type:'LineString',coordinates:navCoords.slice(0,Math.max(2,bi+1)).map(c=>[c[1],c[0]])}}); }catch(e){}
+  }
+  // ── C4 · SARILING POI NG PAN ──────────────────────────────────────────────
+  // Ang mga lugar na kilala ng team pero WALA sa Mapbox/OSM: warehouse, workshop,
+  // madaling maligaw na kanto, dating customer. Ito ang tanging paraan para
+  // mapunan ang bukid at ang bagong subdivision, kung saan walang data ang mapa.
+  // Libre — sariling table, walang API.
+  async function loadPanPlaces(){
+    if(!map3d || !map3d.getSource) return;
+    try{
+      const j=await (await fetch('/api/delivery/places',{cache:'no-store'})).json();
+      const feats=(j.places||[]).filter(p=>isFinite(+p.lat)&&isFinite(+p.lng)).map(p=>({type:'Feature',properties:{name:p.name,kind:p.kind||'place'},geometry:{type:'Point',coordinates:[+p.lng,+p.lat]}}));
+      if(!feats.length) return;
+      if(map3d.getSource('panplaces')) { map3d.getSource('panplaces').setData({type:'FeatureCollection',features:feats}); return; }
+      map3d.addSource('panplaces',{type:'geojson',data:{type:'FeatureCollection',features:feats}});
+      map3d.addLayer({id:'panplaces',type:'circle',source:'panplaces',paint:{'circle-radius':6,'circle-color':'#caa45a','circle-stroke-color':'#fff','circle-stroke-width':2}});
+      map3d.addLayer({id:'panplaces-label',type:'symbol',source:'panplaces',
+        layout:{'text-field':['get','name'],'text-size':12,'text-offset':[0,1.2],'text-anchor':'top','text-allow-overlap':false},
+        paint:{'text-color':'#f4ead8','text-halo-color':'#4a3b1a','text-halo-width':1.6}});
+    }catch(e){}
+  }
+
+  // Ang linya ng iminumungkahing daan (2D at 3D). Ipinapakita kasabay ng card,
+  // binubura kapag tinanggihan o tinanggap.
+  let sugLayer2d=null;
+  // Geometry ng kasalukuyang mungkahi — para makilala kung LUMIKO ROON ang driver.
+  let sugCoords=null;
+  // Pinakamaliit na layo mula sa isang punto papunta sa isang linya (metro).
+  function distToPath(ll, path){
+    let best=Infinity;
+    for(let i=0;i<path.length;i++){ const d=haversine(path[i], ll); if(d<best) best=d; }
+    return best;
+  }
+  // Chip ng ORAS sa gitna ng isang daan — berde para sa mas mabilis, madilim para
+  // sa kasalukuyan. Ito ang buong pakikipag-usap: walang card, walang tanong.
+  let timeChips2d=[], timeChips3d=[];
+  function clearTimeChips(){
+    timeChips2d.forEach(m=>{ try{ navMap.removeLayer(m); }catch(e){} }); timeChips2d=[];
+    timeChips3d.forEach(m=>{ try{ m.remove(); }catch(e){} }); timeChips3d=[];
+  }
+  function drawRouteTime(coords, mins, kind){
+    // coords=null → gamitin ang kasalukuyang ruta (para sa chip ng "cur")
+    const path = coords || navCoords;
+    if(!path || path.length<2 || !isFinite(mins)) return;
+    const mid = path[Math.floor(path.length/2)];
+    const cls = kind==='fast' ? 'tchip fast' : 'tchip';
+    const label = `${mins} min`;
+    try{
+      if(navMap){
+        const m=L.marker(mid,{icon:L.divIcon({className:'',html:`<div class="${cls}">${label}</div>`,iconSize:[0,0]}),interactive:true}).addTo(navMap);
+        if(kind==='fast') m.on('click',()=>acceptSuggest());
+        timeChips2d.push(m);
+      }
+    }catch(e){}
+    try{
+      if(map3d){
+        const el=document.createElement('div'); el.className=cls; el.textContent=label;
+        if(kind==='fast') el.onclick=()=>acceptSuggest();
+        const mk=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat([mid[1],mid[0]]).addTo(map3d);
+        try{ mk.getElement().classList.add('co-mk'); }catch(e){}
+        timeChips3d.push(mk);
+      }
+    }catch(e){}
+  }
+
+  function drawSuggestion(coords){
+    try{
+      if(map3d && map3d.getSource && map3d.getSource('suggest')){
+        map3d.getSource('suggest').setData(coords?{type:'Feature',geometry:{type:'LineString',coordinates:coords.map(c=>[c[1],c[0]])}}:{type:'FeatureCollection',features:[]});
+      }
+    }catch(e){}
+    try{
+      if(sugLayer2d){ navMap.removeLayer(sugLayer2d); sugLayer2d=null; }
+      if(coords && navMap){ sugLayer2d=L.polyline(coords,{color:'#2fbf5e',weight:7,opacity:.95}).addTo(navMap); sugLayer2d.on('click',()=>acceptSuggest()); }
+    sugCoords = coords || null;
+    if(!coords) clearTimeChips();
+    }catch(e){}
+  }
+
+  function update3dAlts(){
+    if(!map3d || !map3d.getSource) return;
+    try{
+      const src=map3d.getSource('alts');
+      if(src) src.setData({type:'FeatureCollection',features:navAlts.map(a=>({type:'Feature',properties:{idx:a.idx},geometry:{type:'LineString',coordinates:a.coords.map(c=>[c[1],c[0]])}}))});
+      m3AltMarkers.forEach(m=>{ try{ m.remove(); }catch(e){} }); m3AltMarkers=[];
+      for(const a of navAlts){
+        const mid=a.coords[Math.floor(a.coords.length/2)];
+        const diff=Math.round((a.dur-navDur)/60);
+        const el=document.createElement('div'); el.className='altchip'+(diff<0?' faster':''); el.textContent=(diff<0?'− ':'+ ')+Math.abs(diff)+' min';
+        el.onclick=()=>adoptRoute(a.idx);
+        m3AltMarkers.push(new maplibregl.Marker({element:el}).setLngLat([mid[1],mid[0]]).addTo(map3d));
+      }
+    }catch(e){}
+  }
+  function update3dTraffic(){
+    if(!map3d || !map3d.getSource) return;
+    try{
+      const src=map3d.getSource('route-traffic'); if(!src) return;
+      const runs=ROUTE_PROVIDER==='mapbox'?congestionRuns(navCoords,navCongestion):[];
+      src.setData({type:'FeatureCollection',features:runs.map(r=>({type:'Feature',properties:{color:r.color},geometry:{type:'LineString',coordinates:r.pts.map(c=>[c[1],c[0]])}}))});
+    }catch(e){}
+  }
+  function update3dRoute(){
+    if(!map3d || !map3d.getSource) return;
+    try{
+      const src=map3d.getSource('route');
+      if(src && navCoords.length>=2){ src.setData({type:'Feature',geometry:{type:'LineString',coordinates:navCoords.map(c=>[c[1],c[0]])}}); }
+    }catch(e){}
+  }
+
+  function setDriverPos(lat,lng,gpsHeading){
+    LIVE=true; stopDemo();
+    const ll=[lat,lng];
+    // Heading priority (Waze-style): use the driver's real GPS travel heading when moving;
+    // otherwise fall back to the route direction (bearing along the route toward the next
+    // point / destination) so the map still points "the way forward" while stopped.
+    let hd = null;
+    if(gpsHeading != null){
+      hd = gpsHeading;                                   // real course over ground
+    } else if(navCoords && navCoords.length >= 2){
+      // Nearest upcoming route segment bearing (points along the road, not across it).
+      hd = bearing(navCoords[0], navCoords[1]);
+    } else if(NAV_DEST){
+      hd = bearing(ll, NAV_DEST);                        // last resort: straight to dest
+    }
+    if(hd != null){ smHead3=smooth(smHead3,hd,0.4); smHead2=smooth(smHead2,hd,0.4); }
+    // Smoothly glide BOTH markers to the new fix (Waze-like continuous motion).
+    glideTo3d(lat,lng);
+    // 2D: keep the map centered at a close zoom so streets are readable.
+    if(navDriver && navMap){
+      // FIXED follow camera (Waze-style): i-rotate muna heading-up, tapos ang
+      // sentro ay ang punto sa UNAHAN ng driver — laging nasa ibabang-gitna ang
+      // arrow, kita ang daan sa unahan, hindi nagbabago ang tanaw. Zoom ay
+      // itinatakda ISANG beses (17) sa unang live fix; pagkatapos pan lang.
+      if(navMap.setBearing && smHead2!=null) navMap.setBearing(-smHead2);
+      const c2=aheadCenter(ll,smHead2);
+      if(!nav2Zoomed){ navMap.setView(c2, 17, {animate:false}); nav2Zoomed=true; }
+      else navMap.panTo(c2, {animate:true, duration:0.5});
+    }
+    // 3D: fly the camera to a close, tilted, heading-up view (marker glides via glideTo3d).
+    if(m3Marker){
+      if(map3d){
+        const ph=(map3d.getContainer().clientHeight||400)*(topdown?0.30:0.36); // driver in lower third → more road ahead
+        map3d.easeTo({ center:[lng,lat], zoom:(topdown?15.8:navZoom), pitch:(topdown?0:NAV_TILT), bearing: (smHead3!=null?smHead3:map3d.getBearing()), duration:500, padding:{top:ph,bottom:0,left:0,right:0}, essential:true });
+      }
+    }
+    lastLL=ll;
+    // Update the Waze turn card + bottom bar from the driver's REAL position: distance to
+    // the next maneuver, the street to turn onto, and live ETA/remaining distance. This
+    // also detects going OFF-route and triggers a re-route (Waze "recalculating"). We do
+    // NOT reload the route on every fix (that spammed OSRM + stacked map layers) — only
+    // when the driver has actually left the route.
+    updateLiveNav(ll);
+  }
+
+  // LUMIPAT SA IBANG RUTA — alternatibo o ang mas mabilis na daan mula sa live check.
+  // Ang napiling ruta ay inilalagay sa unahan ng listahan at muling ipininta; ang
+  // step/TTS logic ay walang pinagbago dahil parehong loadNavRoute ang dumadaan.
+  function adoptRoute(idx, json){
+    const src=json||lastRouteJson; if(!src||!src.routes||!src.routes[idx]) return;
+    const j=Object.assign({},src); const rs=src.routes.slice(); const pick=rs.splice(idx,1)[0]; j.routes=[pick].concat(rs);
+    if(lastLL) NAV_ORIGIN=lastLL.slice();
+    hideSuggest();
+    document.getElementById('navSub').textContent='Switching route…';
+    try{ speak('Rerouting'); }catch(e){}
+    loadNavRoute(j).then(()=>{ update3dRoute(); update3dAlts(); update3dTraffic(); update3dIncidents(); }).catch(()=>{});
+  }
+  // LIVE CHECK: may mas mabilis bang daan mula sa kinaroroonan? Kada 2 minuto lang
+  // (hindi kada segundo — bawat check ay Directions call), habang kita ang app at
+  // malayo pa (>500 m). Ipinapakita lang kapag ≥ 60 s ang tipid — ang 30 segundo ay
+  // ingay na walang lilihis para doon.
+  async function checkFasterRoute(ll, ni, traveled){
+    try{
+      const j=await fetchRoute(ll, NAV_DEST, true);
+      if(!j||!j.routes||!j.routes.length) return;
+      const best=j.routes[0];
+      const curRemain=remainingDuration(ni, traveled);
+      // Sariwang tantiya ng oras mula sa kinaroroonan — traffic-aware — para sa ETA.
+      navEtaFresh={t:Date.now(), sec:Math.min(best.duration, curRemain||best.duration)};
+      if(curRemain && best.duration < curRemain-60){
+        const saveMin=Math.round((curRemain-best.duration)/60);
+        const cur=navSteps[Math.max(0,ni-1)]||{};
+        const viaStep=(best.legs[0].steps||[]).find(st=>st.name && st.name!==cur.road);
+        const via=viaStep?viaStep.name:'another road';
+        suggestJson=j;
+        // Ipakita ang MISMONG DAAN, hindi lang ang bilang ng minuto.
+        try{ drawSuggestion(best.geometry.coordinates.map(c=>[c[1],c[0]])); }catch(e){}
+        // WALANG CARD NA MAY TANONG (2026-08-23). Ang mga daan mismo ang nagsasabi:
+        // berde ang mas mabilis, may chip ng ORAS sa ibabaw nito, at may chip din ang
+        // kasalukuyang ruta — tulad ng Google Maps. Pindutin ang daan para lumipat,
+        // o dumaan doon at kusa itong lilipat. Walang "Later" na kailangang pindutin,
+        // at walang kahong humaharang sa mapa.
+        drawRouteTime(best.geometry.coordinates.map(c=>[c[1],c[0]]), Math.round(best.duration/60), 'fast');
+        drawRouteTime(null, Math.round(curRemain/60), 'cur');
+        try{ speak(`Faster route via ${via}, ${Math.round(best.duration/60)} minutes.`); }catch(e){}
+      }
+    }catch(e){}
+  }
+  // Wala nang card — ang linya at ang chip lang ang inaalis.
+  function hideSuggest(){ drawSuggestion(null); }
+  function acceptSuggest(){ if(!suggestJson) return; const j=suggestJson; suggestJson=null; hideSuggest(); adoptRoute(0, j); }
+
+  // Waze "recalculating": re-fetch a fresh route from the driver's CURRENT position to
+  // the destination, then repaint the 3D line. Guarded so overlapping fixes don't fire
+  // multiple reroutes at once.
+  let lastReroute=0;
+  function reroute(){
+    if(rerouting || !NAV_DEST || !lastLL || !navInit) return;
+    // BANTAY LABAN SA UBUSAN NG QUOTA: kahit anong bug sa off-route detection, hindi
+    // hihigit sa isang reroute kada 30 segundo. Ang 47 request sa isang simulation
+    // ang nagturo nito.
+    if(Date.now()-lastReroute < 30000) return;
+    lastReroute=Date.now();
+    rerouting=true; offCount=0;
+    document.getElementById('navSub').textContent='Recalculating…';
+    const t=document.getElementById('nav3Txt'); if(t) t.textContent='Recalculating…';
+    NAV_ORIGIN=lastLL.slice();
+    loadNavRoute().then(()=>{ update3dRoute(); update3dAlts(); update3dTraffic(); update3dIncidents(); rerouting=false; }).catch(()=>{ rerouting=false; });
+  }
+
+  // Compute + show the next turn and remaining ETA/distance from the driver's live
+  // position along the current route. Drives both the 2D banner and the Waze Driver View.
+  // ── ETA MULA SA TUNAY NA BILIS ──
+  // Dating navDur × frac: bahagdan ng ORIHINAL na tagal ng ruta. Kapag naka-stuck
+  // ang driver ng 30 minuto sa trapik, hindi gumagalaw ang "8 min" — at iyon ang
+  // nakikita ng customer sa tracking page. Ngayon: rolling average ng bilis sa
+  // huling 3 minuto (mula sa traveled distance kada GPS fix); ang natitira ÷ iyon.
+  // Kapag kulang pa ang sample (unang 30 s) o hindi pa gumagalaw, ang orihinal
+  // pa rin ang gamit — walang ETA na tumatalon sa unang segundo.
+  const etaSamples=[];
+  function liveEtaSec(traveled, remain, frac){
+    const now=Date.now();
+    etaSamples.push({t:now, d:traveled});
+    while(etaSamples.length && now-etaSamples[0].t>180000) etaSamples.shift();
+    const first=etaSamples[0];
+    const span=(now-first.t)/1000, moved=traveled-first.d;
+    if(span<30 || moved<20) return navDur*frac;
+    // sahig na 1.4 m/s (5 km/h): kapag ganap na nakatigil ay lumalaki ang ETA,
+    // pero hindi nagiging infinity.
+    const v=Math.max(1.4, moved/span);
+    return remain/v;
+  }
+  // LAYO SA MISMONG LINYA, HINDI SA TULDOK. Ang ruta ay may 2,400 vertex sa 126 km,
+  // pero ANG AGWAT AY HINDI PANTAY: 365 sa kanila ay lampas 90 m ang pagitan, at
+  // ang pinakamalaki ay 925 m (nasukat sa Lucena→MOA, 2026-08-23). Sa gitna ng
+  // ganoong agwat, ang truck na NASA MISMONG KALSADA ay 462 m mula sa pinakamalapit
+  // na tuldok — kaya "off-route" ang basa, at nagre-reroute nang paulit-ulit. Isang
+  // simulation ang umubos ng 47 Directions request dahil dito.
+  function distToSegment(p, a, b){
+    // Sa maikling distansya, sapat na ang patag na projection (metro kada degree).
+    const mLat=111320, mLng=111320*Math.cos(p[0]*Math.PI/180);
+    const ax=(a[1]-p[1])*mLng, ay=(a[0]-p[0])*mLat;
+    const bx=(b[1]-p[1])*mLng, by=(b[0]-p[0])*mLat;
+    const dx=bx-ax, dy=by-ay;
+    const len2=dx*dx+dy*dy;
+    if(len2<1e-9) return Math.hypot(ax,ay);
+    let t=-(ax*dx+ay*dy)/len2;
+    t=Math.max(0,Math.min(1,t));
+    return Math.hypot(ax+t*dx, ay+t*dy);
+  }
+
+  function updateLiveNav(ll){
+    if(!navCoords || navCoords.length<2) return;
+    // Nearest route vertex to the driver → how far along the route we are + how far OFF it.
+    let bi=0, bd=Infinity;
+    for(let i=0;i<navCoords.length;i++){
+      const dx=navCoords[i][0]-ll[0], dy=navCoords[i][1]-ll[1], d=dx*dx+dy*dy;
+      if(d<bd){ bd=d; bi=i; }
+    }
+    // OFF-ROUTE (Waze recalculating): if the driver is well off the line for a couple of
+    // fixes in a row, re-fetch a route from the current position.
+    // Ang layo sa LINYA — tinitingnan ang segment sa magkabilang gilid ng
+    // pinakamalapit na vertex, kaya tama ito kahit malayo ang mga tuldok.
+    let offMeters=haversine(navCoords[bi], ll);
+    if(bi>0) offMeters=Math.min(offMeters, distToSegment(ll, navCoords[bi-1], navCoords[bi]));
+    if(bi<navCoords.length-1) offMeters=Math.min(offMeters, distToSegment(ll, navCoords[bi], navCoords[bi+1]));
+    // LUMIKO BA SA IMINUMUNGKAHING DAAN? Kapag ang driver ay mas malapit sa
+    // berdeng daan kaysa sa kasalukuyang ruta (at higit 25 m ang layo rito),
+    // TINANGGAP NIYA ITO sa pamamagitan ng pagmamaneho — kaya agad tayong
+    // lumilipat. Walang paghihintay ng 45 m off-route at ng dalawang fix, at
+    // walang bagong tawag: nasa memorya na ang ruta.
+    if(sugCoords && suggestJson && offMeters>25){
+      const dSug=distToPath(ll, sugCoords);
+      if(dSug < offMeters - 10 && dSug < 40){
+        const j=suggestJson; suggestJson=null; hideSuggest(); offCount=0;
+        try{ speak('Taking the faster route'); }catch(e){}
+        adoptRoute(0, j);
+        return;
+      }
+    }
+    if(offMeters>45){ if(++offCount>=2) reroute(); return; } else offCount=0;
+
+    // Distance travelled ≈ cumulative route length up to the nearest vertex.
+    let traveled=0; for(let i=0;i<bi;i++){ traveled+=haversine(navCoords[i],navCoords[i+1]); }
+    // Sa 925 m na agwat, ang "traveled" na huminto sa vertex ay nagkakamali nang
+    // halos isang kilometro — kaya idinadagdag ang nalakbay SA LOOB ng segment.
+    if(bi<navCoords.length-1){
+      const a=navCoords[bi], b=navCoords[bi+1], segLen=haversine(a,b);
+      if(segLen>1){
+        const mLat=111320, mLng=111320*Math.cos(ll[0]*Math.PI/180);
+        const ax=(a[1]-ll[1])*mLng, ay=(a[0]-ll[0])*mLat, bx=(b[1]-ll[1])*mLng, by=(b[0]-ll[0])*mLat;
+        const dx=bx-ax, dy=by-ay, len2=dx*dx+dy*dy;
+        if(len2>1e-9){ const t=Math.max(0,Math.min(1,-(ax*dx+ay*dy)/len2)); traveled+=segLen*t; }
+      }
+    }
+    const remain=Math.max(0, navDist-traveled);
+    // NASA LOKASYON NA? Sa loob ng 60 m ng destinasyon — distansya sa mismong
+    // tuldok, hindi sa dulo ng ruta (ang ruta ay maaaring magtapos sa kalsada sa
+    // harap, hindi sa bahay).
+    if(NAV_DEST && !arriveAsked && Date.now()>arriveSnoozedUntil && haversine(ll, NAV_DEST)<60){
+      const ab=document.getElementById('arrBtn');
+      if(ab && !ab.disabled){
+        arriveAsked=true;
+        const sh=document.getElementById('arrSheet'); const ad=document.getElementById('arrSheetAddr');
+        if(ad) ad.textContent=(P.get('addr')||'').replace(/\s*\([^()]*\)\s*$/,'');
+        // ABISO LANG (2026-08-29): sinasabing nakarating na, at kusang naglalaho.
+        // Ang "Arrived — sign for the item" sa ibaba ang tanging pindutan — hindi
+        // ito itinatago, dahil iyon na ang susunod na hakbang.
+        if(sh){ sh.classList.add('show'); setTimeout(()=>sh.classList.remove('show'), 6000); }
+        try{ if(navigator.vibrate) navigator.vibrate([120,60,120]); }catch(e){}
+      }
+    }
+    // C2 · Satellite sa huling 500 m — doon nakikilala ang bahay.
+    setSatellite(remain<500);
+    // C3 · TAWAGAN ANG CUSTOMER SA 1 KM. Ang pinakamabilis na paraan para hindi
+    // maligaw ay ang customer mismo — siya ang nakatayo sa tarangkahan. Isang
+    // beses lang lumalabas; kapag binalewala, hindi na inuulit.
+    if(PHONE && !callChipShown && remain<1000 && remain>60){
+      callChipShown=true;
+      const cc=document.getElementById('callchip'); if(cc){ cc.classList.add('show'); try{ speak('One kilometer to the delivery. Call the customer?'); }catch(e){} }
+    }
+    // Landmark ng customer — ipakita kapag malapit na; doon ito nagpapaiba.
+    if(LANDMARK){ const L=document.getElementById('landmark'); if(L){ if(remain<500 && !L.classList.contains('show')){ L.innerHTML='<b>LANDMARK</b><span></span>'; L.lastChild.textContent=LANDMARK; L.classList.add('show'); } else if(remain>=500) L.classList.remove('show'); } }
+    const frac=navDist?remain/navDist:0;
+    // TUNAY NA SPEED LIMIT mula sa segment na kinaroroonan (Mapbox maxspeed annotation).
+    if(navMaxspeed.length){ const ms=navMaxspeed[Math.min(bi,navMaxspeed.length-1)]; REAL_LIMIT=(ms&&ms.speed)?(ms.unit==='mph'?Math.round(ms.speed*1.609):ms.speed):null; } else REAL_LIMIT=null;
+
+    // NEXT maneuver = first step whose maneuver point is still ahead (10 m grace so a
+    // just-passed turn advances at once). steps[0] is the depart.
+    let ni=(navSteps||[]).findIndex(s=>s.cum > traveled+10); if(ni<0) ni=(navSteps||[]).length-1;
+    const nextStep=navSteps[ni]||{};
+    const dToTurn=Math.max(0,(nextStep.cum||0)-traveled);
+    const curStep=navSteps[Math.max(0,ni-1)]||{};         // road we're currently on
+    const thenStep=navSteps[ni+1];                         // the maneuver AFTER the next one
+    const thenTxt=(thenStep && !/arrive/.test(thenStep.type||'')) ? thenStep.txt : '';
+
+    const set=(id,v)=>{ const e=document.getElementById(id); if(e) e.textContent=v; };
+    // 2D banner — "distance to turn · total left · ETA"
+    setArrow('navAr', nextStep.ar||'straight'); set('navTxt', nextStep.txt||'Continue');
+    // ETA: Mapbox = traffic-aware na natitirang tagal (sariwa mula sa live check kada
+    // 2 min, kung hindi ay suma ng step durations); OSRM = mula sa tunay na bilis.
+    //
+    // SA SIMULATION, ang liveEtaSec ay sumusukat sa TOTOONG orasan habang ang truck ay
+    // tumatakbo sa simulated na bilis — kaya lumalabas ang "24h 44m" sa 1×. Doon, ang
+    // tagal ng ruta ang masusunod, hinati sa bilis ng simulation.
+    let etaSec;
+    if(simOn){
+      const base=(ROUTE_PROVIDER==='mapbox'&&remainingDuration(ni,traveled))||navDur*frac;
+      etaSec=base/Math.max(1,simX);
+      set('navSub', `${fmtKm(dToTurn)} · ${fmtKm(remain)} left · ETA ~${fmtMin(etaSec)}`);
+      renderLanes(nextStep.lanes, dToTurn, nextStep.loc);
+      update3dDone(bi);
+      set('wzMin', fmtMin(etaSec)); set('wzClock', clockIn(etaSec)); set('wzKm', fmtKm(remain));
+    } else {
+    if(ROUTE_PROVIDER==='mapbox'){
+      const fresh=navEtaFresh?Math.max(0,navEtaFresh.sec-(Date.now()-navEtaFresh.t)/1000):null;
+      etaSec=fresh!=null?fresh:(remainingDuration(ni,traveled)||liveEtaSec(traveled,remain,frac));
+      // naka-stuck nang husto? ang tunay na bilis ang mas tapat kaysa sa lumang tantiya
+      const byspeed=liveEtaSec(traveled,remain,frac); if(byspeed>etaSec*1.5) etaSec=byspeed;
+    } else etaSec=liveEtaSec(traveled, remain, frac);
+    set('navSub', `${fmtKm(dToTurn)} · ${fmtKm(remain)} left · ETA ~${fmtMin(etaSec)}`);
+    }
+    // LANE GUIDANCE — aling linya, sa loob ng 400 m bago ang liko (Mapbox lanes).
+    renderLanes(nextStep.lanes, dToTurn, nextStep.loc);
+    update3dDone(bi);
+    // Incident sa unahan (≤ 2 km): sabihin sa turn card.
+    { const inc=navIncidents.find(i=>i.cum>traveled && i.cum-traveled<2000); const ie=document.getElementById('incTxt'); if(ie){ if(inc){ ie.textContent=`Incident in ${fmtKm(inc.cum-traveled)}`; ie.style.display='block'; } else ie.style.display='none'; } }
+    // Progress bar sa bottom card (v3): bahagi ng nalakbay; kulay ng trapik sa natitira.
+    { const pf=document.getElementById('progFill'); if(pf){ pf.style.width=Math.round((1-frac)*100)+'%'; } const pt=document.getElementById('progTraf'); if(pt && ROUTE_PROVIDER==='mapbox' && navCongestion.length){ const n=navCongestion.length; const stops=[]; let last=null; for(let i=0;i<n;i++){ const c=CONG_COLOR[navCongestion[i]]||'#1fd0f0'; if(c!==last){ stops.push(`${c} ${Math.round(i/n*100)}%`); last=c; } } pt.style.background=`linear-gradient(90deg, ${stops.join(', ')})`; } }
+    // LIVE CHECK ng mas mabilis na daan — kada 2 min, kita ang app, >500 m pa.
+    if(ROUTE_PROVIDER==='mapbox' && LIVE && !lowPower && navigator.onLine && remain>500 && !rerouting && document.visibilityState==='visible' && Date.now()-lastRouteCheck>120000){ lastRouteCheck=Date.now(); checkFasterRoute(ll, ni, traveled); }
+    // Waze Driver View card ("then …" preview) + bottom bar
+    setArrow('nav3Ar', nextStep.ar||'straight'); set('nav3Txt', nextStep.txt||'Continue');
+    set('wz3Dist', fmtKm(dToTurn));
+    set('wz3Then', thenTxt ? (NAV_STYLE ? ('then '+thenTxt.replace(/^(Turn|Continue|Make a) /,'')+(thenStep&&thenStep.d?'  ·  '+fmtKm(thenStep.d):'')) : ('then '+thenTxt)) : '');
+    // D1 · MAGKASUNOD NA LIKO: kapag ang kasunod ay wala pang 150 m mula sa una,
+    // hindi na aabot ang driver na basahin ito nang hiwalay — pinapalaki para
+    // sabay silang makita (Aguinaldo → Molino sa loob ng 80 m).
+    { const tw=document.getElementById('wz3Then'); if(tw) tw.classList.toggle('soon', !!(thenStep && thenStep.d>0 && thenStep.d<150)); }
+
+    // D3 · MALAKING ARRIVED SA LOOB NG 100 m — iyon na lang ang gagawin niya.
+    { const ab=document.getElementById('arrBtn'); if(ab && !ab.disabled) ab.classList.toggle('big', remain<100); }
+    // Upcoming-maneuvers strip — susunod na hanggang 6 na liko (kasama U-turns);
+    // unang icon (susunod na liko) ay malaki't maliwanag, ang iba lumalabo.
+    const seqEl=document.getElementById('wzSeq');
+    if(seqEl){
+      const seq=(navSteps||[]).slice(ni, ni+6);
+      if(seq.length>1){
+        seqEl.innerHTML=seq.map((s,i)=>`<span class="sq ${i===0?'on':''}" title="${(s.txt||'').replace(/"/g,'')}">${mvIcon(s.ar||'straight')}</span>`).join('<i class="sqSep"></i>');
+        seqEl.classList.add('show');
+      } else seqEl.classList.remove('show');
+    }
+    set('wzMin', fmtMin(etaSec)); set('wzClock', clockIn(etaSec)); set('wzKm', fmtKm(remain));
+    lastEtaSec=Math.round(etaSec); lastRemainM=Math.round(remain);
+    // Current-street bubbles (2D + 3D)
+    const rd=curStep.road||'';
+    ['curStreet2','curStreet3'].forEach(id=>{ const cs=document.getElementById(id); if(cs){ cs.textContent=rd; cs.style.display=rd?'block':'none'; } });
+    updateCallouts(ni, traveled);
+    voiceGuide(ni, nextStep.txt||'', dToTurn);
+  }
+
+  // Great-circle distance (m) between two [lat,lng] points — for live route progress.
+  function haversine(a,b){ const R=6371000,r=d=>d*Math.PI/180; const dLat=r(b[0]-a[0]),dLng=r(b[1]-a[1]); const s=Math.sin(dLat/2)**2+Math.cos(r(a[0]))*Math.cos(r(b[0]))*Math.sin(dLng/2)**2; return 2*R*Math.asin(Math.sqrt(s)); }
+
+  // Punto na `d` metro mula sa `ll` patungo sa bearing `brg` — pang-offset ng kamera.
+  function offsetPoint(ll,brg,d){ const R=6371000,r=Math.PI/180; const la1=ll[0]*r,lo1=ll[1]*r,b=brg*r; const la2=Math.asin(Math.sin(la1)*Math.cos(d/R)+Math.cos(la1)*Math.sin(d/R)*Math.cos(b)); const lo2=lo1+Math.atan2(Math.sin(b)*Math.sin(d/R)*Math.cos(la1),Math.cos(d/R)-Math.sin(la1)*Math.sin(la2)); return [la2/r,lo2/r]; }
+  // FIXED Waze-style na kamera sa 2D map: ang sentro ng screen ay punto na nasa
+  // UNAHAN ng driver (22% ng taas ng screen), kaya ang arrow ay laging nasa
+  // ibabang-gitna at ang daan sa unahan ang nakikita — hindi kalat ang tanaw.
+  function aheadCenter(ll,hd){
+    try{
+      if(hd==null||!navMap) return ll;
+      const h=navMap.getContainer().clientHeight||600;
+      const mpp=156543.03392*Math.cos(ll[0]*Math.PI/180)/Math.pow(2,navMap.getZoom());
+      return offsetPoint(ll,hd,mpp*h*0.22);
+    }catch(e){ return ll; }
+  }
+
+  // Speed-limit sign. The free OSRM router carries no maxspeed, so we ESTIMATE the local
+  // limit from how fast the driver is going (PH road norms: residential 30–40, city
+  // roads 50–60, highway 80–100) and snap it to the nearest signed value. Shown Waze-style.
+  function showSpeedLimit(kmh){
+    const el=document.getElementById('speedLimit'), v=document.getElementById('speedLimitVal');
+    if(!el||!v) return;
+    // TUNAY na limit mula sa kalsada kapag meron (Mapbox); kung wala, hulaan mula sa bilis
+    // at markahan ng "?" para alam ng driver na tantiya lang.
+    let lim = REAL_LIMIT!=null ? REAL_LIMIT : (kmh<=15 ? 0 : kmh<=35 ? 40 : kmh<=55 ? 60 : kmh<=75 ? 80 : 100);
+    el.classList.toggle('guess', REAL_LIMIT==null);
+    if(lim===0){ el.style.display='none'; return; }
+    v.textContent=String(lim); el.style.display='flex';
+    const sb=document.querySelector('.speed'); if(sb) sb.classList.toggle('over', kmh>lim+8);
+    // Over the estimated limit → red number (Waze warns by tinting).
+    v.style.color = (kmh > lim+8) ? '#e02424' : '#12141a';
+  }
+
+  // ── Smooth marker glide: interpolate the driver arrow between GPS fixes (which land
+  // ~1×/sec) so it moves like Waze's continuous glide instead of jumping. ──
+  let glideRAF=null, glideFrom=null, glideTo=null, glideT0=0, glideDur=900;
+  function glideTo3d(lat,lng){
+    const to=[lat,lng];
+    glideFrom = m3Marker ? (function(){ const p=m3Marker.getLngLat(); return [p.lat,p.lng]; })() : to;
+    glideTo=to; glideT0=performance.now();
+    if(glideRAF) cancelAnimationFrame(glideRAF);
+    const step=(now)=>{
+      const k=Math.min(1,(now-glideT0)/glideDur), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; // ease
+      const lt=glideFrom[0]+(glideTo[0]-glideFrom[0])*e, ln=glideFrom[1]+(glideTo[1]-glideFrom[1])*e;
+      if(m3Marker) m3Marker.setLngLat([ln,lt]);
+      if(navDriver) navDriver.setLatLng([lt,ln]);
+      if(k<1) glideRAF=requestAnimationFrame(step);
+    };
+    glideRAF=requestAnimationFrame(step);
+  }
+
+  function gpsStatus(state,msg){
+    const dot=document.getElementById('gpsDot'), txt=document.getElementById('gpsTxt'), btn=document.getElementById('gpsBtn');
+    if(!dot) return;
+    const c=state==='on'?'#2e7d52':state==='wait'?'#caa45a':'#c0392b';
+    dot.style.background=c; if(txt) txt.textContent=msg;
+    if(btn) btn.style.display = state==='on' ? 'none' : 'block';
+  }
+
+  // Driver's own device: stream real GPS up to the server. On iOS the permission
+  // prompt inside an iframe only appears from a user tap → call this from the
+  // "Enable Live GPS" button. Safe to also auto-call on boot (Android/desktop that
+  // already granted permission just start immediately).
+  function onGeoFix(pos){
+    const {latitude,longitude,accuracy,heading,speed}=pos.coords;
+    gpsStatus('on', `Live GPS on · ±${Math.round(accuracy||0)}m`);
+    // Waze-style: rotate the map to the driver's ACTUAL travel direction (GPS heading /
+    // course), not the straight-line bearing to the destination. Only trust the GPS
+    // heading when it's a real number AND the driver is actually moving (speed > ~0.5 m/s
+    // ≈ 1.8 km/h) — a stationary phone reports a garbage/NaN heading that would spin the
+    // map. When not moving, setDriverPos falls back to the route bearing.
+    const gpsHeading = (heading != null && !isNaN(heading) && (speed == null || speed > 0.5)) ? heading : null;
+    // Real speed (m/s → km/h) on the Driver View speed dial.
+    if(speed != null && !isNaN(speed)){ const kmh=Math.max(0,Math.round(speed*3.6)); const sv=document.getElementById('speedVal'); if(sv) sv.textContent=String(kmh); showSpeedLimit(kmh); }
+    setDriverPos(latitude,longitude,gpsHeading); // move our own marker immediately
+    const now=Date.now();
+    if(now-lastPingAt < 3000) return;       // throttle uploads to ≤1 / 3s
+    lastPingAt=now;
+    const spdKmh=(speed!=null && !isNaN(speed)) ? Math.max(0,speed*3.6) : null;
+    // Kasama ang ETA at ang natitirang distansya — ito ang makikita ng ops at ng
+    // customer sa tracking page. Ang mapa lang ang may alam ng ruta at ng trapik.
+    fetch('/api/delivery/ping',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({order:ORDER,lat:latitude,lng:longitude,speed:spdKmh,eta:lastEtaSec,remain:lastRemainM})}).catch(()=>{});
+  }
+
+  // Start the continuous watch. `hi` = high-accuracy (GPS satellite). If that
+  // times out (common indoors / cold start / Wi-Fi-only device) we retry ONCE with
+  // low-accuracy (Wi-Fi/cell) which is faster and usually succeeds.
+  function beginWatch(hi){
+    try{
+      // Sa low power: mas maluwag na accuracy at mas matandang fix ang tinatanggap —
+      // mas kaunting paggising ng GPS chip.
+      geoWatch=navigator.geolocation.watchPosition(onGeoFix,(err)=>{
+        geoWatch=null;
+        if(err && err.code===3 && hi){        // timeout on high-accuracy → fall back
+          gpsStatus('wait','GPS slow — trying network location…');
+          beginWatch(false);
+          return;
+        }
+        const m = err&&err.code===1 ? 'GPS blocked — allow location in Safari settings'
+               : err&&err.code===2 ? 'GPS unavailable — check location is ON'
+               : 'GPS timed out — tap Retry';
+        gpsStatus('off', m);
+      },{ enableHighAccuracy:hi, maximumAge: hi?5000:30000, timeout: hi?20000:30000 });
+    }catch(e){ geoWatch=null; gpsStatus('off','GPS error — tap Retry'); }
+  }
+
+  function beginGeo(){
+    // Kick a one-shot getCurrentPosition first: on iOS this triggers the permission
+    // prompt reliably and warms up the GPS so the watch's first fix lands faster.
+    try{
+      navigator.geolocation.getCurrentPosition(onGeoFix, ()=>{/* let the watch handle errors */}, { enableHighAccuracy:!lowPower, maximumAge:lowPower?20000:10000, timeout:10000 });
+    }catch(e){}
+    beginWatch(true);
+  }
+
+  function startGeoStream(){
+    if(geoWatch!=null) return;                       // already streaming
+    if(!navigator.geolocation){ gpsStatus('off','No GPS on this device'); return; }
+    if(!ORDER){ gpsStatus('off','No order — cannot track'); return; }
+    // Permission is remembered per device once granted, so we only ever need ONE
+    // "Allow" — on every later delivery this reports "granted" and connects with no
+    // prompt at all. Use the Permissions API (when present) to guide the FIRST-time
+    // driver and to avoid re-asking when already granted or hard-denied.
+    if(navigator.permissions && navigator.permissions.query){
+      navigator.permissions.query({name:'geolocation'}).then((p)=>{
+        if(p.state==='granted'){ gpsStatus('wait','Connecting GPS…'); beginGeo(); }
+        else if(p.state==='denied'){ gpsStatus('off','Location blocked — enable it in Settings, then reopen'); }
+        else { gpsStatus('wait','Tap “Allow While Using App” once…'); beginGeo(); }
+        // If the driver changes the setting later, react without a page reload.
+        p.onchange=()=>{ if(p.state==='granted' && geoWatch==null){ gpsStatus('wait','Connecting GPS…'); beginGeo(); } };
+      }).catch(()=>{ gpsStatus('wait','Getting GPS…'); beginGeo(); });
+    } else {
+      gpsStatus('wait','Getting GPS…'); beginGeo();
+    }
+  }
+
+  // Button handler (user gesture — required by iOS to prompt inside the iframe).
+  function enableGps(){ try{ if(geoWatch!=null){ navigator.geolocation.clearWatch(geoWatch); } }catch(e){} geoWatch=null; startGeoStream(); }
+
+  // Everyone: poll the server for the latest real driver position.
+  // ── SIMULATE DRIVE ──────────────────────────────────────────────────────
+  // "Simulating Navigation at N×" gaya ng Mapbox: ang simulator ang nagpapakain ng
+  // GPS fix sa PAREHONG daloy (setDriverPos → updateLiveNav), kaya tunay na gumagana
+  // ang boses, ETA, lane popup, alternatibo, live suggestion at auto-arrival — nang
+  // hindi sumasakay. 40 km/h, may 1×/4×/10×. Para ligtas: lalabas lang sa order na
+  // TEST-* o kapag ?sim=1; hindi kailanman sa tunay na delivery.
+  const SIM_ALLOWED = P.get('sim')==='1' || /^TEST-/i.test(ORDER);
+  let simOn=false, simX=1, simTimer=null, simPos=null, simHead=0;
+  const SIM_KMH=40;
+  function simLabel(){ const el=document.getElementById('simbar'); if(!el) return; el.style.display=SIM_ALLOWED?'flex':'none'; el.querySelector('.t').textContent=simOn?`Simulating drive · ${simX}×`:'Simulate drive'; el.querySelectorAll('button[data-x]').forEach(b=>b.classList.toggle('on', simOn && +b.dataset.x===simX)); el.querySelector('.pp').textContent=simOn?'⏸':'▶'; }
+  function simSet(x){ simX=x; if(!simOn) simStart(); simLabel(); }
+  function simToggle(){ if(simOn){ simStop(); } else simStart(); }
+  function simStop(){ simOn=false; clearInterval(simTimer); simTimer=null; simLabel(); gpsStatus('off','Simulation paused'); }
+  function simStart(){
+    if(!SIM_ALLOWED || !navCoords || navCoords.length<2){ setTimeout(()=>{ if(SIM_ALLOWED && navCoords.length>=2 && !simOn) simStart(); },800); return; }
+    // Patayin ang tunay na GPS at ang server poll — kung hindi, hihilahin pabalik ang marker.
+    try{ if(geoWatch!=null){ navigator.geolocation.clearWatch(geoWatch); geoWatch=null; } }catch(e){}
+    try{ clearInterval(liveTimer); }catch(e){}
+    stopDemo(); LIVE=true; simOn=true;
+    simPos = simPos || (lastLL ? lastLL.slice() : NAV_ORIGIN.slice());
+    gpsStatus('on','Simulating · 40 km/h');
+    simLabel();
+    const STEP_MS=700;
+    clearInterval(simTimer);
+    simTimer=setInterval(()=>{
+      if(!navCoords || navCoords.length<2) return;
+      // pinakamalapit na vertex sa kinaroroonan → sumulong sa ruta ng (bilis × oras)
+      let bi=0,bd=Infinity; for(let i=0;i<navCoords.length;i++){ const dx=navCoords[i][0]-simPos[0], dy=navCoords[i][1]-simPos[1], d=dx*dx+dy*dy; if(d<bd){bd=d;bi=i;} }
+      let left = SIM_KMH/3.6 * (STEP_MS/1000) * simX; // metro
+      let pos=simPos.slice(), i=bi;
+      // kung nasa likod ng vertex bi ang simPos, ang susunod na target ay bi; kung hindi, bi+1
+      if(haversine(pos,navCoords[bi])<2 && bi+1<navCoords.length) i=bi+1; else if(bi+1<navCoords.length && haversine(navCoords[bi],navCoords[bi+1])<haversine(pos,navCoords[bi+1])) i=bi+1; else i=Math.min(bi+1,navCoords.length-1);
+      while(left>0 && i<navCoords.length){
+        const tgt=navCoords[i]; const d=haversine(pos,tgt);
+        if(d<=left){ left-=d; pos=tgt.slice(); i++; }
+        else { const f=left/d; pos=[pos[0]+(tgt[0]-pos[0])*f, pos[1]+(tgt[1]-pos[1])*f]; left=0; }
+      }
+      const nxt=navCoords[Math.min(i,navCoords.length-1)];
+      if(haversine(pos,nxt)>0.5) simHead=bearing(pos,nxt);
+      simPos=pos;
+      const sv=document.getElementById('speedVal'); if(sv) sv.textContent=String(SIM_KMH);
+      showSpeedLimit(SIM_KMH);
+      setDriverPos(pos[0],pos[1],simHead);
+      // dulo: huminto; ang auto-arrival sheet ay kusang lumabas sa < 60 m
+      if(NAV_DEST && haversine(pos,NAV_DEST)<25){ simStop(); gpsStatus('on','Simulation: arrived'); }
+    },STEP_MS);
+  }
+
+  function startLivePoll(){
+    if(!ORDER) return;
+    const tick=async()=>{
+      try{
+        const j=await (await fetch(`/api/delivery/ping?order=${encodeURIComponent(ORDER)}`,{cache:'no-store'})).json();
+        if(j && isFinite(+j.lat) && isFinite(+j.lng) && j.lat!=null){ setDriverPos(+j.lat,+j.lng); }
+        if(j && /arrived|delivered/i.test(j.status||'')){ clearInterval(liveTimer); }
+      }catch(e){}
+    };
+    tick();
+    liveTimer=setInterval(tick, 5000);
+  }
+
+  // ── boot ──
+  async function boot(){
+    if(!NAV_DEST && P.get('addr')){
+      // PAULIT-ULIT NA PINAIIKLI (2026-08-24). Ang buong address ay madalas
+      // masyadong detalyado para sa geocoder: ang "Blk 39 Lot 1 Neon St.,
+      // Epifanio Malia, GMA, Cavite" ay WALANG resulta, pero ang "Epifanio
+      // Malia, GMA, Cavite" ay tumatama. Dalawa sa tatlong workshop ay hindi
+      // nahahanap dahil dito — bumubukas ang mapa nang walang ruta.
+      //
+      // Kaya: sinusubukan muna ang buo, tapos inaalis ang unahan pakomma-komma
+      // hanggang may tumama. Ganito rin naman ang gagawin ng tao — lalaktawan
+      // ang bloke at lote, at ang barangay ang hahanapin.
+      const parts = String(P.get('addr')).split(',').map(x=>x.trim()).filter(Boolean);
+      for(let i=0; i<parts.length && !NAV_DEST; i++){
+        const q = parts.slice(i).join(', ');
+        if(!q) continue;
+        try{
+          const r = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`);
+          const c = (await r.json())?.features?.[0]?.geometry?.coordinates;
+          if(c) NAV_DEST=[c[1],c[0]];
+        }catch(e){}
+      }
+    }
+    if(!NAV_DEST){
+      // DATING tahimik na bumabagsak sa Manila coordinates — magna-navigate ang
+      // driver sa maling lugar at walang magsasabi kanino man. Ngayon: malinaw
+      // na harang. Ang mapa ay bubukas pa rin (sa kinaroroonan ng driver kung
+      // meron) para magamit ang Call/Message, pero WALANG rutang ginagawa.
+      NO_DEST=true;
+      NAV_DEST = hasDriver ? [+P.get('olat'),+P.get('olng')] : [14.1136,121.5556];
+      const ov=document.getElementById('noDest'); if(ov){ const a=document.getElementById('noDestAddr'); if(a) a.textContent=P.get('addr')||'(no address)'; ov.classList.add('show'); }
+    }
+    // Seed origin: real driver pin if we have one, else a temporary point near the
+    // destination just so the map renders until the first real GPS fix lands.
+    NAV_ORIGIN = hasDriver ? [+P.get('olat'),+P.get('olng')] : [NAV_DEST[0]+0.045, NAV_DEST[1]-0.04];
+    setArrow('navAr','depart'); setArrow('nav3Ar','depart'); // seed the chevrons (not the raw ↑)
+    openNav();
+    // DEFAULT sa Waze-style Driver View (vector, night palette) — ang "Map"
+    // button ay top-down toggle na ng PAREHONG mapa, hindi na hiwalay na view.
+    open3D();
+    { const vc=document.getElementById('voiceChip'); if(vc) vc.textContent=voiceOn?'On':'Off'; }
+    simLabel();
+    if(P.get('sim')==='1'){ setTimeout(simStart,1200); } else {
+    // Every viewer polls the server so the marker reflects the driver's true position.
+    startLivePoll();
+    // Auto-detect the device role: try to stream real GPS. On the driver's phone the
+    // parent app already granted location (in the Start-Delivery tap), so this
+    // connects instantly with no extra prompt. On an office screen with no GPS /
+    // permission it simply falls back to the poll above (watchPosition errors out
+    // quietly and the marker still moves from the server). One code path, no config.
+    startGeoStream();
+    }
+
+    // Keep the map filling its container when it grows (maximize from minimized,
+    // device rotate to landscape, iframe resize) — Leaflet/MapLibre otherwise show
+    // a grey gap until told the size changed.
+    let rz=null;
+    const refit=()=>{ try{ if(navMap) navMap.invalidateSize(); }catch(e){} try{ if(map3d) map3d.resize(); }catch(e){} };
+    window.addEventListener('resize', ()=>{ clearTimeout(rz); rz=setTimeout(refit, 150); });
+    window.addEventListener('orientationchange', ()=>{ setTimeout(refit, 300); });
+
+    // Subukang i-LOCK ang orientation sa portrait (phone lang — hindi ang
+    // desktop LiveMap iframe). Ang Screen Orientation API ay kadalasang
+    // nangangailangan ng fullscreen sa Android Chrome; sa APK webview ay
+    // pwedeng diretso. Tahimik lang kapag hindi suportado (iOS Safari) —
+    // sasalo ang CSS rotate-overlay fallback.
+    let orientationLocked=false;
+    async function lockPortrait(){
+      if(orientationLocked) return;
+      if(!(navigator.maxTouchPoints>0)) return;               // phone/tablet lang
+      try{ await screen.orientation.lock('portrait-primary'); orientationLocked=true; return; }catch(e){}
+      try{
+        if(!document.fullscreenElement && document.documentElement.requestFullscreen){
+          await document.documentElement.requestFullscreen();
+        }
+        await screen.orientation.lock('portrait-primary');
+        orientationLocked=true;
+      }catch(e){ /* CSS overlay ang fallback */ }
+    }
+    // Kailangan ng user gesture ang fullscreen — sa unang tap kahit saan.
+    const tryLock=()=>{ lockPortrait(); };
+    document.addEventListener('pointerdown', tryLock, {once:false, passive:true});
+    lockPortrait(); // APK webview: pwedeng tumama agad nang walang gesture
+  }
+  boot();
+</script>
+</body>
+</html>

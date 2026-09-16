@@ -1,0 +1,47 @@
+Packing List,PL-100093,,,,,,,
+Booking,NW2693,Container,CNTU5915009,ETD,2026-06-13,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9438,CO9844-BK,Ironbridge Radiator,Black,120,3.422,90.3,81.3
+11-12,PO-9501,IG5290-RH,Voltera Spark Plug Set,Right Hand,24,0.425,20.2,18.2
+13-22,PO-9501,SU7553-LH,Summit Shock Absorber,Left Hand,120,1.397,260.8,234.7
+23-26,PO-9484,IG4933-PF,Voltera Spark Plug Set,Performance,48,1.097,38.1,34.3
+27-36,PO-9513,BD2913-RH,Ridgeline Side Mirror Set,Right Hand,120,2.666,205.6,185.0
+37-40,PO-9468,EL5189-BK,Voltera Battery 12V,Black,48,1.414,93.0,83.7
+41-41,PO-9529,FL3479-CR,Kestrel Oil Filter,Chrome,12,0.294,14.4,13.0
+42-57,PO-9409,BR9401-BK,Redhawk Brake Pad Set,Black,200,5.482,477.3,429.6
+58-59,PO-9504,SU4657-CE,Summit Shock Absorber,Ceramic,24,0.270,29.2,26.3
+60-75,PO-9502,IG2875-STD,Voltera Spark Plug Set,Standard,200,2.257,489.4,440.5
+76-85,PO-9459,EL3963-STD,Voltera Battery 12V,Standard,120,3.234,463.3,417.0
+86-87,PO-9498,SU3832-RH,Summit Shock Absorber,Right Hand,24,0.482,12.5,11.2
+88-97,PO-9448,BR9322-CR,Apex Brake Pad Set,Chrome,120,1.307,437.0,393.3
+98-105,PO-9469,BR3445-PF,Apex Brake Pad Set,Performance,96,1.174,51.5,46.4
+106-115,PO-9470,DR5269-HD,Torqueline Drive Chain,Heavy Duty,120,1.524,181.5,163.3
+116-119,PO-9406,BD3839-CR,Ridgeline Side Mirror Set,Chrome,48,0.392,90.5,81.5
+120-129,PO-9430,CO3844-OE,Ironbridge Radiator,OE Spec,120,1.853,50.9,45.8
+130-133,PO-9506,EL4388-PF,Voltera Battery 12V,Performance,48,0.200,56.9,51.2
+134-137,PO-9522,CO7530-CE,Ironbridge Radiator,Ceramic,48,0.141,61.9,55.7
+138-145,PO-9402,FL4487-HD,Kestrel Oil Filter,Heavy Duty,96,1.949,70.3,63.3
+146-149,PO-9505,IG6583-RH,Voltera Spark Plug Set,Right Hand,48,1.367,157.6,141.8
+150-165,PO-9426,BR5609-BK,Apex Brake Pad Set,Black,200,4.591,108.5,97.7
+166-175,PO-9522,BD5044-HD,Ridgeline Side Mirror Set,Heavy Duty,120,2.697,421.6,379.4
+176-183,PO-9442,SU8619-HD,Summit Shock Absorber,Heavy Duty,96,2.828,263.8,237.4
+184-199,PO-9521,DR8712-STD,Torqueline Drive Chain,Standard,200,0.632,651.5,586.4
+200-201,PO-9477,IG7789-CE,Voltera Spark Plug Set,Ceramic,24,0.213,69.8,62.8
+202-217,PO-9439,BD9188-CR,Ridgeline Side Mirror Set,Chrome,200,3.304,580.8,522.7
+218-233,PO-9487,DR2520-CE,Torqueline Drive Chain,Ceramic,200,3.685,94.4,85.0
+234-243,PO-9517,BR3985-HD,Redhawk Brake Pad Set,Heavy Duty,120,0.555,138.2,124.4
+244-244,PO-9433,IG6294-CR,Voltera Spark Plug Set,Chrome,12,0.100,33.3,30.0
+245-246,PO-9473,EL3991-CE,Voltera Battery 12V,Ceramic,24,0.098,20.1,18.1
+247-256,PO-9422,BR3573-CR,Apex Brake Pad Set,Chrome,120,1.521,318.7,286.8
+257-266,PO-9509,IG7060-HD,Voltera Spark Plug Set,Heavy Duty,120,2.995,89.8,80.8
+267-274,PO-9520,SU1326-CR,Summit Shock Absorber,Chrome,96,1.979,76.2,68.6
+275-276,PO-9437,FL2375-OE,Kestrel Oil Filter,OE Spec,24,0.304,14.9,13.4
+277-277,PO-9534,CO6605-OE,Ironbridge Radiator,OE Spec,12,0.279,36.0,32.4
+278-281,PO-9422,FL5611-STD,Kestrel Oil Filter,Standard,48,0.257,187.3,168.6
+282-285,PO-9477,FL8827-RH,Kestrel Oil Filter,Right Hand,48,0.793,16.6,14.9
+286-301,PO-9540,IG3731-OE,Voltera Spark Plug Set,OE Spec,200,2.331,104.1,93.7
+302-303,PO-9530,CO2988-RH,Ironbridge Radiator,Right Hand,24,0.348,36.0,32.4
+
+TOTAL,,,,,3692,61.857,6613.8,5952.6
+Total cartons,303,,,,,,,

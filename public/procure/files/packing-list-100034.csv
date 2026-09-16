@@ -1,0 +1,36 @@
+Packing List,PL-100034,,,,,,,
+Booking,NW2634,Container,NWMU6118089,ETD,2026-08-11,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9404,EL7501-OE,Voltera Battery 12V,OE Spec,24,0.522,85.0,76.5
+3-12,PO-9502,LT1397-HD,Lumen LED Headlight,Heavy Duty,120,3.377,154.3,138.9
+13-22,PO-9498,SU5390-CR,Summit Shock Absorber,Chrome,120,2.212,422.2,380.0
+23-24,PO-9467,CO6625-PF,Ironbridge Radiator,Performance,24,0.338,63.0,56.7
+25-34,PO-9524,SU7244-BK,Summit Shock Absorber,Black,120,1.443,74.1,66.7
+35-38,PO-9490,SU8613-HD,Summit Shock Absorber,Heavy Duty,48,0.686,143.0,128.7
+39-40,PO-9474,IG2410-PF,Voltera Spark Plug Set,Performance,24,0.122,10.1,9.1
+41-42,PO-9419,DR1270-STD,Torqueline Drive Chain,Standard,24,0.338,50.5,45.5
+43-50,PO-9410,BD4149-PF,Ridgeline Side Mirror Set,Performance,96,1.267,203.6,183.2
+51-52,PO-9438,CO7866-BK,Ironbridge Radiator,Black,24,0.620,32.2,29.0
+53-53,PO-9515,LT3164-RH,Lumen LED Headlight,Right Hand,12,0.200,46.6,41.9
+54-57,PO-9486,FL8837-BK,Kestrel Oil Filter,Black,48,1.329,67.5,60.8
+58-59,PO-9467,FL1134-LH,Kestrel Oil Filter,Left Hand,24,0.080,90.5,81.5
+60-75,PO-9431,FL3898-CE,Kestrel Oil Filter,Ceramic,200,3.351,361.5,325.4
+76-77,PO-9475,DR7055-CR,Torqueline Drive Chain,Chrome,24,0.287,56.8,51.1
+78-85,PO-9506,FL8382-CE,Kestrel Oil Filter,Ceramic,96,1.731,63.4,57.1
+86-89,PO-9482,SU9632-OE,Summit Shock Absorber,OE Spec,48,1.228,154.2,138.8
+90-99,PO-9525,IG9879-PF,Voltera Spark Plug Set,Performance,120,0.997,69.8,62.8
+100-115,PO-9480,BD2934-HD,Ridgeline Side Mirror Set,Heavy Duty,200,3.484,444.5,400.1
+116-125,PO-9477,EL4582-STD,Voltera Battery 12V,Standard,120,3.186,121.2,109.1
+126-133,PO-9472,DR3622-LH,Torqueline Drive Chain,Left Hand,96,0.778,281.6,253.4
+134-135,PO-9535,LT6057-LH,Lumen LED Headlight,Left Hand,24,0.535,10.2,9.2
+136-136,PO-9510,FL1869-STD,Kestrel Oil Filter,Standard,12,0.280,39.7,35.7
+137-144,PO-9448,FL4245-PF,Kestrel Oil Filter,Performance,96,0.274,132.6,119.3
+145-148,PO-9535,BD4028-CR,Ridgeline Side Mirror Set,Chrome,48,0.619,66.4,59.8
+149-164,PO-9429,EL3117-CR,Voltera Battery 12V,Chrome,200,5.437,478.9,431.0
+165-172,PO-9471,DR4481-STD,Torqueline Drive Chain,Standard,96,1.188,340.3,306.3
+173-176,PO-9424,BR1029-BK,Redhawk Brake Pad Set,Black,48,1.312,98.0,88.2
+177-192,PO-9432,BD2827-HD,Ridgeline Side Mirror Set,Heavy Duty,200,5.734,181.7,163.5
+
+TOTAL,,,,,2336,42.955,4343.4,3909.3
+Total cartons,192,,,,,,,

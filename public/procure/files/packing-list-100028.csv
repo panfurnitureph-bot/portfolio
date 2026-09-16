@@ -1,0 +1,29 @@
+Packing List,PL-100028,,,,,,,
+Booking,NW2628,Container,SEAU3731682,ETD,2026-07-02,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-4,PO-9497,EL9564-BK,Voltera Battery 12V,Black,48,0.332,106.4,95.8
+5-6,PO-9477,SU5613-CE,Summit Shock Absorber,Ceramic,24,0.361,36.4,32.8
+7-8,PO-9483,DR9141-CE,Torqueline Drive Chain,Ceramic,24,0.286,43.5,39.1
+9-10,PO-9417,SU8448-OE,Summit Shock Absorber,OE Spec,24,0.105,7.2,6.5
+11-26,PO-9472,IG6056-RH,Voltera Spark Plug Set,Right Hand,200,0.756,345.7,311.1
+27-34,PO-9526,CO7208-RH,Ironbridge Radiator,Right Hand,96,1.229,159.7,143.7
+35-50,PO-9414,EL7057-PF,Voltera Battery 12V,Performance,200,4.435,343.7,309.3
+51-54,PO-9461,BD5446-BK,Ridgeline Side Mirror Set,Black,48,0.267,43.9,39.5
+55-55,PO-9437,EL7982-LH,Voltera Battery 12V,Left Hand,12,0.332,20.0,18.0
+56-63,PO-9424,BD1594-STD,Ridgeline Side Mirror Set,Standard,96,0.818,115.3,103.8
+64-65,PO-9505,FL4570-HD,Kestrel Oil Filter,Heavy Duty,24,0.157,32.7,29.4
+66-66,PO-9445,DR2366-RH,Torqueline Drive Chain,Right Hand,12,0.275,19.9,17.9
+67-67,PO-9505,EL3364-LH,Voltera Battery 12V,Left Hand,12,0.234,28.5,25.7
+68-83,PO-9461,DR2691-BK,Torqueline Drive Chain,Black,200,5.803,495.6,446.0
+84-84,PO-9492,IG8350-HD,Voltera Spark Plug Set,Heavy Duty,12,0.343,7.4,6.7
+85-88,PO-9499,IG8898-RH,Voltera Spark Plug Set,Right Hand,48,0.751,137.9,124.1
+89-90,PO-9477,BR1727-STD,Redhawk Brake Pad Set,Standard,24,0.351,87.4,78.7
+91-98,PO-9462,BR6817-CE,Apex Brake Pad Set,Ceramic,96,1.034,283.6,255.2
+99-114,PO-9439,CO6940-OE,Ironbridge Radiator,OE Spec,200,4.641,288.1,259.3
+115-130,PO-9429,CO2854-PF,Ironbridge Radiator,Performance,200,0.962,456.5,410.9
+131-138,PO-9487,LT5667-HD,Lumen LED Headlight,Heavy Duty,96,1.716,312.6,281.3
+139-146,PO-9428,BD5118-BK,Ridgeline Side Mirror Set,Black,96,2.180,69.3,62.4
+
+TOTAL,,,,,1792,27.368,3441.3,3097.2
+Total cartons,146,,,,,,,

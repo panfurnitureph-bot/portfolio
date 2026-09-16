@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/pan/real/*"],
+      "next/link": ["src/pan/shims/next-link.tsx"],
+      "next/navigation": ["src/pan/shims/next-navigation.ts"],
+      "next/dynamic": ["src/pan/shims/next-dynamic.ts"],
+      "next/cache": ["src/pan/shims/next-cache.ts"],
+      "server-only": ["src/pan/shims/server-only.ts"],
+      "next/server": ["src/pan/shims/next-server.ts"],
+      "next/headers": ["src/pan/shims/next-headers.ts"],
+      "@imgly/background-removal": ["src/pan/shims/imgly-bg.ts"],
+      "@vladmandic/face-api": ["src/pan/shims/face-api.ts"],
+      "sharp": ["src/pan/shims/sharp.ts"],
+      "@capacitor/push-notifications": ["src/pan/shims/capacitor-push.ts"],
+      "@capacitor-community/text-to-speech": ["src/pan/shims/capacitor-tts.ts"],
+      "@capacitor/core": ["src/pan/shims/capacitor-core.ts"],
+      "pdfjs-dist/*": ["src/pan/shims/pdfjs.ts"],
+      "pdfjs-dist": ["src/pan/shims/pdfjs.ts"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["src/procure", "src/store"]
+}

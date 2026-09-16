@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="12.7" height="12.7" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M133.5 295.1 C172.9 295.1 172.9 295.1 212.4 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M207.3 292.0 L212.4 295.1 L207.3 298.1z" fill="#7a7a7a"/>
+<path d="M275.9 295.1 C315.3 295.1 315.3 295.1 354.7 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M349.6 292.0 L354.7 295.1 L349.6 298.1z" fill="#7a7a7a"/>
+<path d="M418.2 295.1 C457.6 295.1 457.6 295.1 497.1 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M492.0 292.0 L497.1 295.1 L492.0 298.1z" fill="#7a7a7a"/>
+<text x="424.6" y="291.9" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">true</text>
+<path d="M418.2 295.1 C457.6 295.1 457.6 434.9 497.1 434.9" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M492.0 431.9 L497.1 434.9 L492.0 438.0z" fill="#7a7a7a"/>
+<text x="424.6" y="303.4" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">false</text>
+<path d="M560.6 295.1 C600.0 295.1 600.0 295.1 639.4 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M634.3 292.0 L639.4 295.1 L634.3 298.1z" fill="#7a7a7a"/>
+<path d="M702.9 295.1 C742.4 295.1 742.4 295.1 781.8 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M776.7 292.0 L781.8 295.1 L776.7 298.1z" fill="#7a7a7a"/>
+<path d="M845.3 295.1 C884.7 295.1 884.7 295.1 924.1 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M919.0 292.0 L924.1 295.1 L919.0 298.1z" fill="#7a7a7a"/>
+<path d="M987.6 295.1 C1027.1 295.1 1027.1 295.1 1066.5 295.1" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M1061.4 292.0 L1066.5 295.1 L1061.4 298.1z" fill="#7a7a7a"/>
+<path d="M101.8 263.3 H124.7 a8.9 8.9 0 0 1 8.9 8.9 V318.0 a8.9 8.9 0 0 1 -8.9 8.9 H101.8 A31.8 31.8 0 0 1 101.8 263.3z" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(101.8 295.1) scale(0.635) translate(-101.8 -295.1)"><circle cx="101.77458033573141" cy="295.09592326139085" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M101.77458033573141 287.09592326139085 V295.09592326139085 H107.77458033573141" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="133.5" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<path transform="translate(53.5 289.4) scale(0.635)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="101.8" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Every 1 Minute</text>
+<rect x="212.4" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(244.1 295.1) scale(0.635) translate(-244.1 -295.1)"><ellipse cx="244.12470023980816" cy="296.09592326139085" rx="12" ry="10" fill="#4f9fd8"/><circle cx="240.12470023980816" cy="293.09592326139085" r="2" fill="#fff"/><path d="M253.12470023980816 293.09592326139085 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M236.12470023980816 303.09592326139085 v5 M250.12470023980816 303.09592326139085 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="212.4" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="275.9" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="244.1" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Check</text>
+<text x="244.1" y="351.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Schedule Due</text>
+<text x="244.1" y="361.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+<rect x="354.7" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(386.5 295.1) scale(0.635) translate(-386.5 -295.1)"><path d="M374.47482014388487 305.09592326139085 H384.47482014388487 C392.47482014388487 305.09592326139085 392.47482014388487 285.09592326139085 399.47482014388487 285.09592326139085 M374.47482014388487 285.09592326139085 H384.47482014388487 C392.47482014388487 285.09592326139085 392.47482014388487 305.09592326139085 399.47482014388487 305.09592326139085" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M395.47482014388487 281.09592326139085 l5 4 -5 4z M395.47482014388487 301.09592326139085 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="354.7" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="418.2" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="386.5" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Is Schedule</text>
+<text x="386.5" y="351.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Due?</text>
+<rect x="497.1" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(528.8 295.1) scale(0.635) translate(-528.8 -295.1)"><ellipse cx="528.8249400479617" cy="296.09592326139085" rx="12" ry="10" fill="#4f9fd8"/><circle cx="524.8249400479617" cy="293.09592326139085" r="2" fill="#fff"/><path d="M537.8249400479617 293.09592326139085 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M520.8249400479617 303.09592326139085 v5 M534.8249400479617 303.09592326139085 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="497.1" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="560.6" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="528.8" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Get Recipients</text>
+<text x="528.8" y="351.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+<rect x="639.4" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(671.2 295.1) scale(0.635) translate(-671.2 -295.1)"><ellipse cx="671.1750599520384" cy="296.09592326139085" rx="12" ry="10" fill="#4f9fd8"/><circle cx="667.1750599520384" cy="293.09592326139085" r="2" fill="#fff"/><path d="M680.1750599520384 293.09592326139085 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M663.1750599520384 303.09592326139085 v5 M677.1750599520384 303.09592326139085 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="639.4" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="702.9" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="671.2" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Get Order</text>
+<text x="671.2" y="351.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Now Items</text>
+<text x="671.2" y="361.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+<rect x="781.8" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(813.5 295.1) scale(0.635) translate(-813.5 -295.1)"><text x="813.5251798561152" y="304.09592326139085" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="781.8" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="845.3" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="813.5" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Build Email</text>
+<text x="813.5" y="351.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Per Recipient</text>
+<rect x="924.1" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(955.9 295.1) scale(0.635) translate(-955.9 -295.1)"><rect x="940.875299760192" y="285.09592326139085" width="30" height="20" rx="2" fill="#fff"/><path d="M940.875299760192 287.09592326139085 L955.875299760192 298.09592326139085 L970.875299760192 287.09592326139085" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M940.875299760192 287.09592326139085 V305.09592326139085" stroke="#4285f4" stroke-width="3"/><path d="M970.875299760192 287.09592326139085 V305.09592326139085" stroke="#34a853" stroke-width="3"/><path d="M940.875299760192 304.09592326139085 H946.875299760192" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="924.1" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="987.6" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="955.9" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Send Gmail</text>
+<text x="955.9" y="351.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">send: message</text>
+<rect x="1066.5" y="263.3" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(1098.2 295.1) scale(0.635) translate(-1098.2 -295.1)"><ellipse cx="1098.2254196642687" cy="296.09592326139085" rx="12" ry="10" fill="#4f9fd8"/><circle cx="1094.2254196642687" cy="293.09592326139085" r="2" fill="#fff"/><path d="M1107.2254196642687 293.09592326139085 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1090.2254196642687 303.09592326139085 v5 M1104.2254196642687 303.09592326139085 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="1066.5" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="1130.0" cy="295.1" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<path d="M1132.9 295.1 h14.0" stroke="#7a7a7a" stroke-width="1.3"/><rect x="1146.8" y="290.0" width="10.2" height="10.2" rx="1.9" fill="#3a3a3a"/><text x="1151.9" y="297.6" text-anchor="middle" font-size="7.6" fill="#ddd" font-family="Arial">+</text>
+<text x="1098.2" y="340.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Update Schedule</text>
+<text x="1098.2" y="351.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+<rect x="497.1" y="403.1" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(528.8 434.9) scale(0.635) translate(-528.8 -434.9)"><path d="M516.8249400479617 434.9040767386091 h22 M532.8249400479617 427.9040767386091 l7 7 -7 7" fill="none" stroke="#c9c9c9" stroke-width="2.6"/></g>
+<circle cx="497.1" cy="434.9" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="560.6" cy="434.9" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<path d="M563.5 434.9 h14.0" stroke="#7a7a7a" stroke-width="1.3"/><rect x="577.4" y="429.8" width="10.2" height="10.2" rx="1.9" fill="#3a3a3a"/><text x="582.5" y="437.4" text-anchor="middle" font-size="7.6" fill="#ddd" font-family="Arial">+</text>
+<text x="528.8" y="480.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Not Due Yet</text>
+</svg>

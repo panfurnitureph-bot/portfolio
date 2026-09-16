@@ -1,0 +1,27 @@
+Packing List,PL-100003,,,,,,,
+Booking,NW2603,Container,BOXU7225765,ETD,2026-09-21,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9524,CO6321-CE,Ironbridge Radiator,Ceramic,12,0.063,29.6,26.6
+2-5,PO-9513,IG4794-CE,Voltera Spark Plug Set,Ceramic,48,0.621,62.3,56.1
+6-15,PO-9521,DR4571-RH,Torqueline Drive Chain,Right Hand,120,2.561,314.7,283.2
+16-23,PO-9511,SU4056-STD,Summit Shock Absorber,Standard,96,1.875,244.8,220.3
+24-25,PO-9442,CO6519-CR,Ironbridge Radiator,Chrome,24,0.157,26.5,23.9
+26-27,PO-9496,SU4109-BK,Summit Shock Absorber,Black,24,0.543,54.1,48.7
+28-35,PO-9437,IG5714-LH,Voltera Spark Plug Set,Left Hand,96,0.577,159.5,143.6
+36-51,PO-9497,BR3740-OE,Redhawk Brake Pad Set,OE Spec,200,5.982,302.5,272.2
+52-55,PO-9459,BR2986-CE,Apex Brake Pad Set,Ceramic,48,0.381,189.2,170.3
+56-57,PO-9531,SU4467-RH,Summit Shock Absorber,Right Hand,24,0.384,69.5,62.6
+58-73,PO-9532,CO7329-RH,Ironbridge Radiator,Right Hand,200,5.600,629.8,566.8
+74-74,PO-9521,IG1794-STD,Voltera Spark Plug Set,Standard,12,0.080,8.5,7.7
+75-76,PO-9514,DR5773-HD,Torqueline Drive Chain,Heavy Duty,24,0.391,33.5,30.2
+77-77,PO-9504,CO5213-CR,Ironbridge Radiator,Chrome,12,0.118,3.8,3.4
+78-81,PO-9490,DR4355-CE,Torqueline Drive Chain,Ceramic,48,0.278,75.7,68.1
+82-83,PO-9442,FL6666-CE,Kestrel Oil Filter,Ceramic,24,0.050,37.4,33.7
+84-84,PO-9459,BD3100-STD,Ridgeline Side Mirror Set,Standard,12,0.294,11.3,10.2
+85-85,PO-9505,IG5141-OE,Voltera Spark Plug Set,OE Spec,12,0.082,36.1,32.5
+86-93,PO-9410,SU4999-RH,Summit Shock Absorber,Right Hand,96,2.320,332.5,299.2
+94-97,PO-9448,DR2372-OE,Torqueline Drive Chain,OE Spec,48,1.200,151.1,136.0
+
+TOTAL,,,,,1180,23.557,2772.4,2495.3
+Total cartons,97,,,,,,,

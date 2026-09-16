@@ -1,0 +1,24 @@
+Packing List,PL-100008,,,,,,,
+Booking,NW2608,Container,BOXU5500596,ETD,2026-08-03,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9495,EL1974-PF,Voltera Battery 12V,Performance,120,0.452,216.9,195.2
+11-26,PO-9425,EL5674-STD,Voltera Battery 12V,Standard,200,2.931,93.3,84.0
+27-28,PO-9440,BR4289-BK,Redhawk Brake Pad Set,Black,24,0.117,49.4,44.5
+29-38,PO-9468,SU1386-LH,Summit Shock Absorber,Left Hand,120,2.952,204.2,183.8
+39-39,PO-9518,FL3763-CR,Kestrel Oil Filter,Chrome,12,0.041,23.0,20.7
+40-47,PO-9447,IG6861-STD,Voltera Spark Plug Set,Standard,96,0.681,215.8,194.2
+48-49,PO-9506,DR2805-HD,Torqueline Drive Chain,Heavy Duty,24,0.502,91.7,82.5
+50-53,PO-9434,FL1990-OE,Kestrel Oil Filter,OE Spec,48,0.216,123.3,111.0
+54-54,PO-9488,CO3809-HD,Ironbridge Radiator,Heavy Duty,12,0.066,41.7,37.5
+55-64,PO-9495,DR1840-HD,Torqueline Drive Chain,Heavy Duty,120,0.589,107.0,96.3
+65-68,PO-9431,BR7946-HD,Redhawk Brake Pad Set,Heavy Duty,48,0.898,75.3,67.8
+69-69,PO-9455,BD2804-CE,Ridgeline Side Mirror Set,Ceramic,12,0.090,29.0,26.1
+70-77,PO-9445,IG6908-LH,Voltera Spark Plug Set,Left Hand,96,2.854,96.0,86.4
+78-81,PO-9503,CO3216-BK,Ironbridge Radiator,Black,48,0.609,37.9,34.1
+82-85,PO-9508,FL8396-LH,Kestrel Oil Filter,Left Hand,48,0.736,152.7,137.4
+86-95,PO-9418,IG6168-OE,Voltera Spark Plug Set,OE Spec,120,2.659,301.1,271.0
+96-103,PO-9451,FL4784-BK,Kestrel Oil Filter,Black,96,1.941,107.7,96.9
+
+TOTAL,,,,,1244,18.334,1966.0,1769.4
+Total cartons,103,,,,,,,

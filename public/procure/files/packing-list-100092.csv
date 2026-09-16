@@ -1,0 +1,32 @@
+Packing List,PL-100092,,,,,,,
+Booking,NW2692,Container,NWMU6640677,ETD,2026-06-07,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-16,PO-9520,LT7903-CR,Lumen LED Headlight,Chrome,200,4.685,286.4,257.8
+17-24,PO-9432,DR3035-CE,Torqueline Drive Chain,Ceramic,96,1.142,126.7,114.0
+25-34,PO-9438,LT3231-LH,Lumen LED Headlight,Left Hand,120,1.933,125.9,113.3
+35-44,PO-9477,IG4183-LH,Voltera Spark Plug Set,Left Hand,120,0.304,128.5,115.7
+45-52,PO-9525,DR5654-BK,Torqueline Drive Chain,Black,96,1.049,240.4,216.4
+53-56,PO-9481,EL6278-STD,Voltera Battery 12V,Standard,48,1.083,177.6,159.8
+57-57,PO-9455,LT6561-CR,Lumen LED Headlight,Chrome,12,0.238,12.4,11.2
+58-61,PO-9418,SU8672-OE,Summit Shock Absorber,OE Spec,48,1.316,188.4,169.6
+62-69,PO-9462,LT7480-CE,Lumen LED Headlight,Ceramic,96,1.489,228.5,205.7
+70-79,PO-9473,DR2689-STD,Torqueline Drive Chain,Standard,120,1.864,236.5,212.8
+80-89,PO-9437,DR3554-CR,Torqueline Drive Chain,Chrome,120,2.319,151.6,136.4
+90-99,PO-9404,LT6740-LH,Lumen LED Headlight,Left Hand,120,2.193,393.3,354.0
+100-115,PO-9519,CO7032-STD,Ironbridge Radiator,Standard,200,3.434,575.6,518.0
+116-131,PO-9505,BR7963-BK,Redhawk Brake Pad Set,Black,200,3.626,67.2,60.5
+132-135,PO-9511,DR7343-OE,Torqueline Drive Chain,OE Spec,48,1.276,87.5,78.8
+136-136,PO-9524,BR9244-HD,Apex Brake Pad Set,Heavy Duty,12,0.290,47.7,42.9
+137-137,PO-9526,BD3244-STD,Ridgeline Side Mirror Set,Standard,12,0.275,9.0,8.1
+138-147,PO-9438,SU8030-BK,Summit Shock Absorber,Black,120,2.739,240.3,216.3
+148-157,PO-9505,IG8582-OE,Voltera Spark Plug Set,OE Spec,120,1.766,242.4,218.2
+158-159,PO-9467,SU9329-CR,Summit Shock Absorber,Chrome,24,0.676,44.3,39.9
+160-163,PO-9471,IG4424-CR,Voltera Spark Plug Set,Chrome,48,0.339,155.8,140.2
+164-173,PO-9467,CO4731-CR,Ironbridge Radiator,Chrome,120,2.060,432.3,389.1
+174-181,PO-9487,DR4640-LH,Torqueline Drive Chain,Left Hand,96,2.310,269.4,242.5
+182-182,PO-9507,EL4335-BK,Voltera Battery 12V,Black,12,0.288,27.0,24.3
+183-184,PO-9513,IG2886-RH,Voltera Spark Plug Set,Right Hand,24,0.358,68.0,61.2
+
+TOTAL,,,,,2232,39.052,4562.7,4106.7
+Total cartons,184,,,,,,,

@@ -1,0 +1,38 @@
+Packing List,PL-100006,,,,,,,
+Booking,NW2606,Container,CNTU4986779,ETD,2026-09-03,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9420,CO9036-PF,Ironbridge Radiator,Performance,120,0.924,232.8,209.5
+11-18,PO-9450,BR3257-PF,Apex Brake Pad Set,Performance,96,2.036,348.9,314.0
+19-20,PO-9531,BR2571-LH,Redhawk Brake Pad Set,Left Hand,24,0.573,34.8,31.3
+21-24,PO-9466,IG9835-RH,Voltera Spark Plug Set,Right Hand,48,1.064,26.4,23.8
+25-40,PO-9413,CO3117-CE,Ironbridge Radiator,Ceramic,200,0.629,224.5,202.1
+41-41,PO-9537,EL6731-BK,Voltera Battery 12V,Black,12,0.122,35.5,31.9
+42-51,PO-9522,BD5316-HD,Ridgeline Side Mirror Set,Heavy Duty,120,3.127,174.5,157.1
+52-52,PO-9510,FL1270-LH,Kestrel Oil Filter,Left Hand,12,0.309,10.4,9.4
+53-53,PO-9489,LT1983-LH,Lumen LED Headlight,Left Hand,12,0.173,8.2,7.4
+54-55,PO-9514,IG9339-PF,Voltera Spark Plug Set,Performance,24,0.356,64.0,57.6
+56-65,PO-9492,LT2226-BK,Lumen LED Headlight,Black,120,2.134,100.0,90.0
+66-69,PO-9418,FL4516-CE,Kestrel Oil Filter,Ceramic,48,0.963,173.8,156.4
+70-77,PO-9472,SU2024-CR,Summit Shock Absorber,Chrome,96,2.697,92.7,83.4
+78-79,PO-9470,IG5400-RH,Voltera Spark Plug Set,Right Hand,24,0.337,44.1,39.7
+80-89,PO-9459,CO2410-RH,Ironbridge Radiator,Right Hand,120,1.711,106.5,95.9
+90-105,PO-9477,EL2946-LH,Voltera Battery 12V,Left Hand,200,2.948,741.7,667.5
+106-121,PO-9459,SU1059-OE,Summit Shock Absorber,OE Spec,200,4.003,133.6,120.2
+122-122,PO-9530,BR9320-BK,Apex Brake Pad Set,Black,12,0.209,18.3,16.5
+123-132,PO-9516,SU3157-CE,Summit Shock Absorber,Ceramic,120,2.919,37.7,33.9
+133-142,PO-9450,BR8252-OE,Apex Brake Pad Set,OE Spec,120,1.994,243.9,219.5
+143-144,PO-9476,LT7091-OE,Lumen LED Headlight,OE Spec,24,0.596,19.6,17.6
+145-152,PO-9431,CO5014-CR,Ironbridge Radiator,Chrome,96,2.632,295.5,265.9
+153-153,PO-9458,FL9202-BK,Kestrel Oil Filter,Black,12,0.145,19.5,17.6
+154-157,PO-9402,IG9676-HD,Voltera Spark Plug Set,Heavy Duty,48,0.149,22.2,20.0
+158-161,PO-9538,BR3370-PF,Apex Brake Pad Set,Performance,48,1.038,65.8,59.2
+162-165,PO-9400,BD7104-CE,Ridgeline Side Mirror Set,Ceramic,48,0.993,142.6,128.3
+166-169,PO-9428,CO6313-BK,Ironbridge Radiator,Black,48,0.232,108.0,97.2
+170-177,PO-9456,BR2305-CR,Apex Brake Pad Set,Chrome,96,1.448,129.8,116.8
+178-178,PO-9408,SU8938-STD,Summit Shock Absorber,Standard,12,0.067,47.2,42.5
+179-186,PO-9440,LT3439-RH,Lumen LED Headlight,Right Hand,96,1.280,182.1,163.9
+187-196,PO-9527,SU6793-CR,Summit Shock Absorber,Chrome,120,3.071,310.7,279.6
+
+TOTAL,,,,,2376,40.879,4195.3,3775.7
+Total cartons,196,,,,,,,

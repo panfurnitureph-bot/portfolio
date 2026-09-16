@@ -1,0 +1,28 @@
+Packing List,PL-100036,,,,,,,
+Booking,NW2636,Container,NWMU1331427,ETD,2026-08-10,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-4,PO-9400,BR1738-RH,Apex Brake Pad Set,Right Hand,48,1.100,138.2,124.4
+5-14,PO-9504,BD3635-CE,Ridgeline Side Mirror Set,Ceramic,120,2.392,401.2,361.1
+15-18,PO-9514,SU1341-LH,Summit Shock Absorber,Left Hand,48,1.121,88.6,79.7
+19-19,PO-9460,DR9817-HD,Torqueline Drive Chain,Heavy Duty,12,0.243,27.5,24.8
+20-23,PO-9503,EL4986-STD,Voltera Battery 12V,Standard,48,0.875,94.3,84.9
+24-24,PO-9437,LT3846-LH,Lumen LED Headlight,Left Hand,12,0.206,20.8,18.7
+25-40,PO-9478,SU9117-BK,Summit Shock Absorber,Black,200,2.759,570.9,513.8
+41-44,PO-9467,EL9468-CE,Voltera Battery 12V,Ceramic,48,0.405,56.3,50.7
+45-54,PO-9463,CO3893-LH,Ironbridge Radiator,Left Hand,120,0.747,153.6,138.2
+55-70,PO-9471,IG5808-PF,Voltera Spark Plug Set,Performance,200,4.050,714.1,642.7
+71-72,PO-9425,DR9079-HD,Torqueline Drive Chain,Heavy Duty,24,0.528,39.2,35.3
+73-80,PO-9511,BD4318-OE,Ridgeline Side Mirror Set,OE Spec,96,0.720,38.4,34.6
+81-96,PO-9531,FL6947-BK,Kestrel Oil Filter,Black,200,5.468,356.1,320.5
+97-112,PO-9433,BD4501-CR,Ridgeline Side Mirror Set,Chrome,200,3.993,673.1,605.8
+113-128,PO-9517,EL8400-OE,Voltera Battery 12V,OE Spec,200,5.117,150.9,135.8
+129-130,PO-9495,EL5947-OE,Voltera Battery 12V,OE Spec,24,0.239,17.5,15.8
+131-140,PO-9408,BD6332-HD,Ridgeline Side Mirror Set,Heavy Duty,120,3.488,457.6,411.8
+141-150,PO-9531,EL4775-OE,Voltera Battery 12V,OE Spec,120,1.017,373.3,336.0
+151-154,PO-9415,BD3022-STD,Ridgeline Side Mirror Set,Standard,48,1.238,189.4,170.5
+155-170,PO-9475,BD9248-BK,Ridgeline Side Mirror Set,Black,200,5.153,74.8,67.3
+171-178,PO-9499,IG9845-STD,Voltera Spark Plug Set,Standard,96,1.787,318.7,286.8
+
+TOTAL,,,,,2184,42.646,4954.5,4459.2
+Total cartons,178,,,,,,,

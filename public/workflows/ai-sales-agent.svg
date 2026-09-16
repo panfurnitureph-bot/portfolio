@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="10.0" height="10.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M117.2 336.7 C146.4 336.7 146.4 336.7 175.6 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M171.6 334.3 L175.6 336.7 L171.6 339.1z" fill="#7a7a7a"/>
+<path d="M222.8 336.7 C252.0 336.7 252.0 336.7 281.2 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M277.2 334.3 L281.2 336.7 L277.2 339.1z" fill="#7a7a7a"/>
+<path d="M328.4 336.7 C357.6 336.7 357.6 336.7 386.9 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M382.9 334.3 L386.9 336.7 L382.9 339.1z" fill="#7a7a7a"/>
+<path d="M434.0 336.7 C464.2 336.7 464.2 223.5 494.4 223.5" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M490.4 221.1 L494.4 223.5 L490.4 225.9z" fill="#7a7a7a"/>
+<path d="M434.0 336.7 C464.2 336.7 464.2 336.7 494.4 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M490.4 334.3 L494.4 336.7 L490.4 339.1z" fill="#7a7a7a"/>
+<path d="M434.0 336.7 C464.2 336.7 464.2 449.9 494.4 449.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M490.4 447.5 L494.4 449.9 L490.4 452.3z" fill="#7a7a7a"/>
+<path d="M518.0 247.1 C518.0 256.5 518.0 256.5 518.0 266.0" stroke="#7a7a7a" stroke-width="1.0" stroke-dasharray="1.9 1.9" fill="none"/><path d="M516.1 247.1 l1.9 2.4 l1.9 -2.4z" fill="#7a7a7a"/>
+<path d="M518.0 360.3 C518.0 369.7 518.0 369.7 518.0 379.1" stroke="#7a7a7a" stroke-width="1.0" stroke-dasharray="1.9 1.9" fill="none"/><path d="M516.1 360.3 l1.9 2.4 l1.9 -2.4z" fill="#7a7a7a"/>
+<path d="M518.0 473.5 C518.0 482.9 518.0 482.9 518.0 492.3" stroke="#7a7a7a" stroke-width="1.0" stroke-dasharray="1.9 1.9" fill="none"/><path d="M516.1 473.5 l1.9 2.4 l1.9 -2.4z" fill="#7a7a7a"/>
+<path d="M541.5 223.5 C584.0 223.5 584.0 223.5 626.4 223.5" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M622.4 221.1 L626.4 223.5 L622.4 225.9z" fill="#7a7a7a"/>
+<path d="M673.6 223.5 C702.8 223.5 702.8 223.5 732.0 223.5" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M728.0 221.1 L732.0 223.5 L728.0 225.9z" fill="#7a7a7a"/>
+<path d="M541.5 336.7 C584.0 336.7 584.0 336.7 626.4 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M622.4 334.3 L626.4 336.7 L622.4 339.1z" fill="#7a7a7a"/>
+<path d="M673.6 336.7 C702.8 336.7 702.8 336.7 732.0 336.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M728.0 334.3 L732.0 336.7 L728.0 339.1z" fill="#7a7a7a"/>
+<path d="M541.5 449.9 C584.0 449.9 584.0 449.9 626.4 449.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M622.4 447.5 L626.4 449.9 L622.4 452.3z" fill="#7a7a7a"/>
+<path d="M673.6 449.9 C702.8 449.9 702.8 449.9 732.0 449.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M728.0 447.5 L732.0 449.9 L728.0 452.3z" fill="#7a7a7a"/>
+<path d="M918.8 251.8 C948.0 251.8 948.0 251.8 977.2 251.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M973.2 249.4 L977.2 251.8 L973.2 254.2z" fill="#7a7a7a"/>
+<path d="M1024.4 251.8 C1053.6 251.8 1053.6 214.1 1082.8 214.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1078.8 211.7 L1082.8 214.1 L1078.8 216.5z" fill="#7a7a7a"/>
+<text x="1029.1" y="249.5" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">true</text>
+<path d="M1024.4 251.8 C1053.6 251.8 1053.6 289.6 1082.8 289.6" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1078.8 287.2 L1082.8 289.6 L1078.8 292.0z" fill="#7a7a7a"/>
+<text x="1029.1" y="258.0" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">false</text>
+<path d="M93.6 313.1 H110.6 a6.6 6.6 0 0 1 6.6 6.6 V353.7 a6.6 6.6 0 0 1 -6.6 6.6 H93.6 A23.6 23.6 0 0 1 93.6 313.1z" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(93.6 336.7) scale(0.472) translate(-93.6 -336.7)"><circle cx="93.57651245551601" cy="336.7081850533808" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M93.57651245551601 328.7081850533808 V336.7081850533808 H99.57651245551601" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="117.2" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path transform="translate(57.7 332.5) scale(0.472)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="93.6" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Schedule</text>
+<text x="93.6" y="380.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Trigger</text>
+<rect x="175.6" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(199.2 336.7) scale(0.472) translate(-199.2 -336.7)"><path d="M190.19928825622776 323.7081850533808 H203.19928825622776 L209.19928825622776 329.7081850533808 V349.7081850533808 H190.19928825622776z" fill="#34a853"/><path d="M194.19928825622776 335.7081850533808 H205.19928825622776 M194.19928825622776 340.7081850533808 H205.19928825622776 M194.19928825622776 344.7081850533808 H205.19928825622776 M199.19928825622776 335.7081850533808 V344.7081850533808" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="175.6" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="222.8" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="199.2" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Load Leads</text>
+<text x="199.2" y="380.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">read: sheet</text>
+<rect x="281.2" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(304.8 336.7) scale(0.472) translate(-304.8 -336.7)"><path d="M291.8220640569395 325.7081850533808 h26 l-10 12 v10 l-6 3 v-13z" fill="none" stroke="#4f9cf7" stroke-width="2.4" stroke-linejoin="round"/></g>
+<circle cx="281.2" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="328.4" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="304.8" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Filter Due</text>
+<rect x="386.9" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(410.4 336.7) scale(0.472) translate(-410.4 -336.7)"><path d="M408.44483985765123 349.7081850533808 V323.7081850533808" stroke="#4f9cf7" stroke-width="3"/><path d="M408.44483985765123 327.7081850533808 h13 l4 4 -4 4 h-13z M408.44483985765123 337.7081850533808 h-11 l-4 4 4 4 h11z" fill="#4f9cf7"/></g>
+<circle cx="386.9" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="434.0" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="410.4" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Which touch?</text>
+<text x="410.4" y="380.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">mode: Rules</text>
+<rect x="494.4" y="200.0" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 223.5) scale(0.472) translate(-518.0 -223.5)"><rect x="505.9537366548043" y="215.54092526690394" width="24" height="18" rx="5" fill="none" stroke="#e8e8e8" stroke-width="2.4"/><circle cx="512.9537366548043" cy="224.54092526690394" r="2" fill="#e8e8e8"/><circle cx="522.9537366548043" cy="224.54092526690394" r="2" fill="#e8e8e8"/><path d="M517.9537366548043 215.54092526690394 V210.54092526690394 M502.9537366548043 221.54092526690394 v6 M532.9537366548043 221.54092526690394 v6" stroke="#e8e8e8" stroke-width="2.4"/></g>
+<circle cx="494.4" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="541.5" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="518.0" y="258.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">1st Touch Agent</text>
+<circle cx="518.0" cy="289.6" r="23.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 289.6) scale(0.472) translate(-518.0 -289.6)"><circle cx="517.9537366548043" cy="289.55516014234877" r="13" fill="#4285f4"/><text x="517.9537366548043" y="294.95516014234875" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#fff">G</text></g>
+<path d="M516.1 266.0 l1.9 -2.4 l1.9 2.4z" fill="#7a7a7a"/>
+<text x="518.0" y="324.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Gemini 1</text>
+<rect x="626.4" y="200.0" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(650.0 223.5) scale(0.472) translate(-650.0 -223.5)"><rect x="634.9822064056939" y="213.54092526690394" width="30" height="20" rx="2" fill="#fff"/><path d="M634.9822064056939 215.54092526690394 L649.9822064056939 226.54092526690394 L664.9822064056939 215.54092526690394" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M634.9822064056939 215.54092526690394 V233.54092526690394" stroke="#4285f4" stroke-width="3"/><path d="M664.9822064056939 215.54092526690394 V233.54092526690394" stroke="#34a853" stroke-width="3"/><path d="M634.9822064056939 232.54092526690394 H640.9822064056939" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="626.4" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="673.6" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="650.0" y="258.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Send 1st Email</text>
+<text x="650.0" y="266.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">send: message</text>
+<rect x="732.0" y="200.0" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(755.6 223.5) scale(0.472) translate(-755.6 -223.5)"><path d="M746.6049822064056 210.54092526690394 H759.6049822064056 L765.6049822064056 216.54092526690394 V236.54092526690394 H746.6049822064056z" fill="#34a853"/><path d="M750.6049822064056 222.54092526690394 H761.6049822064056 M750.6049822064056 227.54092526690394 H761.6049822064056 M750.6049822064056 231.54092526690394 H761.6049822064056 M755.6049822064056 222.54092526690394 V231.54092526690394" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="732.0" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="779.2" cy="223.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M781.7 223.5 h10.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="792.1" y="219.8" width="7.5" height="7.5" rx="1.4" fill="#3a3a3a"/><text x="795.8" y="225.4" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="755.6" y="258.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Mark Touch 1</text>
+<text x="755.6" y="266.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">append: sheet</text>
+<rect x="494.4" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 336.7) scale(0.472) translate(-518.0 -336.7)"><rect x="505.9537366548043" y="328.7081850533808" width="24" height="18" rx="5" fill="none" stroke="#e8e8e8" stroke-width="2.4"/><circle cx="512.9537366548043" cy="337.7081850533808" r="2" fill="#e8e8e8"/><circle cx="522.9537366548043" cy="337.7081850533808" r="2" fill="#e8e8e8"/><path d="M517.9537366548043 328.7081850533808 V323.7081850533808 M502.9537366548043 334.7081850533808 v6 M532.9537366548043 334.7081850533808 v6" stroke="#e8e8e8" stroke-width="2.4"/></g>
+<circle cx="494.4" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="541.5" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="518.0" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">2nd Touch Agent</text>
+<circle cx="518.0" cy="402.7" r="23.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 402.7) scale(0.472) translate(-518.0 -402.7)"><circle cx="517.9537366548043" cy="402.7224199288257" r="13" fill="#4285f4"/><text x="517.9537366548043" y="408.12241992882565" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#fff">G</text></g>
+<path d="M516.1 379.1 l1.9 -2.4 l1.9 2.4z" fill="#7a7a7a"/>
+<text x="518.0" y="437.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Gemini 2</text>
+<rect x="626.4" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(650.0 336.7) scale(0.472) translate(-650.0 -336.7)"><rect x="634.9822064056939" y="326.7081850533808" width="30" height="20" rx="2" fill="#fff"/><path d="M634.9822064056939 328.7081850533808 L649.9822064056939 339.7081850533808 L664.9822064056939 328.7081850533808" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M634.9822064056939 328.7081850533808 V346.7081850533808" stroke="#4285f4" stroke-width="3"/><path d="M664.9822064056939 328.7081850533808 V346.7081850533808" stroke="#34a853" stroke-width="3"/><path d="M634.9822064056939 345.7081850533808 H640.9822064056939" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="626.4" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="673.6" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="650.0" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Send 2nd Email</text>
+<text x="650.0" y="380.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">send: message</text>
+<rect x="732.0" y="313.1" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(755.6 336.7) scale(0.472) translate(-755.6 -336.7)"><path d="M746.6049822064056 323.7081850533808 H759.6049822064056 L765.6049822064056 329.7081850533808 V349.7081850533808 H746.6049822064056z" fill="#34a853"/><path d="M750.6049822064056 335.7081850533808 H761.6049822064056 M750.6049822064056 340.7081850533808 H761.6049822064056 M750.6049822064056 344.7081850533808 H761.6049822064056 M755.6049822064056 335.7081850533808 V344.7081850533808" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="732.0" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="779.2" cy="336.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M781.7 336.7 h10.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="792.1" y="332.9" width="7.5" height="7.5" rx="1.4" fill="#3a3a3a"/><text x="795.8" y="338.6" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="755.6" y="371.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Mark Touch 2</text>
+<text x="755.6" y="380.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">append: sheet</text>
+<rect x="494.4" y="426.3" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 449.9) scale(0.472) translate(-518.0 -449.9)"><rect x="505.9537366548043" y="441.87544483985766" width="24" height="18" rx="5" fill="none" stroke="#e8e8e8" stroke-width="2.4"/><circle cx="512.9537366548043" cy="450.87544483985766" r="2" fill="#e8e8e8"/><circle cx="522.9537366548043" cy="450.87544483985766" r="2" fill="#e8e8e8"/><path d="M517.9537366548043 441.87544483985766 V436.87544483985766 M502.9537366548043 447.87544483985766 v6 M532.9537366548043 447.87544483985766 v6" stroke="#e8e8e8" stroke-width="2.4"/></g>
+<circle cx="494.4" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="541.5" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="518.0" y="484.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">3rd Touch Agent</text>
+<circle cx="518.0" cy="515.9" r="23.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(518.0 515.9) scale(0.472) translate(-518.0 -515.9)"><circle cx="517.9537366548043" cy="515.8896797153025" r="13" fill="#4285f4"/><text x="517.9537366548043" y="521.2896797153024" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#fff">G</text></g>
+<path d="M516.1 492.3 l1.9 -2.4 l1.9 2.4z" fill="#7a7a7a"/>
+<text x="518.0" y="550.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Gemini 3</text>
+<rect x="626.4" y="426.3" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(650.0 449.9) scale(0.472) translate(-650.0 -449.9)"><rect x="634.9822064056939" y="439.87544483985766" width="30" height="20" rx="2" fill="#fff"/><path d="M634.9822064056939 441.87544483985766 L649.9822064056939 452.87544483985766 L664.9822064056939 441.87544483985766" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M634.9822064056939 441.87544483985766 V459.87544483985766" stroke="#4285f4" stroke-width="3"/><path d="M664.9822064056939 441.87544483985766 V459.87544483985766" stroke="#34a853" stroke-width="3"/><path d="M634.9822064056939 458.87544483985766 H640.9822064056939" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="626.4" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="673.6" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="650.0" y="484.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Send 3rd Email</text>
+<text x="650.0" y="493.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">send: message</text>
+<rect x="732.0" y="426.3" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(755.6 449.9) scale(0.472) translate(-755.6 -449.9)"><path d="M746.6049822064056 436.87544483985766 H759.6049822064056 L765.6049822064056 442.87544483985766 V462.87544483985766 H746.6049822064056z" fill="#34a853"/><path d="M750.6049822064056 448.87544483985766 H761.6049822064056 M750.6049822064056 453.87544483985766 H761.6049822064056 M750.6049822064056 457.87544483985766 H761.6049822064056 M755.6049822064056 448.87544483985766 V457.87544483985766" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="732.0" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="779.2" cy="449.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M781.7 449.9 h10.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="792.1" y="446.1" width="7.5" height="7.5" rx="1.4" fill="#3a3a3a"/><text x="795.8" y="451.8" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="755.6" y="484.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Mark Touch 3</text>
+<text x="755.6" y="493.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">append: sheet</text>
+<path d="M895.2 228.3 H912.2 a6.6 6.6 0 0 1 6.6 6.6 V268.8 a6.6 6.6 0 0 1 -6.6 6.6 H895.2 A23.6 23.6 0 0 1 895.2 228.3z" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(895.2 251.8) scale(0.472) translate(-895.2 -251.8)"><rect x="880.1779359430604" y="241.83274021352315" width="30" height="20" rx="2" fill="#fff"/><path d="M880.1779359430604 243.83274021352315 L895.1779359430604 254.83274021352315 L910.1779359430604 243.83274021352315" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M880.1779359430604 243.83274021352315 V261.83274021352315" stroke="#4285f4" stroke-width="3"/><path d="M910.1779359430604 243.83274021352315 V261.83274021352315" stroke="#34a853" stroke-width="3"/><path d="M880.1779359430604 260.83274021352315 H886.1779359430604" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="918.8" cy="251.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path transform="translate(859.3 247.6) scale(0.472)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="895.2" y="286.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Gmail Trigger</text>
+<rect x="977.2" y="228.3" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1000.8 251.8) scale(0.472) translate(-1000.8 -251.8)"><path d="M988.8007117437721 261.83274021352315 H998.8007117437721 C1006.8007117437721 261.83274021352315 1006.8007117437721 241.83274021352315 1013.8007117437721 241.83274021352315 M988.8007117437721 241.83274021352315 H998.8007117437721 C1006.8007117437721 241.83274021352315 1006.8007117437721 261.83274021352315 1013.8007117437721 261.83274021352315" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M1009.8007117437721 237.83274021352315 l5 4 -5 4z M1009.8007117437721 257.83274021352315 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="977.2" cy="251.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1024.4" cy="251.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="1000.8" y="286.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Replied?</text>
+<rect x="1082.8" y="190.5" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1106.4 214.1) scale(0.472) translate(-1106.4 -214.1)"><path d="M1097.423487544484 201.11032028469754 H1110.423487544484 L1116.423487544484 207.11032028469754 V227.11032028469754 H1097.423487544484z" fill="#34a853"/><path d="M1101.423487544484 213.11032028469754 H1112.423487544484 M1101.423487544484 218.11032028469754 H1112.423487544484 M1101.423487544484 222.11032028469754 H1112.423487544484 M1106.423487544484 213.11032028469754 V222.11032028469754" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="1082.8" cy="214.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1130.0" cy="214.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1132.5 214.1 h10.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1142.9" y="210.3" width="7.5" height="7.5" rx="1.4" fill="#3a3a3a"/><text x="1146.6" y="216.0" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1106.4" y="249.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Mark Replied</text>
+<text x="1106.4" y="257.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">append: sheet</text>
+<rect x="1082.8" y="266.0" width="47.2" height="47.2" rx="6.6" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1106.4 289.6) scale(0.472) translate(-1106.4 -289.6)"><path d="M1094.423487544484 289.55516014234877 h22 M1110.423487544484 282.55516014234877 l7 7 -7 7" fill="none" stroke="#c9c9c9" stroke-width="2.6"/></g>
+<circle cx="1082.8" cy="289.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1130.0" cy="289.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1132.5 289.6 h10.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1142.9" y="285.8" width="7.5" height="7.5" rx="1.4" fill="#3a3a3a"/><text x="1146.6" y="291.4" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1106.4" y="324.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">No reply yet</text>
+</svg>

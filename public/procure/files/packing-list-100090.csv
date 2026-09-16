@@ -1,0 +1,24 @@
+Packing List,PL-100090,,,,,,,
+Booking,NW2690,Container,NWMU1341428,ETD,2026-06-21,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-16,PO-9502,IG7143-BK,Voltera Spark Plug Set,Black,200,0.909,602.8,542.5
+17-20,PO-9418,SU3100-PF,Summit Shock Absorber,Performance,48,0.919,48.4,43.6
+21-24,PO-9408,IG8024-RH,Voltera Spark Plug Set,Right Hand,48,0.166,161.1,145.0
+25-28,PO-9504,DR3370-RH,Torqueline Drive Chain,Right Hand,48,0.951,115.0,103.5
+29-29,PO-9490,LT8741-RH,Lumen LED Headlight,Right Hand,12,0.151,36.4,32.8
+30-33,PO-9426,EL7315-PF,Voltera Battery 12V,Performance,48,0.970,183.6,165.2
+34-43,PO-9475,BR7772-CR,Redhawk Brake Pad Set,Chrome,120,2.512,222.7,200.4
+44-44,PO-9404,EL7700-STD,Voltera Battery 12V,Standard,12,0.226,18.1,16.3
+45-60,PO-9402,LT4873-HD,Lumen LED Headlight,Heavy Duty,200,3.289,469.1,422.2
+61-68,PO-9508,BR9042-CE,Apex Brake Pad Set,Ceramic,96,2.666,331.2,298.1
+69-84,PO-9442,EL6555-BK,Voltera Battery 12V,Black,200,3.120,155.6,140.0
+85-92,PO-9471,IG7485-RH,Voltera Spark Plug Set,Right Hand,96,1.483,283.5,255.2
+93-93,PO-9464,BR8592-STD,Apex Brake Pad Set,Standard,12,0.177,8.9,8.0
+94-97,PO-9509,CO3777-RH,Ironbridge Radiator,Right Hand,48,0.434,49.8,44.8
+98-99,PO-9477,EL2329-LH,Voltera Battery 12V,Left Hand,24,0.463,16.6,14.9
+100-101,PO-9514,CO6510-OE,Ironbridge Radiator,OE Spec,24,0.643,29.3,26.4
+102-102,PO-9507,DR2166-CE,Torqueline Drive Chain,Ceramic,12,0.327,15.4,13.9
+
+TOTAL,,,,,1248,19.406,2747.5,2472.8
+Total cartons,102,,,,,,,

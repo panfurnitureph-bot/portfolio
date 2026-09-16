@@ -1,0 +1,17 @@
+/* Sidebar groups from the real app, flattened for label lookup (used by placeholder pages). */
+export const LEGACY_GROUPS: { title: string; items: { href: string; label: string }[] }[] = [
+  { title: 'Warehouse', items: [['/locations', 'Warehouse Location Management'], ['/inventory', 'Inventory Management'], ['/incoming', 'Incoming Shipment'], ['/stock-movements', 'Stock Movement Ledger'], ['/quality-control', 'Quality Control'], ['/returns', 'Returns / RMA']].map(([href, label]) => ({ href, label })) },
+  { title: 'Sales & Service', items: [['/orders', 'Sales Orders'], ['/initial-sales', 'Initial Sales'], ['/operations/delivery-schedule', 'Delivery Schedule'], ['/mattress-orders', 'Mattress Orders'], ['/warranty', 'Warranty Documents'], ['/mto-requests', 'MTO Requests'], ['/quotations', 'Formal Quotation'], ['/design-details', 'Design Details'], ['/customers', 'Customer List']].map(([href, label]) => ({ href, label })) },
+  { title: 'Operations Manager', items: [['/operations/approval', 'Order Approval'], ['/operations/stock-build', 'Stock Build'], ['/operations/edit-requests', 'Requested Edit Order'], ['/operations/delivery-queue', 'Delivery Queue'], ['/operations/route-planner', 'Route Planner'], ['/operations/returns', 'Return / Defect Approval'], ['/rework', 'Rework Tracker'], ['/operations/materials', 'Materials'], ['/operations/requests', 'Stock Requests'], ['/purchase-orders', 'Purchase Orders'], ['/suppliers', 'Suppliers'], ['/costing', 'Product Costing'], ['/products', 'Product Management'], ['/delivery', 'Delivery Tracker'], ['/installation', 'Installation Tracking'], ['/operations/tracker', 'Order Tracker']].map(([href, label]) => ({ href, label })) },
+  { title: 'Workshop', items: [['/workshop/jobs', 'My Jobs'], ['/workshop/rework', 'Rework Jobs'], ['/workshop/inventory', 'My Inventory'], ['/workshop/logs', 'Stock Logs'], ['/workshop/quality-control', 'Quality Control'], ['/workshop/requests', 'My Requests']].map(([href, label]) => ({ href, label })) },
+  { title: 'Delivery Teams', items: [['/pickup-task', 'Pickup Task'], ['/delivery/routes', 'Delivery Route'], ['/pickup', 'Rework (Pull Out)'], ['/pickup/refund', 'Refund (Pull Out)']].map(([href, label]) => ({ href, label })) },
+  { title: 'HR Management', items: [['/hr/directory', 'Employee Directory'], ['/hr/attendance', 'Attendance'], ['/hr/wfh', 'Attendance (WFH)'], ['/hr/overtime', 'Overtime Approval'], ['/hr/leaves', 'Day Off Management'], ['/hr/projects', 'Constructor'], ['/hr/advances', 'Advance Payments'], ['/hr/payroll', 'Payroll'], ['/hr/reports', 'HR Reports'], ['/hr/overall', 'PAN Overall'], ['/payment-approval', 'Payment Approval']].map(([href, label]) => ({ href, label })) },
+  { title: 'Website', items: [['/website/live', 'panfurniture.ph (live)'], ['/website/configurator', 'MTO Configurator'], ['/website/content', 'Website Content'], ['/website/shipping', 'Shipping Rates'], ['/website/facebook-agent', 'FB AI Agent']].map(([href, label]) => ({ href, label })) },
+  { title: 'System', items: [['/reports', 'Performance Rankings'], ['/audit-trail', 'Activity Logs'], ['/settings', 'Settings']].map(([href, label]) => ({ href, label })) },
+]
+
+export function labelFor(path: string) {
+  const base = path.split(/[#?]/)[0]
+  for (const g of LEGACY_GROUPS) for (const i of g.items) if (base === i.href || base.startsWith(i.href + '/')) return { group: g.title, label: i.label }
+  return { group: '', label: 'Pan Furniture' }
+}

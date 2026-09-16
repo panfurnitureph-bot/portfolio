@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PAN Furniture — Live Delivery Tracking (OSM preview)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  :root{--brand:#5C4632;--gold:#b08d57;--ink:#3a2e20;--muted:#8a7c6b;--line:#e7e0d6;--amber:#b9842b;--amberbg:#fbf1de;--green:#2e7d52;--greenbg:#e7f4ec}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f4f1ec;color:var(--ink)}
+  .wrap{max-width:680px;margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 0 30px rgba(0,0,0,.06)}
+  .head{background:var(--brand);color:#f4ead8;text-align:center;padding:18px}
+  .logo{width:42px;height:42px;border-radius:50%;background:var(--gold);color:#3a2e20;font-weight:800;font-size:11px;line-height:42px;display:inline-block}
+  .brand{letter-spacing:3px;font-weight:700;font-size:14px;margin-top:6px}
+  .tag{font-size:10px;opacity:.85;letter-spacing:1px}
+  .eta{position:sticky;top:0;z-index:500;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--amberbg);color:var(--amber);padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .eta .em{font-size:24px;line-height:1}
+  .eta .big{font-size:19px;font-weight:800;line-height:1.1}
+  .eta .sub{font-size:11px;font-weight:600;opacity:.85;margin-top:2px}
+  .eta .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#e23b3b;margin-right:5px;animation:blink 1.2s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .mapcol{display:flex}
+  @media(max-width:640px){.mapcol{flex-direction:column}}
+  #map{width:100%;height:420px}
+  .steps{width:230px;flex:0 0 230px;border-right:1px solid var(--line);background:#fbfaf8;padding:14px 14px;display:flex;flex-direction:column;justify-content:center}
+  .steps .tot{font-size:11px;color:var(--muted);margin-bottom:14px}
+  .steps .tot b{color:var(--brand);font-size:15px}
+  .nt-lbl{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--amber);margin-bottom:6px}
+  .nt{display:flex;gap:12px;align-items:flex-start}
+  .nt .ar{font-size:30px;color:#2d6cb4;line-height:1;flex:0 0 34px;text-align:center}
+  .nt .txt{font-size:16px;font-weight:700;color:var(--ink);line-height:1.25}
+  .nt .dist{color:var(--amber);font-weight:700;font-size:13px;margin-top:3px}
+  .then{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;color:var(--muted)}
+  .then b{color:var(--ink)}
+  .callbar{display:flex;gap:8px;justify-content:center;padding:0 12px 12px}
+  .callbar a{flex:1;max-width:200px;text-align:center;text-decoration:none;border-radius:10px;padding:10px;font-size:13px;font-weight:700}
+  .callbar .call{background:#2e7d52;color:#fff} .callbar .msg{background:#faf8f5;color:var(--brand);border:1px solid var(--line)}
+  @media(max-width:640px){.steps{width:100%;flex:none;max-height:200px;border-right:0;border-bottom:1px solid var(--line)}}
+  .info{padding:14px 18px}
+  .row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+  .row .k{color:var(--muted)} .row .v{font-weight:600}
+  .truck-ic{font-size:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
+  .note{font-size:11px;color:var(--muted);text-align:center;padding:10px 18px 22px;line-height:1.5}
+  .prog{height:6px;background:var(--line)} .prog>i{display:block;height:100%;background:var(--gold);width:8%;transition:width .25s linear}
+  .stepper{display:flex;padding:22px 12px 12px;font-size:9.5px;line-height:1.25;color:var(--muted);text-align:center}
+  .stepper .s{flex:1;position:relative;text-align:center}
+  .stepper .s::before{content:"";position:absolute;top:9px;right:50%;width:100%;height:3px;background:var(--line);border-radius:3px;z-index:0}
+  .stepper .s:first-child::before{display:none}
+  .stepper .s.fill::before{background:var(--gold)}
+  .stepper .d{position:relative;z-index:2;width:21px;height:21px;border-radius:50%;background:#fff;border:2.5px solid var(--line);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;transition:.25s}
+  .stepper .d.done{background:var(--green);border-color:var(--green)}
+  .stepper .d.done::after{content:"✓"}
+  .stepper .d.on{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 5px var(--amberbg)}
+  .stepper .d.on::after{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
+  .stepper .s.cur{color:var(--brand);font-weight:700}
+  .drv{display:flex;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+  .drv .av{width:48px;height:48px;border-radius:50%;background:#ece5da;flex:0 0 48px;display:flex;align-items:center;justify-content:center;font-size:24px}
+  .drv .nm{font-weight:700} .drv .meta{font-size:12px;color:var(--muted);margin-top:2px}
+  .drv .star{color:#e0a92b;font-weight:700}
+  .pin{margin:14px 18px;padding:12px 14px;border:1px dashed var(--gold);border-radius:12px;background:#fbf6ec;text-align:center}
+  .pin .lbl{font-size:11px;color:var(--muted)} .pin .code{font-size:26px;font-weight:800;letter-spacing:7px;color:var(--brand);margin-top:3px}
+  .pay{display:block;margin:0 18px 4px;text-align:center;background:var(--brand);color:#f4ead8;text-decoration:none;font-weight:700;padding:13px;border-radius:10px;font-size:13px}
+  .ctl{display:flex;gap:8px;justify-content:center;padding:10px}
+  .ctl button{border:1px solid var(--line);background:#faf8f5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer}
+  .ctl button.demo{background:transparent;border-style:dashed;color:var(--muted)}
+  /* live driver marker: pulsing ring + smooth glide + heading flip */
+  .driver-mk{transition:transform .12s linear}
+  .pulse{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:rgba(185,132,43,.55);animation:pulse 1.7s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.8}70%{transform:scale(3);opacity:0}100%{opacity:0}}
+  .truck-ic{font-size:24px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));transition:transform .2s;position:relative;z-index:1}
+  .destpin{font-size:26px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+  /* skeleton while route loads */
+  #skel{position:absolute;inset:0;z-index:600;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:13px;font-weight:600;
+        background:linear-gradient(100deg,#eef0ec 30%,#f6f7f4 50%,#eef0ec 70%);background-size:200% 100%;animation:shim 1.3s infinite}
+  @keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  /* arrived state */
+  .arrived{display:none;text-align:center;padding:18px;border-top:1px solid var(--line)}
+  .arrived .ttl{font-size:16px;font-weight:800;color:var(--green)}
+  .arrived .stars{font-size:30px;letter-spacing:5px;color:#e0a92b;cursor:pointer;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><span class="logo">PAN</span><div class="brand">PAN FURNITURE</div><div class="tag" id="trkTag">LIVE DELIVERY TRACKING · ORD-000010</div></div>
+  <div class="eta">
+    <span class="em">🚚</span>
+    <div><div class="big" id="etaMin"><span class="live"></span>Calculating…</div><div class="sub" id="etaSub">Getting live location</div></div>
+  </div>
+  <div class="prog"><i id="prog"></i></div>
+  <div style="position:relative">
+    <div id="map"></div>
+    <div id="skel">🗺️ Loading live route…</div>
+  </div>
+  <!-- status stepper -->
+  <div class="stepper">
+    <div class="s"><div class="d done"></div>Confirmed<br>Jun 24</div>
+    <div class="s fill cur"><div class="d on"></div>Out for Delivery<br>Jun 27</div>
+    <div class="s"><div class="d"></div>Arrived<br>—</div>
+    <div class="s"><div class="d"></div>Installation<br>—</div>
+    <div class="s"><div class="d"></div>Delivered<br>—</div>
+  </div>
+
+  <!-- driver card -->
+  <div class="drv">
+    <div class="av">🧑‍✈️</div>
+    <div style="flex:1">
+      <div class="nm">Jay Ar Dumangas</div>
+      <div class="meta">Closed Van · ABC 1234 · <span class="star">★ 4.9</span> (218 deliveries)</div>
+    </div>
+  </div>
+
+  <div class="callbar" style="padding-top:12px">
+    <a class="call" href="tel:+639170000000">📞 Call Driver</a>
+    <a class="msg" href="sms:+639170000000">💬 Message</a>
+  </div>
+
+  <!-- delivery PIN -->
+  <div class="pin" id="pinBox">
+    <div class="lbl">Give to driver on arrival — DELIVERY PIN</div>
+    <div class="code">4&nbsp;8&nbsp;2&nbsp;1</div>
+  </div>
+
+  <!-- arrived state (shown on arrival) -->
+  <div class="arrived" id="arrived">
+    <div class="ttl">✅ Delivered!</div>
+    <p class="sub" style="color:var(--muted);margin:6px 0 0">Thank you for your trust. Please rate your driver:</p>
+    <div class="stars" onclick="this.textContent='★ ★ ★ ★ ★'">☆ ☆ ☆ ☆ ☆</div>
+  </div>
+
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // Origin (driver) + Destination (delivery). From URL params (?dlat&dlng customer, ?olat&olng driver,
+  // ?order ?addr) when opened from the "Track My Delivery" email; falls back to the Lucena demo.
+  const _P = new URLSearchParams(location.search);
+  let dest = (_P.get('dlat') && _P.get('dlng')) ? [+_P.get('dlat'), +_P.get('dlng')] : [13.9314, 121.6176];
+  let origin = (_P.get('olat') && _P.get('olng')) ? [+_P.get('olat'), +_P.get('olng')] : [dest[0] + 0.045, dest[1] - 0.04];
+  (function(){
+    const o = _P.get('order'); if (o) { const t = document.getElementById('trkTag'); if (t) t.textContent = 'LIVE DELIVERY TRACKING · ' + o; const r = document.getElementById('trkOrd'); if (r) r.textContent = o; }
+    const a = _P.get('addr'); if (a) { const d = document.getElementById('trkDest'); if (d) d.textContent = a; }
+    const pn = _P.get('pin'); if (pn) { const code = document.querySelector('#pinBox .code'); if (code) code.innerHTML = pn.split('').join('&nbsp;'); }
+  })();
+
+  const map = L.map('map', { attributionControl: false }).setView([13.9245,121.6080], 14);
+  // NOTE: attribution hidden for this MOCKUP only. Production w/ public OSM tiles REQUIRES credit
+  // (OSM tile usage policy) — keep it, or switch to MapTiler/Mapbox for custom attribution.
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+  const homeIcon = L.divIcon({html:'<div class="destpin">📍</div>',className:'',iconSize:[28,28],iconAnchor:[14,26]});
+  const homeMarker = L.marker(dest,{icon:homeIcon}).addTo(map).bindPopup('Delivery address');
+
+  const truckIcon = L.divIcon({html:'<div class="pulse"></div><div class="truck-ic" id="truckIc">🚚</div>',className:'driver-mk',iconSize:[30,30],iconAnchor:[15,15]});
+  const driver = L.marker(origin,{icon:truckIcon}).addTo(map);
+
+  let coords = [origin, dest];   // road geometry [lat,lng][]
+  let totalDur = 0;              // OSRM total driving seconds
+  let routeDist = 0;             // OSRM total meters
+  let stepCum = [];              // cumulative END distance (m) per step
+  let line = null, timer = null;
+
+  // Fetch the real road route from OSRM (free public demo — no API key).
+  async function loadRoute(){
+    try{
+      const url = `https://router.project-osrm.org/route/v1/driving/${origin[1]},${origin[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson&steps=true`;
+      const r = await fetch(url);
+      const j = await r.json();
+      const rt = j.routes && j.routes[0];
+      if(!rt) throw new Error('no route');
+      coords = rt.geometry.coordinates.map(c => [c[1], c[0]]); // [lng,lat] → [lat,lng]
+      totalDur = rt.duration; // seconds along roads
+      routeDist = rt.distance; // meters
+    }catch(e){
+      document.getElementById('etaSub').textContent = 'Route unavailable (offline?) — straight line';
+    }
+    if(line) map.removeLayer(line);
+    line = L.polyline(coords,{color:'#2b7cff',weight:5,opacity:.65,lineJoin:'round',lineCap:'round'}).addTo(map);
+    map.invalidateSize();
+    map.fitBounds(line.getBounds().pad(0.2));
+    const sk=document.getElementById('skel'); if(sk) sk.style.display='none';
+    restart();
+  }
+
+  // Turn-by-turn directions panel from OSRM steps.
+  function fmtDur(s){ const m=Math.round(s/60); return m>=60?`${Math.floor(m/60)} hr ${m%60} min`:`${Math.max(1,m)} min`; }
+  function fmtKm(m){ return m>=1000?`${(m/1000).toFixed(1)} km`:`${Math.round(m)} m`; }
+  function instr(s){
+    const m=s.maneuver, road=s.name||'', type=m.type, mod=m.modifier||'';
+    if(type==='depart') return 'Depart'+(road?` onto ${road}`:'');
+    if(type==='arrive') return 'Arrive at delivery location 🏠';
+    if(type==='roundabout'||type==='rotary') return `Roundabout${road?` exit onto ${road}`:''}`;
+    const t = /left/.test(mod)?'Turn left':/right/.test(mod)?'Turn right':/straight/.test(mod)?'Continue straight':/uturn/.test(mod)?'U-turn':'Continue';
+    return `${t}${road?` on ${road}`:''}`;
+  }
+  function arrow(s){
+    const m=s.maneuver,type=m.type,mod=m.modifier||'';
+    if(type==='depart')return '🏁'; if(type==='arrive')return '🏠';
+    if(type==='roundabout'||type==='rotary')return '↻';
+    if(/uturn/.test(mod))return '↩';
+    if(/slight left/.test(mod))return '↖'; if(/slight right/.test(mod))return '↗';
+    if(/left/.test(mod))return '←'; if(/right/.test(mod))return '→';
+    return '↑';
+  }
+  let STEPS=[], lastActive=-1;   // {ar,txt,dist,cumEnd}
+  function renderSteps(rt){
+    document.getElementById('tot').innerHTML = `<b>${fmtDur(rt.duration)}</b> · ${fmtKm(rt.distance)}`;
+    const steps = (rt.legs && rt.legs[0] && rt.legs[0].steps) || [];
+    stepCum=[]; STEPS=[]; let cum=0;
+    steps.forEach((s)=>{ cum+=s.distance; stepCum.push(cum); STEPS.push({ar:arrow(s),txt:instr(s),dist:s.distance,cumEnd:cum}); });
+    lastActive=-1; renderNext(0, STEPS[0]?STEPS[0].dist:0);
+  }
+  // Show ONLY the next turn + the one after — simple, no scrolling list.
+  function renderNext(active, distToTurn){
+    const nt=document.getElementById('nextturn'); if(!STEPS.length)return;
+    const cur=STEPS[active]||STEPS[STEPS.length-1], then=STEPS[active+1];
+    nt.innerHTML =
+      `<div class="nt-lbl">NEXT TURN</div>`+
+      `<div class="nt"><span class="ar">${cur.ar}</span><div><div class="txt">${cur.txt}</div>`+
+      `<div class="dist">in ${fmtKm(Math.max(0,distToTurn))}</div></div></div>`+
+      (then?`<div class="then">Then: <b>${then.ar} ${then.txt}</b></div>`:``);
+  }
+  function highlightStep(traveledM){
+    if(!stepCum.length)return;
+    let active=stepCum.findIndex(c=>traveledM<=c); if(active<0)active=stepCum.length-1;
+    const distToTurn=(STEPS[active]?STEPS[active].cumEnd:0)-traveledM;
+    lastActive=active;
+    renderNext(active, distToTurn);
+  }
+  function clockIn(secs){
+    const d=new Date(Date.now()+secs*1000);
+    return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+  }
+
+  // segment lengths for proportional ETA + smooth animation
+  function segLen(a,b){const dx=(a[0]-b[0]),dy=(a[1]-b[1]);return Math.sqrt(dx*dx+dy*dy)}
+  // Progress-based animation → fixed ~26s duration regardless of point count, so the driver
+  // visibly moves even when OSRM returns just a straight 2-point line.
+  function animate(){
+    const segs=[],cum=[0]; let total=0;
+    for(let k=0;k<coords.length-1;k++){const d=segLen(coords[k],coords[k+1]);segs.push(d);total+=d;cum.push(total);}
+    clearInterval(timer);
+    if(total<=0){ driver.setLatLng(dest); onArrived(); return; }
+    let prog=0; const INC=total/220;   // 220 ticks × 120ms ≈ 26s
+    timer=setInterval(()=>{
+      prog+=INC;
+      if(prog>=total){ driver.setLatLng(dest); onArrived(); clearInterval(timer); return; }
+      let i=0; while(i<segs.length-1 && cum[i+1]<prog) i++;
+      const t=segs[i]?(prog-cum[i])/segs[i]:0, a=coords[i], b=coords[i+1];
+      driver.setLatLng([a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t]);
+      const ic=document.getElementById('truckIc'); if(ic) ic.style.transform=(b[1]-a[1])>=0?'scaleX(-1)':'scaleX(1)';
+      const frac=(total-prog)/total;            // remaining fraction
+      const secs=Math.max(30, totalDur*frac);
+      const min=Math.round(secs/60);
+      const km=(routeDist>0 ? (frac*routeDist/1000) : (total-prog)*111).toFixed(1);
+      const minLabel=min>=60 ? `${Math.floor(min/60)}h ${min%60}m` : `${Math.max(1,min)} min`;
+      document.getElementById('etaMin').innerHTML=`<span class="live"></span>${minLabel}`;
+      document.getElementById('etaSub').textContent=`${km} km away · Arriving ${clockIn(secs)}`;
+      const pr=document.getElementById('prog'); if(pr) pr.style.width=Math.min(99,(1-frac)*100).toFixed(0)+'%';
+    },120);
+  }
+
+  function onArrived(){
+    document.getElementById('etaMin').textContent='Arrived 🏠';
+    document.getElementById('etaSub').textContent='Driver is at your location';
+    const p=document.getElementById('prog'); if(p)p.style.width='100%';
+    document.getElementById('pinBox').style.display='none';
+    const _pb=document.getElementById('payBtn'); if(_pb)_pb.style.display='none';
+    document.getElementById('arrived').style.display='block';
+    // stepper → Out for Delivery done, Delivered active, fill to end
+    const ss=document.querySelectorAll('.stepper .s'), dd=document.querySelectorAll('.stepper .d');
+    if(dd[2]){dd[2].classList.remove('on');dd[2].classList.add('done');}
+    if(dd[3]){dd[3].classList.add('on');}
+    ss.forEach(s=>s.classList.remove('cur')); if(ss[3]){ss[3].classList.add('cur','fill');}
+  }
+  function resetUI(){
+    document.getElementById('pinBox').style.display='';
+    const _pb=document.getElementById('payBtn'); if(_pb)_pb.style.display='';
+    document.getElementById('arrived').style.display='none';
+    const dd=document.querySelectorAll('.stepper .d'); if(dd[2]){dd[2].classList.add('on');dd[2].classList.remove('done');} if(dd[3]){dd[3].classList.remove('on');}
+    const ss=document.querySelectorAll('.stepper .s'); ss.forEach(s=>s.classList.remove('cur')); if(ss[2])ss[2].classList.add('cur'); if(ss[3])ss[3].classList.remove('fill');
+  }
+  function restart(){ lastActive=-1; resetUI(); driver.setLatLng(coords[0]); animate(); }
+
+  // Center the map on the REAL customer address. If the order has no saved coords (?dlat/?dlng),
+  // geocode the ?addr string so the map is always based on the actual delivery address.
+  (async () => {
+    if (!(_P.get('dlat') && _P.get('dlng')) && _P.get('addr')) {
+      try {
+        const r = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(_P.get('addr'))}&limit=1`);
+        const c = (await r.json())?.features?.[0]?.geometry?.coordinates;
+        if (c) {
+          dest = [c[1], c[0]];
+          origin = [dest[0] + 0.045, dest[1] - 0.04];
+          map.setView(dest, 14);
+          homeMarker.setLatLng(dest);
+          driver.setLatLng(origin);
+        }
+      } catch (e) {}
+    }
+    loadRoute();
+  })();
+</script>
+</body>
+</html>

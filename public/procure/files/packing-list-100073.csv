@@ -1,0 +1,26 @@
+Packing List,PL-100073,,,,,,,
+Booking,NW2673,Container,CNTU5455563,ETD,2026-08-15,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9401,BD8387-RH,Ridgeline Side Mirror Set,Right Hand,24,0.188,54.5,49.1
+3-4,PO-9453,SU3940-CE,Summit Shock Absorber,Ceramic,24,0.259,75.9,68.3
+5-12,PO-9509,FL7030-PF,Kestrel Oil Filter,Performance,96,0.306,201.6,181.4
+13-20,PO-9442,BD2792-PF,Ridgeline Side Mirror Set,Performance,96,2.438,217.7,195.9
+21-21,PO-9408,IG2711-LH,Voltera Spark Plug Set,Left Hand,12,0.209,22.3,20.1
+22-31,PO-9411,LT6590-BK,Lumen LED Headlight,Black,120,2.847,453.3,408.0
+32-33,PO-9468,DR2997-STD,Torqueline Drive Chain,Standard,24,0.664,60.5,54.5
+34-35,PO-9452,BR2067-STD,Redhawk Brake Pad Set,Standard,24,0.285,19.6,17.6
+36-39,PO-9425,LT4514-RH,Lumen LED Headlight,Right Hand,48,0.888,171.9,154.7
+40-49,PO-9461,FL4435-HD,Kestrel Oil Filter,Heavy Duty,120,2.098,66.2,59.6
+50-53,PO-9413,LT9037-PF,Lumen LED Headlight,Performance,48,1.088,50.7,45.6
+54-63,PO-9411,BR6849-RH,Apex Brake Pad Set,Right Hand,120,1.985,397.8,358.0
+64-71,PO-9413,LT9439-PF,Lumen LED Headlight,Performance,96,1.721,303.4,273.1
+72-73,PO-9457,LT1995-CE,Lumen LED Headlight,Ceramic,24,0.626,33.6,30.2
+74-74,PO-9445,IG8950-RH,Voltera Spark Plug Set,Right Hand,12,0.154,43.3,39.0
+75-75,PO-9492,CO2300-CR,Ironbridge Radiator,Chrome,12,0.101,44.2,39.8
+76-77,PO-9456,SU6564-OE,Summit Shock Absorber,OE Spec,24,0.198,39.1,35.2
+78-85,PO-9452,IG4439-CR,Voltera Spark Plug Set,Chrome,96,0.263,212.9,191.6
+86-95,PO-9421,EL5839-CE,Voltera Battery 12V,Ceramic,120,3.552,422.2,380.0
+
+TOTAL,,,,,1140,19.870,2890.7,2601.7
+Total cartons,95,,,,,,,

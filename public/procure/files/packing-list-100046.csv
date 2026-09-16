@@ -1,0 +1,25 @@
+Packing List,PL-100046,,,,,,,
+Booking,NW2646,Container,SEAU5476075,ETD,2026-09-06,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9512,EL5791-BK,Voltera Battery 12V,Black,120,1.618,420.5,378.4
+11-12,PO-9453,FL8047-CE,Kestrel Oil Filter,Ceramic,24,0.417,23.4,21.1
+13-20,PO-9518,BD7811-BK,Ridgeline Side Mirror Set,Black,96,2.698,59.9,53.9
+21-30,PO-9494,SU4743-STD,Summit Shock Absorber,Standard,120,0.553,429.3,386.4
+31-46,PO-9529,DR1253-HD,Torqueline Drive Chain,Heavy Duty,200,3.408,216.8,195.1
+47-48,PO-9449,BD5887-CR,Ridgeline Side Mirror Set,Chrome,24,0.649,14.0,12.6
+49-49,PO-9459,CO2777-STD,Ironbridge Radiator,Standard,12,0.181,38.3,34.5
+50-53,PO-9430,BR8183-STD,Apex Brake Pad Set,Standard,48,0.757,184.5,166.1
+54-63,PO-9507,LT9558-OE,Lumen LED Headlight,OE Spec,120,0.334,352.9,317.6
+64-71,PO-9473,CO7285-STD,Ironbridge Radiator,Standard,96,1.913,185.3,166.8
+72-73,PO-9498,EL1988-HD,Voltera Battery 12V,Heavy Duty,24,0.593,49.5,44.6
+74-83,PO-9434,LT8789-BK,Lumen LED Headlight,Black,120,1.923,295.7,266.1
+84-84,PO-9455,CO8275-CE,Ironbridge Radiator,Ceramic,12,0.156,46.4,41.8
+85-86,PO-9444,FL9454-STD,Kestrel Oil Filter,Standard,24,0.437,85.9,77.3
+87-102,PO-9540,LT4197-RH,Lumen LED Headlight,Right Hand,200,0.628,326.9,294.2
+103-112,PO-9424,BR8846-BK,Apex Brake Pad Set,Black,120,1.457,296.6,266.9
+113-113,PO-9482,BR3463-HD,Apex Brake Pad Set,Heavy Duty,12,0.177,16.4,14.8
+114-115,PO-9431,LT1599-HD,Lumen LED Headlight,Heavy Duty,24,0.677,52.5,47.2
+
+TOTAL,,,,,1396,18.576,3094.8,2785.4
+Total cartons,115,,,,,,,

@@ -1,0 +1,40 @@
+Packing List,PL-100002,,,,,,,
+Booking,NW2602,Container,SEAU9834247,ETD,2026-09-16,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-4,PO-9402,DR2163-PF,Torqueline Drive Chain,Performance,48,0.302,65.5,59.0
+5-5,PO-9469,IG6773-CR,Voltera Spark Plug Set,Chrome,12,0.252,12.0,10.8
+6-15,PO-9502,IG3591-STD,Voltera Spark Plug Set,Standard,120,1.903,338.3,304.5
+16-19,PO-9449,FL9594-OE,Kestrel Oil Filter,OE Spec,48,0.820,86.9,78.2
+20-21,PO-9490,FL9725-LH,Kestrel Oil Filter,Left Hand,24,0.192,10.8,9.7
+22-29,PO-9513,BR1308-LH,Redhawk Brake Pad Set,Left Hand,96,1.478,335.8,302.2
+30-45,PO-9536,BR2830-OE,Redhawk Brake Pad Set,OE Spec,200,4.755,728.0,655.2
+46-53,PO-9402,CO6765-OE,Ironbridge Radiator,OE Spec,96,2.710,310.8,279.7
+54-61,PO-9537,LT9200-STD,Lumen LED Headlight,Standard,96,1.931,86.2,77.6
+62-71,PO-9492,SU2356-OE,Summit Shock Absorber,OE Spec,120,2.104,380.4,342.4
+72-75,PO-9492,CO3147-PF,Ironbridge Radiator,Performance,48,0.822,159.1,143.2
+76-91,PO-9454,CO9724-STD,Ironbridge Radiator,Standard,200,4.544,608.9,548.0
+92-92,PO-9518,BD9105-CE,Ridgeline Side Mirror Set,Ceramic,12,0.078,33.0,29.7
+93-94,PO-9525,SU8818-CE,Summit Shock Absorber,Ceramic,24,0.337,40.8,36.7
+95-102,PO-9486,BR8213-CR,Redhawk Brake Pad Set,Chrome,96,0.745,309.1,278.2
+103-104,PO-9400,IG5859-OE,Voltera Spark Plug Set,OE Spec,24,0.301,42.2,38.0
+105-106,PO-9523,SU1900-BK,Summit Shock Absorber,Black,24,0.633,56.3,50.7
+107-114,PO-9514,DR2158-PF,Torqueline Drive Chain,Performance,96,1.089,154.7,139.2
+115-130,PO-9431,FL4256-LH,Kestrel Oil Filter,Left Hand,200,1.802,638.6,574.7
+131-132,PO-9467,FL2707-CE,Kestrel Oil Filter,Ceramic,24,0.474,20.2,18.2
+133-134,PO-9526,SU4569-CR,Summit Shock Absorber,Chrome,24,0.138,75.7,68.1
+135-138,PO-9472,DR1946-CR,Torqueline Drive Chain,Chrome,48,0.108,164.1,147.7
+139-139,PO-9530,CO1346-STD,Ironbridge Radiator,Standard,12,0.278,30.3,27.3
+140-149,PO-9510,EL1348-BK,Voltera Battery 12V,Black,120,2.046,279.7,251.7
+150-157,PO-9516,IG9417-LH,Voltera Spark Plug Set,Left Hand,96,2.221,254.6,229.1
+158-158,PO-9456,EL2421-OE,Voltera Battery 12V,OE Spec,12,0.310,43.5,39.1
+159-160,PO-9484,EL5903-PF,Voltera Battery 12V,Performance,24,0.057,31.3,28.2
+161-162,PO-9440,BR3508-BK,Apex Brake Pad Set,Black,24,0.184,8.1,7.3
+163-164,PO-9503,BD3003-HD,Ridgeline Side Mirror Set,Heavy Duty,24,0.407,17.5,15.8
+165-174,PO-9456,SU2577-OE,Summit Shock Absorber,OE Spec,120,0.300,382.3,344.1
+175-184,PO-9402,SU7548-RH,Summit Shock Absorber,Right Hand,120,2.890,448.3,403.5
+185-192,PO-9503,DR8899-LH,Torqueline Drive Chain,Left Hand,96,0.284,205.8,185.2
+193-196,PO-9535,BR3686-HD,Redhawk Brake Pad Set,Heavy Duty,48,1.139,142.2,128.0
+
+TOTAL,,,,,2376,37.634,6501.0,5851.0
+Total cartons,196,,,,,,,

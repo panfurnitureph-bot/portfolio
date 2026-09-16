@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PAN Furniture — Driver App (preview)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"/>
+<style>
+  :root{--brand:#5C4632;--gold:#b08d57;--ink:#3a2e20;--muted:#8a7c6b;--line:#e7e0d6;--amber:#b9842b;--amberbg:#fbf1de;--green:#2e7d52;--greenbg:#e7f4ec;--red:#b23b3b}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#ded7cc;color:var(--ink);display:flex;justify-content:center;align-items:flex-start;padding:68px 12px 60px}
+  .phone{width:390px;max-width:100%;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.25);border:8px solid #2b2118}
+  .top{background:var(--brand);color:#f4ead8;padding:14px 16px;display:flex;align-items:center;gap:10px}
+  .top .logo{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#3a2e20;font-weight:800;font-size:10px;line-height:34px;text-align:center}
+  .top .t1{font-weight:700;font-size:13px;letter-spacing:1px} .top .t2{font-size:10px;opacity:.8}
+  .screen{display:none;padding:14px 16px 22px;min-height:520px}
+  .screen.on{display:block}
+  .back{background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;padding:0 0 10px}
+  h2{font-size:16px;margin:2px 0 12px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;background:#fff}
+  .card.tap{cursor:pointer} .card.tap:active{background:#faf8f5}
+  .o-num{font-family:monospace;font-weight:700;font-size:13px}
+  .pill{display:inline-block;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700}
+  .pill.cod{background:#fdecec;color:var(--red)} .pill.paid{background:var(--greenbg);color:var(--green)} .pill.ofd{background:var(--amberbg);color:var(--amber)}
+  .muted{color:var(--muted);font-size:12px}
+  .row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+  .row .k{color:var(--muted)}.row .v{font-weight:600}
+  .btn{display:block;width:100%;text-align:center;border:0;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px}
+  .btn.primary{background:var(--brand);color:#f4ead8} .btn.green{background:var(--green);color:#fff}
+  .btn.ghost{background:#faf8f5;color:var(--brand);border:1px solid var(--line)}
+  .two{display:flex;gap:8px}.two .btn{margin-top:0}
+  .pinwrap{display:flex;gap:8px;justify-content:center;margin:10px 0}
+  .pinwrap input{width:46px;height:54px;text-align:center;font-size:22px;font-weight:800;border:2px solid var(--line);border-radius:10px;color:var(--brand)}
+  .pinwrap input:focus{border-color:var(--gold);outline:none}
+  .lbl{font-size:12px;font-weight:600;color:var(--muted);margin:12px 0 4px}
+  input.fld,select.fld{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;font-size:14px}
+  .sign{height:70px;border:1px dashed var(--gold);border-radius:10px;background:#fbf6ec;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;cursor:pointer}
+  .photo{height:80px;border:1px dashed var(--line);border-radius:10px;background:#faf8f5;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;cursor:pointer}
+  .ok{display:inline-block;color:var(--green);font-weight:700;font-size:12px;margin-left:6px}
+  .err{color:var(--red);font-size:12px;font-weight:600;text-align:center}
+  .or{text-align:center;color:var(--muted);font-size:11px;margin:14px 0 4px;position:relative}
+  .or:before,.or:after{content:"";position:absolute;top:50%;width:38%;height:1px;background:var(--line)}.or:before{left:0}.or:after{right:0}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;opacity:0;transition:.3s;z-index:99}
+  .toast.show{opacity:1}
+  .done-ic{width:74px;height:74px;border-radius:50%;background:var(--greenbg);color:var(--green);font-size:40px;line-height:74px;text-align:center;margin:30px auto 14px}
+  .center{text-align:center}
+  .navbanner{background:var(--brand);color:#f4ead8;padding:12px 14px;display:flex;align-items:center;gap:12px}
+  .navbanner .ar{font-size:30px;line-height:1} .navbanner .txt{font-weight:800;font-size:17px} .navbanner .sub{font-size:11px;opacity:.85;margin-top:2px}
+  #navmap,#map3d{height:330px;width:100%}
+  .threed-btn{position:absolute;right:12px;z-index:500;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:12px;font-weight:700;color:var(--brand);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .truck3{font-size:26px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+  .maplibregl-marker{pointer-events:none;outline:none;-webkit-tap-highlight-color:transparent}
+  .maplibregl-marker svg{outline:none}
+  .speed{position:absolute;left:12px;bottom:12px;z-index:500;width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid #d23b3b;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .speed b{font-size:17px;line-height:1;font-weight:800} .speed span{font-size:7.5px;color:var(--muted);letter-spacing:.5px}
+  .wazebar{display:flex;align-items:center;justify-content:center;gap:16px;background:#22303b;color:#fff;padding:11px;font-size:13px}
+  .wazebar .big{font-weight:800;font-size:15px} .wazebar .mut{opacity:.72}
+  .voicechip{position:absolute;right:12px;bottom:12px;z-index:500;background:#fff;border:1px solid var(--line);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .navfoot{display:flex;gap:8px;padding:12px 14px}
+  .truck-ic{font-size:24px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+  .destpin{font-size:26px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+  .curstreet{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:500;background:#4a3b1a;color:#fff;font-weight:800;font-size:13px;padding:6px 15px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.32);max-width:70%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none}
+  /* device switcher + frames */
+  .toolbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;box-shadow:0 4px 16px rgba(0,0,0,.16);z-index:1000}
+  .toolbar button{border:0;background:none;padding:7px 15px;border-radius:999px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer}
+  .toolbar button.on{background:var(--brand);color:#f4ead8}
+  .device{background:#fff;overflow:hidden;transition:width .25s ease}
+  .device.phone{width:390px;max-width:100%;border-radius:26px;border:8px solid #2b2118;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+  .device.tablet{width:760px;max-width:100%;border-radius:22px;border:12px solid #2b2118;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+  .device.desktop{width:980px;max-width:100%;border-radius:10px;border:1px solid #c9bda6;box-shadow:0 22px 60px rgba(0,0,0,.30)}
+  .winbar{display:none;align-items:center;gap:9px;background:#ece6dc;border-bottom:1px solid var(--line);padding:9px 13px}
+  .winbar .dots{display:flex;gap:6px}.winbar .dots i{width:11px;height:11px;border-radius:50%;display:block}
+  .winbar .dots .r{background:#ff5f57}.winbar .dots .y{background:#febc2e}.winbar .dots .g{background:#28c840}
+  .winbar .wt{font-size:12px;font-weight:700;color:var(--muted)}
+  .device.desktop .winbar{display:flex}
+  .device.tablet #navmap,.device.tablet #map3d{height:460px}
+  .device.desktop #navmap,.device.desktop #map3d{height:520px}
+  .device.desktop .screen,.device.tablet .screen{padding-left:26px;padding-right:26px}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button data-m="phone" class="on" onclick="setDevice('phone')">📱 Phone</button>
+  <button data-m="tablet" onclick="setDevice('tablet')">📲 Tablet</button>
+  <button data-m="desktop" onclick="setDevice('desktop')">🖥️ Windows</button>
+</div>
+<div class="device phone" id="device">
+  <div class="winbar"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="wt">PAN Furniture — Driver App</span></div>
+  <div class="top"><span class="logo">PAN</span><div><div class="t1">DRIVER APP</div><div class="t2">Jay Ar Dumangas · Closed Van ABC 1234</div></div></div>
+
+  <!-- SCREEN 1: deliveries -->
+  <div class="screen on" id="s1">
+    <h2>My Deliveries · Jun 27</h2>
+    <div class="card tap" onclick="go('s2')">
+      <div style="display:flex;justify-content:space-between"><span class="o-num">ORD-000010</span><span class="pill cod">COD ₱1,500</span></div>
+      <div style="margin-top:6px;font-weight:600">Maria Santos</div>
+      <div class="muted">Lucban, Quezon · 2 items</div>
+    </div>
+    <div class="card tap" style="opacity:.7">
+      <div style="display:flex;justify-content:space-between"><span class="o-num">ORD-000012</span><span class="pill paid">Paid</span></div>
+      <div style="margin-top:6px;font-weight:600">Robert Tecson</div>
+      <div class="muted">Tayabas · 1 item</div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: order detail -->
+  <div class="screen" id="s2">
+    <button class="back" onclick="go('s1')">← Deliveries</button>
+    <h2>ORD-000010 <span class="pill ofd" id="ofdPill" style="display:none">Out for Delivery</span></h2>
+    <div class="card">
+      <div style="font-weight:700">Maria Santos</div>
+      <div class="muted">📍 Lucban, Quezon (~22 km)</div>
+      <div class="two" style="margin-top:10px">
+        <button class="btn ghost" onclick="toast('Calling Maria…')">📞 Call</button>
+        <button class="btn ghost" onclick="toast('Opening messages…')">💬 Message</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row"><span class="k">Items</span><span class="v">2× Bedside, 6× Chair</span></div>
+      <div class="row"><span class="k">Total</span><span class="v">₱2,500</span></div>
+      <div class="row"><span class="k">Paid</span><span class="v">₱1,000</span></div>
+      <div class="row" style="border:0"><span class="k">Balance (COD)</span><span class="v" style="color:var(--red)">₱1,500</span></div>
+    </div>
+    <button class="btn primary" id="startBtn" onclick="startDelivery()">▶ Start Delivery</button>
+    <button class="btn green" id="arriveBtn" style="display:none" onclick="go('s3')">📍 Arrived — Confirm Delivery</button>
+  </div>
+
+  <!-- SCREEN: NAVIGATION (driver turn-by-turn) -->
+  <div class="screen" id="snav" style="padding:0">
+    <div style="padding:10px 14px 0"><button class="back" onclick="go('s2')">← Order</button></div>
+    <div class="navbanner"><span class="ar" id="navAr">↑</span><div><div class="txt" id="navTxt">Starting…</div><div class="sub" id="navSub">Calculating route</div></div></div>
+    <div style="position:relative">
+      <div id="navmap"></div>
+      <button class="threed-btn" style="top:12px" onclick="open3D()">🚗 Driver View</button>
+      <div class="curstreet" id="curStreet2"></div>
+    </div>
+    <div class="navfoot" style="flex-direction:column;gap:8px">
+      <div class="two" style="width:100%">
+        <button class="btn ghost" onclick="toast('Calling Maria…')">📞 Call</button>
+        <button class="btn ghost" onclick="toast('Opening messages…')">💬 Message</button>
+      </div>
+      <button class="btn green" style="width:100%" onclick="go('s3')">✅ Arrived</button>
+    </div>
+  </div>
+
+  <!-- SCREEN: 3D NAVIGATION (heading-up, tilted) -->
+  <div class="screen" id="s3d" style="padding:0">
+    <div style="padding:10px 14px 0"><button class="back" onclick="go('snav')">← Normal View</button></div>
+    <div class="navbanner"><span class="ar" id="nav3Ar">↑</span><div><div class="txt" id="nav3Txt">3D Navigate</div><div class="sub" id="nav3Sub">Heading-up · tilted</div></div></div>
+    <div style="position:relative">
+      <div id="map3d"></div>
+      <button class="threed-btn" style="top:12px" onclick="go('snav')">🗺️ Normal View</button>
+      <div class="speed"><b id="speedVal">35</b><span>KM/H</span></div>
+      <div class="voicechip" id="voiceChip" onclick="toggleVoice()">🔊</div>
+      <div class="curstreet" id="curStreet3"></div>
+    </div>
+    <div class="wazebar"><span class="big" id="wzClock">9:03 PM</span><span class="mut" id="wzMin">16 min</span><span class="mut" id="wzKm">14 km</span></div>
+    <div class="navfoot" style="flex-direction:column;gap:8px">
+      <div class="two" style="width:100%">
+        <button class="btn ghost" onclick="toast('Calling Maria…')">📞 Call</button>
+        <button class="btn ghost" onclick="toast('Opening messages…')">💬 Message</button>
+      </div>
+      <button class="btn green" onclick="go('s3')">✅ Arrived</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: confirm -->
+  <div class="screen" id="s3">
+    <button class="back" onclick="go('s2')">← Back</button>
+    <h2>Confirm Delivery</h2>
+    <div class="card">
+      <div class="lbl" style="margin-top:0">Delivery PIN <span class="muted">(customer provides · from email)</span></div>
+      <div class="pinwrap">
+        <input class="fld" maxlength="1" inputmode="numeric" oninput="pinMove(this,0)">
+        <input class="fld" maxlength="1" inputmode="numeric" oninput="pinMove(this,1)">
+        <input class="fld" maxlength="1" inputmode="numeric" oninput="pinMove(this,2)">
+        <input class="fld" maxlength="1" inputmode="numeric" oninput="pinMove(this,3)">
+      </div>
+      <div class="err" id="pinErr"></div>
+      <button class="btn primary" onclick="verifyPin()">Verify PIN</button>
+    </div>
+
+    <div class="or">or if NO PIN (helper/proxy received)</div>
+
+    <div class="card">
+      <div class="lbl" style="margin-top:0">Received by</div>
+      <input class="fld" id="recvName" placeholder="Receiver name">
+      <div class="lbl">Relationship to customer</div>
+      <select class="fld" id="recvRel"><option>Customer</option><option>Helper</option><option>Guard</option><option>Family</option><option>Other</option></select>
+      <div class="lbl">Signature</div>
+      <div class="sign" onclick="this.innerHTML='✍️ Signed';this.style.color='var(--ink)'">Tap to sign</div>
+      <div class="lbl">Photo (proof)</div>
+      <div class="photo" onclick="this.innerHTML='📷 ✓ Photo captured';this.style.color='var(--green)'">📷 Tap to take photo</div>
+    </div>
+
+    <div class="card">
+      <div class="row" style="border:0"><span class="k">Collect COD</span><span class="v" id="codV" style="color:var(--red)">₱1,500</span></div>
+      <button class="btn ghost" id="codBtn" onclick="markPaid()">💵 Mark Paid</button>
+    </div>
+
+    <button class="btn green" onclick="confirmDelivered()">✅ Confirm Delivered</button>
+  </div>
+
+  <!-- SCREEN 4: done -->
+  <div class="screen" id="s4">
+    <div class="done-ic">✓</div>
+    <div class="center"><h2 style="color:var(--green)">Delivered!</h2></div>
+    <div class="card">
+      <div class="row"><span class="k">Order</span><span class="v">ORD-000010</span></div>
+      <div class="row"><span class="k">Received by</span><span class="v" id="doneRecv">Maria Santos</span></div>
+      <div class="row"><span class="k">Method</span><span class="v" id="doneMethod">PIN verified</span></div>
+      <div class="row"><span class="k">Time</span><span class="v" id="doneTime">—</span></div>
+      <div class="row" style="border:0"><span class="k">COD</span><span class="v" style="color:var(--green)">₱1,500 collected</span></div>
+    </div>
+    <button class="btn primary" onclick="resetAll();go('s1')">Back to Deliveries</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+  const CORRECT_PIN='4821';
+  let codPaid=false, method='POD (signature + photo)';
+  // device frame switcher (phone / tablet / windows) — same app, reflowed; redraw maps after resize
+  function setDevice(mode){
+    document.getElementById('device').className='device '+mode;
+    document.querySelectorAll('.toolbar button').forEach(b=>b.classList.toggle('on',b.dataset.m===mode));
+    setTimeout(()=>{ try{if(navMap)navMap.invalidateSize();}catch(e){} try{if(map3d)map3d.resize();}catch(e){} },200);
+  }
+  function go(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on')); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); setTimeout(()=>{ if(id==='snav'&&navMap){navMap.invalidateSize(); if(navDriver)navMap.panTo(navDriver.getLatLng(),{animate:false});} if(id==='s3d'&&map3d)map3d.resize(); },80); }
+  function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),1800); }
+  function startDelivery(){ document.getElementById('ofdPill').style.display='inline-block'; toast('📧 Customer notified via email (PIN + tracking link)'); openNav(); }
+  const pins=()=>document.querySelectorAll('#s3 .pinwrap input');
+  function pinMove(el,i){ if(el.value && i<3) pins()[i+1].focus(); document.getElementById('pinErr').textContent=''; }
+  function verifyPin(){
+    const v=[...pins()].map(p=>p.value).join('');
+    if(v===CORRECT_PIN){ method='PIN verified'; document.getElementById('doneRecv').textContent='Maria Santos'; confirmDelivered(); }
+    else document.getElementById('pinErr').textContent='❌ Wrong PIN — check with customer';
+  }
+  function markPaid(){ codPaid=true; document.getElementById('codBtn').textContent='✓ Paid'; document.getElementById('codBtn').style.color='var(--green)'; toast('💵 COD marked paid'); }
+  function confirmDelivered(){
+    const recv=document.getElementById('recvName').value.trim();
+    if(method!=='PIN verified' && recv){ method='POD (signed by '+recv+')'; document.getElementById('doneRecv').textContent=recv+' ('+document.getElementById('recvRel').value+')'; }
+    document.getElementById('doneMethod').textContent=method;
+    document.getElementById('doneTime').textContent=new Date().toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+    go('s4');
+  }
+  function resetAll(){ codPaid=false; method='POD (signature + photo)'; pins().forEach(p=>p.value=''); document.getElementById('recvName').value=''; document.getElementById('startBtn').style.display='block'; document.getElementById('arriveBtn').style.display='none'; document.getElementById('ofdPill').style.display='none'; document.getElementById('codBtn').textContent='💵 Mark Paid'; document.getElementById('codBtn').style.color=''; }
+
+  // ── Driver navigation (OSM + turn-by-turn) ──
+  // Far delivery example: Lucena City → Lucban, Quezon (~22 km, multiple turns)
+  const NAV_ORIGIN=[13.9314,121.6176], NAV_DEST=[14.1136,121.5556];
+  let navMap=null, navDriver=null, navTimer=null, navInit=false, navFollow=true;
+  let navCoords=[], navSteps=[], navDur=0, navDist=0;          // shared route for 3D
+  let map3d=null, t3=null, m3Marker=null, m3Init=false, t3idx=0, t3t=0;
+  let smHead2=null, smHead3=null;   // smoothed heading per view
+  function smooth(prev,raw,k){ if(prev==null)return raw; let d=raw-prev; while(d>180)d-=360; while(d<-180)d+=360; return (prev+d*k+360)%360; }
+  function fmtKm(m){ return m>=1000?(m/1000).toFixed(1)+' km':Math.round(m)+' m'; }
+  function fmtMin(s){ const m=Math.round(s/60); return m>=60?Math.floor(m/60)+'h '+(m%60)+'m':Math.max(1,m)+' min'; }
+  // Turn direction from the ACTUAL road angle (OSRM bearing_before/after) → matches the drawn route exactly.
+  function turnDelta(m){ if(m.bearing_before==null||m.bearing_after==null)return null; let d=m.bearing_after-m.bearing_before; while(d>180)d-=360; while(d<-180)d+=360; return d; }
+  function navArrow(s){ const m=s.maneuver,t=m.type; if(t==='depart')return'🏁'; if(t==='arrive')return'🏠'; const d=turnDelta(m); if(d==null)return /left/.test(m.modifier||'')?'←':/right/.test(m.modifier||'')?'→':'↑'; return Math.abs(d)<18?'↑':Math.abs(d)>150?'↩':d>0?'→':'←'; }
+  function navInstr(s){ const m=s.maneuver,r=s.name||'',t=m.type; if(t==='depart')return'Depart'+(r?' on '+r:''); if(t==='arrive')return'Arrive at delivery'; const d=turnDelta(m); let dir; if(d==null) dir=/left/.test(m.modifier||'')?'Turn left':/right/.test(m.modifier||'')?'Turn right':'Continue'; else dir=Math.abs(d)<18?'Continue straight':Math.abs(d)>150?'Make a U-turn':d>0?'Turn right':'Turn left'; return dir+(r?' on '+r:''); }
+
+  function openNav(){
+    go('snav');
+    if(!navInit){
+      navInit=true;
+      navMap=L.map('navmap',{attributionControl:false,rotate:true,rotateControl:false,touchRotate:false,bearing:0}).setView([13.9245,121.608],14);
+      // Standard OpenStreetMap — colorful base w/ full street & place names (free, no key)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,subdomains:'abc'}).addTo(navMap);
+      // always auto-follow the driver (north-up so street names stay upright/readable)
+      L.marker(NAV_DEST,{icon:L.divIcon({html:'<div class="destpin">📍</div>',className:'',iconSize:[28,28],iconAnchor:[14,26]})}).addTo(navMap);
+      // up-pointing arrow (map rotates heading-up, so arrow always = forward)
+      navDriver=L.marker(NAV_ORIGIN,{icon:L.divIcon({html:'<svg width="48" height="48" viewBox="0 0 48 48" style="display:block;filter:drop-shadow(0 2px 5px rgba(0,0,0,.4))"><circle cx="24" cy="24" r="17" fill="#fff" stroke="#e2e6ee" stroke-width="1.5"/><path d="M24 11 L33 33 L24 27.5 L15 33 Z" fill="#2b7cff" stroke="#2b7cff" stroke-width="1" stroke-linejoin="round"/></svg>',className:'',iconSize:[48,48],iconAnchor:[24,24]})}).addTo(navMap);
+      loadNavRoute();
+    }
+    setTimeout(()=>navMap.invalidateSize(),120);
+  }
+  async function loadNavRoute(){
+    let coords=[NAV_ORIGIN,NAV_DEST], steps=[], dur=0, dist=0;
+    try{
+      const u=`https://router.project-osrm.org/route/v1/driving/${NAV_ORIGIN[1]},${NAV_ORIGIN[0]};${NAV_DEST[1]},${NAV_DEST[0]}?overview=full&geometries=geojson&steps=true`;
+      const j=await (await fetch(u)).json(); const rt=j.routes[0];
+      coords=rt.geometry.coordinates.map(c=>[c[1],c[0]]); dur=rt.duration; dist=rt.distance;
+      steps=(rt.legs[0].steps||[]).map(s=>({ar:navArrow(s),txt:navInstr(s),cum:0,d:s.distance,road:s.name||''}));
+      let c=0; steps.forEach(s=>{c+=s.d;s.cum=c;});
+    }catch(e){ document.getElementById('navSub').textContent='Route offline'; }
+    L.polyline(coords,{color:'#2b7cff',weight:5,opacity:.65}).addTo(navMap);
+    navCoords=coords; navSteps=steps; navDur=dur; navDist=dist;   // share with 3D view
+    navFollow=true; navMap.setView(NAV_ORIGIN,16);   // follow-mode: zoom in on driver
+    // animate (progress-based → fixed duration regardless of route length)
+    const seg=[],cum=[0]; let tot=0;
+    for(let k=0;k<coords.length-1;k++){const dx=coords[k][0]-coords[k+1][0],dy=coords[k][1]-coords[k+1][1];const d=Math.sqrt(dx*dx+dy*dy);seg.push(d);tot+=d;cum.push(tot);}
+    let prog=0; const INC=tot*1.6/(dist||tot); clearInterval(navTimer);
+    navTimer=setInterval(()=>{
+      const fin=()=>{ const L=coords[coords.length-1]; navDriver.setLatLng(L); document.getElementById('navTxt').textContent='Arrived at delivery 🏠'; document.getElementById('navAr').textContent='🏠'; document.getElementById('navSub').textContent='Tap Arrived'; clearInterval(navTimer); };
+      prog+=INC; if(prog>=tot){ fin(); return; }
+      let i=0; while(i<seg.length-1 && cum[i+1]<prog) i++;
+      const t=seg[i]?(prog-cum[i])/seg[i]:0, a=coords[i], b=coords[i+1];
+      const pos=[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+      navDriver.setLatLng(pos);
+      navMap.panTo(pos,{animate:false});   // always follow
+      smHead2=smooth(smHead2,bearing(a,b),0.25);
+      if(navMap.setBearing) navMap.setBearing(-smHead2);   // heading-up: rotate map, arrow stays forward
+      const frac=(tot-prog)/tot, traveled=(1-frac)*dist;
+      let ai=steps.findIndex(s=>traveled<=s.cum); if(ai<0)ai=steps.length-1;
+      const cur=steps[ai];
+      if(cur){ document.getElementById('navAr').textContent=cur.ar; document.getElementById('navTxt').textContent=cur.txt; document.getElementById('navSub').textContent=`in ${fmtKm(cur.cum-traveled)} · ETA ~${fmtMin(dur*frac)}`; }
+      const cs2=document.getElementById('curStreet2'); if(cs2){ const rd=cur&&cur.road; cs2.textContent=rd||''; cs2.style.display=rd?'block':'none'; }
+    },140);
+  }
+
+  // ── 3D Navigate (MapLibre GL — heading-up, tilted) ──
+  function bearing(a,b){ const R=d=>d*Math.PI/180,D=r=>r*180/Math.PI; const φ1=R(a[0]),φ2=R(b[0]),Δ=R(b[1]-a[1]); const y=Math.sin(Δ)*Math.cos(φ2); const x=Math.cos(φ1)*Math.sin(φ2)-Math.sin(φ1)*Math.cos(φ2)*Math.cos(Δ); return (D(Math.atan2(y,x))+360)%360; }
+  // point ~`ahead` (in cum units) further along the route → stable heading so turns render correctly
+  function aheadPoint(coords,cum,prog,ahead){ const T=cum[cum.length-1]; const target=Math.min(prog+ahead,T-1e-9); let j=0; while(j<cum.length-2 && cum[j+1]<target) j++; const span=cum[j+1]-cum[j], tt=span?(target-cum[j])/span:0; return [coords[j][0]+(coords[j+1][0]-coords[j][0])*tt, coords[j][1]+(coords[j+1][1]-coords[j][1])*tt]; }
+  // voice guidance — Waze-style distance reminders + "turn now"
+  let voiceOn=true, vStep=-1, vDone=[];
+  const V_TH=[2000,1000,500,200,60];   // meters thresholds to announce at
+  function toggleVoice(){ voiceOn=!voiceOn; document.getElementById('voiceChip').textContent=voiceOn?'🔊':'🔇'; if(!voiceOn){try{speechSynthesis.cancel();}catch(e){}} }
+  function speak(t){ if(!voiceOn)return; try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t); u.rate=1; u.lang='en-US'; speechSynthesis.speak(u); }catch(e){} }
+  function spokenDist(m){ return m>=1000?(m/1000)+' kilometer'+((m/1000)>1?'s':''):(Math.round(m/10)*10)+' meters'; }
+  function voiceGuide(idx,instr,dist){
+    if(idx!==vStep){ vStep=idx; vDone=[]; }
+    for(const th of V_TH){
+      if(dist<=th && !vDone.includes(th)){
+        vDone.push(th);
+        speak(th<=60 ? instr : `In ${spokenDist(th)}, ${instr}`);
+        break;
+      }
+    }
+  }
+  function open3D(){
+    go('s3d');
+    if(navCoords.length<2){ document.getElementById('nav3Sub').textContent='Loading route… (start delivery first)'; return; }
+    if(!m3Init){ m3Init=true; init3d(); }
+    else { setTimeout(()=>{ map3d.resize(); animate3d(); },150); }
+  }
+  function init3d(){
+    // Hybrid: OpenFreeMap vector style (for crisp upright labels) + Esri satellite imagery underneath the labels.
+    map3d=new maplibregl.Map({
+      container:'map3d', attributionControl:false,
+      style:'https://tiles.openfreemap.org/styles/liberty',
+      center:[NAV_ORIGIN[1],NAV_ORIGIN[0]], zoom:17, pitch:62, bearing:0, maxZoom:18.5
+    });
+    map3d.on('load',()=>{
+      // satellite imagery inserted UNDER the first label (symbol) layer → covers vector land/roads,
+      // but keeps vector street/place names crisp & upright on top.
+      const firstSymbol=(map3d.getStyle().layers.find(l=>l.type==='symbol')||{}).id;
+      map3d.addSource('sat',{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],tileSize:256,maxzoom:18,attribution:'Esri'});
+      map3d.addLayer({id:'sat',type:'raster',source:'sat',paint:{'raster-opacity':1}}, firstSymbol);
+      // 3D building extrusions ON TOP of satellite (below labels) — same as the earlier vector view
+      try{
+        const bl=map3d.getStyle().layers.find(l=>l['source-layer']==='building' && l.type!=='symbol');
+        const bsrc=bl?bl.source:'openmaptiles';
+        map3d.addLayer({id:'b3d',type:'fill-extrusion',source:bsrc,'source-layer':'building',minzoom:14,
+          paint:{
+            'fill-extrusion-color':'#c9bda6',
+            'fill-extrusion-height':['interpolate',['linear'],['zoom'],14,0,16,['*',1.6,['coalesce',['get','render_height'],['get','height'],9]]],
+            'fill-extrusion-base':['coalesce',['get','render_min_height'],0],
+            'fill-extrusion-opacity':0.7}}, firstSymbol);
+      }catch(e){}
+      // Prefer real street NAMES over OSM ref numbers (e.g. "603-1"). Rural PH roads in
+      // free OSM often only have `ref` and no `name` → hide those shields so we don't show
+      // bare numbers; show a label only where an actual name exists.
+      try{
+        for(const ly of map3d.getStyle().layers){
+          if(ly.type!=='symbol') continue;
+          let tf; try{ tf=map3d.getLayoutProperty(ly.id,'text-field'); }catch(e){ continue; }
+          const s=JSON.stringify(tf||'');
+          const isRoad=ly['source-layer']==='transportation_name';
+          if(isRoad){
+            // road label → name only (no ref fallback). Blank where OSM has no name.
+            map3d.setLayoutProperty(ly.id,'text-field',['coalesce',['get','name:latin'],['get','name'],'']);
+            // make names KITA on satellite: bigger, white, strong dark halo, follow road, always show
+            map3d.setLayoutProperty(ly.id,'visibility','visible');
+            map3d.setLayoutProperty(ly.id,'symbol-placement','line');
+            map3d.setLayoutProperty(ly.id,'text-size',10);
+            map3d.setLayoutProperty(ly.id,'text-allow-overlap',false);
+            map3d.setLayoutProperty(ly.id,'text-rotation-alignment','map');
+            map3d.setLayoutProperty(ly.id,'text-pitch-alignment','viewport');
+            try{ map3d.setPaintProperty(ly.id,'text-color','#ffffff'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-color','rgba(15,18,28,.9)'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-width',2.2); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-blur',0.3); }catch(e){}
+            try{ map3d.setLayerZoomRange(ly.id,10,24); }catch(e){}
+          }else if(/\bref\b/.test(s)){
+            // standalone ref shield (route number) → hide
+            map3d.setLayoutProperty(ly.id,'visibility','none');
+          }else{
+            // place / POI labels → also white w/ dark halo so readable on satellite, smaller
+            try{ map3d.setPaintProperty(ly.id,'text-color','#ffffff'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-color','rgba(15,18,28,.9)'); }catch(e){}
+            try{ map3d.setPaintProperty(ly.id,'text-halo-width',2); }catch(e){}
+            try{ map3d.setLayoutProperty(ly.id,'text-size',9); }catch(e){}
+          }
+        }
+      }catch(e){}
+      // route ON TOP of satellite + labels
+      map3d.addSource('route',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:navCoords.map(c=>[c[1],c[0]])}}});
+      map3d.addLayer({id:'route-case',type:'line',source:'route',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#0a66b0','line-width':13,'line-opacity':.95}});
+      map3d.addLayer({id:'route',type:'line',source:'route',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#1ea2ff','line-width':8.5,'line-opacity':1}});
+      if(m3Marker){ try{m3Marker.remove();}catch(e){} }
+      const el=document.createElement('div');
+      el.style.pointerEvents='none';
+      el.innerHTML='<svg width="48" height="48" viewBox="0 0 48 48" style="display:block"><circle cx="24" cy="24" r="17" fill="#fff" stroke="#e2e6ee" stroke-width="1.5"/><path d="M24 11 L33 33 L24 27.5 L15 33 Z" fill="#2b7cff" stroke="#2b7cff" stroke-width="1" stroke-linejoin="round"/></svg>';
+      el.style.filter='drop-shadow(0 2px 5px rgba(0,0,0,.4))';
+      m3Marker=new maplibregl.Marker({element:el}).setLngLat([NAV_ORIGIN[1],NAV_ORIGIN[0]]).addTo(map3d);
+      animate3d();
+    });
+  }
+  function animate3d(){
+    const coords=navCoords; if(coords.length<2)return;
+    const seg=[],cum=[0]; let tot=0;
+    for(let k=0;k<coords.length-1;k++){const dx=coords[k][0]-coords[k+1][0],dy=coords[k][1]-coords[k+1][1];const d=Math.sqrt(dx*dx+dy*dy);seg.push(d);tot+=d;cum.push(tot);}
+    vStep=-1; vDone=[]; smHead3=null; clearInterval(t3);
+    let prog=0; const INC=tot*1.6/(navDist||tot);   // ~1.6 m/tick @140ms ≈ 41 km/h (real GPS speed)
+    t3=setInterval(()=>{
+      const fin=()=>{ const L=coords[coords.length-1]; m3Marker.setLngLat([L[1],L[0]]); document.getElementById('nav3Txt').textContent='Arrived at delivery 🏠'; document.getElementById('nav3Ar').textContent='🏠'; document.getElementById('nav3Sub').textContent='Tap Arrived'; document.getElementById('wzMin').textContent='Arrived'; speak('You have arrived at your delivery location'); clearInterval(t3); };
+      prog+=INC; if(prog>=tot){ fin(); return; }
+      let i=0; while(i<seg.length-1 && cum[i+1]<prog) i++;
+      const t=seg[i]?(prog-cum[i])/seg[i]:0, a=coords[i], b=coords[i+1];
+      const lat=a[0]+(b[0]-a[0])*t, lng=a[1]+(b[1]-a[1])*t;
+      m3Marker.setLngLat([lng,lat]);
+      smHead3=smooth(smHead3,bearing(a,b),0.25);   // map up = current travel direction (smoothed)
+      const ph3=(map3d.getContainer().clientHeight||330)*0.42; // driver to lower third (more road ahead)
+      map3d.easeTo({center:[lng,lat],bearing:smHead3,pitch:62,duration:160,padding:{top:ph3,bottom:0,left:0,right:0},essential:true});
+      const frac=(tot-prog)/tot, traveled=(1-frac)*navDist;
+      let ai=navSteps.findIndex(s=>traveled<=s.cum); if(ai<0)ai=navSteps.length-1;
+      const cur=navSteps[ai], turn=navSteps[ai+1]||cur, dToTurn=Math.max(0,(cur?cur.cum:0)-traveled);
+      const cs3=document.getElementById('curStreet3'); if(cs3){ const rd=cur&&cur.road; cs3.textContent=rd||''; cs3.style.display=rd?'block':'none'; }
+      document.getElementById('nav3Ar').textContent=turn.ar;
+      document.getElementById('nav3Txt').textContent=turn.txt;
+      document.getElementById('nav3Sub').textContent=`in ${fmtKm(dToTurn)} · ETA ~${fmtMin(navDur*frac)}`;
+      voiceGuide(ai, turn.txt, dToTurn);
+      document.getElementById('wzClock').textContent=clockIn(navDur*frac);
+      document.getElementById('wzMin').textContent=fmtMin(navDur*frac);
+      document.getElementById('wzKm').textContent=fmtKm(navDist*frac);
+      document.getElementById('speedVal').textContent=String(30+Math.round(15*Math.abs(Math.sin(prog))));
+    },140);
+  }
+</script>
+</body>
+</html>

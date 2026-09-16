@@ -1,0 +1,627 @@
+{
+  "heroSlides": [
+    {
+      "headline": "Beds built for how you sleep",
+      "subtext": "Made to order in our San Pedro, Laguna workshop. Any size, any fabric.",
+      "cta": "Shop Beds",
+      "ctaHref": "/collections/beds",
+      "imageDesktop": "/store/images/scenes/hero-1-desktop.jpg",
+      "imageMobile": "/store/images/scenes/hero-1-mobile.jpg"
+    },
+    {
+      "headline": "Tufted, channelled, or plain",
+      "subtext": "Pick the headboard, the fabric and the size. We build the rest.",
+      "cta": "Shop Promo Beds",
+      "ctaHref": "/collections/bed",
+      "imageDesktop": "/store/images/scenes/hero-2-desktop.jpg",
+      "imageMobile": "/store/images/scenes/hero-2-mobile.jpg"
+    },
+    {
+      "headline": "Sofas that last the family years",
+      "subtext": "Kiln-dried hardwood frames, pocket springs, fabrics you can wipe.",
+      "cta": "Shop Sofas",
+      "ctaHref": "/collections/sofas",
+      "imageDesktop": "/store/images/scenes/hero-3-desktop.jpg",
+      "imageMobile": "/store/images/scenes/hero-3-mobile.jpg"
+    },
+    {
+      "headline": "Made to measure",
+      "subtext": "Panel headboards, wall padding, storage — built to your room.",
+      "cta": "Custom Beds",
+      "ctaHref": "/collections/customized-bed",
+      "imageDesktop": "/store/images/scenes/hero-4-desktop.jpg",
+      "imageMobile": "/store/images/scenes/hero-4-mobile.jpg"
+    }
+  ],
+  "trustBadges": [
+    {
+      "icon": "sofa",
+      "title": "Made in our own workshop",
+      "text": "Kiln-dried hardwood, no shortcuts."
+    },
+    {
+      "icon": "guarantee",
+      "title": "1-year frame warranty",
+      "text": "Repairs on us."
+    },
+    {
+      "icon": "card",
+      "title": "30% downpayment to start",
+      "text": "Pay the balance before delivery."
+    },
+    {
+      "icon": "truck",
+      "title": "Delivery across Luzon",
+      "text": "Our own trucks and installers."
+    }
+  ],
+  "pressBar": {
+    "title": "What people say",
+    "quote": "“The bed arrived exactly as we drew it on Messenger — that never happens.”",
+    "logos": [
+      "Casa Diaries",
+      "Home Journal PH",
+      "Sala Weekly",
+      "Bahay Living",
+      "Design Notes",
+      "Tahanan Mag"
+    ]
+  },
+  "bestSelling": {
+    "title": "Best-selling beds",
+    "productPrefixes": [
+      "lakan-platform-bed",
+      "tala-tufted-bed",
+      "dalisay-upholstered-bed",
+      "kalinaw-storage-bed",
+      "bagwis-low-bed",
+      "custom-bed-made-to-measure"
+    ]
+  },
+  "bannerSlideshows": [
+    {
+      "id": "bedroom",
+      "slides": [
+        {
+          "headline": "Make room for better rest",
+          "ctas": [
+            {
+              "label": "Explore Bedroom",
+              "href": "/collections/beds"
+            },
+            {
+              "label": "Shop Storage Beds",
+              "href": "/products/kalinaw-storage-bed"
+            }
+          ],
+          "image": "/store/images/scenes/banner-1.jpg",
+          "label": "Kalinaw Storage Bed in Cloud Grey"
+        },
+        {
+          "headline": "Low, light, and easy to live with",
+          "ctas": [
+            {
+              "label": "Shop the Bagwis",
+              "href": "/products/bagwis-low-bed"
+            }
+          ],
+          "image": "/store/images/scenes/banner-2.jpg",
+          "label": "Bagwis Low-Profile Bed in Natural Linen"
+        }
+      ]
+    },
+    {
+      "id": "living",
+      "slides": [
+        {
+          "headline": "Built for movie nights",
+          "ctas": [
+            {
+              "label": "Shop the Habagat",
+              "href": "/products/habagat-l-shape-sofa"
+            }
+          ],
+          "image": "/store/images/scenes/banner-3.jpg",
+          "label": "Habagat L-Shape Sofa in Olive Drab"
+        },
+        {
+          "headline": "Small space, big comfort",
+          "ctas": [
+            {
+              "label": "Shop Loveseats",
+              "href": "/collections/sofas"
+            }
+          ],
+          "image": "/store/images/scenes/banner-4.jpg",
+          "label": "Sinag Loveseat in Mustard"
+        }
+      ]
+    }
+  ],
+  "splitSections": [
+    {
+      "image": "/store/images/scenes/split-1.jpg",
+      "headline": "The living edit",
+      "subtext": "Sofas, loveseats and the tables that go with them",
+      "cta": "Explore Living",
+      "href": "/collections/living",
+      "productPrefixes": [
+        "marikit-3-seater-sofa",
+        "sinag-loveseat",
+        "ilog-side-table"
+      ]
+    },
+    {
+      "image": "/store/images/scenes/split-2.jpg",
+      "headline": "Statement armchairs",
+      "subtext": "The kind of chair every room needs",
+      "cta": "Explore Accent Chairs",
+      "href": "/collections/accent-chair",
+      "productPrefixes": [
+        "ginto-barrel-chair",
+        "liwayway-accent-chair",
+        "bughaw-lounge-chair"
+      ]
+    },
+    {
+      "image": "/store/images/scenes/split-3.jpg",
+      "headline": "The dining edit",
+      "subtext": "Tables and chairs finished by hand",
+      "cta": "Explore Dining",
+      "href": "/collections/dining",
+      "productPrefixes": [
+        "narra-dining-table-6",
+        "mabini-dining-chair",
+        "lihim-cane-dining-chair"
+      ]
+    }
+  ],
+  "testimonials": {
+    "title": "What our customers are saying",
+    "items": [
+      {
+        "state": "LAG",
+        "quote": "They built the bed to the exact width of our room. Nothing off the shelf would have fit.",
+        "name": "Bea R.",
+        "city": "Santa Rosa, Laguna"
+      },
+      {
+        "state": "NCR",
+        "quote": "The sofa is heavier and sturdier than anything we saw in the mall.",
+        "name": "Marco D.",
+        "city": "Quezon City"
+      },
+      {
+        "state": "CAV",
+        "quote": "Delivered and installed the same afternoon. Very polite team.",
+        "name": "Ana L.",
+        "city": "Bacoor, Cavite"
+      },
+      {
+        "state": "BTG",
+        "quote": "Chose the fabric from the swatch photos and it matched exactly.",
+        "name": "Joseph T.",
+        "city": "Lipa, Batangas"
+      },
+      {
+        "state": "QZN",
+        "quote": "Our second order. Same quality as the first one three years ago.",
+        "name": "Grace M.",
+        "city": "San Pedro, Laguna"
+      },
+      {
+        "state": "RIZ",
+        "quote": "Messenger updates during production made the wait easy.",
+        "name": "Noel P.",
+        "city": "Antipolo, Rizal"
+      }
+    ]
+  },
+  "videoReviews": {
+    "eyebrow": "Real customer reviews",
+    "title": "Sit back and press play",
+    "items": [
+      {
+        "video": "",
+        "poster": "",
+        "name": "",
+        "role": "Real PAN Furniture Customer"
+      }
+    ]
+  },
+  "ugc": {
+    "title": "PAN Furniture, in real life",
+    "subtitle": "USE #PANFURNITURES AND TAG US @PANFURNITURES",
+    "handle": "@panfurnitures",
+    "caption": "A little look at how our pieces are living in your homes ✨",
+    "photos": [
+      "/store/images/scenes/customer-1.jpg",
+      "/store/images/scenes/customer-2.jpg",
+      "/store/images/scenes/customer-3.jpg",
+      "/store/images/scenes/customer-4.jpg",
+      "/store/images/scenes/customer-5.jpg",
+      "/store/images/scenes/customer-6.jpg",
+      "/store/images/scenes/customer-7.jpg",
+      "/store/images/scenes/customer-8.jpg"
+    ]
+  },
+  "faqs": {
+    "title": "FAQs",
+    "items": [
+      {
+        "q": "How much do you charge for delivery?",
+        "a": "Delivery is quoted per city at checkout. San Pedro and nearby provinces are delivered by our own trucks; farther provinces go through partner couriers."
+      },
+      {
+        "q": "How long does a made-to-order bed take?",
+        "a": "Most frames are finished within 3–5 weeks. We send photos from the workshop on Messenger as it progresses."
+      },
+      {
+        "q": "Can I change the size or fabric?",
+        "a": "Yes. Every bed and sofa is built to order, so you can pick any size and any fabric from the swatch library, or send us your own."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "A 30% downpayment via QR Ph or card confirms the order; the balance is settled before delivery."
+      },
+      {
+        "q": "Do you assemble?",
+        "a": "Our delivery team assembles and positions the piece in the room you choose."
+      },
+      {
+        "q": "What is covered by the warranty?",
+        "a": "The frame is covered for one year against structural defects. Fabric wear is not covered."
+      }
+    ]
+  },
+  "googleReviews": {
+    "title": "PAN Furniture Reviews on Google",
+    "rating": 4.8,
+    "count": 63,
+    "items": [
+      {
+        "name": "Ivy S.",
+        "rating": 5,
+        "date": "2 weeks ago",
+        "text": "Ordered the Lakan bed in Bailey Blue. The workshop sent progress photos and the finished bed looked exactly like them.",
+        "photos": [
+          "/store/images/scenes/customer-1.jpg"
+        ],
+        "product": "lakan-platform-bed"
+      },
+      {
+        "name": "Rico B.",
+        "rating": 5,
+        "date": "3 weeks ago",
+        "text": "The wingback headboard is taller than we expected, in a good way. Solid frame.",
+        "photos": [
+          "/store/images/scenes/customer-2.jpg"
+        ],
+        "product": "dalisay-upholstered-bed"
+      },
+      {
+        "name": "Trina G.",
+        "rating": 4,
+        "date": "1 month ago",
+        "text": "Storage drawers glide smoothly and hold all our sheets.",
+        "photos": [
+          "/store/images/scenes/customer-3.jpg"
+        ],
+        "product": "kalinaw-storage-bed"
+      },
+      {
+        "name": "Dexter V.",
+        "rating": 5,
+        "date": "1 month ago",
+        "text": "Tufted bed is the centrepiece of our room now.",
+        "photos": [
+          "/store/images/scenes/customer-4.jpg"
+        ],
+        "product": "tala-tufted-bed"
+      },
+      {
+        "name": "Mae F.",
+        "rating": 5,
+        "date": "2 months ago",
+        "text": "Low bed fits our small condo room perfectly.",
+        "photos": [
+          "/store/images/scenes/customer-5.jpg"
+        ],
+        "product": "bagwis-low-bed"
+      },
+      {
+        "name": "Jun E.",
+        "rating": 5,
+        "date": "2 months ago",
+        "text": "Channel headboard looks like a feature wall. Neighbours asked where we got it.",
+        "photos": [
+          "/store/images/scenes/customer-6.jpg"
+        ],
+        "product": "hiraya-channel-bed"
+      },
+      {
+        "name": "Kim H.",
+        "rating": 4,
+        "date": "3 months ago",
+        "text": "Solid sofa. Two adults and a dog every night and the cushions still bounce back.",
+        "photos": [
+          "/store/images/scenes/customer-7.jpg"
+        ],
+        "product": "marikit-3-seater-sofa"
+      },
+      {
+        "name": "Leo J.",
+        "rating": 5,
+        "date": "3 months ago",
+        "text": "Mustard velvet bed, exactly the colour of the swatch photo.",
+        "photos": [
+          "/store/images/scenes/customer-8.jpg"
+        ],
+        "product": "ginto-velvet-bed"
+      },
+      {
+        "name": "Diana K.",
+        "rating": 5,
+        "date": "4 months ago",
+        "text": "Green channel bed delivered and set up in an afternoon. Very polite team.",
+        "photos": [
+          "/store/images/scenes/customer-9.jpg"
+        ],
+        "product": "luntian-channel-bed"
+      }
+    ]
+  },
+  "trustBar": [
+    {
+      "icon": "home",
+      "title": "Made in San Pedro, Laguna",
+      "sub": "Our own workshop crew"
+    },
+    {
+      "icon": "shield",
+      "title": "6-month warranty",
+      "sub": "Frame, foam, workmanship"
+    },
+    {
+      "icon": "truck",
+      "title": "Delivered & set up by our team",
+      "sub": "Nationwide · live tracking"
+    },
+    {
+      "icon": "card",
+      "title": "30% downpayment",
+      "sub": "QR Ph · card"
+    }
+  ],
+  "readyToShip": {
+    "eyebrow": "In stock · San Pedro, Laguna",
+    "title": "Ready to ship this week",
+    "sub": "Built and on the warehouse floor. Order by Thursday and it leaves with this week’s delivery run."
+  },
+  "promoBeds": {
+    "eyebrow": "Promo Bed · made to order",
+    "title": "Promo beds from ₱15,900",
+    "sub": "Twelve upholstered frames, built to order in San Pedro. Pick a fabric, Single to King 2, delivered and set up in 4–6 weeks.",
+    "featuredSlug": "lakan-platform-bed",
+    "foot": [
+      "30% downpayment to start",
+      "4–6 weeks build to delivery",
+      "6-month warranty on frame, foam and workmanship",
+      "Add a mattress — delivered together"
+    ],
+    "featuredImage": "",
+    "cards": [
+      {
+        "name": "Lakan Platform Bed",
+        "image": "/store/images/scenes/promo-1.jpg"
+      },
+      {
+        "name": "Dalisay Upholstered Bed",
+        "image": "/store/images/scenes/promo-2.jpg"
+      },
+      {
+        "name": "Kalinaw Storage Bed",
+        "image": "/store/images/scenes/promo-3.jpg"
+      },
+      {
+        "name": "Tala Tufted Bed",
+        "image": "/store/images/scenes/promo-4.jpg"
+      },
+      {
+        "name": "Bagwis Low-Profile Bed",
+        "image": "/store/images/scenes/promo-5.jpg"
+      },
+      {
+        "name": "Hiraya Channel Bed",
+        "image": "/store/images/scenes/promo-6.jpg"
+      },
+      {
+        "name": "Ginto Velvet Bed",
+        "image": "/store/images/scenes/promo-7.jpg"
+      },
+      {
+        "name": "Rosas Bed",
+        "image": "/store/images/scenes/promo-8.jpg"
+      },
+      {
+        "name": "Luntian Channel Bed",
+        "image": "/store/images/scenes/promo-9.jpg"
+      },
+      {
+        "name": "Kape Tufted Bed",
+        "image": "/store/images/scenes/promo-10.jpg"
+      },
+      {
+        "name": "Bughaw Panel Bed",
+        "image": "/store/images/scenes/promo-11.jpg"
+      },
+      {
+        "name": "Perlas Wingback Bed",
+        "image": "/store/images/scenes/promo-12.jpg"
+      }
+    ]
+  },
+  "categoryRows": {
+    "minProducts": 2,
+    "rows": [
+      {
+        "title": "Chairs",
+        "tabs": [
+          {
+            "label": "Accent",
+            "slug": "accent-chair"
+          },
+          {
+            "label": "Dining",
+            "slug": "dining-chairs"
+          },
+          {
+            "label": "Barstool",
+            "slug": "barstool"
+          },
+          {
+            "label": "Swivel",
+            "slug": "swivel-chair"
+          }
+        ]
+      },
+      {
+        "title": "Beds & Mattress",
+        "tabs": [
+          {
+            "label": "Promo Bed",
+            "slug": "bed"
+          },
+          {
+            "label": "Custom Bed",
+            "slug": "customized-bed"
+          },
+          {
+            "label": "Mattress",
+            "slug": "mattress"
+          }
+        ]
+      },
+      {
+        "title": "Sofas",
+        "tabs": [
+          {
+            "label": "Sofa",
+            "slug": "sofa"
+          },
+          {
+            "label": "Sofa Bed",
+            "slug": "sofa-bed"
+          }
+        ]
+      },
+      {
+        "title": "Dining",
+        "tabs": [
+          {
+            "label": "Dining Table",
+            "slug": "dining-table"
+          },
+          {
+            "label": "Dining Set",
+            "slug": "dining-set"
+          },
+          {
+            "label": "Barstool",
+            "slug": "barstool"
+          }
+        ]
+      },
+      {
+        "title": "Living",
+        "tabs": [
+          {
+            "label": "Side Table",
+            "slug": "side-table"
+          },
+          {
+            "label": "Ottoman",
+            "slug": "ottoman-ph"
+          },
+          {
+            "label": "Accent Chair",
+            "slug": "accent-chair"
+          }
+        ]
+      }
+    ]
+  },
+  "mto": {
+    "eyebrow": "How made-to-order works",
+    "title": "Made to order, made here",
+    "sub": "Every made-to-order piece is built in our own San Pedro, Laguna workshop. Pick the fabric, we build it, we deliver it.",
+    "image": "/store/images/scenes/mto-workshop.jpg",
+    "stat": {
+      "pieces": "1,200+",
+      "workshop": "San Pedro, Laguna",
+      "build": "4–6 wks"
+    },
+    "steps": [
+      {
+        "title": "Pick your fabric and size",
+        "text": "Choose from 50 fabrics — leather, weave, velvet, linen — and set the measurements that fit your room."
+      },
+      {
+        "title": "We build it in San Pedro",
+        "text": "Frame, foam and upholstery by our own crew. You get a photo update when it goes into upholstery and when it passes QC."
+      },
+      {
+        "title": "Delivered and set up",
+        "text": "Our own delivery team brings it to your home, assembles it, and takes the packaging away. Live tracking on the day; balance paid on delivery."
+      }
+    ],
+    "areas": [
+      "Cavite",
+      "Laguna",
+      "Metro Manila",
+      "Nationwide"
+    ],
+    "messengerLabel": "Talk to us on Messenger"
+  },
+  "showrooms": {
+    "eyebrow": "Two showrooms",
+    "title": "Come sit on it first",
+    "sub": "Try the fabrics, test the seats, and talk to the people who build them. Walk-ins welcome at both branches.",
+    "items": [
+      {
+        "name": "PAN Furniture Showroom 1",
+        "address": "San Pedro, Laguna — main branch",
+        "hours": "Mon–Sun · 9:00 AM – 7:00 PM",
+        "image": "/store/images/scenes/showroom-1.jpg",
+        "waze": "",
+        "maps": ""
+      },
+      {
+        "name": "PAN Furniture Showroom 2",
+        "address": "Biñan, Laguna",
+        "hours": "Mon–Sun · 9:00 AM – 7:00 PM",
+        "image": "/store/images/scenes/showroom-2.jpg",
+        "waze": "",
+        "maps": ""
+      }
+    ],
+    "contact": {
+      "phone": "0917 000 0000",
+      "phoneHours": "Mon–Sun · 9 AM – 7 PM",
+      "email": "panfurnitureph@gmail.com",
+      "emailNote": "Expect a reply within 2 days",
+      "messengerNote": "Replies within the hour on business days",
+      "deliveryNote": "Nationwide by our own team · Cavite, Laguna and Metro Manila weekly runs"
+    }
+  },
+  "preFooter": {
+    "title": "Any questions?",
+    "subtitle": "We are happy to help!",
+    "phone": "0917 000 0000",
+    "phoneHours": "Mon–Sat 9 AM – 6 PM",
+    "chatLabel": "Chat",
+    "chatText": "Chat with us on Messenger",
+    "email": "panfurnitureph@gmail.com",
+    "emailText": "Expect a reply within a day"
+  }
+}

@@ -1,0 +1,21 @@
+Packing List,PL-100022,,,,,,,
+Booking,NW2622,Container,NWMU8283486,ETD,2026-07-01,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9497,EL5629-STD,Voltera Battery 12V,Standard,120,3.228,347.7,312.9
+11-18,PO-9471,FL1137-LH,Kestrel Oil Filter,Left Hand,96,0.548,121.5,109.4
+19-28,PO-9520,CO5260-CE,Ironbridge Radiator,Ceramic,120,2.349,368.9,332.0
+29-30,PO-9461,DR3629-RH,Torqueline Drive Chain,Right Hand,24,0.116,80.8,72.7
+31-34,PO-9540,EL4893-CE,Voltera Battery 12V,Ceramic,48,0.593,123.1,110.8
+35-44,PO-9480,EL2664-PF,Voltera Battery 12V,Performance,120,2.300,96.3,86.7
+45-45,PO-9496,FL9142-LH,Kestrel Oil Filter,Left Hand,12,0.028,23.6,21.2
+46-47,PO-9535,FL5311-RH,Kestrel Oil Filter,Right Hand,24,0.616,63.5,57.1
+48-55,PO-9438,FL6596-LH,Kestrel Oil Filter,Left Hand,96,0.356,346.4,311.8
+56-57,PO-9439,DR9239-BK,Torqueline Drive Chain,Black,24,0.478,16.9,15.2
+58-58,PO-9519,IG4727-CR,Voltera Spark Plug Set,Chrome,12,0.345,35.1,31.6
+59-68,PO-9478,DR5480-RH,Torqueline Drive Chain,Right Hand,120,2.982,155.7,140.1
+69-76,PO-9419,BD7916-RH,Ridgeline Side Mirror Set,Right Hand,96,2.818,162.0,145.8
+77-84,PO-9436,LT5081-HD,Lumen LED Headlight,Heavy Duty,96,1.591,83.8,75.4
+
+TOTAL,,,,,1008,18.348,2025.3,1822.7
+Total cartons,84,,,,,,,

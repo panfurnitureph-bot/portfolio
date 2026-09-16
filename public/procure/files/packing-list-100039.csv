@@ -1,0 +1,34 @@
+Packing List,PL-100039,,,,,,,
+Booking,NW2639,Container,SEAU5448877,ETD,2026-06-09,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9430,BR6890-PF,Apex Brake Pad Set,Performance,24,0.166,14.5,13.1
+3-10,PO-9441,SU9257-STD,Summit Shock Absorber,Standard,96,1.873,194.2,174.8
+11-26,PO-9421,LT8550-STD,Lumen LED Headlight,Standard,200,4.763,544.9,490.4
+27-42,PO-9516,BD8170-BK,Ridgeline Side Mirror Set,Black,200,1.397,544.2,489.8
+43-50,PO-9504,DR4787-BK,Torqueline Drive Chain,Black,96,2.609,138.4,124.6
+51-58,PO-9483,CO9424-PF,Ironbridge Radiator,Performance,96,1.684,158.0,142.2
+59-66,PO-9441,LT6412-STD,Lumen LED Headlight,Standard,96,1.570,96.0,86.4
+67-67,PO-9441,SU9909-BK,Summit Shock Absorber,Black,12,0.102,39.2,35.3
+68-75,PO-9494,DR6384-RH,Torqueline Drive Chain,Right Hand,96,1.236,157.1,141.4
+76-76,PO-9480,DR1091-PF,Torqueline Drive Chain,Performance,12,0.118,28.0,25.2
+77-77,PO-9539,DR2322-CE,Torqueline Drive Chain,Ceramic,12,0.208,41.2,37.1
+78-85,PO-9447,BD5142-CE,Ridgeline Side Mirror Set,Ceramic,96,2.055,267.1,240.4
+86-86,PO-9475,IG6390-CE,Voltera Spark Plug Set,Ceramic,12,0.031,43.8,39.4
+87-90,PO-9513,SU5742-STD,Summit Shock Absorber,Standard,48,1.236,31.0,27.9
+91-91,PO-9476,BD2732-CR,Ridgeline Side Mirror Set,Chrome,12,0.185,22.5,20.2
+92-92,PO-9540,BR9000-STD,Apex Brake Pad Set,Standard,12,0.122,19.4,17.5
+93-96,PO-9460,DR1953-CE,Torqueline Drive Chain,Ceramic,48,0.690,108.0,97.2
+97-112,PO-9532,SU1098-BK,Summit Shock Absorber,Black,200,5.770,175.0,157.5
+113-128,PO-9449,BD5890-OE,Ridgeline Side Mirror Set,OE Spec,200,4.103,159.6,143.6
+129-144,PO-9522,BR1686-BK,Apex Brake Pad Set,Black,200,4.141,569.8,512.8
+145-148,PO-9460,BR6347-LH,Redhawk Brake Pad Set,Left Hand,48,0.103,14.5,13.1
+149-149,PO-9411,BD4598-RH,Ridgeline Side Mirror Set,Right Hand,12,0.171,23.8,21.4
+150-159,PO-9429,BD4467-HD,Ridgeline Side Mirror Set,Heavy Duty,120,0.816,454.4,409.0
+160-163,PO-9439,FL8217-OE,Kestrel Oil Filter,OE Spec,48,0.178,66.0,59.4
+164-165,PO-9480,SU4157-RH,Summit Shock Absorber,Right Hand,24,0.214,65.8,59.2
+166-175,PO-9444,BD8037-OE,Ridgeline Side Mirror Set,OE Spec,120,3.041,138.8,124.9
+176-185,PO-9402,EL9032-STD,Voltera Battery 12V,Standard,120,1.029,238.9,215.0
+
+TOTAL,,,,,2260,39.611,4354.1,3918.8
+Total cartons,185,,,,,,,

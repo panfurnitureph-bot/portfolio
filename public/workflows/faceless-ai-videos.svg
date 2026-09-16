@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="10.0" height="10.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M110.8 360.9 C136.0 360.9 136.0 360.9 161.3 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M157.3 358.5 L161.3 360.9 L157.3 363.3z" fill="#7a7a7a"/>
+<path d="M181.7 381.3 C181.7 393.5 139.3 393.5 139.3 405.8" stroke="#7a7a7a" stroke-width="1.0" stroke-dasharray="1.6 1.6" fill="none"/><path d="M180.1 381.3 l1.6 2.0 l1.6 -2.0z" fill="#7a7a7a"/>
+<path d="M181.7 381.3 C181.7 393.5 245.3 393.5 245.3 405.8" stroke="#7a7a7a" stroke-width="1.0" stroke-dasharray="1.6 1.6" fill="none"/><path d="M180.1 381.3 l1.6 2.0 l1.6 -2.0z" fill="#7a7a7a"/>
+<path d="M202.1 360.9 C250.2 360.9 250.2 360.9 298.3 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M294.3 358.5 L298.3 360.9 L294.3 363.3z" fill="#7a7a7a"/>
+<path d="M339.1 360.9 C364.4 360.9 364.4 360.9 389.6 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M385.6 358.5 L389.6 360.9 L385.6 363.3z" fill="#7a7a7a"/>
+<path d="M430.4 360.9 C455.7 360.9 455.7 360.9 481.0 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M477.0 358.5 L481.0 360.9 L477.0 363.3z" fill="#7a7a7a"/>
+<path d="M521.7 360.9 C547.0 360.9 547.0 360.9 572.3 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M568.3 358.5 L572.3 360.9 L568.3 363.3z" fill="#7a7a7a"/>
+<path d="M613.0 360.9 C661.2 360.9 661.2 360.9 709.3 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M705.3 358.5 L709.3 360.9 L705.3 363.3z" fill="#7a7a7a"/>
+<path d="M750.0 360.9 C775.3 360.9 775.3 360.9 800.6 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M796.6 358.5 L800.6 360.9 L796.6 363.3z" fill="#7a7a7a"/>
+<path d="M841.4 360.9 C883.8 360.9 883.8 197.8 926.2 197.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M922.2 195.4 L926.2 197.8 L922.2 200.2z" fill="#7a7a7a"/>
+<path d="M841.4 360.9 C883.8 360.9 883.8 279.4 926.2 279.4" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M922.2 277.0 L926.2 279.4 L922.2 281.8z" fill="#7a7a7a"/>
+<path d="M841.4 360.9 C883.8 360.9 883.8 360.9 926.2 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M922.2 358.5 L926.2 360.9 L922.2 363.3z" fill="#7a7a7a"/>
+<path d="M841.4 360.9 C883.8 360.9 883.8 442.5 926.2 442.5" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M922.2 440.1 L926.2 442.5 L922.2 444.9z" fill="#7a7a7a"/>
+<path d="M966.9 197.8 C1017.9 197.8 1017.9 197.8 1068.8 197.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1064.8 195.4 L1068.8 197.8 L1064.8 200.2z" fill="#7a7a7a"/>
+<path d="M966.9 279.4 C1017.9 279.4 1017.9 279.4 1068.8 279.4" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1064.8 277.0 L1068.8 279.4 L1064.8 281.8z" fill="#7a7a7a"/>
+<path d="M966.9 360.9 C1017.9 360.9 1017.9 360.9 1068.8 360.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1064.8 358.5 L1068.8 360.9 L1064.8 363.3z" fill="#7a7a7a"/>
+<path d="M966.9 442.5 C1017.9 442.5 1017.9 442.5 1068.8 442.5" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1064.8 440.1 L1068.8 442.5 L1064.8 444.9z" fill="#7a7a7a"/>
+<path d="M966.9 532.2 C987.3 532.2 987.3 532.2 1007.7 532.2" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1003.7 529.8 L1007.7 532.2 L1003.7 534.6z" fill="#7a7a7a"/>
+<path d="M1048.5 532.2 C1068.8 532.2 1068.8 532.2 1089.2 532.2" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1085.2 529.8 L1089.2 532.2 L1085.2 534.6z" fill="#7a7a7a"/>
+<path d="M90.4 340.5 H105.1 a5.7 5.7 0 0 1 5.7 5.7 V375.6 a5.7 5.7 0 0 1 -5.7 5.7 H90.4 A20.4 20.4 0 0 1 90.4 340.5z" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(90.4 360.9) scale(0.408) translate(-90.4 -360.9)"><circle cx="90.38461538461539" cy="360.9230769230769" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M90.38461538461539 352.9230769230769 V360.9230769230769 H96.38461538461539" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="110.8" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path transform="translate(59.4 357.3) scale(0.408)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="90.4" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Schedule</text>
+<text x="90.4" y="400.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Trigger</text>
+<rect x="161.3" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(181.7 360.9) scale(0.408) translate(-181.7 -360.9)"><rect x="169.70769230769233" y="352.9230769230769" width="24" height="18" rx="5" fill="none" stroke="#e8e8e8" stroke-width="2.4"/><circle cx="176.70769230769233" cy="361.9230769230769" r="2" fill="#e8e8e8"/><circle cx="186.70769230769233" cy="361.9230769230769" r="2" fill="#e8e8e8"/><path d="M181.70769230769233 352.9230769230769 V347.9230769230769 M166.70769230769233 358.9230769230769 v6 M196.70769230769233 358.9230769230769 v6" stroke="#e8e8e8" stroke-width="2.4"/></g>
+<circle cx="161.3" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="202.1" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="181.7" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">AI Agent</text>
+<circle cx="139.3" cy="426.2" r="20.4" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(139.3 426.2) scale(0.408) translate(-139.3 -426.2)"><circle cx="139.3076923076923" cy="426.1538461538461" r="13" fill="#4285f4"/><text x="139.3076923076923" y="431.55384615384605" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#fff">G</text></g>
+<path d="M137.7 405.8 l1.6 -2.0 l1.6 2.0z" fill="#7a7a7a"/>
+<text x="139.3" y="457.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Brainstorm Idea</text>
+<circle cx="245.3" cy="426.2" r="20.4" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(245.3 426.2) scale(0.408) translate(-245.3 -426.2)"><text x="245.30769230769232" y="432.1538461538461" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#c9c9c9">&lt;/&gt;</text></g>
+<path d="M243.7 405.8 l1.6 -2.0 l1.6 2.0z" fill="#7a7a7a"/>
+<text x="245.3" y="457.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Structured</text>
+<text x="245.3" y="465.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Output Parser</text>
+<rect x="298.3" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(318.7 360.9) scale(0.408) translate(-318.7 -360.9)"><rect x="306.6923076923076" y="350.9230769230769" width="20" height="22" rx="3" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><path d="M320.6923076923076 366.9230769230769 L332.6923076923076 352.9230769230769 l4 4 L326.6923076923076 370.9230769230769 l-6 2z" fill="#7d6cf0"/></g>
+<circle cx="298.3" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="339.1" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="318.7" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Prepare Video</text>
+<text x="318.7" y="400.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">manual</text>
+<rect x="389.6" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(410.0 360.9) scale(0.408) translate(-410.0 -360.9)"><circle cx="410.01538461538456" cy="360.9230769230769" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="410.01538461538456" cy="360.9230769230769" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M397.01538461538456 360.9230769230769 H423.01538461538456 M399.01538461538456 354.9230769230769 H421.01538461538456 M399.01538461538456 366.9230769230769 H421.01538461538456" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="389.6" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="430.4" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="410.0" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Create Video</text>
+<text x="410.0" y="400.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="481.0" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(501.3 360.9) scale(0.408) translate(-501.3 -360.9)"><path d="M491.3384615384615 347.9230769230769 H511.3384615384615 M491.3384615384615 373.9230769230769 H511.3384615384615 M493.3384615384615 347.9230769230769 C493.3384615384615 358.9230769230769 509.3384615384615 358.9230769230769 509.3384615384615 347.9230769230769 M493.3384615384615 373.9230769230769 C493.3384615384615 362.9230769230769 509.3384615384615 362.9230769230769 509.3384615384615 373.9230769230769" stroke="#ff6d8c" stroke-width="2.6" fill="none"/></g>
+<circle cx="481.0" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="521.7" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="501.3" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Wait</text>
+<rect x="572.3" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(592.7 360.9) scale(0.408) translate(-592.7 -360.9)"><circle cx="592.6615384615385" cy="360.9230769230769" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="592.6615384615385" cy="360.9230769230769" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M579.6615384615385 360.9230769230769 H605.6615384615385 M581.6615384615385 354.9230769230769 H603.6615384615385 M581.6615384615385 366.9230769230769 H603.6615384615385" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="572.3" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="613.0" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="592.7" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Get Video</text>
+<text x="592.7" y="400.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="709.3" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(729.6 360.9) scale(0.408) translate(-729.6 -360.9)"><rect x="717.6461538461538" y="350.9230769230769" width="20" height="22" rx="3" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><path d="M731.6461538461538 366.9230769230769 L743.6461538461538 352.9230769230769 l4 4 L737.6461538461538 370.9230769230769 l-6 2z" fill="#7d6cf0"/></g>
+<circle cx="709.3" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="750.0" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="729.6" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Prepare</text>
+<text x="729.6" y="400.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">for Publish</text>
+<text x="729.6" y="409.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">manual</text>
+<rect x="800.6" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(821.0 360.9) scale(0.408) translate(-821.0 -360.9)"><circle cx="820.9692307692308" cy="360.9230769230769" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="820.9692307692308" cy="360.9230769230769" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M807.9692307692308 360.9230769230769 H833.9692307692308 M809.9692307692308 354.9230769230769 H831.9692307692308 M809.9692307692308 366.9230769230769 H831.9692307692308" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="800.6" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="841.4" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="821.0" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Upload to</text>
+<text x="821.0" y="400.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Blotato</text>
+<text x="821.0" y="409.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="926.2" y="177.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(946.5 197.8) scale(0.408) translate(-946.5 -197.8)"><circle cx="946.5384615384615" cy="197.84615384615384" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="946.5384615384615" cy="197.84615384615384" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M933.5384615384615 197.84615384615384 H959.5384615384615 M935.5384615384615 191.84615384615384 H957.5384615384615 M935.5384615384615 203.84615384615384 H957.5384615384615" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="926.2" cy="197.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="966.9" cy="197.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="946.5" y="229.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Instagram</text>
+<text x="946.5" y="237.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1068.8" y="177.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1089.2 197.8) scale(0.408) translate(-1089.2 -197.8)"><circle cx="1089.2307692307693" cy="197.84615384615384" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1089.2307692307693" cy="197.84615384615384" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1076.2307692307693 197.84615384615384 H1102.2307692307693 M1078.2307692307693 191.84615384615384 H1100.2307692307693 M1078.2307692307693 203.84615384615384 H1100.2307692307693" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1068.8" cy="197.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1109.6" cy="197.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1112.1 197.8 h9.0" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1121.1" y="194.6" width="6.5" height="6.5" rx="1.2" fill="#3a3a3a"/><text x="1124.3" y="199.5" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1089.2" y="229.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">YouTube</text>
+<text x="1089.2" y="237.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="926.2" y="259.0" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(946.5 279.4) scale(0.408) translate(-946.5 -279.4)"><circle cx="946.5384615384615" cy="279.38461538461536" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="946.5384615384615" cy="279.38461538461536" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M933.5384615384615 279.38461538461536 H959.5384615384615 M935.5384615384615 273.38461538461536 H957.5384615384615 M935.5384615384615 285.38461538461536 H957.5384615384615" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="926.2" cy="279.4" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="966.9" cy="279.4" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="946.5" y="310.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Facebook</text>
+<text x="946.5" y="318.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1068.8" y="259.0" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1089.2 279.4) scale(0.408) translate(-1089.2 -279.4)"><circle cx="1089.2307692307693" cy="279.38461538461536" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1089.2307692307693" cy="279.38461538461536" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1076.2307692307693 279.38461538461536 H1102.2307692307693 M1078.2307692307693 273.38461538461536 H1100.2307692307693 M1078.2307692307693 285.38461538461536 H1100.2307692307693" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1068.8" cy="279.4" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1109.6" cy="279.4" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1112.1 279.4 h9.0" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1121.1" y="276.1" width="6.5" height="6.5" rx="1.2" fill="#3a3a3a"/><text x="1124.3" y="281.0" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1089.2" y="310.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Threads</text>
+<text x="1089.2" y="318.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="926.2" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(946.5 360.9) scale(0.408) translate(-946.5 -360.9)"><circle cx="946.5384615384615" cy="360.9230769230769" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="946.5384615384615" cy="360.9230769230769" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M933.5384615384615 360.9230769230769 H959.5384615384615 M935.5384615384615 354.9230769230769 H957.5384615384615 M935.5384615384615 366.9230769230769 H957.5384615384615" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="926.2" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="966.9" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="946.5" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">LinkedIn</text>
+<text x="946.5" y="400.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1068.8" y="340.5" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1089.2 360.9) scale(0.408) translate(-1089.2 -360.9)"><circle cx="1089.2307692307693" cy="360.9230769230769" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1089.2307692307693" cy="360.9230769230769" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1076.2307692307693 360.9230769230769 H1102.2307692307693 M1078.2307692307693 354.9230769230769 H1100.2307692307693 M1078.2307692307693 366.9230769230769 H1100.2307692307693" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1068.8" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1109.6" cy="360.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1112.1 360.9 h9.0" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1121.1" y="357.7" width="6.5" height="6.5" rx="1.2" fill="#3a3a3a"/><text x="1124.3" y="362.6" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1089.2" y="392.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Twitter</text>
+<text x="1089.2" y="400.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="926.2" y="422.1" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(946.5 442.5) scale(0.408) translate(-946.5 -442.5)"><circle cx="946.5384615384615" cy="442.46153846153845" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="946.5384615384615" cy="442.46153846153845" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M933.5384615384615 442.46153846153845 H959.5384615384615 M935.5384615384615 436.46153846153845 H957.5384615384615 M935.5384615384615 448.46153846153845 H957.5384615384615" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="926.2" cy="442.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="966.9" cy="442.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="946.5" y="473.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">TikTok</text>
+<text x="946.5" y="481.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1068.8" y="422.1" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1089.2 442.5) scale(0.408) translate(-1089.2 -442.5)"><circle cx="1089.2307692307693" cy="442.46153846153845" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1089.2307692307693" cy="442.46153846153845" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1076.2307692307693 442.46153846153845 H1102.2307692307693 M1078.2307692307693 436.46153846153845 H1100.2307692307693 M1078.2307692307693 448.46153846153845 H1100.2307692307693" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1068.8" cy="442.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1109.6" cy="442.5" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1112.1 442.5 h9.0" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1121.1" y="439.2" width="6.5" height="6.5" rx="1.2" fill="#3a3a3a"/><text x="1124.3" y="444.1" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1089.2" y="473.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Bluesky</text>
+<text x="1089.2" y="481.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="926.2" y="511.8" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(946.5 532.2) scale(0.408) translate(-946.5 -532.2)"><circle cx="946.5384615384615" cy="532.1538461538462" r="13" fill="#10a37f"/><text x="946.5384615384615" y="536.8338461538461" text-anchor="middle" font-family="DM Sans, Arial" font-size="13" font-weight="700" fill="#fff">AI</text></g>
+<circle cx="926.2" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="966.9" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="946.5" y="563.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">OpenAI Image</text>
+<rect x="1007.7" y="511.8" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1028.1 532.2) scale(0.408) translate(-1028.1 -532.2)"><circle cx="1028.076923076923" cy="532.1538461538462" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1028.076923076923" cy="532.1538461538462" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1015.0769230769231 532.1538461538462 H1041.076923076923 M1017.0769230769231 526.1538461538462 H1039.076923076923 M1017.0769230769231 538.1538461538462 H1039.076923076923" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1007.7" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1048.5" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="1028.1" y="563.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Upload Image</text>
+<text x="1028.1" y="571.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="1089.2" y="511.8" width="40.8" height="40.8" rx="5.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1109.6 532.2) scale(0.408) translate(-1109.6 -532.2)"><circle cx="1109.6153846153845" cy="532.1538461538462" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1109.6153846153845" cy="532.1538461538462" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1096.6153846153845 532.1538461538462 H1122.6153846153845 M1098.6153846153845 526.1538461538462 H1120.6153846153845 M1098.6153846153845 538.1538461538462 H1120.6153846153845" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1089.2" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1130.0" cy="532.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1132.5 532.2 h9.0" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1141.5" y="528.9" width="6.5" height="6.5" rx="1.2" fill="#3a3a3a"/><text x="1144.7" y="533.8" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1109.6" y="563.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Pinterest</text>
+<text x="1109.6" y="571.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+</svg>

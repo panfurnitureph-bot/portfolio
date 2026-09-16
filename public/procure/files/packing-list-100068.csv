@@ -1,0 +1,31 @@
+Packing List,PL-100068,,,,,,,
+Booking,NW2668,Container,BOXU7632945,ETD,2026-06-17,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-16,PO-9441,BR3398-CE,Apex Brake Pad Set,Ceramic,200,2.371,721.7,649.5
+17-18,PO-9430,IG2488-RH,Voltera Spark Plug Set,Right Hand,24,0.267,38.9,35.0
+19-28,PO-9438,FL4231-LH,Kestrel Oil Filter,Left Hand,120,3.549,290.3,261.3
+29-29,PO-9516,BR3258-BK,Apex Brake Pad Set,Black,12,0.046,15.5,14.0
+30-45,PO-9489,DR5705-PF,Torqueline Drive Chain,Performance,200,3.819,208.0,187.2
+46-61,PO-9404,LT1482-STD,Lumen LED Headlight,Standard,200,0.752,254.9,229.4
+62-77,PO-9529,BR2022-CE,Apex Brake Pad Set,Ceramic,200,5.300,316.9,285.2
+78-79,PO-9515,BD4877-PF,Ridgeline Side Mirror Set,Performance,24,0.309,82.8,74.5
+80-80,PO-9495,LT2867-PF,Lumen LED Headlight,Performance,12,0.063,27.7,24.9
+81-96,PO-9414,FL4192-PF,Kestrel Oil Filter,Performance,200,0.491,431.7,388.5
+97-104,PO-9513,SU2427-STD,Summit Shock Absorber,Standard,96,2.223,184.6,166.1
+105-105,PO-9414,SU6650-LH,Summit Shock Absorber,Left Hand,12,0.210,44.2,39.8
+106-109,PO-9433,LT3265-PF,Lumen LED Headlight,Performance,48,0.312,78.7,70.8
+110-111,PO-9445,CO1677-HD,Ironbridge Radiator,Heavy Duty,24,0.372,73.8,66.4
+112-112,PO-9433,CO2198-OE,Ironbridge Radiator,OE Spec,12,0.073,13.2,11.9
+113-122,PO-9456,CO8047-BK,Ironbridge Radiator,Black,120,1.158,160.7,144.6
+123-126,PO-9404,DR6289-RH,Torqueline Drive Chain,Right Hand,48,1.409,38.1,34.3
+127-130,PO-9481,LT4311-CR,Lumen LED Headlight,Chrome,48,0.988,162.6,146.3
+131-132,PO-9444,CO1836-HD,Ironbridge Radiator,Heavy Duty,24,0.287,12.1,10.9
+133-142,PO-9411,SU5488-CR,Summit Shock Absorber,Chrome,120,1.771,345.9,311.3
+143-152,PO-9525,CO1344-LH,Ironbridge Radiator,Left Hand,120,0.308,271.2,244.1
+153-156,PO-9463,SU8913-HD,Summit Shock Absorber,Heavy Duty,48,1.385,83.2,74.9
+157-157,PO-9424,EL1558-HD,Voltera Battery 12V,Heavy Duty,12,0.077,40.7,36.6
+158-158,PO-9515,SU1453-OE,Summit Shock Absorber,OE Spec,12,0.144,47.2,42.5
+
+TOTAL,,,,,1936,27.684,3944.6,3550.0
+Total cartons,158,,,,,,,

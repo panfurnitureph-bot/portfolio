@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="12.7" height="12.7" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M133.5 447.6 C172.9 447.6 172.9 447.6 212.4 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M207.3 444.6 L212.4 447.6 L207.3 450.7z" fill="#7a7a7a"/>
+<path d="M275.9 447.6 C315.3 447.6 315.3 447.6 354.7 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M349.6 444.6 L354.7 447.6 L349.6 450.7z" fill="#7a7a7a"/>
+<path d="M418.2 447.6 C457.6 447.6 457.6 447.6 497.1 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M492.0 444.6 L497.1 447.6 L492.0 450.7z" fill="#7a7a7a"/>
+<path d="M560.6 447.6 C600.0 447.6 600.0 447.6 639.4 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M634.3 444.6 L639.4 447.6 L634.3 450.7z" fill="#7a7a7a"/>
+<path d="M702.9 447.6 C742.4 447.6 742.4 447.6 781.8 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M776.7 444.6 L781.8 447.6 L776.7 450.7z" fill="#7a7a7a"/>
+<path d="M845.3 447.6 C884.7 447.6 884.7 447.6 924.1 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M919.0 444.6 L924.1 447.6 L919.0 450.7z" fill="#7a7a7a"/>
+<path d="M987.6 447.6 C1027.1 447.6 1027.1 447.6 1066.5 447.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M1061.4 444.6 L1066.5 447.6 L1061.4 450.7z" fill="#7a7a7a"/>
+<path d="M1130.0 447.6 h7.6 q5.1 0 5.1 5.1 V504.8 q0 5.1 -5.1 5.1 H489.4 q-5.1 0 -5.1 -5.1 V452.7 q0 -5.1 5.1 -5.1 h7.6" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M492.0 444.6 L497.1 447.6 L492.0 450.7z" fill="#7a7a7a"/>
+<path d="M560.6 447.6 C728.4 447.6 728.4 282.4 896.1 282.4" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M891.1 279.3 L896.1 282.4 L891.1 285.4z" fill="#7a7a7a"/>
+<path d="M959.7 282.4 C1010.5 282.4 1010.5 282.4 1061.4 282.4" stroke="#7a7a7a" stroke-width="1.4" fill="none"/>
+<path d="M1056.3 279.3 L1061.4 282.4 L1056.3 285.4z" fill="#7a7a7a"/>
+<path d="M101.8 415.8 H124.7 a8.9 8.9 0 0 1 8.9 8.9 V470.5 a8.9 8.9 0 0 1 -8.9 8.9 H101.8 A31.8 31.8 0 0 1 101.8 415.8z" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(101.8 447.6) scale(0.635) translate(-101.8 -447.6)"><circle cx="101.77458033573141" cy="447.6139088729016" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M101.77458033573141 439.6139088729016 V447.6139088729016 H107.77458033573141" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="133.5" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<path transform="translate(53.5 441.9) scale(0.635)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="101.8" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Schedule Trigger</text>
+<text x="101.8" y="503.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">(Daily 9 AM)</text>
+<rect x="212.4" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(244.1 447.6) scale(0.635) translate(-244.1 -447.6)"><circle cx="244.12470023980816" cy="447.6139088729016" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="244.12470023980816" cy="447.6139088729016" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M231.12470023980816 447.6139088729016 H257.12470023980813 M233.12470023980816 441.6139088729016 H255.12470023980816 M233.12470023980816 453.6139088729016 H255.12470023980816" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="212.4" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="275.9" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="244.1" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Generate Token</text>
+<text x="244.1" y="503.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">POST</text>
+<rect x="354.7" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(386.5 447.6) scale(0.635) translate(-386.5 -447.6)"><text x="386.47482014388487" y="456.6139088729016" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="354.7" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="418.2" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="386.5" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Generate Dates</text>
+<rect x="497.1" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(528.8 447.6) scale(0.635) translate(-528.8 -447.6)"><path d="M518.8249400479617 443.6139088729016 a10 10 0 1 1 3 10" fill="none" stroke="#4ac97e" stroke-width="2.6"/><path d="M514.8249400479617 438.6139088729016 l5 6 3 -7z" fill="#4ac97e"/></g>
+<circle cx="497.1" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="560.6" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="528.8" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Loop Over Items</text>
+<rect x="639.4" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(671.2 447.6) scale(0.635) translate(-671.2 -447.6)"><circle cx="671.1750599520384" cy="447.6139088729016" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="671.1750599520384" cy="447.6139088729016" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M658.1750599520384 447.6139088729016 H684.1750599520384 M660.1750599520384 441.6139088729016 H682.1750599520384 M660.1750599520384 453.6139088729016 H682.1750599520384" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="639.4" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="702.9" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="671.2" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">ShopifyQL Query</text>
+<text x="671.2" y="503.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">POST</text>
+<rect x="781.8" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(813.5 447.6) scale(0.635) translate(-813.5 -447.6)"><text x="813.5251798561152" y="456.6139088729016" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="781.8" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="845.3" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="813.5" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Process rows</text>
+<rect x="924.1" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(955.9 447.6) scale(0.635) translate(-955.9 -447.6)"><path d="M942.875299760192 436.6139088729016 h26 l-10 12 v10 l-6 3 v-13z" fill="none" stroke="#4f9cf7" stroke-width="2.4" stroke-linejoin="round"/></g>
+<circle cx="924.1" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="987.6" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="955.9" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Skip Empty?</text>
+<rect x="1066.5" y="415.8" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(1098.2 447.6) scale(0.635) translate(-1098.2 -447.6)"><circle cx="1098.2254196642687" cy="447.6139088729016" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1098.2254196642687" cy="447.6139088729016" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1085.2254196642687 447.6139088729016 H1111.2254196642687 M1087.2254196642687 441.6139088729016 H1109.2254196642687 M1087.2254196642687 453.6139088729016 H1109.2254196642687" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1066.5" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="1130.0" cy="447.6" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="1098.2" y="493.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Save to</text>
+<text x="1098.2" y="503.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Supabase</text>
+<text x="1098.2" y="513.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">POST</text>
+<rect x="896.1" y="250.6" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(927.9 282.4) scale(0.635) translate(-927.9 -282.4)"><ellipse cx="927.9136690647483" cy="283.38609112709827" rx="12" ry="10" fill="#4f9fd8"/><circle cx="923.9136690647483" cy="280.38609112709827" r="2" fill="#fff"/><path d="M936.9136690647483 280.38609112709827 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M919.9136690647483 290.38609112709827 v5 M933.9136690647483 290.38609112709827 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="896.1" cy="282.4" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="959.7" cy="282.4" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<text x="927.9" y="328.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Rebuild Ranges</text>
+<text x="927.9" y="338.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+<rect x="1061.4" y="250.6" width="63.5" height="63.5" rx="8.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.3"/>
+<g transform="translate(1093.1 282.4) scale(0.635) translate(-1093.1 -282.4)"><ellipse cx="1093.1414868105514" cy="283.38609112709827" rx="12" ry="10" fill="#4f9fd8"/><circle cx="1089.1414868105514" cy="280.38609112709827" r="2" fill="#fff"/><path d="M1102.1414868105514 280.38609112709827 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1085.1414868105514 290.38609112709827 v5 M1099.1414868105514 290.38609112709827 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="1061.4" cy="282.4" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<circle cx="1124.9" cy="282.4" r="2.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.3"/>
+<path d="M1127.8 282.4 h14.0" stroke="#7a7a7a" stroke-width="1.3"/><rect x="1141.8" y="277.3" width="10.2" height="10.2" rx="1.9" fill="#3a3a3a"/><text x="1146.8" y="284.9" text-anchor="middle" font-size="7.6" fill="#ddd" font-family="Arial">+</text>
+<text x="1093.1" y="328.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">Top-5</text>
+<text x="1093.1" y="338.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="8.9" font-weight="600" fill="#f2f2f2">channels view</text>
+<text x="1093.1" y="348.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">executeQuery</text>
+</svg>

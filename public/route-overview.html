@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PAN Furniture — Route Overview</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  *{box-sizing:border-box} html,body{height:100%;margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  #map{position:absolute;inset:0}
+  #sum{display:none;position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:900;background:#fff;border:1px solid #e7e0d6;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;color:#3a2e20;box-shadow:0 3px 10px rgba(0,0,0,.2);white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="sum"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // ROUTE OVERVIEW — mga numerado (1..N) na pin MISMO SA MAPA sa pagkakasunod ng
+  // biyahe + OSRM driving polyline. Stops via ?stops=<JSON [{lat,lng,name}]>.
+  var stops=[]; try{ stops=JSON.parse(decodeURIComponent(new URLSearchParams(location.search).get('stops')||'[]')); }catch(e){}
+  var pts=stops.filter(function(s){ return typeof s.lat==='number' && typeof s.lng==='number'; });
+  var map=L.map('map',{zoomControl:true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
+  if(pts.length){ map.fitBounds(L.latLngBounds(pts.map(function(s){return [s.lat,s.lng];})).pad(0.25)); }
+  else { map.setView([14.6,121.3],9); }
+
+  // order[i] = posisyon ng stop i sa OPTIMIZED na biyahe (0-based).
+  function drawMarkers(order){
+    pts.forEach(function(s,i){
+      var n=(order? order[i] : i)+1;
+      L.marker([s.lat,s.lng],{icon:L.divIcon({
+        html:'<div style="width:32px;height:32px;border-radius:50%;background:#caa45a;border:3px solid #4a3b1a;display:flex;align-items:center;justify-content:center;font:800 15px/1 Arial;color:#2b2620;box-shadow:0 2px 8px rgba(0,0,0,.4)">'+n+'</div>',
+        className:'',iconSize:[32,32],iconAnchor:[16,16]
+      })}).addTo(map).bindTooltip(n+'. '+(s.name||''),{direction:'top',offset:[0,-16]});
+    });
+  }
+  function showSum(distance,duration){
+    var km=(distance/1000).toFixed(1), min=Math.round(duration/60);
+    var t=min>=60? Math.floor(min/60)+' hr '+(min%60)+' min' : min+' min';
+    var el=document.getElementById('sum'); el.textContent=''+t+' · '+km+' km · '+pts.length+' stops';
+    el.style.display='block';
+  }
+
+  if(pts.length>=2){
+    var coords=pts.map(function(s){return s.lng+','+s.lat;}).join(';');
+    // OSRM TRIP = ino-optimize ang PAGKAKASUNOD ng mga stop (pinakamabilis na
+    // ikot) — ang numbering ng pins ay ang optimized na order, hindi ang listahan.
+    // NOTE: ang roundtrip=false ay sinusuportahan lang kasama ng source=first
+    // (any+any = InvalidOptions → dating napupunta sa fallback, maling numbering).
+    fetch('https://router.project-osrm.org/trip/v1/driving/'+coords+'?roundtrip=false&source=first&destination=any&overview=full&geometries=geojson')
+      .then(function(r){return r.json();})
+      .then(function(j){
+        var trip=j&&j.trips&&j.trips[0];
+        if(trip && j.waypoints){
+          L.geoJSON(trip.geometry,{style:{color:'#5b3df5',weight:6,opacity:.85}}).addTo(map);
+          drawMarkers(j.waypoints.map(function(w){return w.waypoint_index;}));
+          showSum(trip.distance,trip.duration);
+          return;
+        }
+        throw new Error('no trip');
+      })
+      .catch(function(){
+        // Fallback: sundin ang ibinigay na order + simpleng route.
+        drawMarkers(null);
+        fetch('https://router.project-osrm.org/route/v1/driving/'+coords+'?overview=full&geometries=geojson')
+          .then(function(r){return r.json();})
+          .then(function(j){
+            var rt=j&&j.routes&&j.routes[0];
+            if(!rt) return;
+            L.geoJSON(rt.geometry,{style:{color:'#5b3df5',weight:6,opacity:.85}}).addTo(map);
+            showSum(rt.distance,rt.duration);
+          }).catch(function(){});
+      });
+  } else {
+    drawMarkers(null);
+  }
+</script>
+</body>
+</html>

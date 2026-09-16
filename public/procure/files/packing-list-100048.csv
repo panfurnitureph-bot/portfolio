@@ -1,0 +1,31 @@
+Packing List,PL-100048,,,,,,,
+Booking,NW2648,Container,BOXU1266360,ETD,2026-09-09,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9486,BD1099-CE,Ridgeline Side Mirror Set,Ceramic,120,3.211,265.9,239.3
+11-20,PO-9421,DR7878-STD,Torqueline Drive Chain,Standard,120,2.704,300.5,270.4
+21-22,PO-9448,BD8982-CE,Ridgeline Side Mirror Set,Ceramic,24,0.681,51.8,46.6
+23-30,PO-9470,SU7024-BK,Summit Shock Absorber,Black,96,2.251,136.4,122.8
+31-32,PO-9442,EL1089-STD,Voltera Battery 12V,Standard,24,0.106,38.4,34.6
+33-42,PO-9535,IG7768-OE,Voltera Spark Plug Set,OE Spec,120,1.470,57.6,51.8
+43-43,PO-9434,FL2194-HD,Kestrel Oil Filter,Heavy Duty,12,0.075,13.3,12.0
+44-47,PO-9481,CO3377-CE,Ironbridge Radiator,Ceramic,48,0.428,73.8,66.4
+48-48,PO-9531,SU7698-CR,Summit Shock Absorber,Chrome,12,0.240,26.0,23.4
+49-50,PO-9410,EL7165-OE,Voltera Battery 12V,OE Spec,24,0.632,23.7,21.3
+51-52,PO-9525,FL2142-HD,Kestrel Oil Filter,Heavy Duty,24,0.463,43.6,39.2
+53-60,PO-9489,IG1225-RH,Voltera Spark Plug Set,Right Hand,96,2.169,118.0,106.2
+61-70,PO-9437,SU1103-HD,Summit Shock Absorber,Heavy Duty,120,0.795,171.9,154.7
+71-71,PO-9501,IG9890-CR,Voltera Spark Plug Set,Chrome,12,0.163,29.3,26.4
+72-81,PO-9442,FL5950-OE,Kestrel Oil Filter,OE Spec,120,0.665,159.5,143.6
+82-83,PO-9406,BD1791-CE,Ridgeline Side Mirror Set,Ceramic,24,0.403,62.0,55.8
+84-99,PO-9440,BR5316-RH,Redhawk Brake Pad Set,Right Hand,200,5.828,82.4,74.2
+100-103,PO-9535,SU8256-LH,Summit Shock Absorber,Left Hand,48,0.480,17.6,15.8
+104-107,PO-9434,CO3583-LH,Ironbridge Radiator,Left Hand,48,1.231,76.5,68.9
+108-111,PO-9424,BR4679-BK,Apex Brake Pad Set,Black,48,0.978,70.8,63.7
+112-113,PO-9515,BR5907-RH,Redhawk Brake Pad Set,Right Hand,24,0.185,59.3,53.4
+114-117,PO-9524,DR7524-LH,Torqueline Drive Chain,Left Hand,48,1.011,117.4,105.7
+118-133,PO-9510,EL4148-STD,Voltera Battery 12V,Standard,200,5.117,324.3,291.9
+134-149,PO-9481,BR2579-BK,Redhawk Brake Pad Set,Black,200,4.880,259.3,233.4
+
+TOTAL,,,,,1812,36.166,2579.3,2321.5
+Total cartons,149,,,,,,,

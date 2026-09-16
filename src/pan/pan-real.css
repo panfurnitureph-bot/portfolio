@@ -1,0 +1,109 @@
+/* Tailwind v4 for the PAN System demo. Utilities + theme only; preflight is re-declared
+   scoped under .pan-root so the rest of the portfolio is untouched. Class scanning is limited
+   to src/pan so utility names cannot collide with portfolio CSS. */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;600&display=swap');
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "./";
+
+/* ---- Pan Furnitures design tokens (verbatim from app/globals.css) ---- */
+:root {
+  --background: #f7f5ef;
+  --surface: #ffffff;
+  --foreground: #2a2519;
+  --muted: #7c7361;
+  --border: #e7e0d2;
+  --primary: #5b5026;
+  --primary-foreground: #f6efda;
+  --accent: #c9a85c;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --info: #1d4ed8;
+  --cognac: #8a6b3d;
+  --ink: #2a2519;
+  --cream: #f6efda;
+  --linen: #f2ede1;
+  --sand: #e7e0d2;
+  --stone: #7c7361;
+  --espresso: #5a4a26;
+  --olive: #5b5026;
+  --font-geist-sans: 'Geist', Arial, Helvetica, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-cognac: var(--cognac);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-linen: var(--linen);
+  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-espresso: var(--espresso);
+  --color-olive: var(--olive);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ---- scoped preflight (the parts the copied components rely on) ---- */
+@layer base {
+  .pan-root, .pan-root *, .pan-root ::before, .pan-root ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: var(--border); margin: 0; padding: 0; }
+  .pan-root { background: var(--background); color: var(--foreground); font-family: var(--font-geist-sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+  .pan-root h1, .pan-root h2, .pan-root h3, .pan-root h4, .pan-root p { margin: 0; font-size: inherit; font-weight: inherit; letter-spacing: 0; font-family: inherit; }
+  .pan-root ul, .pan-root ol { list-style: none; margin: 0; padding: 0; }
+  .pan-root a { color: inherit; text-decoration: inherit; }
+  .pan-root button, .pan-root input, .pan-root select, .pan-root textarea { font: inherit; color: inherit; background: transparent; border-radius: 0; letter-spacing: inherit; }
+  .pan-root button, .pan-root [role="button"] { cursor: pointer; }
+  .pan-root :disabled { cursor: default; }
+  .pan-root img, .pan-root svg, .pan-root video, .pan-root canvas { display: block; vertical-align: middle; }
+  .pan-root img, .pan-root video { max-width: 100%; height: auto; }
+  .pan-root table { border-collapse: collapse; border-color: inherit; text-indent: 0; }
+  .pan-root input::placeholder, .pan-root textarea::placeholder { color: #a8a29e; opacity: 1; }
+  .pan-root ::-webkit-tap-highlight-color { color: transparent; }
+  .pan-root a, .pan-root button, .pan-root input, .pan-root select, .pan-root textarea, .pan-root label, .pan-root summary { outline: none; }
+  .pan-root ::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); color: var(--foreground); }
+}
+
+/* ---- verbatim helpers from app/globals.css ---- */
+.bg-primary\/5  { background-color: rgba(91, 80, 38, 0.05) !important; }
+.bg-primary\/10 { background-color: rgba(91, 80, 38, 0.10) !important; }
+.bg-primary\/15 { background-color: rgba(91, 80, 38, 0.15) !important; }
+.bg-primary\/20 { background-color: rgba(91, 80, 38, 0.20) !important; }
+.hover\:bg-primary\/10:hover { background-color: rgba(91, 80, 38, 0.10) !important; }
+.hover\:bg-primary\/15:hover { background-color: rgba(91, 80, 38, 0.15) !important; }
+.hover\:bg-primary\/20:hover { background-color: rgba(91, 80, 38, 0.20) !important; }
+@keyframes pf-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pf-modal { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes pf-sheet { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pf-drawer { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes pf-pop { 0% { opacity: 0; transform: translateY(8px) scale(0.92); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+.pf-fade { animation: pf-fade 0.18s ease-out; }
+.pf-modal { animation: pf-modal 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-sheet { animation: pf-sheet 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-drawer { animation: pf-drawer 0.22s cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-pop { animation: pf-pop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 both; }
+@media (min-width: 640px) { .sm\:pf-modal { animation: pf-modal 0.2s cubic-bezier(0.16, 1, 0.3, 1); } }
+@media (prefers-reduced-motion: reduce) { .pf-fade, .pf-modal, .pf-sheet, .pf-drawer, .pf-pop { animation: none; } }
+.pf-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+.pf-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 9999px; }
+[contenteditable][data-placeholder]:empty::before { content: attr(data-placeholder); color: var(--muted); pointer-events: none; }
+.apk-only { display: none !important; }
+.fixed.overflow-y-auto { -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
+
+/* ---- demo-only floating bar ---- */
+.pan-demo-bar { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 60; display: flex; align-items: center; gap: 0.6rem; background: #2a2519; color: #f6efda; padding: 0.45rem 0.6rem 0.45rem 0.9rem; border-radius: 999px; font-size: 12px; font-family: var(--font-geist-sans); box-shadow: 0 12px 30px -10px rgba(0,0,0,.5); }
+.pan-demo-bar a, .pan-demo-bar button { background: #f6efda; color: #2a2519; border: none; border-radius: 999px; padding: 0.3rem 0.7rem; font-size: 12px; font-weight: 600; cursor: pointer; }
+.pan-demo-bar select { background: #3a3220; color: #f6efda; border: 1px solid #5b5026; border-radius: 999px; padding: 0.25rem 0.6rem; font-size: 12px; }

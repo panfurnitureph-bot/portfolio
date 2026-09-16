@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Amalia Canary Yellow",
+    "material": "Fabric",
+    "color": "#f2c518",
+    "swatch": "/store/images/swatches/amalia-canary-yellow.jpg"
+  },
+  {
+    "name": "Amalia Cerulean",
+    "material": "Fabric",
+    "color": "#2f8ec4",
+    "swatch": "/store/images/swatches/amalia-cerulean.jpg"
+  },
+  {
+    "name": "Amalia Fuschia",
+    "material": "Fabric",
+    "color": "#e6348a",
+    "swatch": "/store/images/swatches/amalia-fuschia.jpg"
+  },
+  {
+    "name": "Amalia Hush Green",
+    "material": "Fabric",
+    "color": "#c3cec0",
+    "swatch": "/store/images/swatches/amalia-hush-green.jpg"
+  },
+  {
+    "name": "Amalia Lime Green",
+    "material": "Fabric",
+    "color": "#9bcd3a",
+    "swatch": "/store/images/swatches/amalia-lime-green.jpg"
+  },
+  {
+    "name": "Amalia Milo",
+    "material": "Fabric",
+    "color": "#6b5645",
+    "swatch": "/store/images/swatches/amalia-milo.jpg"
+  },
+  {
+    "name": "Amalia Peach",
+    "material": "Fabric",
+    "color": "#f3b8c4",
+    "swatch": "/store/images/swatches/amalia-peach.jpg"
+  },
+  {
+    "name": "Amalia Prim Rose",
+    "material": "Fabric",
+    "color": "#dcc79a",
+    "swatch": "/store/images/swatches/amalia-prim-rose.jpg"
+  },
+  {
+    "name": "Amalia Rangoon",
+    "material": "Fabric",
+    "color": "#5c5040",
+    "swatch": "/store/images/swatches/amalia-rangoon.jpg"
+  },
+  {
+    "name": "Amalia Scuba Blue",
+    "material": "Fabric",
+    "color": "#38bcd5",
+    "swatch": "/store/images/swatches/amalia-scuba-blue.jpg"
+  },
+  {
+    "name": "Amalia Tango",
+    "material": "Fabric",
+    "color": "#e87824",
+    "swatch": "/store/images/swatches/amalia-tango.jpg"
+  },
+  {
+    "name": "Bailey Biscuit",
+    "material": "Fabric",
+    "color": "#b6772a",
+    "swatch": "/store/images/swatches/bailey-biscuit.jpg"
+  },
+  {
+    "name": "Bailey Black",
+    "material": "Fabric",
+    "color": "#1c1c1e",
+    "swatch": "/store/images/swatches/bailey-black.jpg"
+  },
+  {
+    "name": "Bailey Blue",
+    "material": "Fabric",
+    "color": "#1e3fa8",
+    "swatch": "/store/images/swatches/bailey-blue.jpg"
+  },
+  {
+    "name": "Bailey Burly Wood",
+    "material": "Fabric",
+    "color": "#8f8167",
+    "swatch": "/store/images/swatches/bailey-burly-wood.jpg"
+  },
+  {
+    "name": "Bailey Burly Wood Light",
+    "material": "Fabric",
+    "color": "#e5e3d6",
+    "swatch": "/store/images/swatches/bailey-burly-wood-light.jpg"
+  },
+  {
+    "name": "Bailey Burly Wood Velvet",
+    "material": "Velvet",
+    "color": "#5a4a33",
+    "swatch": "/store/images/swatches/bailey-burly-wood-velvet.jpg"
+  },
+  {
+    "name": "Bailey Cardinal",
+    "material": "Fabric",
+    "color": "#b11f34",
+    "swatch": "/store/images/swatches/bailey-cardinal.jpg"
+  },
+  {
+    "name": "Bailey Enamel",
+    "material": "Fabric",
+    "color": "#1c6b78",
+    "swatch": "/store/images/swatches/bailey-enamel.jpg"
+  },
+  {
+    "name": "Bailey Flesh",
+    "material": "Fabric",
+    "color": "#dacbb6",
+    "swatch": "/store/images/swatches/bailey-flesh.jpg"
+  },
+  {
+    "name": "Bailey Frost Gray",
+    "material": "Fabric",
+    "color": "#4a4a4c",
+    "swatch": "/store/images/swatches/bailey-frost-gray.jpg"
+  },
+  {
+    "name": "Bailey Garden Green",
+    "material": "Fabric",
+    "color": "#1d6b3b",
+    "swatch": "/store/images/swatches/bailey-garden-green.jpg"
+  },
+  {
+    "name": "Bailey Hot Pink",
+    "material": "Fabric",
+    "color": "#d23e78",
+    "swatch": "/store/images/swatches/bailey-hot-pink.jpg"
+  },
+  {
+    "name": "Bailey Mustang",
+    "material": "Fabric",
+    "color": "#3a2c23",
+    "swatch": "/store/images/swatches/bailey-mustang.jpg"
+  },
+  {
+    "name": "Bailey Olive Drab",
+    "material": "Fabric",
+    "color": "#575b3a",
+    "swatch": "/store/images/swatches/bailey-olive-drab.jpg"
+  },
+  {
+    "name": "Bailey Olive Drab Velvet",
+    "material": "Velvet",
+    "color": "#4c5238",
+    "swatch": "/store/images/swatches/bailey-olive-drab-velvet.jpg"
+  },
+  {
+    "name": "Bailey Pistachio",
+    "material": "Fabric",
+    "color": "#9cd4af",
+    "swatch": "/store/images/swatches/bailey-pistachio.jpg"
+  },
+  {
+    "name": "Bailey Slate",
+    "material": "Fabric",
+    "color": "#2f5f75",
+    "swatch": "/store/images/swatches/bailey-slate.jpg"
+  },
+  {
+    "name": "Bailey Wood Land",
+    "material": "Fabric",
+    "color": "#4a4034",
+    "swatch": "/store/images/swatches/bailey-wood-land.jpg"
+  },
+  {
+    "name": "Beige",
+    "material": "Fabric",
+    "color": "#c2b299",
+    "swatch": "/store/images/swatches/beige.jpg"
+  },
+  {
+    "name": "Denise Beige",
+    "material": "Fabric",
+    "color": "#cfc3ab",
+    "swatch": "/store/images/swatches/denise-beige.jpg"
+  },
+  {
+    "name": "Denise Hazelnut",
+    "material": "Fabric",
+    "color": "#393833",
+    "swatch": "/store/images/swatches/denise-hazelnut.jpg"
+  },
+  {
+    "name": "German Leather 10023",
+    "material": "Leather",
+    "color": "#9aa388",
+    "swatch": "/store/images/swatches/german-leather-10023.jpg"
+  },
+  {
+    "name": "German Leather 10522",
+    "material": "Leather",
+    "color": "#e6e3da",
+    "swatch": "/store/images/swatches/german-leather-10522.jpg"
+  },
+  {
+    "name": "Hazelnut",
+    "material": "Fabric",
+    "color": "#3b3a3f",
+    "swatch": "/store/images/swatches/hazelnut.jpg"
+  },
+  {
+    "name": "Lafayette Brown",
+    "material": "Fabric",
+    "color": "#b0a288",
+    "swatch": "/store/images/swatches/lafayette-brown.jpg"
+  },
+  {
+    "name": "Lafayette Choco",
+    "material": "Fabric",
+    "color": "#5b4633",
+    "swatch": "/store/images/swatches/lafayette-choco.jpg"
+  },
+  {
+    "name": "Maserati Burly Wood",
+    "material": "Fabric",
+    "color": "#dcd9d0",
+    "swatch": "/store/images/swatches/maserati-burly-wood.jpg"
+  },
+  {
+    "name": "Pecan",
+    "material": "Fabric",
+    "color": "#7b5a2f",
+    "swatch": "/store/images/swatches/pecan.jpg"
+  },
+  {
+    "name": "Red",
+    "material": "Fabric",
+    "color": "#a51f2a",
+    "swatch": "/store/images/swatches/red.jpg"
+  },
+  {
+    "name": "Tanya Black",
+    "material": "Fabric",
+    "color": "#2a2a2c",
+    "swatch": "/store/images/swatches/tanya-black.jpg"
+  },
+  {
+    "name": "Tanya Dessert Palm",
+    "material": "Fabric",
+    "color": "#5f4a37",
+    "swatch": "/store/images/swatches/tanya-dessert-palm.jpg"
+  },
+  {
+    "name": "Tanya Ermine",
+    "material": "Fabric",
+    "color": "#6f4d32",
+    "swatch": "/store/images/swatches/tanya-ermine.jpg"
+  },
+  {
+    "name": "Tanya Frost Gray",
+    "material": "Fabric",
+    "color": "#b3aca2",
+    "swatch": "/store/images/swatches/tanya-frost-gray.jpg"
+  },
+  {
+    "name": "Tanya Graphite",
+    "material": "Fabric",
+    "color": "#3e3a37",
+    "swatch": "/store/images/swatches/tanya-graphite.jpg"
+  },
+  {
+    "name": "Tanya Iron",
+    "material": "Fabric",
+    "color": "#9b9187",
+    "swatch": "/store/images/swatches/tanya-iron.jpg"
+  },
+  {
+    "name": "Tanya Parchment",
+    "material": "Fabric",
+    "color": "#d5cdb8",
+    "swatch": "/store/images/swatches/tanya-parchment.jpg"
+  },
+  {
+    "name": "Tanya Peanut",
+    "material": "Fabric",
+    "color": "#a89473",
+    "swatch": "/store/images/swatches/tanya-peanut.jpg"
+  },
+  {
+    "name": "Tanya Scarlet Red",
+    "material": "Fabric",
+    "color": "#b02636",
+    "swatch": "/store/images/swatches/tanya-scarlet-red.jpg"
+  },
+  {
+    "name": "Tanya Torquoise",
+    "material": "Fabric",
+    "color": "#2f7090",
+    "swatch": "/store/images/swatches/tanya-torquoise.jpg"
+  }
+]

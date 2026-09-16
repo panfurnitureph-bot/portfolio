@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HUWAG lagyan ng overflow-x ang html/body! Sa iOS Safari, kapag ang ROOT ang
+   pumipigil sa pahalang na overflow (hidden man o clip), inaangkin ng root ang
+   pahalang na hagod at HINDI NA UMAABOT sa mga carousel — hindi ma-swipe ang
+   kahit anong overflow-x-auto sa buong site (sa iPhone lang; OK ang Android).
+   Napatunayan ito sa /swipe-test: kahit plain na scroll ay ayaw gumalaw.
+   Ang proteksyon laban sa pahalang na page drift ay nasa isang wrapper div sa
+   app/layout.tsx (`overflow-x: clip` — hindi root, kaya ligtas). */
+body {
+  @apply bg-cream text-ink antialiased;
+  max-width: 100%;
+}
+
+/* Wrapper ng buong page (tingnan ang app/layout.tsx) — pumuputol ng pahalang
+   na overflow nang HINDI ginagalaw ang root scroller. Ang `clip` ay hindi
+   gumagawa ng scroll container kaya walang epekto sa mga gesture. */
+.page-clip {
+  overflow-x: clip;
+}
+
+/* Mga pahalang na carousel track: SADYANG WALANG custom CSS —
+   100% native na scroll behavior. Bawat dinagdag namin dito ay may
+   katumbas na iOS Safari bug:
+   - `-webkit-overflow-scrolling: touch` → nag-fi-freeze kapag nagbago laman
+   - `touch-action: pan-x pan-y` → hinaharangan ng WebKit ang swipe mismo
+   - `overscroll-behavior-x: contain` → nakaka-stuck sa dulo ng carousel
+   Sapat na ang `overflow-x: clip` sa body para hindi gumalaw pahalang ang
+   buong page. Huwag nang dagdagan ulit ito. */
+
+/* Dual-range price slider — thumb lang ang clickable (track invisible) */
+.range-thumb {
+  height: 20px;
+  pointer-events: none;
+}
+.range-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #b1502e;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: 0;
+}
+.range-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #b1502e;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.range-thumb::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 20px;
+}
+.range-thumb::-moz-range-track {
+  background: transparent;
+}
+
+/* Itago ang number-input spinner arrows (nag-o-overflow sa maliit na box) */
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"].no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"].no-spinner {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Pop-up (iframe) embed mode — itago ang chrome, laman lang ang ipakita. */
+:root[data-embed="1"] header,
+:root[data-embed="1"] footer,
+:root[data-embed="1"] [data-floating] {
+  display: none !important;
+}
+:root[data-embed="1"] main {
+  min-height: 0 !important;
+}
+
+/* Sa pop-up embed, bawasan ang malaking padding ng FORM lang (may px-6 ito).
+   Ang resulta (bg-cream) ay walang padding para dumikit ang madilim na header
+   sa taas ng modal — walang puting guhit. */
+:root[data-embed="1"] main > div.px-6 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Habang bukas ang track pop-up, itago ang lahat ng lumulutang na buton. */
+:root[data-track-open="1"] [data-floating] {
+  display: none !important;
+}
+
+/* Sa embed, ang container ng modal ang nagsi-scroll — hindi ang iframe body.
+   Alisin ang sariling scroll ng iframe para walang doble na scrollbar. */
+:root[data-embed="1"], :root[data-embed="1"] body {
+  overflow: hidden !important;
+  height: auto !important;
+}
+
+/* Walang default na margin/padding ang body sa embed — para dumikit ang laman
+   sa taas ng modal (walang puting guhit sa ibabaw ng madilim na header). */
+:root[data-embed="1"] body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+:root[data-embed="1"] main {
+  margin: 0 !important;
+}
+
+/* HEADER NA HINDI UMAASA SA JS (2026-09-05): ang boot script sa root layout
+   ang nagmamarka ng <html data-scrolled="1"> sa pag-scroll. Kapag naka-scroll,
+   opaque ang header at itim ang teksto — kahit hindi pa (o hindi kailanman)
+   nag-hydrate ang React, hindi lulutang ang transparent na header sa ibabaw ng
+   laman. Kapag hydrated, pareho rin ang itinatakda ng React; walang tunggalian. */
+:root[data-scrolled="1"] [data-site-header] {
+  background-color: #FAF7F2;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+:root[data-scrolled="1"] [data-site-header] .hdr-txt {
+  color: #1A1A1A;
+}
+
+/* RAIL NA WALANG JS (2026-09-06, "di ba nasa-scroll pa right"): ang product
+   rail ay JS carousel (transform, overflow hidden). Hanggang hindi nag-hydrate
+   ang React (o kailanman, kung nabitawan ng CDN ang chunk), native na
+   pahalang na scroll ito para makita pa rin ang ibang produkto. Kapag
+   hydrated, ang JS na ang bahala (arrows, drag, autoplay). */
+html:not([data-hydrated]) .rail {
+  overflow-x: auto;
+  cursor: auto;
+  scroll-snap-type: x mandatory;
+}
+html:not([data-hydrated]) .rail > * {
+  scroll-snap-align: start;
+}

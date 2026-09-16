@@ -1,0 +1,634 @@
+{
+  "brand": {
+    "name": "PAN Furniture",
+    "tagline": "Made-to-order furniture. Honest prices."
+  },
+  "promoBanner": "Season sale: 10% off every bed frame with code PANSALE10",
+  "promoBannerSmall": "*Applies to bed frames only. Ends at month end.",
+  "featuredSections": [
+    {
+      "title": "Made to your size",
+      "text": "Every bed and sofa is built to order in our workshop, so odd-sized rooms get a piece that fits.",
+      "cta": "Shop Beds",
+      "href": "/collections/beds",
+      "image": "/store/images/scenes/split-1.jpg"
+    },
+    {
+      "title": "Fabrics you can live with",
+      "text": "Wipeable weaves, linens and velvets, chosen from real swatch photos.",
+      "cta": "Shop Sofas",
+      "href": "/collections/sofas",
+      "image": "/store/images/scenes/split-2.jpg"
+    },
+    {
+      "title": "Delivered by our own team",
+      "text": "We deliver, assemble and position the piece in the room you choose.",
+      "cta": "Shop Dining",
+      "href": "/collections/dining",
+      "image": "/store/images/scenes/split-3.jpg"
+    }
+  ],
+  "trustBadges": [
+    {
+      "title": "Made in our own workshop",
+      "text": "Kiln-dried hardwood, high-density foam, no shortcuts."
+    },
+    {
+      "title": "1-year frame warranty",
+      "text": "Structural repairs on us."
+    },
+    {
+      "title": "30% downpayment",
+      "text": "Pay via QR Ph or card; balance before delivery."
+    },
+    {
+      "title": "Delivery across Luzon",
+      "text": "Quoted per city at checkout."
+    }
+  ],
+  "press": [
+    "Casa Diaries",
+    "Home Journal PH",
+    "Sala Weekly",
+    "Bahay Living",
+    "Design Notes",
+    "Tahanan Mag"
+  ],
+  "contact": {
+    "email": "panfurnitureph@gmail.com",
+    "phone": "0917 000 0000",
+    "hours": "Mon–Sun 9 AM – 7 PM",
+    "whatsapp": "09170000000",
+    "viber": "09170000000",
+    "email2": ""
+  },
+  "menuImages": {
+    "beds": "/store/images/scenes/showroom-1.jpg",
+    "sofas": "/store/images/category-sofa.jpg",
+    "dining": "/store/images/category-dining-set.jpg",
+    "living": "/store/images/category-accent-chair.jpg",
+    "promo bed": "/store/images/category-bed.jpg"
+  },
+  "productTabs": {
+    "shipping": {
+      "title": "Delivery quoted per city",
+      "heading": "",
+      "body": "Delivery is **quoted per city** at checkout and delivered by our own team where we can.",
+      "note": "Made-to-order pieces are finished within 4–6 weeks; we send workshop photos on Messenger as your order progresses.",
+      "note2": "Delivery dates are estimates and can move with weather and traffic.",
+      "heading2": "",
+      "body2": "",
+      "linkLabel": "See more",
+      "linkHref": "/shipping"
+    },
+    "guarantee": {
+      "title": "Downpayment & balance",
+      "heading": "30% to reserve, balance on delivery",
+      "body": "A **30% downpayment** via QR Ph or card moves your order into production; the balance is settled when the piece is delivered and set up.",
+      "note": "",
+      "note2": "",
+      "heading2": "",
+      "body2": "",
+      "linkLabel": "Shipping guide",
+      "linkHref": "/shipping"
+    },
+    "warranty": {
+      "title": "Warranty",
+      "heading": "6-month warranty",
+      "body": "Frame, foam and workmanship are covered for six months from delivery. Message us with a photo and we schedule the repair.",
+      "note": "Please inspect the piece before signing for the delivery.",
+      "note2": "",
+      "heading2": "Damaged on arrival",
+      "body2": "Report within 48 hours with photos and we replace or repair it on us.",
+      "linkLabel": "Learn more",
+      "linkHref": "/faqs"
+    }
+  },
+  "social": {
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "twitter": "",
+    "pinterest": ""
+  },
+  "promo": {
+    "enabled": true,
+    "code": "PANSALE10",
+    "rate": 10
+  },
+  "shipping": {
+    "note": "Shipping fee per lokasyon. Naka-edit sa Admin.",
+    "provinces": [
+      {
+        "name": "Laguna",
+        "cities": [
+          {
+            "name": "San Pedro",
+            "fee": 2000
+          },
+          {
+            "name": "Biñan",
+            "fee": 2000
+          },
+          {
+            "name": "Carmona",
+            "fee": 2000
+          },
+          {
+            "name": "Santa Rosa",
+            "fee": 2800
+          },
+          {
+            "name": "Nuvali",
+            "fee": 3000
+          },
+          {
+            "name": "Cabuyao",
+            "fee": 4000
+          },
+          {
+            "name": "Calamba",
+            "fee": 4500
+          },
+          {
+            "name": "Alaminos",
+            "fee": 5000
+          },
+          {
+            "name": "Bay",
+            "fee": 5000
+          },
+          {
+            "name": "Calauan",
+            "fee": 5000
+          },
+          {
+            "name": "Los Baños",
+            "fee": 5000
+          },
+          {
+            "name": "Magdalena",
+            "fee": 5000
+          },
+          {
+            "name": "Luisiana",
+            "fee": 5500
+          },
+          {
+            "name": "Lumban",
+            "fee": 5500
+          },
+          {
+            "name": "Sta Cruz / Pila",
+            "fee": 5500
+          },
+          {
+            "name": "San Pablo",
+            "fee": 5500
+          },
+          {
+            "name": "Rizal (Laguna)",
+            "fee": 5500
+          },
+          {
+            "name": "Nagcarlan",
+            "fee": 5500
+          },
+          {
+            "name": "Cavinti",
+            "fee": 5500
+          },
+          {
+            "name": "Famy",
+            "fee": 6000
+          },
+          {
+            "name": "Kalayaan",
+            "fee": 6000
+          },
+          {
+            "name": "Mabitac",
+            "fee": 6000
+          },
+          {
+            "name": "Siniloan",
+            "fee": 6000
+          },
+          {
+            "name": "Paete",
+            "fee": 6000
+          },
+          {
+            "name": "Pakil",
+            "fee": 3
+          }
+        ]
+      },
+      {
+        "name": "Batangas",
+        "cities": [
+          {
+            "name": "Agoncillo",
+            "fee": 6000
+          },
+          {
+            "name": "Alitagtag / Cuenca",
+            "fee": 6000
+          },
+          {
+            "name": "Balayan",
+            "fee": 7000
+          },
+          {
+            "name": "Balete",
+            "fee": 5000
+          },
+          {
+            "name": "Batangas City",
+            "fee": 6500
+          },
+          {
+            "name": "Bauan",
+            "fee": 5500
+          },
+          {
+            "name": "Calaca",
+            "fee": 6000
+          },
+          {
+            "name": "Calatagan",
+            "fee": 7000
+          },
+          {
+            "name": "Laurel",
+            "fee": 5500
+          },
+          {
+            "name": "Lemery",
+            "fee": 7000
+          },
+          {
+            "name": "Lian",
+            "fee": 5500
+          },
+          {
+            "name": "Lipa",
+            "fee": 5000
+          },
+          {
+            "name": "Lobo",
+            "fee": 6500
+          },
+          {
+            "name": "Mabini",
+            "fee": 5500
+          },
+          {
+            "name": "Malvar",
+            "fee": 5000
+          },
+          {
+            "name": "Mataas na Kahoy",
+            "fee": 5000
+          },
+          {
+            "name": "Nasugbu",
+            "fee": 5500
+          },
+          {
+            "name": "Rosario",
+            "fee": 6000
+          },
+          {
+            "name": "San Juan",
+            "fee": 6500
+          },
+          {
+            "name": "San Jose",
+            "fee": 6000
+          },
+          {
+            "name": "San Luis",
+            "fee": 6000
+          },
+          {
+            "name": "San Nicolas",
+            "fee": 5500
+          },
+          {
+            "name": "San Pascual",
+            "fee": 5500
+          },
+          {
+            "name": "Sta. Teresita",
+            "fee": 5500
+          },
+          {
+            "name": "Sto Tomas",
+            "fee": 5500
+          },
+          {
+            "name": "Taal",
+            "fee": 5500
+          },
+          {
+            "name": "Tanauan",
+            "fee": 5000
+          },
+          {
+            "name": "Taysan",
+            "fee": 6500
+          },
+          {
+            "name": "Tuy",
+            "fee": 5500
+          }
+        ]
+      },
+      {
+        "name": "Cavite",
+        "cities": [
+          {
+            "name": "Alfonso",
+            "fee": 4500
+          },
+          {
+            "name": "Amadeo",
+            "fee": 4500
+          },
+          {
+            "name": "Bacoor",
+            "fee": 4000
+          },
+          {
+            "name": "Carmona",
+            "fee": 1800
+          },
+          {
+            "name": "Cavite City",
+            "fee": 5500
+          },
+          {
+            "name": "Dasmañias",
+            "fee": 4500
+          },
+          {
+            "name": "Gen. Emilio Aguinaldo",
+            "fee": 5500
+          },
+          {
+            "name": "Gen. Trias",
+            "fee": 4500
+          },
+          {
+            "name": "GMA",
+            "fee": 1800
+          },
+          {
+            "name": "Imus",
+            "fee": 4000
+          },
+          {
+            "name": "Indang",
+            "fee": 5000
+          },
+          {
+            "name": "Kawit",
+            "fee": 5500
+          },
+          {
+            "name": "Magallanes",
+            "fee": 5500
+          },
+          {
+            "name": "Maragondon",
+            "fee": 5500
+          },
+          {
+            "name": "Mendez",
+            "fee": 5000
+          },
+          {
+            "name": "Naic",
+            "fee": 5500
+          },
+          {
+            "name": "Noveleta",
+            "fee": 5500
+          },
+          {
+            "name": "Rosario (Cavite)",
+            "fee": 5500
+          },
+          {
+            "name": "Silang",
+            "fee": 4500
+          },
+          {
+            "name": "Tagaytay",
+            "fee": 4500
+          },
+          {
+            "name": "Tanza",
+            "fee": 4000
+          },
+          {
+            "name": "Ternate",
+            "fee": 5500
+          },
+          {
+            "name": "Trece Martires",
+            "fee": 4500
+          }
+        ]
+      },
+      {
+        "name": "Metro Manila (NCR)",
+        "cities": [
+          {
+            "name": "Alabang / Muntinlupa",
+            "fee": 3000
+          },
+          {
+            "name": "Las Piñas",
+            "fee": 4500
+          },
+          {
+            "name": "Makati",
+            "fee": 4500
+          },
+          {
+            "name": "Malabon",
+            "fee": 5000
+          },
+          {
+            "name": "Mandaluyong",
+            "fee": 4500
+          },
+          {
+            "name": "Manila / Tondo",
+            "fee": 4500
+          },
+          {
+            "name": "Marikina",
+            "fee": 5000
+          },
+          {
+            "name": "Navotas",
+            "fee": 5500
+          },
+          {
+            "name": "Novaliches",
+            "fee": 5500
+          },
+          {
+            "name": "North Caloocan",
+            "fee": 5500
+          },
+          {
+            "name": "Parañaque",
+            "fee": 4500
+          },
+          {
+            "name": "Pasay",
+            "fee": 4500
+          },
+          {
+            "name": "Pasig",
+            "fee": 4500
+          },
+          {
+            "name": "Pateros",
+            "fee": 4500
+          },
+          {
+            "name": "Quezon City",
+            "fee": 4500
+          },
+          {
+            "name": "San Juan (NCR)",
+            "fee": 4500
+          },
+          {
+            "name": "South Caloocan",
+            "fee": 5000
+          },
+          {
+            "name": "Taguig",
+            "fee": 4500
+          },
+          {
+            "name": "Valenzuela",
+            "fee": 5500
+          }
+        ]
+      },
+      {
+        "name": "Rizal",
+        "cities": [
+          {
+            "name": "Angono",
+            "fee": 4500
+          },
+          {
+            "name": "Antipolo",
+            "fee": 5500
+          },
+          {
+            "name": "Binangonan",
+            "fee": 4500
+          },
+          {
+            "name": "Cainta",
+            "fee": 4500
+          },
+          {
+            "name": "Cardona",
+            "fee": 5500
+          },
+          {
+            "name": "Jala-jala",
+            "fee": 5500
+          },
+          {
+            "name": "Montalban",
+            "fee": 5500
+          },
+          {
+            "name": "Morong",
+            "fee": 4500
+          },
+          {
+            "name": "San Mateo",
+            "fee": 4500
+          },
+          {
+            "name": "Tanay",
+            "fee": 5500
+          },
+          {
+            "name": "Taytay",
+            "fee": 4500
+          },
+          {
+            "name": "Teresa",
+            "fee": 5500
+          }
+        ]
+      },
+      {
+        "name": "Quezon",
+        "cities": [
+          {
+            "name": "Atimonan",
+            "fee": 10500
+          },
+          {
+            "name": "Candelaria",
+            "fee": 8000
+          },
+          {
+            "name": "Dolores",
+            "fee": 9500
+          },
+          {
+            "name": "Gumaca",
+            "fee": 11500
+          },
+          {
+            "name": "Lucban",
+            "fee": 9500
+          },
+          {
+            "name": "Lucena",
+            "fee": 9500
+          },
+          {
+            "name": "Quezon Province",
+            "fee": 10500
+          },
+          {
+            "name": "Sariaya",
+            "fee": 10000
+          },
+          {
+            "name": "Tayabas",
+            "fee": 8500
+          },
+          {
+            "name": "Tiaong",
+            "fee": 9500
+          }
+        ]
+      },
+      {
+        "name": "Bulacan",
+        "cities": [
+          {
+            "name": "Bulacan",
+            "fee": 5500
+          }
+        ]
+      }
+    ]
+  }
+}

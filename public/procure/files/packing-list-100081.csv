@@ -1,0 +1,19 @@
+Packing List,PL-100081,,,,,,,
+Booking,NW2681,Container,CNTU6314566,ETD,2026-08-04,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9521,CO2069-HD,Ironbridge Radiator,Heavy Duty,24,0.288,44.4,40.0
+3-6,PO-9505,BD5536-CR,Ridgeline Side Mirror Set,Chrome,48,0.658,36.7,33.0
+7-7,PO-9508,LT1915-RH,Lumen LED Headlight,Right Hand,12,0.065,38.5,34.6
+8-17,PO-9524,CO1137-RH,Ironbridge Radiator,Right Hand,120,1.012,222.6,200.3
+18-21,PO-9475,FL8615-CE,Kestrel Oil Filter,Ceramic,48,0.097,100.4,90.4
+22-29,PO-9418,LT8608-CR,Lumen LED Headlight,Chrome,96,1.607,171.6,154.4
+30-45,PO-9453,CO4943-CR,Ironbridge Radiator,Chrome,200,5.782,682.1,613.9
+46-47,PO-9524,DR2149-RH,Torqueline Drive Chain,Right Hand,24,0.109,51.8,46.6
+48-49,PO-9459,DR2066-HD,Torqueline Drive Chain,Heavy Duty,24,0.118,45.7,41.1
+50-53,PO-9460,SU4530-STD,Summit Shock Absorber,Standard,48,1.076,103.6,93.2
+54-55,PO-9463,FL4097-STD,Kestrel Oil Filter,Standard,24,0.102,24.7,22.2
+56-56,PO-9512,LT5066-PF,Lumen LED Headlight,Performance,12,0.242,36.6,32.9
+
+TOTAL,,,,,680,11.156,1558.7,1402.6
+Total cartons,56,,,,,,,

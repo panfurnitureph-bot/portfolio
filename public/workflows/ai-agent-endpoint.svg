@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="16.8" height="16.8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M180.9 289.6 C247.9 289.6 247.9 222.5 315.0 222.5" stroke="#7a7a7a" stroke-width="1.8" fill="none"/>
+<path d="M308.3 218.5 L315.0 222.5 L308.3 226.5z" fill="#7a7a7a"/>
+<path d="M398.8 222.5 C465.9 222.5 465.9 121.9 532.9 121.9" stroke="#7a7a7a" stroke-width="1.8" fill="none"/>
+<path d="M526.2 117.9 L532.9 121.9 L526.2 125.9z" fill="#7a7a7a"/>
+<path d="M180.9 289.6 C323.4 289.6 323.4 423.7 465.9 423.7" stroke="#7a7a7a" stroke-width="1.8" fill="none"/>
+<path d="M459.2 419.7 L465.9 423.7 L459.2 427.7z" fill="#7a7a7a"/>
+<path d="M549.7 423.7 C625.1 423.7 625.1 423.7 700.6 423.7" stroke="#7a7a7a" stroke-width="1.8" fill="none"/>
+<path d="M693.9 419.7 L700.6 423.7 L693.9 427.7z" fill="#7a7a7a"/>
+<path d="M742.5 465.6 C742.5 515.9 675.4 515.9 675.4 566.2" stroke="#7a7a7a" stroke-width="1.3" stroke-dasharray="3.4 3.4" fill="none"/><path d="M739.1 465.6 l3.4 4.2 l3.4 -4.2z" fill="#7a7a7a"/>
+<path d="M742.5 465.6 C742.5 515.9 859.9 515.9 859.9 566.2" stroke="#7a7a7a" stroke-width="1.3" stroke-dasharray="3.4 3.4" fill="none"/><path d="M739.1 465.6 l3.4 4.2 l3.4 -4.2z" fill="#7a7a7a"/>
+<path d="M784.4 423.7 C901.8 423.7 901.8 423.7 1019.1 423.7" stroke="#7a7a7a" stroke-width="1.8" fill="none"/>
+<path d="M1012.4 419.7 L1019.1 423.7 L1012.4 427.7z" fill="#7a7a7a"/>
+<path d="M139.0 247.6 H169.1 a11.7 11.7 0 0 1 11.7 11.7 V319.7 a11.7 11.7 0 0 1 -11.7 11.7 H139.0 A41.9 41.9 0 0 1 139.0 247.6z" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(139.0 289.6) scale(0.838) translate(-139.0 -289.6)"><circle cx="138.97058823529412" cy="280.55882352941177" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="128.97058823529412" cy="297.55882352941177" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="148.97058823529412" cy="297.55882352941177" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><path d="M138.97058823529412 286.55882352941177 L131.97058823529412 292.55882352941177 M138.97058823529412 286.55882352941177 L145.97058823529412 292.55882352941177 M134.97058823529412 297.55882352941177 L142.97058823529412 297.55882352941177" stroke="#ff6d8c" stroke-width="3" fill="none"/></g>
+<circle cx="180.9" cy="289.6" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<path transform="translate(75.3 282.0) scale(0.838)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="139.0" y="349.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Webhook</text>
+<text x="139.0" y="363.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.2" fill="#9a9a9a">POST</text>
+<rect x="315.0" y="180.6" width="83.8" height="83.8" rx="11.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(356.9 222.5) scale(0.838) translate(-356.9 -222.5)"><path d="M344.9117647058824 232.5 H354.9117647058824 C362.9117647058824 232.5 362.9117647058824 212.5 369.9117647058824 212.5 M344.9117647058824 212.5 H354.9117647058824 C362.9117647058824 212.5 362.9117647058824 232.5 369.9117647058824 232.5" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M365.9117647058824 208.5 l5 4 -5 4z M365.9117647058824 228.5 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="315.0" cy="222.5" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="398.8" cy="222.5" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="356.9" y="282.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">If</text>
+<rect x="532.9" y="80.0" width="83.8" height="83.8" rx="11.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(574.9 121.9) scale(0.838) translate(-574.9 -121.9)"><circle cx="574.8529411764706" cy="112.91176470588235" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="564.8529411764706" cy="129.91176470588235" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="584.8529411764706" cy="129.91176470588235" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><path d="M574.8529411764706 118.91176470588235 L567.8529411764706 124.91176470588235 M574.8529411764706 118.91176470588235 L581.8529411764706 124.91176470588235 M570.8529411764706 129.91176470588235 L578.8529411764706 129.91176470588235" stroke="#ff6d8c" stroke-width="3" fill="none"/></g>
+<circle cx="532.9" cy="121.9" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="616.8" cy="121.9" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<path d="M620.5 121.9 h18.4" stroke="#7a7a7a" stroke-width="1.7"/><rect x="639.0" y="115.2" width="13.4" height="13.4" rx="2.5" fill="#3a3a3a"/><text x="645.7" y="125.3" text-anchor="middle" font-size="10.1" fill="#ddd" font-family="Arial">+</text>
+<text x="574.9" y="182.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Respond to</text>
+<text x="574.9" y="195.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Webhook</text>
+<rect x="465.9" y="381.8" width="83.8" height="83.8" rx="11.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(507.8 423.7) scale(0.838) translate(-507.8 -423.7)"><path d="M498.79411764705884 410.6764705882353 H511.79411764705884 L517.7941176470588 416.6764705882353 V436.6764705882353 H498.79411764705884z" fill="#4285f4"/><path d="M502.79411764705884 422.6764705882353 H513.7941176470588 M502.79411764705884 427.6764705882353 H513.7941176470588 M502.79411764705884 431.6764705882353 H509.79411764705884" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="465.9" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="549.7" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="507.8" y="484.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Get a document</text>
+<rect x="700.6" y="381.8" width="83.8" height="83.8" rx="11.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(742.5 423.7) scale(0.838) translate(-742.5 -423.7)"><rect x="730.4999999999999" y="415.6764705882353" width="24" height="18" rx="5" fill="none" stroke="#e8e8e8" stroke-width="2.4"/><circle cx="737.4999999999999" cy="424.6764705882353" r="2" fill="#e8e8e8"/><circle cx="747.4999999999999" cy="424.6764705882353" r="2" fill="#e8e8e8"/><path d="M742.4999999999999 415.6764705882353 V410.6764705882353 M727.4999999999999 421.6764705882353 v6 M757.4999999999999 421.6764705882353 v6" stroke="#e8e8e8" stroke-width="2.4"/></g>
+<circle cx="700.6" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="784.4" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="742.5" y="484.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">AI Agent</text>
+<circle cx="675.4" cy="608.1" r="41.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(675.4 608.1) scale(0.838) translate(-675.4 -608.1)"><circle cx="675.4411764705882" cy="608.0882352941177" r="13" fill="#4285f4"/><text x="675.4411764705882" y="613.4882352941177" text-anchor="middle" font-family="DM Sans, Arial" font-size="15" font-weight="700" fill="#fff">G</text></g>
+<path d="M672.1 566.2 l3.4 -4.2 l3.4 4.2z" fill="#7a7a7a"/>
+<text x="675.4" y="668.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Google Gemini</text>
+<text x="675.4" y="681.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Chat Model</text>
+<circle cx="859.9" cy="608.1" r="41.9" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(859.9 608.1) scale(0.838) translate(-859.9 -608.1)"><ellipse cx="859.8529411764706" cy="600.0882352941177" rx="11" ry="4.5" fill="none" stroke="#b9b9b9" stroke-width="2.4"/><path d="M848.8529411764706 600.0882352941177 V616.0882352941177 a11 4.5 0 0 0 22 0 V600.0882352941177 M848.8529411764706 608.0882352941177 a11 4.5 0 0 0 22 0" fill="none" stroke="#b9b9b9" stroke-width="2.4"/></g>
+<path d="M856.5 566.2 l3.4 -4.2 l3.4 4.2z" fill="#7a7a7a"/>
+<text x="859.9" y="668.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">Simple Memory</text>
+<rect x="1019.1" y="381.8" width="83.8" height="83.8" rx="11.7" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(1061.0 423.7) scale(0.838) translate(-1061.0 -423.7)"><circle cx="1061.029411764706" cy="423.6764705882353" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1061.029411764706" cy="423.6764705882353" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1048.029411764706 423.6764705882353 H1074.029411764706 M1050.029411764706 417.6764705882353 H1072.029411764706 M1050.029411764706 429.6764705882353 H1072.029411764706" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1019.1" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="1102.9" cy="423.7" r="3.8" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<path d="M1106.7 423.7 h18.4" stroke="#7a7a7a" stroke-width="1.7"/><rect x="1125.2" y="417.0" width="13.4" height="13.4" rx="2.5" fill="#3a3a3a"/><text x="1131.9" y="427.0" text-anchor="middle" font-size="10.1" fill="#ddd" font-family="Arial">+</text>
+<text x="1061.0" y="484.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.7" font-weight="600" fill="#f2f2f2">HTTP Request</text>
+<text x="1061.0" y="497.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.2" fill="#9a9a9a">POST</text>
+</svg>

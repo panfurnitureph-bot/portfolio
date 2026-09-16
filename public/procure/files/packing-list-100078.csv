@@ -1,0 +1,30 @@
+Packing List,PL-100078,,,,,,,
+Booking,NW2678,Container,CNTU6598979,ETD,2026-07-04,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9519,FL3737-HD,Kestrel Oil Filter,Heavy Duty,24,0.086,87.4,78.7
+3-3,PO-9528,BD8724-HD,Ridgeline Side Mirror Set,Heavy Duty,12,0.090,10.3,9.3
+4-13,PO-9451,CO1882-RH,Ironbridge Radiator,Right Hand,120,3.250,228.4,205.6
+14-21,PO-9465,FL1435-OE,Kestrel Oil Filter,OE Spec,96,1.692,207.1,186.4
+22-25,PO-9454,IG2326-CE,Voltera Spark Plug Set,Ceramic,48,0.296,147.4,132.7
+26-33,PO-9489,IG6976-HD,Voltera Spark Plug Set,Heavy Duty,96,1.284,188.6,169.7
+34-49,PO-9421,BD5666-OE,Ridgeline Side Mirror Set,OE Spec,200,1.883,451.4,406.3
+50-59,PO-9422,FL6174-OE,Kestrel Oil Filter,OE Spec,120,0.561,158.1,142.3
+60-61,PO-9414,LT1813-CE,Lumen LED Headlight,Ceramic,24,0.351,39.4,35.5
+62-77,PO-9466,DR4254-CE,Torqueline Drive Chain,Ceramic,200,1.519,616.8,555.1
+78-79,PO-9524,BD8809-STD,Ridgeline Side Mirror Set,Standard,24,0.365,86.4,77.8
+80-83,PO-9535,BD9898-OE,Ridgeline Side Mirror Set,OE Spec,48,0.214,103.9,93.5
+84-93,PO-9507,IG5182-RH,Voltera Spark Plug Set,Right Hand,120,3.319,380.7,342.6
+94-95,PO-9433,DR3296-CE,Torqueline Drive Chain,Ceramic,24,0.366,31.7,28.5
+96-97,PO-9404,DR2373-PF,Torqueline Drive Chain,Performance,24,0.078,17.8,16.0
+98-113,PO-9420,IG6324-CE,Voltera Spark Plug Set,Ceramic,200,5.602,403.2,362.9
+114-121,PO-9517,LT2309-LH,Lumen LED Headlight,Left Hand,96,2.864,130.3,117.3
+122-131,PO-9504,BR4800-RH,Apex Brake Pad Set,Right Hand,120,3.594,158.5,142.7
+132-139,PO-9465,DR8056-HD,Torqueline Drive Chain,Heavy Duty,96,0.802,242.3,218.1
+140-141,PO-9408,IG7053-CE,Voltera Spark Plug Set,Ceramic,24,0.076,82.0,73.8
+142-143,PO-9462,SU9799-LH,Summit Shock Absorber,Left Hand,24,0.062,90.6,81.5
+144-144,PO-9484,DR1322-LH,Torqueline Drive Chain,Left Hand,12,0.284,25.9,23.3
+145-145,PO-9512,EL5676-RH,Voltera Battery 12V,Right Hand,12,0.243,19.8,17.8
+
+TOTAL,,,,,1764,28.881,3908.0,3517.4
+Total cartons,145,,,,,,,

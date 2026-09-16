@@ -1,0 +1,39 @@
+Packing List,PL-100070,,,,,,,
+Booking,NW2670,Container,CNTU4511533,ETD,2026-08-15,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9472,CO8378-CE,Ironbridge Radiator,Ceramic,24,0.513,42.9,38.6
+3-4,PO-9458,CO5272-PF,Ironbridge Radiator,Performance,24,0.177,39.6,35.6
+5-20,PO-9467,SU5401-CE,Summit Shock Absorber,Ceramic,200,2.534,320.2,288.2
+21-30,PO-9527,IG3057-PF,Voltera Spark Plug Set,Performance,120,1.743,378.8,340.9
+31-34,PO-9425,BD8459-CR,Ridgeline Side Mirror Set,Chrome,48,1.112,79.3,71.4
+35-36,PO-9456,DR3432-PF,Torqueline Drive Chain,Performance,24,0.425,16.4,14.8
+37-46,PO-9519,BD5855-OE,Ridgeline Side Mirror Set,OE Spec,120,2.697,400.5,360.4
+47-56,PO-9508,LT2873-HD,Lumen LED Headlight,Heavy Duty,120,3.415,284.1,255.7
+57-64,PO-9500,FL6479-LH,Kestrel Oil Filter,Left Hand,96,2.013,208.2,187.4
+65-72,PO-9481,FL6758-PF,Kestrel Oil Filter,Performance,96,1.907,57.9,52.1
+73-82,PO-9481,SU5398-CR,Summit Shock Absorber,Chrome,120,1.099,290.1,261.1
+83-84,PO-9536,DR5008-STD,Torqueline Drive Chain,Standard,24,0.095,79.6,71.6
+85-85,PO-9476,DR6870-LH,Torqueline Drive Chain,Left Hand,12,0.038,24.1,21.7
+86-95,PO-9503,DR4538-HD,Torqueline Drive Chain,Heavy Duty,120,0.725,237.3,213.6
+96-99,PO-9527,SU5428-BK,Summit Shock Absorber,Black,48,0.342,19.5,17.6
+100-101,PO-9473,BR6393-OE,Apex Brake Pad Set,OE Spec,24,0.125,84.8,76.3
+102-105,PO-9407,BD6039-STD,Ridgeline Side Mirror Set,Standard,48,0.976,32.6,29.3
+106-113,PO-9530,DR7357-RH,Torqueline Drive Chain,Right Hand,96,1.249,272.3,245.1
+114-121,PO-9439,CO4050-HD,Ironbridge Radiator,Heavy Duty,96,2.066,97.1,87.4
+122-131,PO-9515,SU4906-CR,Summit Shock Absorber,Chrome,120,2.345,421.9,379.7
+132-141,PO-9403,BD9832-RH,Ridgeline Side Mirror Set,Right Hand,120,1.521,373.6,336.2
+142-151,PO-9507,IG6621-CE,Voltera Spark Plug Set,Ceramic,120,2.997,232.0,208.8
+152-153,PO-9426,DR3883-CR,Torqueline Drive Chain,Chrome,24,0.505,19.4,17.5
+154-157,PO-9499,SU4262-LH,Summit Shock Absorber,Left Hand,48,0.416,149.8,134.8
+158-173,PO-9446,FL7067-BK,Kestrel Oil Filter,Black,200,3.686,320.7,288.6
+174-183,PO-9466,IG7010-LH,Voltera Spark Plug Set,Left Hand,120,3.462,156.2,140.6
+184-187,PO-9403,DR3632-CR,Torqueline Drive Chain,Chrome,48,0.455,18.1,16.3
+188-191,PO-9531,DR9767-BK,Torqueline Drive Chain,Black,48,0.731,18.4,16.6
+192-195,PO-9529,IG8253-STD,Voltera Spark Plug Set,Standard,48,1.259,87.4,78.7
+196-211,PO-9515,SU4684-PF,Summit Shock Absorber,Performance,200,4.313,777.7,699.9
+212-219,PO-9484,SU5799-PF,Summit Shock Absorber,Performance,96,1.198,324.3,291.9
+220-220,PO-9436,FL7457-CR,Kestrel Oil Filter,Chrome,12,0.126,45.5,41.0
+
+TOTAL,,,,,2664,46.265,5910.3,5319.4
+Total cartons,220,,,,,,,

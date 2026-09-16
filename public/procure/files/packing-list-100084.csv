@@ -1,0 +1,24 @@
+Packing List,PL-100084,,,,,,,
+Booking,NW2684,Container,BOXU5496006,ETD,2026-08-19,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-8,PO-9400,IG8048-RH,Voltera Spark Plug Set,Right Hand,96,2.747,80.6,72.5
+9-16,PO-9496,IG8395-PF,Voltera Spark Plug Set,Performance,96,1.977,189.2,170.3
+17-17,PO-9525,IG5030-BK,Voltera Spark Plug Set,Black,12,0.057,34.3,30.9
+18-19,PO-9507,BR3638-BK,Redhawk Brake Pad Set,Black,24,0.623,76.8,69.1
+20-29,PO-9481,IG6356-HD,Voltera Spark Plug Set,Heavy Duty,120,3.201,171.6,154.4
+30-33,PO-9499,EL3721-STD,Voltera Battery 12V,Standard,48,0.595,174.5,157.1
+34-34,PO-9493,SU5807-LH,Summit Shock Absorber,Left Hand,12,0.129,14.8,13.3
+35-38,PO-9521,IG8626-LH,Voltera Spark Plug Set,Left Hand,48,0.297,56.5,50.9
+39-42,PO-9517,FL1553-HD,Kestrel Oil Filter,Heavy Duty,48,1.278,129.3,116.4
+43-52,PO-9433,DR5996-LH,Torqueline Drive Chain,Left Hand,120,0.676,70.8,63.7
+53-60,PO-9403,LT7754-CE,Lumen LED Headlight,Ceramic,96,1.159,369.7,332.7
+61-64,PO-9439,CO1132-BK,Ironbridge Radiator,Black,48,0.589,165.3,148.8
+65-80,PO-9472,EL9552-CR,Voltera Battery 12V,Chrome,200,3.509,336.1,302.5
+81-88,PO-9472,BR7518-PF,Apex Brake Pad Set,Performance,96,0.952,258.8,232.9
+89-98,PO-9510,IG7462-OE,Voltera Spark Plug Set,OE Spec,120,2.971,55.9,50.3
+99-106,PO-9518,CO3754-CR,Ironbridge Radiator,Chrome,96,2.434,365.1,328.6
+107-116,PO-9438,EL1904-STD,Voltera Battery 12V,Standard,120,0.897,143.8,129.4
+
+TOTAL,,,,,1400,24.091,2693.1,2423.8
+Total cartons,116,,,,,,,

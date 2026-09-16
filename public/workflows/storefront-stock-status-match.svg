@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="11.2" height="11.2" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M126.0 365.0 C160.8 365.0 160.8 365.0 195.5 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M191.0 362.3 L195.5 365.0 L191.0 367.7z" fill="#7a7a7a"/>
+<path d="M251.5 365.0 C286.3 365.0 286.3 365.0 321.0 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M316.5 362.3 L321.0 365.0 L316.5 367.7z" fill="#7a7a7a"/>
+<path d="M377.0 365.0 C411.8 365.0 411.8 365.0 446.5 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M442.0 362.3 L446.5 365.0 L442.0 367.7z" fill="#7a7a7a"/>
+<path d="M502.5 365.0 C537.3 365.0 537.3 365.0 572.0 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M567.5 362.3 L572.0 365.0 L567.5 367.7z" fill="#7a7a7a"/>
+<path d="M628.0 365.0 C662.7 365.0 662.7 365.0 697.5 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M693.0 362.3 L697.5 365.0 L693.0 367.7z" fill="#7a7a7a"/>
+<path d="M753.5 365.0 C788.2 365.0 788.2 365.0 823.0 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M818.5 362.3 L823.0 365.0 L818.5 367.7z" fill="#7a7a7a"/>
+<path d="M879.0 365.0 C913.7 365.0 913.7 365.0 948.5 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M944.0 362.3 L948.5 365.0 L944.0 367.7z" fill="#7a7a7a"/>
+<path d="M1004.5 365.0 C1039.2 365.0 1039.2 365.0 1074.0 365.0" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1069.5 362.3 L1074.0 365.0 L1069.5 367.7z" fill="#7a7a7a"/>
+<path d="M98.0 337.0 H118.2 a7.8 7.8 0 0 1 7.8 7.8 V385.2 a7.8 7.8 0 0 1 -7.8 7.8 H98.0 A28.0 28.0 0 0 1 98.0 337.0z" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(98.0 365.0) scale(0.560) translate(-98.0 -365.0)"><circle cx="98.01268498942918" cy="365.0" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M98.01268498942918 357.0 V365.0 H104.01268498942918" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="126.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<path transform="translate(55.4 360.0) scale(0.560)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="98.0" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Daily 8 AM</text>
+<rect x="195.5" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(223.5 365.0) scale(0.560) translate(-223.5 -365.0)"><path d="M211.5095137420719 375.0 l24 -20 M215.5095137420719 353.0 l16 24" stroke="#e0342f" stroke-width="2.6"/><ellipse cx="223.5095137420719" cy="365.0" rx="10" ry="4" fill="none" stroke="#e0342f" stroke-width="2"/></g>
+<circle cx="195.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="251.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="223.5" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Kit components</text>
+<text x="223.5" y="414.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">extract</text>
+<text x="223.5" y="423.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">Execute Query</text>
+<rect x="321.0" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(349.0 365.0) scale(0.560) translate(-349.0 -365.0)"><text x="349.00634249471466" y="374.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="321.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="377.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="349.0" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Build load SQL</text>
+<rect x="446.5" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(474.5 365.0) scale(0.560) translate(-474.5 -365.0)"><ellipse cx="474.5031712473573" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="470.5031712473573" cy="363.0" r="2" fill="#fff"/><path d="M483.5031712473573 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M466.5031712473573 373.0 v5 M480.5031712473573 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="446.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="502.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="474.5" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Load</text>
+<text x="474.5" y="414.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">storefront_status</text>
+<text x="474.5" y="423.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="572.0" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(600.0 365.0) scale(0.560) translate(-600.0 -365.0)"><circle cx="600.0000000000001" cy="365.0" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="600.0000000000001" cy="365.0" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M587.0000000000001 365.0 H613.0000000000001 M589.0000000000001 359.0 H611.0000000000001 M589.0000000000001 371.0 H611.0000000000001" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="572.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="628.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="600.0" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Generate Token</text>
+<text x="600.0" y="414.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="697.5" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(725.5 365.0) scale(0.560) translate(-725.5 -365.0)"><text x="725.4968287526427" y="374.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="697.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="753.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="725.5" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Fetch</text>
+<text x="725.5" y="414.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Storefront SKUs</text>
+<rect x="823.0" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(851.0 365.0) scale(0.560) translate(-851.0 -365.0)"><ellipse cx="850.9936575052855" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="846.9936575052855" cy="363.0" r="2" fill="#fff"/><path d="M859.9936575052855 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M842.9936575052855 373.0 v5 M856.9936575052855 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="823.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="879.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="851.0" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Read forecast</text>
+<text x="851.0" y="414.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">rows</text>
+<text x="851.0" y="423.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="948.5" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(976.5 365.0) scale(0.560) translate(-976.5 -365.0)"><text x="976.4904862579282" y="374.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="948.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="1004.5" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<text x="976.5" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Match SKUs</text>
+<rect x="1074.0" y="337.0" width="56.0" height="56.0" rx="7.8" fill="#2c2c2c" stroke="#454545" stroke-width="1.1"/>
+<g transform="translate(1102.0 365.0) scale(0.560) translate(-1102.0 -365.0)"><ellipse cx="1101.987315010571" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="1097.987315010571" cy="363.0" r="2" fill="#fff"/><path d="M1110.987315010571 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1093.987315010571 373.0 v5 M1107.987315010571 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="1074.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<circle cx="1130.0" cy="365.0" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.1"/>
+<path d="M1132.5 365.0 h12.3" stroke="#7a7a7a" stroke-width="1.1"/><rect x="1144.8" y="360.5" width="9.0" height="9.0" rx="1.7" fill="#3a3a3a"/><text x="1149.3" y="367.2" text-anchor="middle" font-size="6.7" fill="#ddd" font-family="Arial">+</text>
+<text x="1102.0" y="405.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.8" font-weight="600" fill="#f2f2f2">Write matches</text>
+<text x="1102.0" y="414.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+</svg>

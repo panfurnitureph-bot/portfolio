@@ -1,0 +1,41 @@
+Packing List,PL-100033,,,,,,,
+Booking,NW2633,Container,NWMU8488987,ETD,2026-07-15,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9404,BD1615-STD,Ridgeline Side Mirror Set,Standard,24,0.212,65.2,58.7
+3-4,PO-9413,CO2710-HD,Ironbridge Radiator,Heavy Duty,24,0.438,56.8,51.1
+5-8,PO-9455,BD8085-RH,Ridgeline Side Mirror Set,Right Hand,48,0.652,149.5,134.6
+9-16,PO-9526,SU8334-BK,Summit Shock Absorber,Black,96,1.540,159.5,143.6
+17-26,PO-9479,IG3496-LH,Voltera Spark Plug Set,Left Hand,120,0.387,411.4,370.3
+27-34,PO-9402,DR4281-LH,Torqueline Drive Chain,Left Hand,96,1.277,35.3,31.8
+35-42,PO-9455,SU4588-RH,Summit Shock Absorber,Right Hand,96,0.718,164.0,147.6
+43-52,PO-9505,CO4067-LH,Ironbridge Radiator,Left Hand,120,2.374,114.3,102.9
+53-54,PO-9500,CO7639-STD,Ironbridge Radiator,Standard,24,0.657,50.4,45.4
+55-64,PO-9470,FL4862-CE,Kestrel Oil Filter,Ceramic,120,3.366,417.2,375.5
+65-65,PO-9535,BR9134-BK,Apex Brake Pad Set,Black,12,0.260,18.0,16.2
+66-69,PO-9424,SU1658-CR,Summit Shock Absorber,Chrome,48,0.914,98.1,88.3
+70-73,PO-9437,BR9078-LH,Redhawk Brake Pad Set,Left Hand,48,0.930,113.2,101.9
+74-75,PO-9490,FL2215-STD,Kestrel Oil Filter,Standard,24,0.534,20.6,18.5
+76-85,PO-9535,BD2402-CE,Ridgeline Side Mirror Set,Ceramic,120,2.902,178.0,160.2
+86-89,PO-9477,EL4848-CE,Voltera Battery 12V,Ceramic,48,1.215,156.1,140.5
+90-91,PO-9445,EL1127-RH,Voltera Battery 12V,Right Hand,24,0.405,15.0,13.5
+92-107,PO-9456,EL7374-STD,Voltera Battery 12V,Standard,200,2.436,534.5,481.1
+108-123,PO-9425,CO9556-STD,Ironbridge Radiator,Standard,200,1.221,775.2,697.7
+124-127,PO-9461,BR2898-LH,Apex Brake Pad Set,Left Hand,48,0.129,37.3,33.6
+128-143,PO-9502,SU5740-CE,Summit Shock Absorber,Ceramic,200,3.606,371.6,334.4
+144-147,PO-9442,EL2733-CE,Voltera Battery 12V,Ceramic,48,1.316,189.1,170.2
+148-163,PO-9483,BR2956-CR,Redhawk Brake Pad Set,Chrome,200,5.808,170.0,153.0
+164-165,PO-9473,SU4925-LH,Summit Shock Absorber,Left Hand,24,0.671,85.9,77.3
+166-167,PO-9490,BD3015-CR,Ridgeline Side Mirror Set,Chrome,24,0.366,43.5,39.1
+168-177,PO-9443,IG1539-LH,Voltera Spark Plug Set,Left Hand,120,1.888,40.5,36.5
+178-185,PO-9454,EL3870-RH,Voltera Battery 12V,Right Hand,96,1.227,66.0,59.4
+186-189,PO-9530,FL7633-STD,Kestrel Oil Filter,Standard,48,1.437,81.7,73.5
+190-193,PO-9411,BD3553-STD,Ridgeline Side Mirror Set,Standard,48,0.907,116.2,104.6
+194-209,PO-9425,CO9045-LH,Ironbridge Radiator,Left Hand,200,0.595,611.2,550.1
+210-219,PO-9444,IG1089-RH,Voltera Spark Plug Set,Right Hand,120,1.639,283.4,255.1
+220-221,PO-9462,LT2729-RH,Lumen LED Headlight,Right Hand,24,0.115,45.3,40.8
+222-229,PO-9471,EL7106-LH,Voltera Battery 12V,Left Hand,96,0.960,223.2,200.9
+230-237,PO-9425,CO6055-CR,Ironbridge Radiator,Chrome,96,1.291,230.2,207.2
+
+TOTAL,,,,,2884,44.393,6127.4,5515.1
+Total cartons,237,,,,,,,

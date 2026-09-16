@@ -1,0 +1,1131 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Northwind Motor Parts design system
+   Warm graphite neutrals, hazard-orange accent, teal for information, sharp radii — workshop-floor, not office-suite.
+*/
+
+@layer base {
+  :root {
+    /* Core backgrounds - warm off-white paper */
+    --background: 40 14% 96%;
+    --foreground: 205 14% 14%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 205 14% 14%;
+
+    /* Popovers & dropdowns */
+    --popover: 0 0% 100%;
+    --popover-foreground: 205 14% 14%;
+
+    /* Primary - graphite teal */
+    --primary: 196 24% 20%;
+    --primary-foreground: 40 20% 97%;
+
+    /* Secondary - warm stone */
+    --secondary: 40 12% 92%;
+    --secondary-foreground: 196 24% 20%;
+
+    /* Muted */
+    --muted: 40 12% 93%;
+    --muted-foreground: 205 9% 44%;
+
+    /* Accent - hazard orange */
+    --accent: 22 92% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 4 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders - warm */
+    --border: 36 12% 86%;
+    --input: 36 12% 86%;
+    --ring: 22 92% 52%;
+
+    --radius: 0.375rem;
+
+    /* Table tokens */
+    --table-row: 0 0% 100%;
+    --table-row-alt: 40 14% 97%;
+    --table-row-hover: 28 40% 95%;
+    --table-border: 36 12% 88%;
+    /* Sidebar - dark graphite */
+    --sidebar-background: 200 16% 12%;
+    --sidebar-foreground: 40 12% 80%;
+    --sidebar-primary: 22 92% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 13% 18%;
+    --sidebar-accent-foreground: 40 20% 96%;
+    --sidebar-border: 200 12% 20%;
+    --sidebar-ring: 22 92% 52%;
+    --sidebar-hover: 200 13% 18%;
+    --sidebar-active: 22 92% 52%;
+    --sidebar-active-bg: 200 13% 20%;
+    --sidebar-active-foreground: 0 0% 100%;
+    --sidebar-muted: 200 13% 15%;
+    --sidebar-muted-foreground: 200 8% 55%;
+    --sidebar-section-label: 200 8% 50%;
+
+    /* Semantic colors */
+    --success: 152 60% 34%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 45%;
+    --warning-foreground: 0 0% 100%;
+    --info: 182 62% 34%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors */
+    --chart-primary: 22 92% 52%;
+    --chart-secondary: 182 62% 34%;
+    --chart-tertiary: 205 30% 45%;
+    --chart-quaternary: 45 90% 50%;
+    --chart-muted: 205 9% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(196 24% 20%) 0%, hsl(182 62% 28%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(22 92% 52%) 0%, hsl(38 92% 50%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(152 60% 34%) 0%, hsl(168 60% 36%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(200 16% 12% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(200 16% 12% / 0.09), 0 2px 4px -2px hsl(200 16% 12% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(200 16% 12% / 0.09), 0 4px 6px -4px hsl(200 16% 12% / 0.06);
+    --shadow-xl: 0 20px 25px -5px hsl(200 16% 12% / 0.09), 0 8px 10px -6px hsl(200 16% 12% / 0.06);
+    --shadow-card: 0 1px 3px 0 hsl(200 16% 12% / 0.07), 0 1px 2px -1px hsl(200 16% 12% / 0.07);
+
+    /* Row highlight tokens — LIGHT mode */
+    --highlight-bg: rgba(242, 106, 27, 0.10);
+    --highlight-bg-hover: rgba(242, 106, 27, 0.16);
+    --highlight-border: #F26A1B;
+    --highlight-glow: rgba(242, 106, 27, 0.05);
+    --highlight-text: #1c1b18;
+    --highlight-text-secondary: rgba(0, 0, 0, 0.7);
+  }
+
+  .dark {
+    /* Pure black background */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Primary accent — violet */
+    --primary: 22 92% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 7%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 22 92% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 96%;
+
+    /* Pure black borders */
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 22 92% 52%;
+
+    /* Table tokens */
+    --table-row: 0 0% 0%;
+    --table-row-alt: 0 0% 4%;
+    --table-row-hover: 0 0% 8%;
+    --table-border: 0 0% 15%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 22 92% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 22 92% 52%;
+    --sidebar-hover: 0 0% 7%;
+    --sidebar-active: 22 92% 52%;
+    --sidebar-active-foreground: 0 0% 100%;
+    --sidebar-muted: 0 0% 7%;
+    --sidebar-muted-foreground: 0 0% 64%;
+    --sidebar-section-label: 0 0% 64%;
+    --sidebar-active-bg: 0 0% 10%;
+
+    /* Semantic */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors */
+    --chart-primary: 22 92% 52%;
+    --chart-secondary: 142 76% 36%;
+    --chart-tertiary: 182 62% 34%;
+    --chart-quaternary: 38 92% 50%;
+    --chart-muted: 0 0% 64%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(22 92% 52%) 0%, hsl(182 62% 34%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(160 84% 39%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.6);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.6), 0 2px 4px -2px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.6), 0 4px 6px -4px hsl(0 0% 0% / 0.4);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.6), 0 8px 10px -6px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.4), 0 1px 2px -1px hsl(0 0% 0% / 0.3);
+
+    /* Row highlight tokens — DARK mode */
+    --highlight-bg: rgba(255, 214, 10, 0.075);
+    --highlight-bg-hover: rgba(255, 214, 10, 0.11);
+    --highlight-border: #FFD60A;
+    --highlight-glow: rgba(255, 214, 10, 0.04);
+    --highlight-text: #FFFFFF;
+    --highlight-text-secondary: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Mac trackpad: a two-finger swipe past a grid's horizontal edge triggers
+     the browser back/forward gesture, navigating away and dropping the whole
+     view (filters, scroll, unsaved state). The wide dashboard grids make this
+     trivially easy to hit — disable horizontal overscroll chaining app-wide. */
+  html,
+  body {
+    overscroll-behavior-x: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* KPI Card styles */
+  .kpi-card {
+    @apply bg-card rounded-lg border border-border p-6 shadow-card transition-all duration-200 hover:shadow-md;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold text-foreground tracking-tight;
+  }
+
+  .kpi-label {
+    @apply text-sm font-medium text-muted-foreground uppercase tracking-wide;
+  }
+
+  .kpi-trend-up {
+    @apply text-success font-medium text-sm flex items-center gap-1;
+  }
+
+  .kpi-trend-down {
+    @apply text-destructive font-medium text-sm flex items-center gap-1;
+  }
+
+  /* Dashboard grid */
+  .dashboard-grid {
+    @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
+  /* Chart container */
+  .chart-container {
+    @apply bg-card rounded-lg border border-border p-6 shadow-card;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply mb-8;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-foreground;
+  }
+
+  .page-description {
+    @apply text-muted-foreground mt-1;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shadow-enterprise {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+}
+
+@keyframes skuFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Light/Dark design tokens — Untitled-UI style, app-wide
+   `dark` class added by next-themes; `dark-mode` aliased for granular scopes
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root,
+.light-mode {
+  --bg-primary:        #FFFFFF;
+  --bg-secondary:      #F9FAFB;
+  --bg-tertiary:       #F2F4F7;
+  --sidebar-bg:        #FFFFFF;
+
+  --text-primary:      #101828;
+  --text-secondary:    #344054;
+  --text-tertiary:     #475467;
+  --text-placeholder:  #98A2B3;
+
+  --border-primary:    #D0D5DD;
+  --border-secondary:  #EAECF0;
+
+  --card-bg:           #FFFFFF;
+  --card-border:       #EAECF0;
+
+  --nav-active-bg:     #F2F4F7;
+  --nav-active-fg:     #1D2939;
+  --nav-hover-bg:      #F9FAFB;
+  --nav-fg:            #344054;
+  --section-label:     #98A2B3;
+
+  --badge-bg:          #F2F4F7;
+  --badge-fg:          #344054;
+
+  --brand-accent:      #F26A1B;
+  --brand-accent-hover:#D95A12;
+
+  --status-ok-bg:      #ECFDF3;
+  --status-ok-fg:      #027A48;
+  --status-warn-bg:    #FFFAEB;
+  --status-warn-fg:    #B54708;
+  --status-bad-bg:     #FEF3F2;
+  --status-bad-fg:     #B42318;
+}
+
+.dark,
+.dark-mode {
+  --bg-primary:        #000000;
+  --bg-secondary:      #0A0A0A;
+  --bg-tertiary:       #141414;
+  --sidebar-bg:        #000000;
+
+  --text-primary:      #F5F5F5;
+  --text-secondary:    #A3A3A3;
+  --text-tertiary:     #737373;
+  --text-placeholder:  #525252;
+
+  --border-primary:    #262626;
+  --border-secondary:  #1A1A1A;
+
+  --card-bg:           #0A0A0A;
+  --card-border:       #262626;
+
+  --nav-active-bg:     #1A1A1A;
+  --nav-active-fg:     #FFFFFF;
+  --nav-hover-bg:      #111111;
+  --nav-fg:            #A3A3A3;
+  --section-label:     #525252;
+
+  --badge-bg:          #1A1A1A;
+  --badge-fg:          #D4D4D4;
+
+  --brand-accent:      #9E77ED;
+  --brand-accent-hover:#B692F6;
+
+  --status-ok-bg:      #0D2818;
+  --status-ok-fg:      #32D583;
+  --status-warn-bg:    #2B1F0A;
+  --status-warn-fg:    #FDB022;
+  --status-bad-bg:     #2D1114;
+  --status-bad-fg:     #F97066;
+}
+
+
+/* ============================================================================
+   DASHBOARD ENHANCEMENTS - Colorful & Modern
+   ============================================================================ */
+
+/* Gradient backgrounds for metric cards - Northwind Motor Parts inspired */
+.metric-card-gradient-blue {
+  background: linear-gradient(135deg, #8B7355 0%, #A89080 100%) !important;
+}
+
+.metric-card-gradient-green {
+  background: linear-gradient(135deg, #A8B5A0 0%, #B8C5B0 100%) !important;
+}
+
+.metric-card-gradient-orange {
+  background: linear-gradient(135deg, #C4A68A 0%, #D4B5A0 100%) !important;
+}
+
+.metric-card-gradient-purple {
+  background: linear-gradient(135deg, #5D5A52 0%, #7A7568 100%) !important;
+}
+
+.metric-card-gradient-pink {
+  background: linear-gradient(135deg, #9B8B7E 0%, #B5A599 100%) !important;
+}
+
+.metric-card-gradient-teal {
+  background: linear-gradient(135deg, #8B9B8E 0%, #A5B5A8 100%) !important;
+}
+
+/* Dark mode adjustments */
+.dark .metric-card-gradient-blue {
+  background: linear-gradient(135deg, #8B7355 0%, #A89080 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(139, 115, 85, 0.37);
+}
+
+.dark .metric-card-gradient-green {
+  background: linear-gradient(135deg, #A8B5A0 0%, #B8C5B0 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(168, 181, 160, 0.37);
+}
+
+.dark .metric-card-gradient-orange {
+  background: linear-gradient(135deg, #C4A68A 0%, #D4B5A0 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(196, 166, 138, 0.37);
+}
+
+.dark .metric-card-gradient-purple {
+  background: linear-gradient(135deg, #5D5A52 0%, #7A7568 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(93, 90, 82, 0.37);
+}
+
+.dark .metric-card-gradient-pink {
+  background: linear-gradient(135deg, #9B8B7E 0%, #B5A599 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(155, 139, 126, 0.37);
+}
+
+.dark .metric-card-gradient-teal {
+  background: linear-gradient(135deg, #8B9B8E 0%, #A5B5A8 100%) !important;
+  box-shadow: 0 8px 32px 0 rgba(139, 155, 142, 0.37);
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Metric value glow effect */
+.metric-value-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.dark .metric-value-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Chart container with subtle gradient */
+.chart-container-enhanced {
+  background: linear-gradient(180deg, 
+    rgba(102, 126, 234, 0.05) 0%, 
+    rgba(118, 75, 162, 0.05) 100%
+  );
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dark .chart-container-enhanced {
+  background: linear-gradient(180deg, 
+    rgba(102, 126, 234, 0.1) 0%, 
+    rgba(118, 75, 162, 0.1) 100%
+  );
+}
+
+/* Hover effects */
+.metric-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon containers with glow */
+.icon-glow-blue {
+  background: rgba(102, 126, 234, 0.15) !important;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.icon-glow-green {
+  background: rgba(17, 153, 142, 0.15) !important;
+  box-shadow: 0 0 20px rgba(17, 153, 142, 0.3);
+}
+
+.icon-glow-orange {
+  background: rgba(240, 147, 251, 0.15) !important;
+  box-shadow: 0 0 20px rgba(240, 147, 251, 0.3);
+}
+
+.icon-glow-purple {
+  background: rgba(79, 172, 254, 0.15) !important;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Stat number with gradient text */
+.stat-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ============================================================================
+   ENHANCED DATA TABLES - Colorful & Modern
+   ============================================================================ */
+
+/* Enhanced table styling */
+.enhanced-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.enhanced-table thead tr {
+  position: relative;
+}
+
+.enhanced-table thead tr::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(102, 126, 234, 0.3) 0%, 
+    rgba(118, 75, 162, 0.3) 100%
+  );
+}
+
+.enhanced-table tbody tr {
+  position: relative;
+}
+
+.enhanced-table tbody tr::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(139, 115, 85, 0.7) 0%, 
+    rgba(168, 181, 160, 0.7) 100%
+  );
+}
+
+/* Dark mode - softer brand color accent */
+.dark .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(168, 181, 160, 0.6) 0%, 
+    rgba(139, 115, 85, 0.6) 100%
+  );
+}
+
+/* Data card specific gradients */
+.data-card-arrivals .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(168, 181, 160, 0.8) 0%, 
+    rgba(184, 197, 176, 0.8) 100%
+  );
+}
+
+.dark .data-card-arrivals .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(168, 181, 160, 0.5) 0%, 
+    rgba(184, 197, 176, 0.5) 100%
+  );
+}
+
+.data-card-po .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(93, 90, 82, 0.8) 0%, 
+    rgba(122, 117, 104, 0.8) 100%
+  );
+}
+
+.dark .data-card-po .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(122, 117, 104, 0.5) 0%, 
+    rgba(93, 90, 82, 0.5) 100%
+  );
+}
+
+.data-card-forecast .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(196, 166, 138, 0.8) 0%, 
+    rgba(212, 181, 160, 0.8) 100%
+  );
+}
+
+.dark .data-card-forecast .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(196, 166, 138, 0.5) 0%, 
+    rgba(212, 181, 160, 0.5) 100%
+  );
+}
+
+.data-card-rma .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(139, 115, 85, 0.8) 0%, 
+    rgba(160, 128, 96, 0.8) 100%
+  );
+}
+
+.dark .data-card-rma .enhanced-table tbody tr:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(139, 115, 85, 0.5) 0%, 
+    rgba(160, 128, 96, 0.5) 100%
+  );
+}
+
+/* Enhanced status badges with gradients */
+.status-badge-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s ease;
+}
+
+.status-badge-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Animated gradient border for cards */
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.data-card-arrivals {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-card-arrivals::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #11998e, #38ef7d, #11998e);
+  background-size: 200% 100%;
+  animation: gradient-border 3s ease infinite;
+}
+
+.data-card-po::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  background-size: 200% 100%;
+  animation: gradient-border 3s ease infinite;
+}
+
+.data-card-forecast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #f87171, #ef4444);
+  background-size: 200% 100%;
+  animation: gradient-border 3s ease infinite;
+}
+
+.data-card-rma::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f093fb, #f5576c, #f093fb);
+  background-size: 200% 100%;
+  animation: gradient-border 3s ease infinite;
+}
+
+/* Smooth row animations */
+@keyframes slideInRow {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.enhanced-table tbody tr {
+  animation: slideInRow 0.3s ease-out forwards;
+}
+
+/* Badge pulse animation for critical items */
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+.badge-critical {
+  animation: badge-pulse 2s infinite;
+}
+
+
+/* ============================================================================
+   ANIMATED GRADIENT BACKGROUNDS FOR DASHBOARD HEADERS
+   ============================================================================ */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+
+/* ============================================================================
+   ENHANCED CHART ANIMATIONS - NEW ORDERS & SHIPPED
+   ============================================================================ */
+
+/* Pulse animation for chart cards */
+@keyframes chart-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 6px -1px rgba(139, 115, 85, 0.1), 0 2px 4px -1px rgba(139, 115, 85, 0.06);
+  }
+  50% {
+    box-shadow: 0 10px 15px -3px rgba(139, 115, 85, 0.2), 0 4px 6px -2px rgba(139, 115, 85, 0.1);
+  }
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Chart card hover effect */
+.chart-card-enhanced {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-card-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(139, 115, 85, 0.15), 0 10px 10px -5px rgba(139, 115, 85, 0.08);
+}
+
+/* Animated border for chart cards */
+.chart-card-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-card-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8B7355, transparent);
+  animation: border-slide 3s ease-in-out infinite;
+}
+
+@keyframes border-slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive chart container */
+.responsive-chart {
+  width: 100%;
+  height: 220px;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .responsive-chart {
+    height: 180px;
+  }
+}
+
+/* ───── Forecast table: border-separate so position:sticky works horizontally ───── */
+.mf-table th, .mf-table td { border-top: 0 !important; border-left: 0 !important; }
+/* Fixed layout: clip cell content to the column width (td only — th keeps its
+   overflowing resize handle grabbable). Stops long values widening columns. */
+.mf-table td { overflow: hidden; }
+.mf-table thead tr:first-child th { border-top: 1px solid hsl(var(--border)) !important; }
+.mf-table tr th:first-child, .mf-table tr td:first-child { border-left: 1px solid hsl(var(--border)) !important; }
+/* Group separator overrides — higher specificity (0,2,1) wins over base (0,1,1) */
+.mf-table .mf-sep-dark   { border-left: 6px solid rgb(51 65 85)    !important; }
+.mf-table .mf-sep-medium { border-left: 6px solid rgb(71 85 105)   !important; }
+.mf-table .mf-sep-light  { border-left: 6px solid rgb(148 163 184) !important; }
+
+/* ───── Shared table redesign (light blue header, generous padding) ───── */
+.app-th {
+  background: #EFF2FB !important;
+  color: #4A5568 !important;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 18px 24px;
+  text-align: center;
+  white-space: normal;
+  /* Wrap at word boundaries (spaces) first — only break inside a single word
+     if it's too long to fit the column on its own. */
+  overflow-wrap: break-word;
+  word-break: normal;
+  user-select: none;
+  border: 0 !important;
+  /* Vertical column separators so boundaries (and resize targets) are visible. */
+  border-right: 1px solid #DCE0EC !important;
+  backdrop-filter: blur(6px);
+}
+.dark .app-th {
+  background: hsl(var(--muted)) !important;
+  color: hsl(var(--muted-foreground)) !important;
+  border-right-color: hsl(var(--border)) !important;
+}
+.app-td {
+  padding: var(--app-td-py, 22px) 24px;
+  border: 0;
+  border-bottom: 1px solid #F0F0F5;
+  border-right: 1px solid #F0F0F5;
+  color: #4A5568;
+  font-size: 13px;
+  vertical-align: middle;
+  transition: background-color 75ms ease;
+}
+.dark .app-td {
+  border-bottom-color: hsl(var(--border));
+  border-right-color: hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+.app-td-sticky { background: hsl(var(--card)); }
+.dark .app-td-sticky { background: hsl(var(--background)); }
+
+/* Opaque sticky/frozen cell backgrounds for striped analytics tables
+   (AmazonDashboard / SalesBySource). Translucent stripe/hover tints let
+   horizontally-scrolled content bleed through a pinned column, so these
+   recreate the same look as solid colors via color-mix (works light + dark). */
+.cm-sticky      { background-color: hsl(var(--background)); }
+.cm-sticky-alt  { background-color: color-mix(in srgb, hsl(var(--muted)) 20%, hsl(var(--background))); }
+tr:hover > .cm-sticky,
+tr:hover > .cm-sticky-alt { background-color: color-mix(in srgb, hsl(var(--muted)) 40%, hsl(var(--background))); }
+tr:hover > .app-td { background: hsl(var(--table-row-hover)); }
+/* Sticky/frozen cells must stay OPAQUE — a translucent background lets the
+   horizontally-scrolled content behind them bleed through (overlapping text).
+   #E8E3DD is the opaque equivalent of rgba(139,115,85,0.2) over white. */
+tr:hover > .app-td-sticky { background: hsl(var(--table-row-hover)); }
+.dark tr:hover > .app-td { background: #2a2a2a; }
+.dark tr:hover > .app-td-sticky { background: #2a2a2a; }
+
+/* Action dropdown trigger pill */
+.app-action-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #F1F3F8;
+  color: #4A5568;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+.app-action-trigger:hover,
+.app-action-trigger[data-state="open"] { background: #E5E8F0; color: #2D3748; }
+.app-action-trigger:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in oklab, hsl(var(--primary)) 18%, transparent);
+}
+.app-action-trigger-chevron {
+  width: 14px;
+  height: 14px;
+  color: #9CA3AF;
+  transition: transform 150ms ease;
+}
+.app-action-trigger[data-state="open"] .app-action-trigger-chevron { transform: rotate(180deg); }
+.dark .app-action-trigger { background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+.dark .app-action-trigger:hover,
+.dark .app-action-trigger[data-state="open"] {
+  background: hsl(var(--accent)); color: hsl(var(--accent-foreground));
+}
+
+/* Table hover with brand colors */
+.table-row-hover {
+  transition: all 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background: linear-gradient(90deg, rgba(139, 115, 85, 0.08) 0%, transparent 100%);
+  transform: translateX(2px);
+}
+
+/* Dark mode table hover - softer, warmer glow */
+.dark .table-row-hover:hover {
+  background: linear-gradient(90deg, rgba(168, 181, 160, 0.06) 0%, transparent 100%);
+}
+
+/* Number highlight animation */
+@keyframes number-pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.number-highlight {
+  color: #8B7355;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.number-highlight:hover {
+  animation: number-pop 0.3s ease;
+}
+
+/* ============================================================================
+   ROW HIGHLIGHT — dark-mode-safe accent for <tr class="highlighted">
+   ============================================================================ */
+
+tr.highlighted > td,
+tr.highlighted > th {
+  background-color: rgba(255, 214, 10, 0.25) !important;
+  color: #ffffff;
+}
+
+tr.highlighted > td:first-child,
+tr.highlighted > th:first-child {
+  box-shadow: inset 4px 0 0 0 #FFD60A;
+}
+
+tr.highlighted:hover > td,
+tr.highlighted:hover > th {
+  background-color: rgba(255, 214, 10, 0.38) !important;
+}
+
+tr.highlighted .text-muted-foreground,
+tr.highlighted .text-gray-500,
+tr.highlighted .text-gray-600 {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ============================================================================
+   ROW SELECTED — click-active state for <tr class="selected">
+   Theme-aware via CSS vars (--highlight-*). Instant ON, smooth fade OUT.
+   ============================================================================ */
+
+tr:not(.selected) > td,
+tr:not(.selected) > th {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Cells with their own conditional color (.mf-cell-colored) are excluded so the
+   row-selection highlight never overrides their background/text. */
+tr.selected > td:not(.mf-cell-colored),
+tr.selected > th {
+  background-color: var(--highlight-bg) !important;
+  box-shadow: inset 0 0 20px var(--highlight-glow);
+  transition: none !important;
+}
+
+tr.selected > td:first-child,
+tr.selected > th:first-child {
+  box-shadow:
+    inset 3px 0 0 0 var(--highlight-border),
+    inset 0 0 20px var(--highlight-glow);
+  transition: none !important;
+}
+
+tr.selected:hover > td:not(.mf-cell-colored),
+tr.selected:hover > th {
+  background-color: var(--highlight-bg-hover) !important;
+}
+
+tr.selected > td:not(.mf-cell-colored),
+tr.selected > th,
+tr.selected > td:not(.mf-cell-colored) *:not(.badge):not([class*="bg-"]),
+tr.selected > th *:not(.badge):not([class*="bg-"]) {
+  color: var(--highlight-text) !important;
+}
+
+tr.selected > td input,
+tr.selected > td textarea,
+tr.selected > td select {
+  color: var(--highlight-text) !important;
+  caret-color: var(--highlight-border);
+}
+
+tr.selected > td .text-muted-foreground,
+tr.selected > td .text-gray-400,
+tr.selected > td .text-gray-500,
+tr.selected > td .text-gray-600,
+tr.selected > td .text-slate-400,
+tr.selected > td .text-slate-500,
+tr.selected > td .text-slate-600,
+tr.selected > td [class*="text-muted"] {
+  color: var(--highlight-text-secondary) !important;
+}
+
+tr.selected > td:not(.mf-cell-colored) [class*="tabular-nums"],
+tr.selected > td:not(.mf-cell-colored) .font-semibold,
+tr.selected > td:not(.mf-cell-colored) .font-medium {
+  color: var(--highlight-text) !important;
+  font-weight: 500;
+}
+
+tr.selected > td [class*="bg-"]:not([class*="bg-transparent"]) {
+  color: var(--highlight-text) !important;
+}
+
+tr.selected > td svg {
+  color: var(--highlight-text) !important;
+}
+
+/* Sticky/frozen cells must stay OPAQUE on selected/highlighted rows. The row
+   highlight tokens are translucent (--highlight-bg etc.), so without an opaque
+   override the horizontally-scrolled content behind a frozen column bleeds
+   through as overlapping text. color-mix over the opaque --table-row recreates
+   the same tint as a solid color (works in light + dark). Higher specificity +
+   !important so it beats `tr.selected > td`. */
+tr.selected > td[data-frozen-col],
+tr.selected > td[data-sticky-rownum],
+tr.selected > .app-td-sticky {
+  background-color: color-mix(in srgb, #FFC800 25%, hsl(var(--table-row))) !important;
+}
+tr.selected:hover > td[data-frozen-col],
+tr.selected:hover > td[data-sticky-rownum],
+tr.selected:hover > .app-td-sticky {
+  background-color: color-mix(in srgb, #FFC800 35%, hsl(var(--table-row))) !important;
+}
+tr.highlighted > td[data-frozen-col],
+tr.highlighted > td[data-sticky-rownum],
+tr.highlighted > .app-td-sticky {
+  background-color: color-mix(in srgb, #FFD60A 25%, hsl(var(--table-row))) !important;
+}
+tr.highlighted:hover > td[data-frozen-col],
+tr.highlighted:hover > td[data-sticky-rownum],
+tr.highlighted:hover > .app-td-sticky {
+  background-color: color-mix(in srgb, #FFD60A 38%, hsl(var(--table-row))) !important;
+}
+
+/* ============================================================================
+   THEME SWITCH KILL-SWITCH — kills every transition/animation during swap
+   so light↔dark flips in same frame. Added/removed by ThemeToggle handler.
+   ============================================================================ */
+
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+  animation: none !important;
+}
+

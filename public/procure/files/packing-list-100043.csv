@@ -1,0 +1,44 @@
+Packing List,PL-100043,,,,,,,
+Booking,NW2643,Container,SEAU2163887,ETD,2026-06-10,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-8,PO-9444,LT9067-CE,Lumen LED Headlight,Ceramic,96,2.206,205.7,185.1
+9-16,PO-9443,LT5617-STD,Lumen LED Headlight,Standard,96,2.371,41.9,37.7
+17-32,PO-9479,BD6681-CE,Ridgeline Side Mirror Set,Ceramic,200,5.807,683.7,615.3
+33-36,PO-9507,SU4894-RH,Summit Shock Absorber,Right Hand,48,0.137,103.0,92.7
+37-52,PO-9489,IG5606-BK,Voltera Spark Plug Set,Black,200,1.003,198.7,178.8
+53-53,PO-9497,IG3129-OE,Voltera Spark Plug Set,OE Spec,12,0.188,20.0,18.0
+54-57,PO-9408,DR6243-RH,Torqueline Drive Chain,Right Hand,48,1.079,153.5,138.2
+58-73,PO-9495,SU6293-HD,Summit Shock Absorber,Heavy Duty,200,2.457,103.9,93.5
+74-89,PO-9488,CO1047-STD,Ironbridge Radiator,Standard,200,0.821,449.5,404.6
+90-93,PO-9412,FL6953-OE,Kestrel Oil Filter,OE Spec,48,1.018,84.4,76.0
+94-103,PO-9535,EL1011-CR,Voltera Battery 12V,Chrome,120,0.469,222.8,200.5
+104-107,PO-9423,DR3772-LH,Torqueline Drive Chain,Left Hand,48,0.301,172.0,154.8
+108-123,PO-9415,IG2557-CR,Voltera Spark Plug Set,Chrome,200,2.569,108.1,97.3
+124-127,PO-9423,BD8096-CR,Ridgeline Side Mirror Set,Chrome,48,0.542,70.7,63.6
+128-131,PO-9438,SU6108-STD,Summit Shock Absorber,Standard,48,0.372,82.8,74.5
+132-147,PO-9474,DR5581-BK,Torqueline Drive Chain,Black,200,2.719,484.2,435.8
+148-149,PO-9479,BD7880-RH,Ridgeline Side Mirror Set,Right Hand,24,0.211,32.2,29.0
+150-159,PO-9516,CO2938-LH,Ironbridge Radiator,Left Hand,120,2.625,176.1,158.5
+160-163,PO-9439,LT3906-STD,Lumen LED Headlight,Standard,48,0.400,55.3,49.8
+164-165,PO-9504,IG5961-HD,Voltera Spark Plug Set,Heavy Duty,24,0.686,28.4,25.6
+166-175,PO-9493,SU2294-BK,Summit Shock Absorber,Black,120,0.527,467.4,420.7
+176-183,PO-9481,LT3773-PF,Lumen LED Headlight,Performance,96,1.410,256.7,231.0
+184-193,PO-9407,BD9671-CE,Ridgeline Side Mirror Set,Ceramic,120,2.335,263.6,237.2
+194-194,PO-9458,LT6025-CR,Lumen LED Headlight,Chrome,12,0.234,31.2,28.1
+195-202,PO-9477,SU7255-CE,Summit Shock Absorber,Ceramic,96,1.150,222.8,200.5
+203-212,PO-9436,LT2348-LH,Lumen LED Headlight,Left Hand,120,3.172,76.7,69.0
+213-222,PO-9424,BD9818-LH,Ridgeline Side Mirror Set,Left Hand,120,1.035,89.1,80.2
+223-232,PO-9448,SU8454-CR,Summit Shock Absorber,Chrome,120,3.016,38.7,34.8
+233-233,PO-9495,CO1711-PF,Ironbridge Radiator,Performance,12,0.183,12.9,11.6
+234-243,PO-9415,BD6374-STD,Ridgeline Side Mirror Set,Standard,120,2.214,399.9,359.9
+244-259,PO-9463,FL8008-PF,Kestrel Oil Filter,Performance,200,2.483,712.6,641.3
+260-261,PO-9413,IG4616-LH,Voltera Spark Plug Set,Left Hand,24,0.717,30.1,27.1
+262-263,PO-9408,BR3829-CE,Redhawk Brake Pad Set,Ceramic,24,0.108,51.1,46.0
+264-265,PO-9418,LT9262-OE,Lumen LED Headlight,OE Spec,24,0.149,49.2,44.3
+266-266,PO-9438,BR8179-BK,Redhawk Brake Pad Set,Black,12,0.138,8.9,8.0
+267-276,PO-9457,CO5833-RH,Ironbridge Radiator,Right Hand,120,2.215,471.4,424.3
+277-286,PO-9522,DR5571-PF,Torqueline Drive Chain,Performance,120,0.519,93.2,83.9
+
+TOTAL,,,,,3488,49.586,6752.4,6077.2
+Total cartons,286,,,,,,,

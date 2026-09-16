@@ -1,0 +1,22 @@
+Packing List,PL-100050,,,,,,,
+Booking,NW2650,Container,NWMU6588113,ETD,2026-06-28,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9531,CO2192-PF,Ironbridge Radiator,Performance,120,3.165,96.6,86.9
+11-20,PO-9467,SU9197-STD,Summit Shock Absorber,Standard,120,3.112,261.0,234.9
+21-30,PO-9486,LT6146-STD,Lumen LED Headlight,Standard,120,0.996,40.1,36.1
+31-32,PO-9430,CO5804-CR,Ironbridge Radiator,Chrome,24,0.320,42.3,38.1
+33-34,PO-9527,SU4346-CR,Summit Shock Absorber,Chrome,24,0.158,89.8,80.8
+35-44,PO-9525,LT2600-BK,Lumen LED Headlight,Black,120,1.695,259.9,233.9
+45-48,PO-9538,CO6308-OE,Ironbridge Radiator,OE Spec,48,1.432,160.6,144.5
+49-56,PO-9518,DR9317-CE,Torqueline Drive Chain,Ceramic,96,1.761,73.2,65.9
+57-57,PO-9427,EL4646-STD,Voltera Battery 12V,Standard,12,0.325,16.9,15.2
+58-73,PO-9468,SU1490-LH,Summit Shock Absorber,Left Hand,200,2.880,383.6,345.2
+74-81,PO-9421,LT3922-HD,Lumen LED Headlight,Heavy Duty,96,2.850,133.0,119.7
+82-85,PO-9479,DR3398-PF,Torqueline Drive Chain,Performance,48,1.148,60.3,54.3
+86-89,PO-9443,BR9178-CR,Apex Brake Pad Set,Chrome,48,0.906,181.3,163.2
+90-97,PO-9445,DR4467-CE,Torqueline Drive Chain,Ceramic,96,0.475,315.1,283.6
+98-113,PO-9408,LT2151-RH,Lumen LED Headlight,Right Hand,200,0.477,61.0,54.9
+
+TOTAL,,,,,1372,21.700,2174.7,1957.2
+Total cartons,113,,,,,,,

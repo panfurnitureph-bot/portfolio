@@ -1,0 +1,280 @@
+/* ============================================================================
+   DASHBOARD ENHANCEMENTS - Colorful & Modern
+   ============================================================================ */
+
+/* Gradient backgrounds for metric cards */
+.metric-card-gradient-blue {
+  background: linear-gradient(135deg, #283a40 0%, #0f7173 100%);
+}
+
+.metric-card-gradient-green {
+  background: linear-gradient(135deg, #0f7173 0%, #43a3a5 100%);
+}
+
+.metric-card-gradient-orange {
+  background: linear-gradient(135deg, #f26a1b 0%, #f5a623 100%);
+}
+
+.metric-card-gradient-purple {
+  background: linear-gradient(135deg, #3b5769 0%, #6489a0 100%);
+}
+
+.metric-card-gradient-pink {
+  background: linear-gradient(135deg, #d95a12 0%, #f26a1b 100%);
+}
+
+.metric-card-gradient-teal {
+  background: linear-gradient(135deg, #0d5b5d 0%, #1c1b18 100%);
+}
+
+/* Dark mode adjustments */
+.dark .metric-card-gradient-blue {
+  background: linear-gradient(135deg, #283a40 0%, #0f7173 100%);
+  box-shadow: 0 8px 32px 0 rgba(40, 58, 64, 0.37);
+}
+
+.dark .metric-card-gradient-green {
+  background: linear-gradient(135deg, #0f7173 0%, #43a3a5 100%);
+  box-shadow: 0 8px 32px 0 rgba(15, 113, 115, 0.37);
+}
+
+.dark .metric-card-gradient-orange {
+  background: linear-gradient(135deg, #f26a1b 0%, #f5a623 100%);
+  box-shadow: 0 8px 32px 0 rgba(242, 106, 27, 0.37);
+}
+
+.dark .metric-card-gradient-purple {
+  background: linear-gradient(135deg, #3b5769 0%, #6489a0 100%);
+  box-shadow: 0 8px 32px 0 rgba(59, 87, 105, 0.37);
+}
+
+.dark .metric-card-gradient-pink {
+  background: linear-gradient(135deg, #d95a12 0%, #f26a1b 100%);
+  box-shadow: 0 8px 32px 0 rgba(217, 90, 18, 0.37);
+}
+
+.dark .metric-card-gradient-teal {
+  background: linear-gradient(135deg, #0d5b5d 0%, #1c1b18 100%);
+  box-shadow: 0 8px 32px 0 rgba(13, 91, 93, 0.37);
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animated gradient border */
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(90deg, #f26a1b, #0f7173, #3b5769, #f5a623);
+  background-size: 300% 300%;
+  animation: gradient-border 3s ease infinite;
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.gradient-border-inner {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+/* Metric value glow effect */
+.metric-value-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.dark .metric-value-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Chart container with subtle gradient */
+.chart-container-enhanced {
+  background: linear-gradient(180deg, 
+    rgba(102, 126, 234, 0.05) 0%, 
+    rgba(118, 75, 162, 0.05) 100%
+  );
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dark .chart-container-enhanced {
+  background: linear-gradient(180deg, 
+    rgba(102, 126, 234, 0.1) 0%, 
+    rgba(118, 75, 162, 0.1) 100%
+  );
+}
+
+/* Status badges with gradients */
+.status-badge-success {
+  background: linear-gradient(135deg, #0f7173 0%, #43a3a5 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge-warning {
+  background: linear-gradient(135deg, #f26a1b 0%, #f5a623 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge-info {
+  background: linear-gradient(135deg, #3b5769 0%, #6489a0 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Hover effects */
+.metric-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated background for dashboard */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.dashboard-bg-animated {
+  background: linear-gradient(
+    -45deg,
+    rgba(102, 126, 234, 0.03),
+    rgba(118, 75, 162, 0.03),
+    rgba(240, 147, 251, 0.03),
+    rgba(79, 172, 254, 0.03)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Icon containers with glow */
+.icon-glow-blue {
+  background: rgba(102, 126, 234, 0.15);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.icon-glow-green {
+  background: rgba(17, 153, 142, 0.15);
+  box-shadow: 0 0 20px rgba(17, 153, 142, 0.3);
+}
+
+.icon-glow-orange {
+  background: rgba(240, 147, 251, 0.15);
+  box-shadow: 0 0 20px rgba(240, 147, 251, 0.3);
+}
+
+.icon-glow-purple {
+  background: rgba(79, 172, 254, 0.15);
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Pulse animation for live data */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+}
+
+.pulse-live {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Table row hover with gradient */
+.table-row-hover-gradient {
+  transition: all 0.2s ease;
+}
+
+.table-row-hover-gradient:hover {
+  background: linear-gradient(90deg, 
+    rgba(102, 126, 234, 0.05) 0%, 
+    rgba(118, 75, 162, 0.05) 100%
+  );
+}
+
+/* Progress bar with gradient */
+.progress-gradient {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  height: 8px;
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Stat number with gradient text */
+.stat-gradient-text {
+  background: linear-gradient(135deg, #283a40 0%, #0f7173 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}

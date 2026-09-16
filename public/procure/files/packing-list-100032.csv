@@ -1,0 +1,46 @@
+Packing List,PL-100032,,,,,,,
+Booking,NW2632,Container,CNTU9781365,ETD,2026-09-16,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9439,DR6698-RH,Torqueline Drive Chain,Right Hand,12,0.288,7.8,7.0
+2-2,PO-9436,CO8254-OE,Ironbridge Radiator,OE Spec,12,0.048,42.2,38.0
+3-3,PO-9471,DR8075-CR,Torqueline Drive Chain,Chrome,12,0.123,39.2,35.3
+4-19,PO-9495,DR5294-STD,Torqueline Drive Chain,Standard,200,4.302,103.7,93.3
+20-21,PO-9420,DR7480-CE,Torqueline Drive Chain,Ceramic,24,0.553,27.5,24.8
+22-22,PO-9530,BD5704-PF,Ridgeline Side Mirror Set,Performance,12,0.132,36.4,32.8
+23-23,PO-9451,IG4022-PF,Voltera Spark Plug Set,Performance,12,0.035,31.5,28.4
+24-33,PO-9477,IG7692-BK,Voltera Spark Plug Set,Black,120,3.114,403.6,363.2
+34-41,PO-9500,SU1164-HD,Summit Shock Absorber,Heavy Duty,96,1.498,170.2,153.2
+42-51,PO-9475,FL1475-LH,Kestrel Oil Filter,Left Hand,120,0.731,478.1,430.3
+52-59,PO-9407,IG9736-STD,Voltera Spark Plug Set,Standard,96,2.026,143.4,129.1
+60-69,PO-9404,IG6366-RH,Voltera Spark Plug Set,Right Hand,120,0.420,263.2,236.9
+70-77,PO-9527,SU5752-HD,Summit Shock Absorber,Heavy Duty,96,2.120,65.0,58.5
+78-79,PO-9528,SU1655-STD,Summit Shock Absorber,Standard,24,0.494,36.7,33.0
+80-80,PO-9460,IG5038-STD,Voltera Spark Plug Set,Standard,12,0.142,28.8,25.9
+81-82,PO-9466,LT7605-STD,Lumen LED Headlight,Standard,24,0.432,12.6,11.3
+83-83,PO-9499,SU6078-LH,Summit Shock Absorber,Left Hand,12,0.103,45.6,41.0
+84-99,PO-9510,BR9967-RH,Apex Brake Pad Set,Right Hand,200,1.187,327.3,294.6
+100-109,PO-9518,LT2074-CE,Lumen LED Headlight,Ceramic,120,3.547,90.0,81.0
+110-110,PO-9472,DR3264-LH,Torqueline Drive Chain,Left Hand,12,0.026,13.8,12.4
+111-126,PO-9484,CO3402-LH,Ironbridge Radiator,Left Hand,200,5.592,86.7,78.0
+127-136,PO-9534,BR2602-CE,Redhawk Brake Pad Set,Ceramic,120,0.910,318.7,286.8
+137-144,PO-9459,BR1084-HD,Redhawk Brake Pad Set,Heavy Duty,96,2.591,361.7,325.5
+145-154,PO-9408,IG8712-OE,Voltera Spark Plug Set,OE Spec,120,1.017,61.9,55.7
+155-162,PO-9438,IG8851-OE,Voltera Spark Plug Set,OE Spec,96,0.867,346.2,311.6
+163-163,PO-9417,BR7863-CE,Apex Brake Pad Set,Ceramic,12,0.129,17.2,15.5
+164-164,PO-9488,IG8029-CR,Voltera Spark Plug Set,Chrome,12,0.244,28.2,25.4
+165-174,PO-9521,SU2197-BK,Summit Shock Absorber,Black,120,2.595,133.3,120.0
+175-178,PO-9511,BD8749-HD,Ridgeline Side Mirror Set,Heavy Duty,48,1.242,32.5,29.2
+179-188,PO-9418,SU2894-LH,Summit Shock Absorber,Left Hand,120,0.563,324.6,292.1
+189-196,PO-9401,LT3684-LH,Lumen LED Headlight,Left Hand,96,1.152,97.7,87.9
+197-197,PO-9406,LT7080-STD,Lumen LED Headlight,Standard,12,0.041,6.5,5.9
+198-198,PO-9518,FL2444-STD,Kestrel Oil Filter,Standard,12,0.312,27.9,25.1
+199-214,PO-9520,DR1618-RH,Torqueline Drive Chain,Right Hand,200,2.782,484.3,435.9
+215-218,PO-9539,BR4397-CR,Apex Brake Pad Set,Chrome,48,0.416,82.9,74.6
+219-222,PO-9457,EL8628-LH,Voltera Battery 12V,Left Hand,48,0.971,149.1,134.2
+223-224,PO-9407,SU6281-CR,Summit Shock Absorber,Chrome,24,0.562,41.7,37.5
+225-240,PO-9500,EL6077-RH,Voltera Battery 12V,Right Hand,200,4.586,175.9,158.3
+241-244,PO-9447,EL1345-OE,Voltera Battery 12V,OE Spec,48,0.247,121.6,109.4
+
+TOTAL,,,,,2968,48.140,5265.2,4738.6
+Total cartons,244,,,,,,,

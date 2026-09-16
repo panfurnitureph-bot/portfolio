@@ -1,0 +1,37 @@
+Packing List,PL-100069,,,,,,,
+Booking,NW2669,Container,BOXU4027777,ETD,2026-07-12,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9412,FL3326-HD,Kestrel Oil Filter,Heavy Duty,120,0.327,260.4,234.4
+11-12,PO-9433,CO6710-PF,Ironbridge Radiator,Performance,24,0.323,18.4,16.6
+13-13,PO-9540,EL5433-STD,Voltera Battery 12V,Standard,12,0.215,7.8,7.0
+14-14,PO-9444,EL5902-CR,Voltera Battery 12V,Chrome,12,0.337,8.1,7.3
+15-15,PO-9497,FL6404-HD,Kestrel Oil Filter,Heavy Duty,12,0.168,32.5,29.2
+16-23,PO-9458,DR3482-PF,Torqueline Drive Chain,Performance,96,0.585,93.5,84.2
+24-25,PO-9459,BR5924-PF,Redhawk Brake Pad Set,Performance,24,0.148,16.1,14.5
+26-41,PO-9516,LT9306-BK,Lumen LED Headlight,Black,200,4.123,615.9,554.3
+42-42,PO-9519,IG9633-LH,Voltera Spark Plug Set,Left Hand,12,0.244,36.8,33.1
+43-58,PO-9415,BD4175-RH,Ridgeline Side Mirror Set,Right Hand,200,2.605,584.0,525.6
+59-68,PO-9432,BR8248-PF,Apex Brake Pad Set,Performance,120,1.590,286.0,257.4
+69-76,PO-9407,DR4588-PF,Torqueline Drive Chain,Performance,96,0.600,171.9,154.7
+77-92,PO-9491,BR3849-HD,Apex Brake Pad Set,Heavy Duty,200,3.074,569.9,512.9
+93-102,PO-9529,CO9860-PF,Ironbridge Radiator,Performance,120,0.709,110.9,99.8
+103-118,PO-9406,DR9253-STD,Torqueline Drive Chain,Standard,200,3.483,643.8,579.4
+119-120,PO-9459,BR6116-OE,Apex Brake Pad Set,OE Spec,24,0.276,9.5,8.6
+121-122,PO-9470,FL6853-BK,Kestrel Oil Filter,Black,24,0.224,22.0,19.8
+123-130,PO-9426,LT8266-STD,Lumen LED Headlight,Standard,96,0.496,249.1,224.2
+131-134,PO-9418,DR2636-PF,Torqueline Drive Chain,Performance,48,0.645,53.5,48.1
+135-135,PO-9424,BD4252-BK,Ridgeline Side Mirror Set,Black,12,0.173,27.9,25.1
+136-137,PO-9465,FL8951-LH,Kestrel Oil Filter,Left Hand,24,0.372,13.2,11.9
+138-138,PO-9404,BD3178-CE,Ridgeline Side Mirror Set,Ceramic,12,0.098,47.8,43.0
+139-139,PO-9534,CO5867-LH,Ironbridge Radiator,Left Hand,12,0.337,43.9,39.5
+140-147,PO-9524,DR7563-OE,Torqueline Drive Chain,OE Spec,96,1.761,361.8,325.6
+148-151,PO-9448,DR5793-CE,Torqueline Drive Chain,Ceramic,48,0.179,116.1,104.5
+152-155,PO-9415,SU4350-LH,Summit Shock Absorber,Left Hand,48,0.374,168.0,151.2
+156-156,PO-9444,CO9145-CE,Ironbridge Radiator,Ceramic,12,0.154,5.2,4.7
+157-157,PO-9423,EL4708-PF,Voltera Battery 12V,Performance,12,0.175,8.1,7.3
+158-158,PO-9522,SU7328-STD,Summit Shock Absorber,Standard,12,0.128,16.2,14.6
+159-174,PO-9458,DR4015-HD,Torqueline Drive Chain,Heavy Duty,200,5.430,522.3,470.1
+
+TOTAL,,,,,2128,29.353,5120.6,4608.6
+Total cartons,174,,,,,,,

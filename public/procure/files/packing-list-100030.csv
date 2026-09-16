@@ -1,0 +1,40 @@
+Packing List,PL-100030,,,,,,,
+Booking,NW2630,Container,NWMU9842866,ETD,2026-09-10,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9415,SU8694-BK,Summit Shock Absorber,Black,120,3.539,373.8,336.4
+11-12,PO-9420,CO8488-PF,Ironbridge Radiator,Performance,24,0.632,50.4,45.4
+13-22,PO-9453,SU4297-OE,Summit Shock Absorber,OE Spec,120,0.592,202.0,181.8
+23-24,PO-9416,FL3404-CE,Kestrel Oil Filter,Ceramic,24,0.718,47.1,42.4
+25-40,PO-9400,LT7008-OE,Lumen LED Headlight,OE Spec,200,0.779,234.5,211.1
+41-44,PO-9441,BR7908-CR,Redhawk Brake Pad Set,Chrome,48,0.622,116.9,105.2
+45-54,PO-9481,SU6446-PF,Summit Shock Absorber,Performance,120,2.807,472.7,425.4
+55-55,PO-9521,FL1646-PF,Kestrel Oil Filter,Performance,12,0.104,14.2,12.8
+56-57,PO-9434,LT6365-STD,Lumen LED Headlight,Standard,24,0.350,81.4,73.3
+58-58,PO-9421,IG5544-PF,Voltera Spark Plug Set,Performance,12,0.096,26.5,23.9
+59-60,PO-9506,DR3002-OE,Torqueline Drive Chain,OE Spec,24,0.581,53.9,48.5
+61-62,PO-9437,BD6772-STD,Ridgeline Side Mirror Set,Standard,24,0.482,48.1,43.3
+63-64,PO-9520,BR9455-PF,Redhawk Brake Pad Set,Performance,24,0.125,35.7,32.1
+65-65,PO-9436,CO2374-STD,Ironbridge Radiator,Standard,12,0.104,17.7,15.9
+66-66,PO-9484,BR4649-HD,Apex Brake Pad Set,Heavy Duty,12,0.240,18.1,16.3
+67-74,PO-9468,IG4211-LH,Voltera Spark Plug Set,Left Hand,96,0.514,307.0,276.3
+75-78,PO-9540,FL8526-HD,Kestrel Oil Filter,Heavy Duty,48,0.742,19.4,17.5
+79-88,PO-9529,BR6125-HD,Apex Brake Pad Set,Heavy Duty,120,2.184,295.3,265.8
+89-96,PO-9463,BR3345-BK,Apex Brake Pad Set,Black,96,0.940,129.3,116.4
+97-112,PO-9499,EL4944-HD,Voltera Battery 12V,Heavy Duty,200,4.361,373.1,335.8
+113-120,PO-9477,IG5742-PF,Voltera Spark Plug Set,Performance,96,0.772,146.7,132.0
+121-136,PO-9442,CO3151-HD,Ironbridge Radiator,Heavy Duty,200,4.306,212.8,191.5
+137-138,PO-9452,CO7068-OE,Ironbridge Radiator,OE Spec,24,0.567,93.8,84.4
+139-148,PO-9452,IG5511-STD,Voltera Spark Plug Set,Standard,120,2.421,452.8,407.5
+149-156,PO-9411,FL9475-STD,Kestrel Oil Filter,Standard,96,1.797,222.0,199.8
+157-160,PO-9413,CO1919-CE,Ironbridge Radiator,Ceramic,48,0.607,57.3,51.6
+161-170,PO-9500,SU6846-STD,Summit Shock Absorber,Standard,120,0.431,413.4,372.1
+171-172,PO-9506,LT1204-HD,Lumen LED Headlight,Heavy Duty,24,0.690,45.6,41.0
+173-182,PO-9417,IG1649-RH,Voltera Spark Plug Set,Right Hand,120,1.791,382.2,344.0
+183-192,PO-9475,DR8398-PF,Torqueline Drive Chain,Performance,120,1.866,67.3,60.6
+193-193,PO-9536,SU6781-CR,Summit Shock Absorber,Chrome,12,0.184,26.3,23.7
+194-203,PO-9474,BR2239-CE,Redhawk Brake Pad Set,Ceramic,120,3.406,324.5,292.1
+204-204,PO-9402,BD6367-CE,Ridgeline Side Mirror Set,Ceramic,12,0.079,35.0,31.5
+
+TOTAL,,,,,2472,39.429,5396.8,4857.4
+Total cartons,204,,,,,,,

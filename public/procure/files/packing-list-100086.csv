@@ -1,0 +1,40 @@
+Packing List,PL-100086,,,,,,,
+Booking,NW2686,Container,CNTU7759423,ETD,2026-07-07,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9529,FL3588-LH,Kestrel Oil Filter,Left Hand,120,0.498,90.2,81.2
+11-14,PO-9468,BD6247-CR,Ridgeline Side Mirror Set,Chrome,48,1.261,52.6,47.3
+15-24,PO-9437,DR8096-CE,Torqueline Drive Chain,Ceramic,120,3.120,79.6,71.6
+25-40,PO-9522,DR9788-CR,Torqueline Drive Chain,Chrome,200,5.870,526.7,474.0
+41-56,PO-9490,LT4223-LH,Lumen LED Headlight,Left Hand,200,2.978,516.2,464.6
+57-64,PO-9444,IG9812-STD,Voltera Spark Plug Set,Standard,96,0.998,331.3,298.2
+65-68,PO-9459,EL6129-CE,Voltera Battery 12V,Ceramic,48,0.686,82.5,74.2
+69-84,PO-9470,BD6855-RH,Ridgeline Side Mirror Set,Right Hand,200,2.117,451.9,406.7
+85-92,PO-9536,CO3733-CE,Ironbridge Radiator,Ceramic,96,0.365,249.7,224.7
+93-100,PO-9534,IG3329-CR,Voltera Spark Plug Set,Chrome,96,2.202,65.5,59.0
+101-108,PO-9535,BD2744-STD,Ridgeline Side Mirror Set,Standard,96,0.665,182.1,163.9
+109-110,PO-9441,EL8100-PF,Voltera Battery 12V,Performance,24,0.600,26.0,23.4
+111-120,PO-9505,EL2093-LH,Voltera Battery 12V,Left Hand,120,1.935,453.0,407.7
+121-121,PO-9521,CO6284-STD,Ironbridge Radiator,Standard,12,0.194,33.3,30.0
+122-129,PO-9457,EL4853-PF,Voltera Battery 12V,Performance,96,1.707,204.0,183.6
+130-131,PO-9496,DR3418-STD,Torqueline Drive Chain,Standard,24,0.676,89.6,80.6
+132-132,PO-9537,SU1897-LH,Summit Shock Absorber,Left Hand,12,0.125,12.1,10.9
+133-142,PO-9444,FL6151-STD,Kestrel Oil Filter,Standard,120,1.491,86.5,77.9
+143-144,PO-9405,FL1673-CR,Kestrel Oil Filter,Chrome,24,0.554,48.3,43.5
+145-145,PO-9524,BR7050-STD,Apex Brake Pad Set,Standard,12,0.191,40.8,36.7
+146-146,PO-9401,LT4110-CR,Lumen LED Headlight,Chrome,12,0.223,10.7,9.6
+147-162,PO-9489,SU6448-PF,Summit Shock Absorber,Performance,200,2.640,709.2,638.3
+163-163,PO-9400,LT4815-OE,Lumen LED Headlight,OE Spec,12,0.351,11.8,10.6
+164-173,PO-9520,BD9593-OE,Ridgeline Side Mirror Set,OE Spec,120,1.250,430.8,387.7
+174-175,PO-9424,CO1218-PF,Ironbridge Radiator,Performance,24,0.484,63.0,56.7
+176-191,PO-9400,SU1464-CE,Summit Shock Absorber,Ceramic,200,5.069,154.7,139.2
+192-192,PO-9485,LT6613-LH,Lumen LED Headlight,Left Hand,12,0.194,12.0,10.8
+193-202,PO-9534,FL2307-PF,Kestrel Oil Filter,Performance,120,1.034,127.0,114.3
+203-210,PO-9520,DR1475-CR,Torqueline Drive Chain,Chrome,96,1.588,355.6,320.0
+211-220,PO-9521,LT9592-RH,Lumen LED Headlight,Right Hand,120,3.399,172.3,155.1
+221-224,PO-9535,IG2588-CE,Voltera Spark Plug Set,Ceramic,48,0.128,28.3,25.5
+225-225,PO-9458,LT1252-RH,Lumen LED Headlight,Right Hand,12,0.321,28.2,25.4
+226-241,PO-9419,BD7626-CR,Ridgeline Side Mirror Set,Chrome,200,4.542,398.0,358.2
+
+TOTAL,,,,,2940,49.456,6123.5,5511.1
+Total cartons,241,,,,,,,

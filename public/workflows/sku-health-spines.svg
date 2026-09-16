@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="17.4" height="17.4" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M156.9 365.0 C210.8 365.0 210.8 365.0 264.6 365.0" stroke="#7a7a7a" stroke-width="1.9" fill="none"/>
+<path d="M257.7 360.8 L264.6 365.0 L257.7 369.2z" fill="#7a7a7a"/>
+<path d="M351.5 365.0 C405.4 365.0 405.4 365.0 459.2 365.0" stroke="#7a7a7a" stroke-width="1.9" fill="none"/>
+<path d="M452.3 360.8 L459.2 365.0 L452.3 369.2z" fill="#7a7a7a"/>
+<path d="M546.1 365.0 C600.0 365.0 600.0 365.0 653.9 365.0" stroke="#7a7a7a" stroke-width="1.9" fill="none"/>
+<path d="M646.9 360.8 L653.9 365.0 L646.9 369.2z" fill="#7a7a7a"/>
+<path d="M740.8 365.0 C794.6 365.0 794.6 365.0 848.5 365.0" stroke="#7a7a7a" stroke-width="1.9" fill="none"/>
+<path d="M841.5 360.8 L848.5 365.0 L841.5 369.2z" fill="#7a7a7a"/>
+<path d="M935.4 365.0 C989.2 365.0 989.2 365.0 1043.1 365.0" stroke="#7a7a7a" stroke-width="1.9" fill="none"/>
+<path d="M1036.2 360.8 L1043.1 365.0 L1036.2 369.2z" fill="#7a7a7a"/>
+<path d="M113.4 321.6 H144.7 a12.2 12.2 0 0 1 12.2 12.2 V396.3 a12.2 12.2 0 0 1 -12.2 12.2 H113.4 A43.4 43.4 0 0 1 113.4 321.6z" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(113.4 365.0) scale(0.869) translate(-113.4 -365.0)"><circle cx="113.44262295081967" cy="365.0" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M113.44262295081967 357.0 V365.0 H119.44262295081967" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="156.9" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<path transform="translate(47.4 357.2) scale(0.869)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="113.4" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">Daily 6 AM</text>
+<rect x="264.6" y="321.6" width="86.9" height="86.9" rx="12.2" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(308.1 365.0) scale(0.869) translate(-308.1 -365.0)"><path d="M296.0655737704918 375.0 l24 -20 M300.0655737704918 353.0 l16 24" stroke="#e0342f" stroke-width="2.6"/><ellipse cx="308.0655737704918" cy="365.0" rx="10" ry="4" fill="none" stroke="#e0342f" stroke-width="2"/></g>
+<circle cx="264.6" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="351.5" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="308.1" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">SkuHealth</text>
+<text x="308.1" y="441.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">— rates</text>
+<text x="308.1" y="455.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.6" fill="#9a9a9a">Execute Query</text>
+<rect x="459.2" y="321.6" width="86.9" height="86.9" rx="12.2" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(502.7 365.0) scale(0.869) translate(-502.7 -365.0)"><text x="502.6885245901639" y="374.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="459.2" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="546.1" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="502.7" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">Batch all rows</text>
+<rect x="653.9" y="321.6" width="86.9" height="86.9" rx="12.2" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(697.3 365.0) scale(0.869) translate(-697.3 -365.0)"><ellipse cx="697.311475409836" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="693.311475409836" cy="363.0" r="2" fill="#fff"/><path d="M706.311475409836 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M689.311475409836 373.0 v5 M703.311475409836 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="653.9" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="740.8" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="697.3" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">Load</text>
+<text x="697.3" y="441.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">forecast_rates</text>
+<text x="697.3" y="455.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.6" fill="#9a9a9a">executeQuery</text>
+<rect x="848.5" y="321.6" width="86.9" height="86.9" rx="12.2" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(891.9 365.0) scale(0.869) translate(-891.9 -365.0)"><ellipse cx="891.9344262295082" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="887.9344262295082" cy="363.0" r="2" fill="#fff"/><path d="M900.9344262295082 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M883.9344262295082 373.0 v5 M897.9344262295082 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="848.5" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="935.4" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<text x="891.9" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">Refresh spine</text>
+<text x="891.9" y="441.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.6" fill="#9a9a9a">executeQuery</text>
+<rect x="1043.1" y="321.6" width="86.9" height="86.9" rx="12.2" fill="#2c2c2c" stroke="#454545" stroke-width="1.7"/>
+<g transform="translate(1086.6 365.0) scale(0.869) translate(-1086.6 -365.0)"><ellipse cx="1086.5573770491803" cy="366.0" rx="12" ry="10" fill="#4f9fd8"/><circle cx="1082.5573770491803" cy="363.0" r="2" fill="#fff"/><path d="M1095.5573770491803 363.0 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1078.5573770491803 373.0 v5 M1092.5573770491803 373.0 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="1043.1" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<circle cx="1130.0" cy="365.0" r="3.9" fill="#181818" stroke="#7a7a7a" stroke-width="1.7"/>
+<path d="M1133.9 365.0 h19.1" stroke="#7a7a7a" stroke-width="1.7"/><rect x="1153.0" y="358.0" width="13.9" height="13.9" rx="2.6" fill="#3a3a3a"/><text x="1160.0" y="368.5" text-anchor="middle" font-size="10.4" fill="#ddd" font-family="Arial">+</text>
+<text x="1086.6" y="427.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="12.2" font-weight="600" fill="#f2f2f2">Rebuild views</text>
+<text x="1086.6" y="441.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="9.6" fill="#9a9a9a">executeQuery</text>
+</svg>

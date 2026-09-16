@@ -1,0 +1,19 @@
+Packing List,PL-100083,,,,,,,
+Booking,NW2683,Container,BOXU5859703,ETD,2026-06-16,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9509,BD7605-OE,Ridgeline Side Mirror Set,OE Spec,12,0.201,10.3,9.3
+2-2,PO-9535,SU2152-CE,Summit Shock Absorber,Ceramic,12,0.156,38.3,34.5
+3-10,PO-9499,SU7170-CR,Summit Shock Absorber,Chrome,96,1.759,189.3,170.4
+11-26,PO-9423,BR2541-HD,Apex Brake Pad Set,Heavy Duty,200,1.307,544.6,490.1
+27-34,PO-9527,CO1645-RH,Ironbridge Radiator,Right Hand,96,1.331,261.3,235.2
+35-38,PO-9490,FL9215-CR,Kestrel Oil Filter,Chrome,48,0.391,135.0,121.5
+39-54,PO-9501,IG5059-LH,Voltera Spark Plug Set,Left Hand,200,2.096,299.3,269.4
+55-70,PO-9479,FL2401-CR,Kestrel Oil Filter,Chrome,200,2.282,705.1,634.6
+71-78,PO-9407,IG7126-STD,Voltera Spark Plug Set,Standard,96,2.611,321.9,289.7
+79-82,PO-9516,SU9104-CE,Summit Shock Absorber,Ceramic,48,1.343,103.0,92.7
+83-92,PO-9533,LT1605-CE,Lumen LED Headlight,Ceramic,120,1.216,405.6,365.0
+93-102,PO-9517,EL3510-RH,Voltera Battery 12V,Right Hand,120,3.211,264.0,237.6
+
+TOTAL,,,,,1248,17.904,3277.7,2950.0
+Total cartons,102,,,,,,,

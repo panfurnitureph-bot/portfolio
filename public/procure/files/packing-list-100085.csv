@@ -1,0 +1,26 @@
+Packing List,PL-100085,,,,,,,
+Booking,NW2685,Container,CNTU3361399,ETD,2026-08-14,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9500,CO3838-BK,Ironbridge Radiator,Black,120,2.042,318.4,286.6
+11-11,PO-9480,LT9958-BK,Lumen LED Headlight,Black,12,0.337,38.7,34.8
+12-21,PO-9436,LT4413-CE,Lumen LED Headlight,Ceramic,120,1.420,136.2,122.6
+22-31,PO-9410,CO7006-RH,Ironbridge Radiator,Right Hand,120,2.224,402.5,362.2
+32-41,PO-9481,SU2231-PF,Summit Shock Absorber,Performance,120,0.793,66.8,60.1
+42-57,PO-9469,LT9395-CE,Lumen LED Headlight,Ceramic,200,1.261,68.1,61.3
+58-58,PO-9447,LT3734-OE,Lumen LED Headlight,OE Spec,12,0.253,40.9,36.8
+59-60,PO-9536,DR4372-PF,Torqueline Drive Chain,Performance,24,0.263,24.9,22.4
+61-61,PO-9526,BR2443-BK,Redhawk Brake Pad Set,Black,12,0.160,6.1,5.5
+62-65,PO-9484,IG7291-CR,Voltera Spark Plug Set,Chrome,48,0.896,135.1,121.6
+66-73,PO-9488,EL7527-BK,Voltera Battery 12V,Black,96,0.759,204.3,183.9
+74-81,PO-9480,LT2739-RH,Lumen LED Headlight,Right Hand,96,2.206,163.5,147.2
+82-91,PO-9523,FL8989-PF,Kestrel Oil Filter,Performance,120,0.583,382.3,344.1
+92-99,PO-9439,BD5784-LH,Ridgeline Side Mirror Set,Left Hand,96,1.376,317.3,285.6
+100-101,PO-9465,FL5997-RH,Kestrel Oil Filter,Right Hand,24,0.717,26.8,24.1
+102-111,PO-9411,CO5196-CE,Ironbridge Radiator,Ceramic,120,0.510,461.3,415.2
+112-112,PO-9413,IG3735-HD,Voltera Spark Plug Set,Heavy Duty,12,0.152,35.3,31.8
+113-120,PO-9534,EL4615-PF,Voltera Battery 12V,Performance,96,1.426,356.2,320.6
+121-128,PO-9473,LT1714-OE,Lumen LED Headlight,OE Spec,96,1.537,48.8,43.9
+
+TOTAL,,,,,1544,18.915,3233.5,2910.3
+Total cartons,128,,,,,,,

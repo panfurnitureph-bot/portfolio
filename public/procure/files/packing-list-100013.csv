@@ -1,0 +1,33 @@
+Packing List,PL-100013,,,,,,,
+Booking,NW2613,Container,SEAU1797952,ETD,2026-06-16,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-4,PO-9500,IG4627-BK,Voltera Spark Plug Set,Black,48,0.685,51.1,46.0
+5-20,PO-9448,SU8886-STD,Summit Shock Absorber,Standard,200,1.465,338.9,305.0
+21-22,PO-9451,DR9443-STD,Torqueline Drive Chain,Standard,24,0.680,69.1,62.2
+23-23,PO-9508,EL5803-STD,Voltera Battery 12V,Standard,12,0.228,35.1,31.6
+24-25,PO-9501,EL8097-CE,Voltera Battery 12V,Ceramic,24,0.155,47.0,42.3
+26-33,PO-9458,CO8543-LH,Ironbridge Radiator,Left Hand,96,0.886,125.4,112.9
+34-35,PO-9403,CO1270-CE,Ironbridge Radiator,Ceramic,24,0.262,95.2,85.7
+36-51,PO-9457,LT7580-LH,Lumen LED Headlight,Left Hand,200,1.395,429.7,386.7
+52-61,PO-9486,LT6528-OE,Lumen LED Headlight,OE Spec,120,2.562,247.9,223.1
+62-62,PO-9532,FL5385-BK,Kestrel Oil Filter,Black,12,0.153,32.1,28.9
+63-78,PO-9455,CO4178-RH,Ironbridge Radiator,Right Hand,200,1.334,121.9,109.7
+79-80,PO-9435,BR1461-RH,Redhawk Brake Pad Set,Right Hand,24,0.482,15.5,14.0
+81-90,PO-9420,FL5754-RH,Kestrel Oil Filter,Right Hand,120,0.901,93.3,84.0
+91-100,PO-9450,CO5738-CE,Ironbridge Radiator,Ceramic,120,2.612,250.7,225.6
+101-108,PO-9535,BD7886-PF,Ridgeline Side Mirror Set,Performance,96,0.982,124.7,112.2
+109-110,PO-9524,DR4998-BK,Torqueline Drive Chain,Black,24,0.146,18.1,16.3
+111-112,PO-9482,LT6885-OE,Lumen LED Headlight,OE Spec,24,0.151,67.5,60.8
+113-122,PO-9440,SU4966-STD,Summit Shock Absorber,Standard,120,1.869,235.4,211.9
+123-130,PO-9484,FL1053-HD,Kestrel Oil Filter,Heavy Duty,96,0.401,281.5,253.3
+131-146,PO-9500,BR1895-PF,Apex Brake Pad Set,Performance,200,1.827,415.6,374.0
+147-148,PO-9498,BR9022-CE,Redhawk Brake Pad Set,Ceramic,24,0.372,36.9,33.2
+149-149,PO-9521,BR2436-HD,Apex Brake Pad Set,Heavy Duty,12,0.307,44.4,40.0
+150-159,PO-9484,BD3166-STD,Ridgeline Side Mirror Set,Standard,120,2.128,267.6,240.8
+160-160,PO-9401,BR3501-CR,Redhawk Brake Pad Set,Chrome,12,0.068,5.9,5.3
+161-170,PO-9455,FL9350-CR,Kestrel Oil Filter,Chrome,120,3.422,407.4,366.7
+171-171,PO-9439,DR1660-PF,Torqueline Drive Chain,Performance,12,0.095,7.1,6.4
+
+TOTAL,,,,,2084,25.568,3865.0,3478.6
+Total cartons,171,,,,,,,

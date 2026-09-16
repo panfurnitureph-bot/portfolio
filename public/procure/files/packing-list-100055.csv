@@ -1,0 +1,35 @@
+Packing List,PL-100055,,,,,,,
+Booking,NW2655,Container,BOXU5036493,ETD,2026-09-23,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9457,CO2568-CR,Ironbridge Radiator,Chrome,24,0.477,38.4,34.6
+3-10,PO-9417,CO5956-RH,Ironbridge Radiator,Right Hand,96,0.754,62.4,56.2
+11-12,PO-9423,EL2504-HD,Voltera Battery 12V,Heavy Duty,24,0.090,95.9,86.3
+13-14,PO-9494,BD6870-LH,Ridgeline Side Mirror Set,Left Hand,24,0.623,80.7,72.6
+15-22,PO-9474,LT7919-PF,Lumen LED Headlight,Performance,96,1.182,124.3,111.9
+23-38,PO-9515,EL2402-STD,Voltera Battery 12V,Standard,200,1.635,573.9,516.5
+39-46,PO-9412,EL7489-CE,Voltera Battery 12V,Ceramic,96,1.067,366.9,330.2
+47-54,PO-9476,SU9034-CR,Summit Shock Absorber,Chrome,96,2.659,167.5,150.8
+55-62,PO-9513,DR3680-CE,Torqueline Drive Chain,Ceramic,96,2.023,382.3,344.1
+63-72,PO-9448,LT8804-OE,Lumen LED Headlight,OE Spec,120,0.438,181.1,163.0
+73-73,PO-9439,LT6693-CE,Lumen LED Headlight,Ceramic,12,0.215,3.9,3.5
+74-81,PO-9491,SU2729-BK,Summit Shock Absorber,Black,96,1.402,133.2,119.9
+82-97,PO-9419,LT3960-BK,Lumen LED Headlight,Black,200,3.033,292.6,263.3
+98-98,PO-9475,SU8421-OE,Summit Shock Absorber,OE Spec,12,0.206,33.8,30.4
+99-114,PO-9460,CO1806-PF,Ironbridge Radiator,Performance,200,3.556,205.4,184.9
+115-115,PO-9453,IG9397-PF,Voltera Spark Plug Set,Performance,12,0.233,12.8,11.5
+116-123,PO-9439,CO4683-RH,Ironbridge Radiator,Right Hand,96,0.393,233.0,209.7
+124-127,PO-9506,IG7901-CR,Voltera Spark Plug Set,Chrome,48,0.105,172.0,154.8
+128-135,PO-9471,IG7301-HD,Voltera Spark Plug Set,Heavy Duty,96,2.263,276.9,249.2
+136-139,PO-9503,IG7423-OE,Voltera Spark Plug Set,OE Spec,48,0.741,75.8,68.2
+140-149,PO-9506,SU7298-CR,Summit Shock Absorber,Chrome,120,0.316,265.4,238.9
+150-157,PO-9523,SU6920-CE,Summit Shock Absorber,Ceramic,96,1.282,164.5,148.1
+158-161,PO-9490,DR5115-BK,Torqueline Drive Chain,Black,48,0.578,50.2,45.2
+162-169,PO-9468,LT6881-CE,Lumen LED Headlight,Ceramic,96,1.542,270.2,243.2
+170-170,PO-9411,LT9299-LH,Lumen LED Headlight,Left Hand,12,0.043,5.6,5.0
+171-174,PO-9446,DR8614-OE,Torqueline Drive Chain,OE Spec,48,0.769,110.4,99.4
+175-182,PO-9454,BR9591-PF,Apex Brake Pad Set,Performance,96,1.407,197.3,177.6
+183-184,PO-9489,BR2890-CE,Apex Brake Pad Set,Ceramic,24,0.467,47.3,42.6
+
+TOTAL,,,,,2232,29.499,4623.7,4161.6
+Total cartons,184,,,,,,,

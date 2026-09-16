@@ -1,0 +1,34 @@
+Packing List,PL-100077,,,,,,,
+Booking,NW2677,Container,BOXU5488014,ETD,2026-09-19,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9530,FL5359-LH,Kestrel Oil Filter,Left Hand,12,0.219,14.6,13.1
+2-11,PO-9536,DR1916-OE,Torqueline Drive Chain,OE Spec,120,2.221,64.6,58.1
+12-19,PO-9414,FL8317-BK,Kestrel Oil Filter,Black,96,2.691,66.2,59.6
+20-29,PO-9525,BR2717-CE,Apex Brake Pad Set,Ceramic,120,1.149,175.4,157.9
+30-30,PO-9463,LT6771-BK,Lumen LED Headlight,Black,12,0.214,42.7,38.4
+31-32,PO-9441,IG8882-LH,Voltera Spark Plug Set,Left Hand,24,0.371,42.3,38.1
+33-36,PO-9436,BR8059-HD,Redhawk Brake Pad Set,Heavy Duty,48,0.205,115.1,103.6
+37-37,PO-9453,DR7789-CR,Torqueline Drive Chain,Chrome,12,0.359,30.0,27.0
+38-53,PO-9539,EL4072-RH,Voltera Battery 12V,Right Hand,200,4.755,649.1,584.2
+54-69,PO-9408,LT9762-BK,Lumen LED Headlight,Black,200,3.984,757.4,681.7
+70-73,PO-9526,BD4101-LH,Ridgeline Side Mirror Set,Left Hand,48,0.239,57.1,51.4
+74-74,PO-9529,DR3193-PF,Torqueline Drive Chain,Performance,12,0.234,30.4,27.4
+75-75,PO-9536,SU5637-BK,Summit Shock Absorber,Black,12,0.040,11.0,9.9
+76-79,PO-9514,BD2758-CE,Ridgeline Side Mirror Set,Ceramic,48,1.404,130.8,117.7
+80-89,PO-9527,EL1006-CE,Voltera Battery 12V,Ceramic,120,1.355,310.0,279.0
+90-90,PO-9403,CO2579-OE,Ironbridge Radiator,OE Spec,12,0.217,30.7,27.6
+91-92,PO-9409,LT9780-STD,Lumen LED Headlight,Standard,24,0.342,7.5,6.8
+93-96,PO-9456,CO2891-CE,Ironbridge Radiator,Ceramic,48,1.315,120.6,108.5
+97-100,PO-9508,DR4862-PF,Torqueline Drive Chain,Performance,48,0.811,113.7,102.3
+101-110,PO-9532,BR1328-CE,Redhawk Brake Pad Set,Ceramic,120,2.611,393.8,354.4
+111-120,PO-9474,LT8434-LH,Lumen LED Headlight,Left Hand,120,0.588,295.2,265.7
+121-121,PO-9468,BD3667-LH,Ridgeline Side Mirror Set,Left Hand,12,0.270,16.4,14.8
+122-131,PO-9437,LT3297-CR,Lumen LED Headlight,Chrome,120,0.327,219.3,197.4
+132-139,PO-9447,EL2225-CR,Voltera Battery 12V,Chrome,96,2.230,161.1,145.0
+140-149,PO-9475,EL5801-PF,Voltera Battery 12V,Performance,120,2.034,392.8,353.5
+150-159,PO-9486,FL3410-LH,Kestrel Oil Filter,Left Hand,120,3.409,291.6,262.4
+160-163,PO-9428,BR1463-OE,Redhawk Brake Pad Set,OE Spec,48,0.761,176.9,159.2
+
+TOTAL,,,,,1972,34.355,4716.3,4244.7
+Total cartons,163,,,,,,,

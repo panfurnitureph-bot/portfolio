@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="20.0" height="20.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M530.0 365.0 C600.0 365.0 600.0 365.0 670.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M662.0 360.2 L670.0 365.0 L662.0 369.8z" fill="#7a7a7a"/>
+<path d="M480.0 315.0 H516.0 a14.0 14.0 0 0 1 14.0 14.0 V401.0 a14.0 14.0 0 0 1 -14.0 14.0 H480.0 A50.0 50.0 0 0 1 480.0 315.0z" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(480.0 365.0) scale(1.000) translate(-480.0 -365.0)"><circle cx="480.0" cy="356.0" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="470.0" cy="373.0" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><circle cx="490.0" cy="373.0" r="5.5" fill="none" stroke="#ff6d8c" stroke-width="3"/><path d="M480.0 362.0 L473.0 368.0 M480.0 362.0 L487.0 368.0 M476.0 373.0 L484.0 373.0" stroke="#ff6d8c" stroke-width="3" fill="none"/></g>
+<circle cx="530.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path transform="translate(404.0 356.0) scale(1.000)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="480.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Webhook</text>
+<text x="480.0" y="453.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">POST</text>
+<rect x="670.0" y="315.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(720.0 365.0) scale(1.000) translate(-720.0 -365.0)"><rect x="705.0" y="355.0" width="30" height="20" rx="2" fill="#fff"/><path d="M705.0 357.0 L720.0 368.0 L735.0 357.0" stroke="#ea4335" stroke-width="3.2" fill="none"/><path d="M705.0 357.0 V375.0" stroke="#4285f4" stroke-width="3"/><path d="M735.0 357.0 V375.0" stroke="#34a853" stroke-width="3"/><path d="M705.0 374.0 H711.0" stroke="#fbbc05" stroke-width="3"/></g>
+<circle cx="670.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="770.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path d="M774.5 365.0 h22.0" stroke="#7a7a7a" stroke-width="2.0"/><rect x="796.5" y="357.0" width="16.0" height="16.0" rx="3.0" fill="#3a3a3a"/><text x="804.5" y="369.0" text-anchor="middle" font-size="12.0" fill="#ddd" font-family="Arial">+</text>
+<text x="720.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Send Email</text>
+<text x="720.0" y="453.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">send: message</text>
+</svg>

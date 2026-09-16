@@ -1,0 +1,46 @@
+Packing List,PL-100009,,,,,,,
+Booking,NW2609,Container,NWMU2183410,ETD,2026-06-07,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-2,PO-9499,EL5093-PF,Voltera Battery 12V,Performance,24,0.477,44.6,40.1
+3-4,PO-9485,CO7724-STD,Ironbridge Radiator,Standard,24,0.421,16.2,14.6
+5-8,PO-9438,LT8294-OE,Lumen LED Headlight,OE Spec,48,1.080,136.6,122.9
+9-12,PO-9504,FL2179-CR,Kestrel Oil Filter,Chrome,48,0.332,149.5,134.6
+13-22,PO-9440,BD8885-OE,Ridgeline Side Mirror Set,OE Spec,120,3.126,351.8,316.6
+23-32,PO-9534,LT9813-HD,Lumen LED Headlight,Heavy Duty,120,2.696,123.6,111.2
+33-36,PO-9415,SU3744-CE,Summit Shock Absorber,Ceramic,48,1.176,98.5,88.7
+37-46,PO-9487,FL7557-BK,Kestrel Oil Filter,Black,120,2.061,229.1,206.2
+47-62,PO-9445,BR2402-LH,Redhawk Brake Pad Set,Left Hand,200,3.306,179.4,161.5
+63-78,PO-9502,BD9201-BK,Ridgeline Side Mirror Set,Black,200,4.831,723.4,651.1
+79-80,PO-9449,BR6968-HD,Redhawk Brake Pad Set,Heavy Duty,24,0.055,28.8,25.9
+81-82,PO-9436,LT6109-LH,Lumen LED Headlight,Left Hand,24,0.578,40.6,36.5
+83-92,PO-9443,BD3462-CR,Ridgeline Side Mirror Set,Chrome,120,1.849,349.8,314.8
+93-102,PO-9482,SU6115-CE,Summit Shock Absorber,Ceramic,120,0.569,477.7,429.9
+103-110,PO-9436,DR5456-CE,Torqueline Drive Chain,Ceramic,96,1.498,162.7,146.4
+111-112,PO-9451,EL6004-HD,Voltera Battery 12V,Heavy Duty,24,0.421,95.1,85.6
+113-120,PO-9456,BR2176-HD,Redhawk Brake Pad Set,Heavy Duty,96,2.089,130.4,117.4
+121-130,PO-9529,BD4568-OE,Ridgeline Side Mirror Set,OE Spec,120,1.133,449.6,404.6
+131-134,PO-9503,FL7724-CR,Kestrel Oil Filter,Chrome,48,0.338,68.7,61.8
+135-150,PO-9538,SU4400-PF,Summit Shock Absorber,Performance,200,3.763,425.7,383.1
+151-154,PO-9529,CO5090-PF,Ironbridge Radiator,Performance,48,0.794,78.4,70.6
+155-155,PO-9415,EL1368-CE,Voltera Battery 12V,Ceramic,12,0.121,33.0,29.7
+156-165,PO-9515,IG5411-BK,Voltera Spark Plug Set,Black,120,1.630,91.7,82.5
+166-169,PO-9499,SU2381-LH,Summit Shock Absorber,Left Hand,48,0.297,98.2,88.4
+170-185,PO-9516,FL2643-RH,Kestrel Oil Filter,Right Hand,200,4.690,627.3,564.6
+186-186,PO-9494,LT6786-CR,Lumen LED Headlight,Chrome,12,0.242,7.4,6.7
+187-187,PO-9418,DR2164-STD,Torqueline Drive Chain,Standard,12,0.059,15.7,14.1
+188-189,PO-9538,LT1758-OE,Lumen LED Headlight,OE Spec,24,0.386,79.9,71.9
+190-205,PO-9409,SU4108-RH,Summit Shock Absorber,Right Hand,200,4.893,261.6,235.4
+206-221,PO-9472,DR2976-OE,Torqueline Drive Chain,OE Spec,200,1.120,735.3,661.8
+222-237,PO-9427,DR5620-CE,Torqueline Drive Chain,Ceramic,200,4.576,183.2,164.9
+238-245,PO-9486,CO5352-STD,Ironbridge Radiator,Standard,96,2.154,347.2,312.5
+246-253,PO-9513,CO8037-HD,Ironbridge Radiator,Heavy Duty,96,1.297,143.3,129.0
+254-263,PO-9455,IG2818-STD,Voltera Spark Plug Set,Standard,120,0.600,439.0,395.1
+264-264,PO-9460,EL5464-STD,Voltera Battery 12V,Standard,12,0.102,34.5,31.1
+265-272,PO-9415,FL5332-LH,Kestrel Oil Filter,Left Hand,96,0.856,160.3,144.3
+273-280,PO-9437,IG5286-BK,Voltera Spark Plug Set,Black,96,0.509,64.0,57.6
+281-296,PO-9506,FL1343-STD,Kestrel Oil Filter,Standard,200,2.814,798.0,718.2
+297-297,PO-9466,BD2231-RH,Ridgeline Side Mirror Set,Right Hand,12,0.241,10.6,9.5
+
+TOTAL,,,,,3628,59.180,8490.4,7641.4
+Total cartons,297,,,,,,,

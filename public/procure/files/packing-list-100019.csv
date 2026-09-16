@@ -1,0 +1,39 @@
+Packing List,PL-100019,,,,,,,
+Booking,NW2619,Container,CNTU4355926,ETD,2026-08-25,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-10,PO-9473,SU1235-OE,Summit Shock Absorber,OE Spec,120,3.131,439.4,395.5
+11-18,PO-9495,FL1107-PF,Kestrel Oil Filter,Performance,96,2.573,194.6,175.1
+19-34,PO-9409,FL5076-STD,Kestrel Oil Filter,Standard,200,1.116,658.9,593.0
+35-50,PO-9486,FL7410-LH,Kestrel Oil Filter,Left Hand,200,3.141,114.3,102.9
+51-60,PO-9494,LT6317-RH,Lumen LED Headlight,Right Hand,120,0.495,352.9,317.6
+61-68,PO-9489,FL6696-BK,Kestrel Oil Filter,Black,96,1.469,51.5,46.4
+69-70,PO-9475,IG9816-STD,Voltera Spark Plug Set,Standard,24,0.141,34.6,31.1
+71-80,PO-9452,SU6290-HD,Summit Shock Absorber,Heavy Duty,120,1.993,402.8,362.5
+81-90,PO-9462,FL5678-PF,Kestrel Oil Filter,Performance,120,0.286,445.5,400.9
+91-91,PO-9462,FL2634-HD,Kestrel Oil Filter,Heavy Duty,12,0.300,20.0,18.0
+92-101,PO-9514,LT6020-STD,Lumen LED Headlight,Standard,120,2.904,305.4,274.9
+102-117,PO-9412,EL2631-HD,Voltera Battery 12V,Heavy Duty,200,4.303,481.9,433.7
+118-118,PO-9516,LT2120-HD,Lumen LED Headlight,Heavy Duty,12,0.330,42.6,38.3
+119-120,PO-9477,CO9557-CR,Ironbridge Radiator,Chrome,24,0.691,35.4,31.9
+121-128,PO-9540,EL6400-CR,Voltera Battery 12V,Chrome,96,0.613,110.3,99.3
+129-129,PO-9496,IG5605-CE,Voltera Spark Plug Set,Ceramic,12,0.309,8.1,7.3
+130-145,PO-9538,DR4214-HD,Torqueline Drive Chain,Heavy Duty,200,1.952,625.5,563.0
+146-147,PO-9456,EL9032-PF,Voltera Battery 12V,Performance,24,0.264,85.6,77.0
+148-155,PO-9523,BR8833-HD,Apex Brake Pad Set,Heavy Duty,96,1.134,182.7,164.4
+156-171,PO-9412,BR7648-OE,Apex Brake Pad Set,OE Spec,200,4.127,240.0,216.0
+172-175,PO-9494,LT9436-PF,Lumen LED Headlight,Performance,48,0.884,147.2,132.5
+176-177,PO-9478,DR7913-LH,Torqueline Drive Chain,Left Hand,24,0.357,67.8,61.0
+178-187,PO-9428,LT4369-STD,Lumen LED Headlight,Standard,120,2.246,468.5,421.7
+188-188,PO-9499,DR4467-CR,Torqueline Drive Chain,Chrome,12,0.082,42.9,38.6
+189-198,PO-9479,SU2656-HD,Summit Shock Absorber,Heavy Duty,120,1.555,310.5,279.4
+199-202,PO-9407,IG5779-LH,Voltera Spark Plug Set,Left Hand,48,1.160,74.8,67.3
+203-204,PO-9531,BR1316-OE,Apex Brake Pad Set,OE Spec,24,0.689,18.0,16.2
+205-212,PO-9517,CO8352-PF,Ironbridge Radiator,Performance,96,2.013,271.3,244.2
+213-220,PO-9447,DR3772-CR,Torqueline Drive Chain,Chrome,96,0.209,163.8,147.4
+221-228,PO-9405,FL4144-HD,Kestrel Oil Filter,Heavy Duty,96,0.837,73.1,65.8
+229-236,PO-9504,LT5348-CE,Lumen LED Headlight,Ceramic,96,2.836,274.3,246.9
+237-240,PO-9486,BD4627-STD,Ridgeline Side Mirror Set,Standard,48,0.799,184.3,165.9
+
+TOTAL,,,,,2920,44.939,6928.5,6235.7
+Total cartons,240,,,,,,,

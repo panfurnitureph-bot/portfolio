@@ -1,0 +1,21 @@
+Packing List,PL-100024,,,,,,,
+Booking,NW2624,Container,BOXU3413198,ETD,2026-08-16,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-8,PO-9471,EL1190-CE,Voltera Battery 12V,Ceramic,96,2.688,133.3,120.0
+9-9,PO-9428,SU2373-OE,Summit Shock Absorber,OE Spec,12,0.201,31.2,28.1
+10-13,PO-9482,FL1893-CR,Kestrel Oil Filter,Chrome,48,1.037,182.1,163.9
+14-17,PO-9483,EL7090-CR,Voltera Battery 12V,Chrome,48,1.416,43.2,38.9
+18-33,PO-9443,DR5596-LH,Torqueline Drive Chain,Left Hand,200,3.899,743.0,668.7
+34-49,PO-9408,EL4297-RH,Voltera Battery 12V,Right Hand,200,2.144,62.1,55.9
+50-59,PO-9433,CO8766-RH,Ironbridge Radiator,Right Hand,120,0.456,40.4,36.4
+60-63,PO-9447,BD7217-OE,Ridgeline Side Mirror Set,OE Spec,48,1.063,151.3,136.2
+64-67,PO-9413,EL3408-LH,Voltera Battery 12V,Left Hand,48,0.848,53.1,47.8
+68-77,PO-9401,CO1201-RH,Ironbridge Radiator,Right Hand,120,1.275,104.5,94.0
+78-85,PO-9502,BD7845-HD,Ridgeline Side Mirror Set,Heavy Duty,96,0.729,291.6,262.4
+86-86,PO-9512,CO7266-LH,Ironbridge Radiator,Left Hand,12,0.068,5.4,4.9
+87-90,PO-9428,DR2960-BK,Torqueline Drive Chain,Black,48,0.567,70.9,63.8
+91-106,PO-9470,FL7106-BK,Kestrel Oil Filter,Black,200,3.059,578.0,520.2
+
+TOTAL,,,,,1296,19.450,2490.1,2241.2
+Total cartons,106,,,,,,,

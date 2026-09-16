@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="20.0" height="20.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M538.0 365.0 C600.0 365.0 600.0 365.0 662.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M654.0 360.2 L662.0 365.0 L654.0 369.8z" fill="#7a7a7a"/>
+<path d="M488.0 315.0 H524.0 a14.0 14.0 0 0 1 14.0 14.0 V401.0 a14.0 14.0 0 0 1 -14.0 14.0 H488.0 A50.0 50.0 0 0 1 488.0 315.0z" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(488.0 365.0) scale(1.000) translate(-488.0 -365.0)"><circle cx="488.0" cy="365.0" r="13" fill="none" stroke="#ff8b48" stroke-width="2.6"/><path d="M488.0 357.0 V365.0 H494.0" stroke="#ff8b48" stroke-width="2.6" fill="none"/></g>
+<circle cx="538.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path transform="translate(412.0 356.0) scale(1.000)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="488.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Every day 6AM</text>
+<rect x="662.0" y="315.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(712.0 365.0) scale(1.000) translate(-712.0 -365.0)"><circle cx="712.0" cy="365.0" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="712.0" cy="365.0" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M699.0 365.0 H725.0 M701.0 359.0 H723.0 M701.0 371.0 H723.0" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="662.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="762.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path d="M766.5 365.0 h22.0" stroke="#7a7a7a" stroke-width="2.0"/><rect x="788.5" y="357.0" width="16.0" height="16.0" rx="3.0" fill="#3a3a3a"/><text x="796.5" y="369.0" text-anchor="middle" font-size="12.0" fill="#ddd" font-family="Arial">+</text>
+<text x="712.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Send due</text>
+<text x="712.0" y="453.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">reminders</text>
+<text x="712.0" y="469.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">POST</text>
+</svg>

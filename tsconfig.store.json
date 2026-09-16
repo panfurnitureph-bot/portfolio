@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/store/real/*"],
+      "next": ["src/store/shims/next.ts"],
+      "next/link": ["src/store/shims/next-link.tsx"],
+      "next/navigation": ["src/store/shims/next-navigation.ts"],
+      "next/image": ["src/store/shims/next-image.tsx"],
+      "next/font/google": ["src/store/shims/next-font-google.ts"],
+      "next/dynamic": ["src/pan/shims/next-dynamic.ts"]
+    }
+  },
+  "include": ["src/store", "src/vite-env.d.ts"]
+}

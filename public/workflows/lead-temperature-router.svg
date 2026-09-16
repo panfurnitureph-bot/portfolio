@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="20.0" height="20.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M210.0 365.0 C290.0 365.0 290.0 365.0 370.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M362.0 360.2 L370.0 365.0 L362.0 369.8z" fill="#7a7a7a"/>
+<path d="M470.0 365.0 C570.0 365.0 570.0 165.0 670.0 165.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M662.0 160.2 L670.0 165.0 L662.0 169.8z" fill="#7a7a7a"/>
+<path d="M470.0 365.0 C570.0 365.0 570.0 365.0 670.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M662.0 360.2 L670.0 365.0 L662.0 369.8z" fill="#7a7a7a"/>
+<path d="M470.0 365.0 C570.0 365.0 570.0 565.0 670.0 565.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M662.0 560.2 L670.0 565.0 L662.0 569.8z" fill="#7a7a7a"/>
+<path d="M770.0 165.0 C880.0 165.0 880.0 365.0 990.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M982.0 360.2 L990.0 365.0 L982.0 369.8z" fill="#7a7a7a"/>
+<path d="M770.0 365.0 C880.0 365.0 880.0 365.0 990.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M982.0 360.2 L990.0 365.0 L982.0 369.8z" fill="#7a7a7a"/>
+<path d="M770.0 565.0 C880.0 565.0 880.0 365.0 990.0 365.0" stroke="#7a7a7a" stroke-width="2.2" fill="none"/>
+<path d="M982.0 360.2 L990.0 365.0 L982.0 369.8z" fill="#7a7a7a"/>
+<path d="M160.0 315.0 H196.0 a14.0 14.0 0 0 1 14.0 14.0 V401.0 a14.0 14.0 0 0 1 -14.0 14.0 H160.0 A50.0 50.0 0 0 1 160.0 315.0z" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(160.0 365.0) scale(1.000) translate(-160.0 -365.0)"><rect x="149.0" y="353.0" width="22" height="26" rx="3" fill="none" stroke="#4ac97e" stroke-width="2.4"/><rect x="155.0" y="350.0" width="10" height="5" rx="1.5" fill="#4ac97e"/><path d="M154.0 364.0 H166.0 M154.0 370.0 H166.0" stroke="#4ac97e" stroke-width="2.2"/></g>
+<circle cx="210.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path transform="translate(84.0 356.0) scale(1.000)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="160.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">On form</text>
+<text x="160.0" y="453.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">submission</text>
+<rect x="370.0" y="315.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(420.0 365.0) scale(1.000) translate(-420.0 -365.0)"><path d="M418.0 378.0 V352.0" stroke="#4f9cf7" stroke-width="3"/><path d="M418.0 356.0 h13 l4 4 -4 4 h-13z M418.0 366.0 h-11 l-4 4 4 4 h11z" fill="#4f9cf7"/></g>
+<circle cx="370.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="470.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<text x="420.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Switch</text>
+<text x="420.0" y="453.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">mode: Rules</text>
+<rect x="670.0" y="115.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(720.0 165.0) scale(1.000) translate(-720.0 -165.0)"><rect x="708.0" y="155.0" width="20" height="22" rx="3" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><path d="M722.0 171.0 L734.0 157.0 l4 4 L728.0 175.0 l-6 2z" fill="#7d6cf0"/></g>
+<circle cx="670.0" cy="165.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="770.0" cy="165.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<text x="720.0" y="237.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Cold</text>
+<text x="720.0" y="253.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">manual</text>
+<rect x="670.0" y="315.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(720.0 365.0) scale(1.000) translate(-720.0 -365.0)"><rect x="708.0" y="355.0" width="20" height="22" rx="3" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><path d="M722.0 371.0 L734.0 357.0 l4 4 L728.0 375.0 l-6 2z" fill="#7d6cf0"/></g>
+<circle cx="670.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="770.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<text x="720.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Warm</text>
+<text x="720.0" y="453.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">manual</text>
+<rect x="670.0" y="515.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(720.0 565.0) scale(1.000) translate(-720.0 -565.0)"><rect x="708.0" y="555.0" width="20" height="22" rx="3" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><path d="M722.0 571.0 L734.0 557.0 l4 4 L728.0 575.0 l-6 2z" fill="#7d6cf0"/></g>
+<circle cx="670.0" cy="565.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="770.0" cy="565.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<text x="720.0" y="637.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Hot</text>
+<text x="720.0" y="653.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">manual</text>
+<rect x="990.0" y="315.0" width="100.0" height="100.0" rx="14.0" fill="#2c2c2c" stroke="#454545" stroke-width="2.0"/>
+<g transform="translate(1040.0 365.0) scale(1.000) translate(-1040.0 -365.0)"><path d="M1031.0 352.0 H1044.0 L1050.0 358.0 V378.0 H1031.0z" fill="#34a853"/><path d="M1035.0 364.0 H1046.0 M1035.0 369.0 H1046.0 M1035.0 373.0 H1046.0 M1040.0 364.0 V373.0" stroke="#fff" stroke-width="1.6"/></g>
+<circle cx="990.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<circle cx="1090.0" cy="365.0" r="4.5" fill="#181818" stroke="#7a7a7a" stroke-width="2.0"/>
+<path d="M1094.5 365.0 h22.0" stroke="#7a7a7a" stroke-width="2.0"/><rect x="1116.5" y="357.0" width="16.0" height="16.0" rx="3.0" fill="#3a3a3a"/><text x="1124.5" y="369.0" text-anchor="middle" font-size="12.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1040.0" y="437.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Google Sheets</text>
+<text x="1040.0" y="453.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="14.0" font-weight="600" fill="#f2f2f2">Append</text>
+<text x="1040.0" y="469.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="11.0" fill="#9a9a9a">append: sheet</text>
+</svg>

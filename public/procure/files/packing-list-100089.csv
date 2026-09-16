@@ -1,0 +1,32 @@
+Packing List,PL-100089,,,,,,,
+Booking,NW2689,Container,CNTU4741749,ETD,2026-06-25,,,
+
+Carton No,PO,SKU,Description,Variant,Qty (pcs),CBM,G.W. (kg),N.W. (kg)
+1-1,PO-9479,FL4369-BK,Kestrel Oil Filter,Black,12,0.318,19.7,17.7
+2-2,PO-9408,BD3255-STD,Ridgeline Side Mirror Set,Standard,12,0.212,28.7,25.8
+3-10,PO-9479,CO2210-RH,Ironbridge Radiator,Right Hand,96,0.281,365.6,329.0
+11-18,PO-9513,IG8900-OE,Voltera Spark Plug Set,OE Spec,96,1.810,280.3,252.3
+19-20,PO-9511,LT8306-OE,Lumen LED Headlight,OE Spec,24,0.412,27.2,24.5
+21-30,PO-9507,EL4429-OE,Voltera Battery 12V,OE Spec,120,2.626,477.8,430.0
+31-40,PO-9470,IG5528-RH,Voltera Spark Plug Set,Right Hand,120,0.608,216.1,194.5
+41-44,PO-9504,LT6068-CE,Lumen LED Headlight,Ceramic,48,0.598,108.5,97.7
+45-46,PO-9425,EL8127-CE,Voltera Battery 12V,Ceramic,24,0.650,69.7,62.7
+47-56,PO-9471,BD8291-OE,Ridgeline Side Mirror Set,OE Spec,120,1.188,333.4,300.1
+57-66,PO-9422,IG5302-BK,Voltera Spark Plug Set,Black,120,2.912,166.0,149.4
+67-68,PO-9430,FL7803-CE,Kestrel Oil Filter,Ceramic,24,0.519,57.0,51.3
+69-78,PO-9531,LT1246-STD,Lumen LED Headlight,Standard,120,2.258,382.2,344.0
+79-79,PO-9517,IG8729-HD,Voltera Spark Plug Set,Heavy Duty,12,0.078,16.3,14.7
+80-80,PO-9442,EL1757-OE,Voltera Battery 12V,OE Spec,12,0.333,35.8,32.2
+81-88,PO-9436,SU3055-BK,Summit Shock Absorber,Black,96,2.296,193.3,174.0
+89-96,PO-9507,LT8212-STD,Lumen LED Headlight,Standard,96,1.434,240.0,216.0
+97-104,PO-9518,DR3273-PF,Torqueline Drive Chain,Performance,96,0.492,72.6,65.3
+105-120,PO-9409,BR8225-LH,Apex Brake Pad Set,Left Hand,200,1.369,410.8,369.7
+121-121,PO-9505,LT3627-CE,Lumen LED Headlight,Ceramic,12,0.199,12.0,10.8
+122-137,PO-9477,EL6476-BK,Voltera Battery 12V,Black,200,5.949,140.2,126.2
+138-141,PO-9533,EL8040-RH,Voltera Battery 12V,Right Hand,48,0.359,170.1,153.1
+142-149,PO-9506,BD2668-CR,Ridgeline Side Mirror Set,Chrome,96,0.755,280.8,252.7
+150-150,PO-9528,CO9980-LH,Ironbridge Radiator,Left Hand,12,0.299,5.9,5.3
+151-158,PO-9449,BD5988-CR,Ridgeline Side Mirror Set,Chrome,96,0.905,52.6,47.3
+
+TOTAL,,,,,1912,28.860,4162.6,3746.3
+Total cartons,158,,,,,,,

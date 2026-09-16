@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#181818"/>
+<defs><pattern id="g" width="10.0" height="10.0" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2a2a2a"/></pattern></defs>
+<rect width="1200" height="750" fill="url(#g)"/>
+<path d="M108.0 279.8 C131.6 279.8 131.6 279.8 155.2 279.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M151.2 277.4 L155.2 279.8 L151.2 282.2z" fill="#7a7a7a"/>
+<path d="M193.2 279.8 C216.8 279.8 216.8 279.8 240.3 279.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M236.3 277.4 L240.3 279.8 L236.3 282.2z" fill="#7a7a7a"/>
+<path d="M278.4 279.8 C301.9 279.8 301.9 152.1 325.5 152.1" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M321.5 149.7 L325.5 152.1 L321.5 154.5z" fill="#7a7a7a"/>
+<path d="M278.4 279.8 C301.9 279.8 301.9 237.3 325.5 237.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M321.5 234.9 L325.5 237.3 L321.5 239.7z" fill="#7a7a7a"/>
+<path d="M278.4 279.8 C301.9 279.8 301.9 450.2 325.5 450.2" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M321.5 447.8 L325.5 450.2 L321.5 452.6z" fill="#7a7a7a"/>
+<path d="M363.5 237.3 C387.1 237.3 387.1 194.7 410.7 194.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M406.7 192.3 L410.7 194.7 L406.7 197.1z" fill="#7a7a7a"/>
+<text x="367.3" y="235.4" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">true</text>
+<path d="M448.7 194.7 C472.3 194.7 472.3 194.7 495.8 194.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 192.3 L495.8 194.7 L491.8 197.1z" fill="#7a7a7a"/>
+<path d="M363.5 237.3 C387.1 237.3 387.1 279.8 410.7 279.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M406.7 277.4 L410.7 279.8 L406.7 282.2z" fill="#7a7a7a"/>
+<text x="367.3" y="242.2" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">false</text>
+<path d="M448.7 279.8 C472.3 279.8 472.3 279.8 495.8 279.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 277.4 L495.8 279.8 L491.8 282.2z" fill="#7a7a7a"/>
+<text x="452.5" y="277.9" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">true</text>
+<path d="M533.8 279.8 C557.4 279.8 557.4 279.8 581.0 279.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M577.0 277.4 L581.0 279.8 L577.0 282.2z" fill="#7a7a7a"/>
+<path d="M448.7 279.8 C472.3 279.8 472.3 352.8 495.8 352.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 350.4 L495.8 352.8 L491.8 355.2z" fill="#7a7a7a"/>
+<text x="452.5" y="284.8" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">false</text>
+<path d="M533.8 352.8 C557.4 352.8 557.4 352.8 581.0 352.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M577.0 350.4 L581.0 352.8 L577.0 355.2z" fill="#7a7a7a"/>
+<path d="M619.0 352.8 C642.6 352.8 642.6 352.8 666.2 352.8" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M662.2 350.4 L666.2 352.8 L662.2 355.2z" fill="#7a7a7a"/>
+<path d="M363.5 450.2 C387.1 450.2 387.1 407.6 410.7 407.6" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M406.7 405.2 L410.7 407.6 L406.7 410.0z" fill="#7a7a7a"/>
+<text x="367.3" y="448.3" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">true</text>
+<path d="M448.7 407.6 C472.3 407.6 472.3 407.6 495.8 407.6" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 405.2 L495.8 407.6 L491.8 410.0z" fill="#7a7a7a"/>
+<path d="M533.8 407.6 C557.4 407.6 557.4 407.6 581.0 407.6" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M577.0 405.2 L581.0 407.6 L577.0 410.0z" fill="#7a7a7a"/>
+<path d="M363.5 450.2 C387.1 450.2 387.1 535.3 410.7 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M406.7 532.9 L410.7 535.3 L406.7 537.7z" fill="#7a7a7a"/>
+<text x="367.3" y="455.1" font-family="DM Sans, Arial" font-size="7.0" fill="#9a9a9a">false</text>
+<path d="M448.7 535.3 C472.3 535.3 472.3 492.7 495.8 492.7" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 490.3 L495.8 492.7 L491.8 495.1z" fill="#7a7a7a"/>
+<path d="M448.7 535.3 C472.3 535.3 472.3 577.9 495.8 577.9" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M491.8 575.5 L495.8 577.9 L491.8 580.3z" fill="#7a7a7a"/>
+<path d="M533.8 492.7 C557.4 492.7 557.4 535.3 581.0 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M577.0 532.9 L581.0 535.3 L577.0 537.7z" fill="#7a7a7a"/>
+<path d="M533.8 577.9 C557.4 577.9 557.4 535.3 581.0 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M577.0 532.9 L581.0 535.3 L577.0 537.7z" fill="#7a7a7a"/>
+<path d="M619.0 535.3 C642.6 535.3 642.6 535.3 666.2 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M662.2 532.9 L666.2 535.3 L662.2 537.7z" fill="#7a7a7a"/>
+<path d="M704.2 535.3 C727.7 535.3 727.7 535.3 751.3 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M747.3 532.9 L751.3 535.3 L747.3 537.7z" fill="#7a7a7a"/>
+<path d="M789.3 535.3 C812.9 535.3 812.9 535.3 836.5 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M832.5 532.9 L836.5 535.3 L832.5 537.7z" fill="#7a7a7a"/>
+<path d="M874.5 535.3 C898.1 535.3 898.1 535.3 921.6 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M917.6 532.9 L921.6 535.3 L917.6 537.7z" fill="#7a7a7a"/>
+<path d="M959.7 535.3 C983.2 535.3 983.2 535.3 1006.8 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1002.8 532.9 L1006.8 535.3 L1002.8 537.7z" fill="#7a7a7a"/>
+<path d="M1044.8 535.3 C1068.4 535.3 1068.4 535.3 1092.0 535.3" stroke="#7a7a7a" stroke-width="1.2" fill="none"/>
+<path d="M1088.0 532.9 L1092.0 535.3 L1088.0 537.7z" fill="#7a7a7a"/>
+<path d="M89.0 260.8 H102.7 a5.3 5.3 0 0 1 5.3 5.3 V293.5 a5.3 5.3 0 0 1 -5.3 5.3 H89.0 A19.0 19.0 0 0 1 89.0 260.8z" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(89.0 279.8) scale(0.380) translate(-89.0 -279.8)"><circle cx="89.01004304160688" cy="279.8350071736012" r="14" fill="#2aabee"/><path d="M81.01004304160688 278.8350071736012 L97.01004304160688 272.8350071736012 L93.01004304160688 287.8350071736012 L89.01004304160688 282.8350071736012 L86.01004304160688 285.8350071736012 L86.01004304160688 281.8350071736012 L94.01004304160688 275.8350071736012 L84.01004304160688 280.8350071736012z" fill="#fff"/></g>
+<circle cx="108.0" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path transform="translate(60.1 276.4) scale(0.380)" d="M8 0 l-7 11 h6 l-2 9 8 -11 h-5z" fill="#ff8b48"/>
+<text x="89.0" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Telegram</text>
+<text x="89.0" y="318.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Trigger</text>
+<text x="89.0" y="326.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">Updates: message, callback…</text>
+<rect x="155.2" y="260.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(174.2 279.8) scale(0.380) translate(-174.2 -279.8)"><text x="174.17503586800572" y="288.8350071736012" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="155.2" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="193.2" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="174.2" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Normalize</text>
+<text x="174.2" y="318.0" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Update</text>
+<rect x="240.3" y="260.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(259.3 279.8) scale(0.380) translate(-259.3 -279.8)"><path d="M247.34002869440457 289.8350071736012 H257.34002869440457 C265.34002869440457 289.8350071736012 265.34002869440457 269.8350071736012 272.34002869440457 269.8350071736012 M247.34002869440457 269.8350071736012 H257.34002869440457 C265.34002869440457 269.8350071736012 265.34002869440457 289.8350071736012 272.34002869440457 289.8350071736012" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M268.34002869440457 265.8350071736012 l5 4 -5 4z M268.34002869440457 285.8350071736012 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="240.3" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="278.4" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="259.3" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Is Callback?</text>
+<rect x="325.5" y="133.1" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(344.5 152.1) scale(0.380) translate(-344.5 -152.1)"><circle cx="344.50502152080344" cy="152.08751793400288" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="344.50502152080344" cy="152.08751793400288" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M331.50502152080344 152.08751793400288 H357.50502152080344 M333.50502152080344 146.08751793400288 H355.50502152080344 M333.50502152080344 158.08751793400288 H355.50502152080344" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="325.5" cy="152.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="363.5" cy="152.1" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M366.0 152.1 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="374.4" y="149.0" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="377.4" y="153.6" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="344.5" y="181.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Answer Callback</text>
+<text x="344.5" y="189.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="325.5" y="218.2" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(344.5 237.3) scale(0.380) translate(-344.5 -237.3)"><path d="M332.50502152080344 247.25251076040172 H342.50502152080344 C350.50502152080344 247.25251076040172 350.50502152080344 227.25251076040172 357.50502152080344 227.25251076040172 M332.50502152080344 227.25251076040172 H342.50502152080344 C350.50502152080344 227.25251076040172 350.50502152080344 247.25251076040172 357.50502152080344 247.25251076040172" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M353.50502152080344 223.25251076040172 l5 4 -5 4z M353.50502152080344 243.25251076040172 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="325.5" cy="237.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="363.5" cy="237.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="344.5" y="266.8" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Save?</text>
+<rect x="410.7" y="175.7" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(429.7 194.7) scale(0.380) translate(-429.7 -194.7)"><ellipse cx="429.67001434720225" cy="195.6700143472023" rx="12" ry="10" fill="#4f9fd8"/><circle cx="425.67001434720225" cy="192.6700143472023" r="2" fill="#fff"/><path d="M438.67001434720225 192.6700143472023 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M421.67001434720225 202.6700143472023 v5 M435.67001434720225 202.6700143472023 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="410.7" cy="194.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="448.7" cy="194.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="429.7" y="224.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Save Job</text>
+<text x="429.7" y="232.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="495.8" y="175.7" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 194.7) scale(0.380) translate(-514.8 -194.7)"><circle cx="514.8350071736012" cy="194.6700143472023" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="514.8350071736012" cy="194.6700143472023" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M501.8350071736012 194.6700143472023 H527.8350071736012 M503.8350071736012 188.6700143472023 H525.8350071736012 M503.8350071736012 200.6700143472023 H525.8350071736012" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="495.8" cy="194.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="194.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M536.3 194.7 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="544.7" y="191.6" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="547.8" y="196.2" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="514.8" y="224.2" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Reply Saved</text>
+<text x="514.8" y="232.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="410.7" y="260.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(429.7 279.8) scale(0.380) translate(-429.7 -279.8)"><path d="M417.67001434720225 289.8350071736012 H427.67001434720225 C435.67001434720225 289.8350071736012 435.67001434720225 269.8350071736012 442.67001434720225 269.8350071736012 M417.67001434720225 269.8350071736012 H427.67001434720225 C435.67001434720225 269.8350071736012 435.67001434720225 289.8350071736012 442.67001434720225 289.8350071736012" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M438.67001434720225 265.8350071736012 l5 4 -5 4z M438.67001434720225 285.8350071736012 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="410.7" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="448.7" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="429.7" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Hide?</text>
+<rect x="495.8" y="260.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 279.8) scale(0.380) translate(-514.8 -279.8)"><ellipse cx="514.8350071736012" cy="280.8350071736012" rx="12" ry="10" fill="#4f9fd8"/><circle cx="510.8350071736012" cy="277.8350071736012" r="2" fill="#fff"/><path d="M523.8350071736012 277.8350071736012 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M506.8350071736012 287.8350071736012 v5 M520.8350071736012 287.8350071736012 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="495.8" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="514.8" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Hide Job</text>
+<text x="514.8" y="317.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="581.0" y="260.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(600.0 279.8) scale(0.380) translate(-600.0 -279.8)"><circle cx="600.0" cy="279.8350071736012" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="600.0" cy="279.8350071736012" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M587.0 279.8350071736012 H613.0 M589.0 273.8350071736012 H611.0 M589.0 285.8350071736012 H611.0" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="581.0" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="619.0" cy="279.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M621.5 279.8 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="629.9" y="276.8" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="632.9" y="281.4" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="600.0" y="309.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Reply Hidden</text>
+<text x="600.0" y="317.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="495.8" y="333.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 352.8) scale(0.380) translate(-514.8 -352.8)"><path d="M502.8350071736012 362.83357245337163 H512.8350071736012 C520.8350071736012 362.83357245337163 520.8350071736012 342.83357245337163 527.8350071736012 342.83357245337163 M502.8350071736012 342.83357245337163 H512.8350071736012 C520.8350071736012 342.83357245337163 520.8350071736012 362.83357245337163 527.8350071736012 362.83357245337163" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M523.8350071736012 338.83357245337163 l5 4 -5 4z M523.8350071736012 358.83357245337163 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="495.8" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="514.8" y="382.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Alert?</text>
+<rect x="581.0" y="333.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(600.0 352.8) scale(0.380) translate(-600.0 -352.8)"><ellipse cx="600.0" cy="353.83357245337163" rx="12" ry="10" fill="#4f9fd8"/><circle cx="596.0" cy="350.83357245337163" r="2" fill="#fff"/><path d="M609.0 350.83357245337163 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M592.0 360.83357245337163 v5 M606.0 360.83357245337163 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="581.0" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="619.0" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="600.0" y="382.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Create Alert</text>
+<text x="600.0" y="390.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="666.2" y="333.8" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(685.2 352.8) scale(0.380) translate(-685.2 -352.8)"><circle cx="685.1649928263988" cy="352.83357245337163" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="685.1649928263988" cy="352.83357245337163" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M672.1649928263988 352.83357245337163 H698.1649928263988 M674.1649928263988 346.83357245337163 H696.1649928263988 M674.1649928263988 358.83357245337163 H696.1649928263988" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="666.2" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="704.2" cy="352.8" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M706.7 352.8 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="715.0" y="349.8" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="718.1" y="354.4" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="685.2" y="382.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Reply Alert</text>
+<text x="685.2" y="390.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="325.5" y="431.2" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(344.5 450.2) scale(0.380) translate(-344.5 -450.2)"><path d="M332.50502152080344 460.1649928263988 H342.50502152080344 C350.50502152080344 460.1649928263988 350.50502152080344 440.1649928263988 357.50502152080344 440.1649928263988 M332.50502152080344 440.1649928263988 H342.50502152080344 C350.50502152080344 440.1649928263988 350.50502152080344 460.1649928263988 357.50502152080344 460.1649928263988" stroke="#4ac97e" stroke-width="2.6" fill="none"/><path d="M353.50502152080344 436.1649928263988 l5 4 -5 4z M353.50502152080344 456.1649928263988 l5 4 -5 4z" fill="#4ac97e"/></g>
+<circle cx="325.5" cy="450.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="363.5" cy="450.2" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="344.5" y="479.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Is /saved?</text>
+<rect x="410.7" y="388.6" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(429.7 407.6) scale(0.380) translate(-429.7 -407.6)"><ellipse cx="429.67001434720225" cy="408.58249641319946" rx="12" ry="10" fill="#4f9fd8"/><circle cx="425.67001434720225" cy="405.58249641319946" r="2" fill="#fff"/><path d="M438.67001434720225 405.58249641319946 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M421.67001434720225 415.58249641319946 v5 M435.67001434720225 415.58249641319946 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="410.7" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="448.7" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="429.7" y="437.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Get Saved Jobs</text>
+<text x="429.7" y="445.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="495.8" y="388.6" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 407.6) scale(0.380) translate(-514.8 -407.6)"><text x="514.8350071736012" y="416.58249641319946" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="495.8" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="514.8" y="437.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Format Saved</text>
+<rect x="581.0" y="388.6" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(600.0 407.6) scale(0.380) translate(-600.0 -407.6)"><circle cx="600.0" cy="407.58249641319946" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="600.0" cy="407.58249641319946" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M587.0 407.58249641319946 H613.0 M589.0 401.58249641319946 H611.0 M589.0 413.58249641319946 H611.0" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="581.0" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="619.0" cy="407.6" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M621.5 407.6 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="629.9" y="404.5" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="632.9" y="409.1" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="600.0" y="437.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Send Saved</text>
+<text x="600.0" y="445.4" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+<rect x="410.7" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(429.7 535.3) scale(0.380) translate(-429.7 -535.3)"><text x="429.67001434720225" y="544.3299856527977" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="410.7" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="448.7" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="429.7" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Parse Search</text>
+<rect x="495.8" y="473.7" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 492.7) scale(0.380) translate(-514.8 -492.7)"><circle cx="514.8350071736012" cy="492.7474892395983" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="514.8350071736012" cy="492.7474892395983" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M501.8350071736012 492.7474892395983 H527.8350071736012 M503.8350071736012 486.7474892395983 H525.8350071736012 M503.8350071736012 498.7474892395983 H525.8350071736012" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="495.8" cy="492.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="492.7" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="514.8" y="522.3" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Remotive</text>
+<text x="514.8" y="530.6" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">GET</text>
+<rect x="495.8" y="558.9" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(514.8 577.9) scale(0.380) translate(-514.8 -577.9)"><circle cx="514.8350071736012" cy="577.9124820659971" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="514.8350071736012" cy="577.9124820659971" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M501.8350071736012 577.9124820659971 H527.8350071736012 M503.8350071736012 571.9124820659971 H525.8350071736012 M503.8350071736012 583.9124820659971 H525.8350071736012" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="495.8" cy="577.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="533.8" cy="577.9" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="514.8" y="607.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Remote OK</text>
+<text x="514.8" y="615.7" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">GET</text>
+<rect x="581.0" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(600.0 535.3) scale(0.380) translate(-600.0 -535.3)"><path d="M587.0 526.3299856527977 C598.0 526.3299856527977 598.0 535.3299856527977 606.0 535.3299856527977 M587.0 544.3299856527977 C598.0 544.3299856527977 598.0 535.3299856527977 606.0 535.3299856527977 H613.0" stroke="#35c7c1" stroke-width="2.6" fill="none"/></g>
+<circle cx="581.0" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="619.0" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="600.0" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Merge Sources</text>
+<text x="600.0" y="573.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">combine</text>
+<rect x="666.2" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(685.2 535.3) scale(0.380) translate(-685.2 -535.3)"><text x="685.1649928263988" y="544.3299856527977" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="666.2" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="704.2" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="685.2" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Normalize</text>
+<text x="685.2" y="573.5" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Sources</text>
+<rect x="751.3" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(770.3 535.3) scale(0.380) translate(-770.3 -535.3)"><text x="770.3299856527976" y="544.3299856527977" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="751.3" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="789.3" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="770.3" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Rank Jobs</text>
+<rect x="836.5" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(855.5 535.3) scale(0.380) translate(-855.5 -535.3)"><ellipse cx="855.4949784791966" cy="536.3299856527977" rx="12" ry="10" fill="#4f9fd8"/><circle cx="851.4949784791966" cy="533.3299856527977" r="2" fill="#fff"/><path d="M864.4949784791966 533.3299856527977 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M847.4949784791966 543.3299856527977 v5 M861.4949784791966 543.3299856527977 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="836.5" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="874.5" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="855.5" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Store Jobs</text>
+<text x="855.5" y="573.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="921.6" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(940.7 535.3) scale(0.380) translate(-940.7 -535.3)"><ellipse cx="940.6599713055954" cy="536.3299856527977" rx="12" ry="10" fill="#4f9fd8"/><circle cx="936.6599713055954" cy="533.3299856527977" r="2" fill="#fff"/><path d="M949.6599713055954 533.3299856527977 q7 -2 5 6" stroke="#4f9fd8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M932.6599713055954 543.3299856527977 v5 M946.6599713055954 543.3299856527977 v5" stroke="#4f9fd8" stroke-width="3" stroke-linecap="round"/></g>
+<circle cx="921.6" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="959.7" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="940.7" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Get Hidden</text>
+<text x="940.7" y="573.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">executeQuery</text>
+<rect x="1006.8" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1025.8 535.3) scale(0.380) translate(-1025.8 -535.3)"><text x="1025.8249641319942" y="544.3299856527977" text-anchor="middle" font-family="DM Sans, Arial" font-size="26" font-weight="700" fill="#ffab5e">{ }</text></g>
+<circle cx="1006.8" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1044.8" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<text x="1025.8" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Format Results</text>
+<rect x="1092.0" y="516.3" width="38.0" height="38.0" rx="5.3" fill="#2c2c2c" stroke="#454545" stroke-width="1.0"/>
+<g transform="translate(1111.0 535.3) scale(0.380) translate(-1111.0 -535.3)"><circle cx="1110.9899569583931" cy="535.3299856527977" r="13" fill="none" stroke="#7d6cf0" stroke-width="2.5"/><ellipse cx="1110.9899569583931" cy="535.3299856527977" rx="5.5" ry="13" fill="none" stroke="#7d6cf0" stroke-width="2.2"/><path d="M1097.9899569583931 535.3299856527977 H1123.9899569583931 M1099.9899569583931 529.3299856527977 H1121.9899569583931 M1099.9899569583931 541.3299856527977 H1121.9899569583931" stroke="#7d6cf0" stroke-width="2"/></g>
+<circle cx="1092.0" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<circle cx="1130.0" cy="535.3" r="2.5" fill="#181818" stroke="#7a7a7a" stroke-width="1.0"/>
+<path d="M1132.5 535.3 h8.4" stroke="#7a7a7a" stroke-width="1.0"/><rect x="1140.9" y="532.3" width="6.1" height="6.1" rx="1.1" fill="#3a3a3a"/><text x="1143.9" y="536.9" text-anchor="middle" font-size="6.0" fill="#ddd" font-family="Arial">+</text>
+<text x="1111.0" y="564.9" text-anchor="middle" font-family="DM Sans, Arial" font-size="7.5" font-weight="600" fill="#f2f2f2">Send Results</text>
+<text x="1111.0" y="573.1" text-anchor="middle" font-family="DM Sans, Arial" font-size="6.5" fill="#9a9a9a">POST</text>
+</svg>
